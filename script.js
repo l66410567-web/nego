@@ -64,3 +64,14 @@ function handleSubmit(e){
 document.querySelectorAll('form.form, #modalForm').forEach(function(f){
   f.addEventListener('submit', handleSubmit);
 });
+
+/* ---------- 임종 시 대처 — 장소별 탭 ---------- */
+document.querySelectorAll('.er-tab').forEach(function(tab){
+  tab.addEventListener('click', function(){
+    document.querySelectorAll('.er-tab').forEach(function(t){ t.classList.remove('on'); });
+    document.querySelectorAll('.er-panel').forEach(function(p){ p.classList.remove('on'); });
+    tab.classList.add('on');
+    var panel = document.getElementById('er-' + tab.dataset.t);
+    if (panel) panel.classList.add('on');
+  });
+});
