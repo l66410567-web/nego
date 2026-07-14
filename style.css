@@ -93,15 +93,23 @@ button{cursor:pointer}
 .blink{width:7px;height:7px;border-radius:50%;background:var(--siren);position:relative;flex-shrink:0}
 .blink::after{content:'';position:absolute;inset:-4px;border:1px solid var(--siren);border-radius:50%;animation:ping 2s ease-out infinite}
 @keyframes ping{0%{transform:scale(.7);opacity:.8}100%{transform:scale(2.1);opacity:0}}
-.burger{display:none;flex-direction:column;gap:5px;width:40px;height:40px;align-items:center;justify-content:center;background:none;border:none}
-.burger span{display:block;width:24px;height:2px;background:var(--pine);border-radius:2px}
-.m-menu{display:none;flex-direction:column;background:#fff;border-top:1px solid var(--line);padding:8px 24px 16px}
+.burger{display:none;flex-direction:column;gap:5px;width:44px;height:44px;align-items:center;justify-content:center;background:none;border:none;flex-shrink:0}
+.burger span{display:block;width:26px;height:2.5px;background:var(--pine);border-radius:2px}
+.m-menu{display:none;flex-direction:column;background:#fff;border-top:1px solid var(--line);padding:8px 20px 16px}
 .m-menu.on{display:flex}
-.m-menu a{padding:15px 0;font-size:17px;font-weight:700;color:var(--pine);border-bottom:1px solid var(--line)}
+.m-menu a{padding:17px 4px;font-size:17px;font-weight:700;color:var(--pine);border-bottom:1px solid var(--line)}
 .m-menu a:last-child{border-bottom:none}
 .m-menu a.on{color:var(--brass-dp)}
 @media(max-width:1080px){.gnb{display:none}.burger{display:flex}}
-@media(max-width:520px){.tel-num{font-size:17px}.logo-name{font-size:20px}.logo-119{font-size:21px}.nav-in{height:74px}}
+@media(max-width:700px){
+  .nav-in{height:68px;padding:0 16px;gap:10px}
+  .nav-tel .tel-txt{display:none}   /* 좁은 화면에선 하단 고정바로 전화 연결 */
+  .logo-name{font-size:19px}
+  .logo-119{font-size:20px}
+  .logo-tag{font-size:11px}
+  .logo-mark{width:29px;height:29px}
+  .logo{gap:8px}
+}
 
 /* ---------- 메인 히어로 ---------- */
 .hero{position:relative;overflow:hidden;min-height:600px;display:flex;align-items:center}
@@ -111,8 +119,9 @@ button{cursor:pointer}
 .hero-in{position:relative;z-index:2;width:100%;padding:76px 0}
 .hero-copy{max-width:680px;color:#fff}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:14px;font-weight:700;color:#C3D4BC;margin-bottom:20px}
-.hero h1{font-size:42px;font-weight:700;line-height:1.42;letter-spacing:-.01em}
+.hero h1{font-size:44px;font-weight:700;line-height:1.4;letter-spacing:-.015em}
 .hero h1 .hl{color:var(--brass)}
+.hero-sub{margin-top:18px;font-size:19px;font-weight:500;color:#C3D4BC;line-height:1.7}
 .hero-benefits{display:flex;flex-direction:column;gap:12px;margin-top:28px;max-width:620px}
 .bene{display:flex;align-items:center;gap:14px;flex-wrap:wrap;border-radius:10px;padding:15px 18px;font-size:17px;font-weight:700;color:#fff;border:1.5px solid}
 .bene-hall{background:linear-gradient(92deg,rgba(200,155,74,.30),rgba(200,155,74,.10));border-color:var(--brass)}
@@ -121,10 +130,27 @@ button{cursor:pointer}
 .bene-hall .bene-tag{background:var(--brass);color:#22190A}
 .bene-site .bene-tag{background:var(--pine-lite);color:#fff}
 .bene b{color:var(--siren-lt);font-weight:900}
-.bene-note{font-size:13px;color:#9FB398;margin-top:2px}
+.bene-note{display:inline-block;font-size:13.5px;color:#D9E4D3;background:rgba(255,255,255,.10);border-left:3px solid var(--brass);padding:9px 13px;margin-top:6px;border-radius:0 6px 6px 0;line-height:1.6}
 .hero-cta{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
-@media(max-width:900px){.hero h1{font-size:31px}.hero-veil{background:linear-gradient(180deg,rgba(20,38,28,.94),rgba(20,38,28,.86))}}
-@media(max-width:520px){.hero{min-height:auto}.hero h1{font-size:26px}.bene{font-size:15px;padding:13px 15px}.hero-cta .btn{flex:1;min-width:145px}}
+@media(max-width:900px){
+  .hero h1{font-size:33px}
+  .hero-sub{font-size:17px}
+  .hero-veil{background:linear-gradient(180deg,rgba(20,38,28,.94),rgba(20,38,28,.88))}
+}
+@media(max-width:640px){
+  .hero{min-height:auto}
+  .hero-in{padding:52px 0 48px}
+  .hero h1{font-size:27px;line-height:1.45}
+  .hero-sub{font-size:15.5px;margin-top:14px;line-height:1.65}
+  .hero-eyebrow{font-size:12.5px;margin-bottom:16px}
+  .hero-benefits{gap:10px;margin-top:24px}
+  /* 태그를 위로 올려 2줄 구조 — 좁은 화면에서 문구가 뭉치지 않게 */
+  .bene{flex-direction:column;align-items:flex-start;gap:9px;padding:14px 15px;font-size:15.5px;line-height:1.55}
+  .bene-tag{font-size:12px;padding:5px 11px}
+  .bene-note{font-size:13px;padding:9px 12px}
+  .hero-cta{gap:9px;margin-top:24px}
+  .hero-cta .btn{flex:1;min-width:0;padding:15px 12px;font-size:15px}
+}
 
 /* ---------- 서브페이지 헤더 ---------- */
 .phead{background:var(--ink);color:#fff;padding:70px 0 66px;position:relative;overflow:hidden}
@@ -210,8 +236,8 @@ button{cursor:pointer}
 .bx-pine li .ck{color:var(--brass)}
 .bx li b{color:var(--siren);font-weight:900}
 .bx-pine li b{color:var(--siren-lt)}
-.bx-note{margin-top:14px;font-size:13.5px;color:var(--gray-lt)}
-.bx-pine .bx-note{color:#93A88C}
+.bx-note{display:block;margin-top:18px;font-size:14px;color:var(--gray);background:rgba(200,155,74,.12);border-left:3px solid var(--brass);padding:11px 14px;border-radius:0 6px 6px 0;line-height:1.65;font-weight:500}
+.bx-pine .bx-note{color:#D9E4D3;background:rgba(255,255,255,.08)}
 @media(max-width:520px){.bx li{font-size:15px}}
 
 /* ---------- 서비스 카드 (메인) ---------- */
@@ -375,15 +401,166 @@ button{cursor:pointer}
 .foot-links{display:flex;gap:18px;flex-wrap:wrap;font-weight:700}
 .foot-links a:hover{color:var(--brass-dp)}
 
-/* ---------- 플로팅 ---------- */
+/* ---------- 플로팅 (PC) ---------- */
 .float{position:fixed;right:20px;bottom:20px;z-index:80;display:flex;flex-direction:column;gap:11px}
 .fab{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(0,0,0,.28);border:none}
 .fab svg{width:26px;height:26px}
 .fab-k{background:var(--kakao);color:#3B1E1E}
 .fab-c{background:var(--siren);color:#fff}
 
+/* ---------- 하단 고정 상담바 (모바일) ---------- */
+.callbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:85;
+  background:#fff;border-top:1px solid var(--line);box-shadow:0 -4px 18px rgba(0,0,0,.10);
+  padding:9px 10px calc(9px + env(safe-area-inset-bottom));gap:9px}
+.callbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;
+  height:56px;border-radius:10px;font-size:17px;font-weight:900}
+.callbar svg{width:22px;height:22px;flex-shrink:0}
+.cb-tel{background:var(--siren);color:#fff}
+.cb-kakao{background:var(--kakao);color:#3B1E1E}
+@media(max-width:700px){
+  .float{display:none}
+  .callbar{display:flex}
+  .foot{padding-bottom:104px}
+}
+
 /* ---------- 모달 ---------- */
 .modal{display:none;position:fixed;inset:0;z-index:100;background:rgba(20,38,28,.62);align-items:center;justify-content:center;padding:20px}
 .modal.on{display:flex}
 .modal-box{background:#fff;border-radius:14px;padding:34px 30px;width:100%;max-width:420px;position:relative;max-height:90vh;overflow-y:auto}
 .modal-x{position:absolute;top:14px;right:16px;background:none;border:none;font-size:18px;color:var(--gray-lt)}
+
+/* ==========================================================
+   모바일 최종 점검 (≤ 640px)
+   40~60대 이용자 기준: 큰 글씨 · 넉넉한 여백 · 큰 터치 영역
+   ========================================================== */
+@media(max-width:640px){
+  .wrap,.wrap-narrow{padding:0 18px}
+  .sec{padding:54px 0}
+  .sec-sm{padding:42px 0}
+  .sec-head{margin-bottom:32px}
+  .sec-head h2{font-size:22px;line-height:1.5}
+  .sec-head .sub{font-size:15px;margin-top:13px}
+  .eyebrow{font-size:13px;padding:6px 16px;margin-bottom:14px}
+
+  /* 서브페이지 헤더 */
+  .phead{padding:40px 0 38px}
+  .phead h1{font-size:24px;line-height:1.45}
+  .phead p{font-size:15px;line-height:1.75}
+  .crumb{font-size:13px;margin-bottom:11px}
+
+  /* 경고 띠 — 세로 정렬 */
+  .alert-in{flex-direction:column;align-items:flex-start;gap:15px;padding:22px 0}
+  .alert-ico{width:46px;height:46px}
+  .alert-txt{flex:1 1 auto;min-width:0}
+  .alert-txt h3{font-size:16.5px;line-height:1.6}
+  .alert-txt p{font-size:13.5px}
+  .alert .btn-white{width:100%;margin:0}
+
+  /* 카드 */
+  .card{padding:26px 20px}
+  .card h3{font-size:16.5px}
+  .card p{font-size:14.5px}
+
+  /* 부탁 → 권리 */
+  .swap{gap:14px;margin-bottom:40px}
+  .swap-card{padding:26px 20px}
+  .swap-word{font-size:36px;margin-bottom:14px}
+  .swap-card p{font-size:14.5px}
+  .swap-new p strong{font-size:15px}
+  .swap-arrow{font-size:24px;padding:0}
+
+  /* 약속 카드 */
+  .pledge{padding:24px 20px}
+  .pledge h3{font-size:15.5px}
+  .pledge p{font-size:14px}
+  .core-cta{margin-top:38px}
+  .core-cta p{font-size:15px}
+  .core-cta .btn{width:100%}
+
+  /* 혜택 상자 */
+  .bx{padding:24px 20px}
+  .bx h3{font-size:17.5px;margin-bottom:14px}
+  .bx li{font-size:15.5px;padding:8px 0;line-height:1.6}
+  .bx-note{font-size:13.5px;padding:10px 12px}
+
+  /* 서비스 카드 */
+  .svc-img{height:130px}
+  .svc-body{padding:20px 18px 22px}
+  .svc-body h3{font-size:17px}
+  .svc-body p{font-size:14.5px}
+
+  /* 패키지 */
+  .pkg{padding:28px 22px}
+  .pkg h3{font-size:19px}
+  .pkg li{font-size:14.5px;padding:7px 0}
+  .pkg-pick-tag{font-size:12px;padding:5px 14px}
+
+  /* 진행 절차 — 한 줄에 1개 */
+  .steps{grid-template-columns:1fr;gap:24px}
+  .step{display:flex;gap:15px;align-items:flex-start}
+  .step-n{margin-bottom:0;flex-shrink:0;width:40px;height:40px;font-size:15px}
+  .step h4{font-size:16px}
+  .step p{font-size:14px}
+
+  /* 세로 절차 (서브페이지) */
+  .vstep{gap:14px;padding:18px 0}
+  .vstep-n{width:38px;height:38px;font-size:14px}
+  .vstep-b h4{font-size:16px}
+  .vstep-b p{font-size:14.5px}
+
+  /* 언론 스크랩 */
+  .clip{padding:20px 18px}
+  .clip h4{font-size:16px}
+  .clip p{font-size:13.5px}
+
+  /* 약속 리본 */
+  .pm{padding:0}
+  .pm h4{font-size:15.5px}
+  .pm p{font-size:13.5px}
+
+  /* 표 — 가로 스크롤 안내 */
+  .tbl th,.tbl td{padding:13px 14px;font-size:14px}
+  .tbl-scroll{margin:0 -18px;padding:0 18px}
+
+  /* FAQ */
+  .faq-q{padding:18px 18px;font-size:15.5px;line-height:1.5}
+  .faq-a p{padding:0 18px 20px;font-size:14.5px}
+  .faq-cat{font-size:14.5px;margin:28px 0 12px}
+
+  /* 제휴 장례식장 */
+  .dist{padding:16px;gap:14px}
+  .dist-img{height:56px}
+  .dist-img span{font-size:14px}
+  .chip{font-size:13.5px;padding:8px 11px}
+
+  /* 정보센터 */
+  .news-head h2{font-size:22px}
+  .news-body h4{font-size:14.5px}
+
+  /* 상담 신청 */
+  .apply-l h2{font-size:22px;line-height:1.5}
+  .apply-l>p{font-size:15px}
+  .tel-box{padding:18px 20px}
+  .tel-box .num{font-size:28px}
+  .form{padding:26px 22px}
+  .form h3{font-size:18px}
+  .form input[type=text],.form input[type=tel],.form select{padding:15px 14px;font-size:16px}
+  .form .btn{padding:17px 20px}
+
+  /* 푸터 */
+  .foot{padding:36px 0 104px}
+  .foot-in{flex-direction:column;gap:18px;font-size:13.5px}
+  .foot-links{gap:14px}
+
+  /* 모달 */
+  .modal-box{padding:28px 22px}
+}
+
+/* 아주 좁은 화면 (≤ 380px) */
+@media(max-width:380px){
+  .hero h1{font-size:25px}
+  .sec-head h2{font-size:21px}
+  .logo-name{font-size:18px}
+  .logo-119{font-size:19px}
+  .callbar a{font-size:16px;height:54px}
+}
