@@ -262,18 +262,75 @@ button{cursor:pointer}
 .gg6{background:linear-gradient(140deg,#26402F,#4E7A54)}
 
 /* ---------- 언론 스크랩 ---------- */
-.press{background:repeating-linear-gradient(0deg,rgba(0,0,0,.012) 0 1px,transparent 1px 3px),#EBE6D6}
+/* 신문지 배경 — 누렇게 바랜 종이 + 인쇄 결 */
+.press{
+  position:relative;
+  background:
+    /* 종이 얼룩 (바랜 자국) */
+    radial-gradient(ellipse 60% 40% at 12% 18%, rgba(160,130,70,.10), transparent 60%),
+    radial-gradient(ellipse 50% 35% at 88% 72%, rgba(150,120,60,.09), transparent 60%),
+    radial-gradient(ellipse 40% 30% at 60% 40%, rgba(120,95,50,.05), transparent 65%),
+    /* 종이 섬유결 (미세한 가로 결) */
+    repeating-linear-gradient(0deg, rgba(90,70,35,.030) 0 1px, transparent 1px 4px),
+    /* 인쇄 세로 단 (신문 칼럼) */
+    repeating-linear-gradient(90deg, rgba(90,70,35,.045) 0 1px, transparent 1px 132px),
+    #E9E2CE;
+}
+/* 신문 상단 접힌 자국 */
+.press::before{
+  content:'';position:absolute;left:0;right:0;top:0;height:100%;pointer-events:none;
+  background:linear-gradient(180deg, rgba(90,70,35,.09), transparent 12%, transparent 88%, rgba(90,70,35,.09));
+}
+.press>*{position:relative;z-index:1}
+
 .clips{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
-.clip{background:#FBF8EE;border:1px solid #D6CDB2;padding:24px 20px 22px;position:relative;box-shadow:0 8px 20px rgba(60,50,20,.14);font-family:'Noto Serif KR',serif}
+
+/* 스크랩 조각 — 인쇄된 종이 질감 */
+.clip{
+  position:relative;padding:24px 20px 22px;
+  border:1px solid #CDC2A2;
+  font-family:'Noto Serif KR',serif;
+  box-shadow:0 10px 24px rgba(60,45,15,.20), inset 0 0 40px rgba(150,125,70,.10);
+  background:
+    /* 활판 인쇄 망점 (halftone) */
+    radial-gradient(circle at 1px 1px, rgba(60,45,20,.045) 1px, transparent 0) 0 0/4px 4px,
+    /* 종이 결 */
+    repeating-linear-gradient(0deg, rgba(90,70,35,.022) 0 1px, transparent 1px 3px),
+    /* 바랜 종이 톤 */
+    linear-gradient(160deg, #FCFAF2 0%, #F6F1E2 55%, #EFE8D4 100%);
+}
+/* 잘린 종이 가장자리 느낌 */
+.clip::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7), inset 0 -1px 0 rgba(120,95,50,.10);
+}
 .clip:nth-child(1){transform:rotate(-1.5deg)}
 .clip:nth-child(2){transform:rotate(1.1deg)}
 .clip:nth-child(3){transform:rotate(-.8deg)}
 .clip:nth-child(4){transform:rotate(1.6deg)}
-.tape{position:absolute;top:-11px;left:50%;transform:translateX(-50%) rotate(-3deg);width:64px;height:20px;background:rgba(200,155,74,.4)}
-.clip-src{font-family:'Noto Sans KR',sans-serif;font-size:12px;font-weight:900;color:#9C4529;margin-bottom:11px}
-.clip h4{font-size:17px;font-weight:700;line-height:1.5;color:#1A1F19;border-bottom:2px solid #1A1F19;padding-bottom:11px;margin-bottom:12px}
-.clip p{font-family:'Noto Sans KR',sans-serif;font-size:13.5px;color:#5C5648;line-height:1.75}
-.clip-note{text-align:center;margin-top:36px;font-size:13px;color:#8A8168}
+.tape{position:absolute;top:-11px;left:50%;transform:translateX(-50%) rotate(-3deg);width:64px;height:20px;
+  background:linear-gradient(180deg, rgba(216,196,150,.75), rgba(196,172,120,.6));
+  box-shadow:0 1px 3px rgba(60,45,15,.18)}
+
+/* 신문 제호 줄 */
+.clip-src{
+  font-family:'Noto Sans KR',sans-serif;font-size:12px;font-weight:900;color:#8E3B26;
+  letter-spacing:.04em;padding-bottom:8px;margin-bottom:10px;
+  border-bottom:1px solid rgba(60,45,20,.28);
+  display:flex;align-items:center;gap:6px;
+}
+/* 인쇄된 헤드라인 */
+.clip h4{
+  font-family:'Noto Serif KR',serif;font-size:17.5px;font-weight:900;line-height:1.45;
+  color:#14100A;border-bottom:3px double #14100A;padding-bottom:12px;margin-bottom:13px;
+  letter-spacing:-.01em;
+}
+/* 기사 본문 — 신문 활자 느낌 */
+.clip p{
+  font-family:'Noto Serif KR',serif;font-size:14px;color:#3B342A;line-height:1.85;
+  text-align:justify;letter-spacing:-.005em;
+}
+.clip-note{text-align:center;margin-top:36px;font-size:13px;color:#7A6E52}
 @media(max-width:980px){.clips{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.clips{grid-template-columns:1fr}.clip{transform:none!important}}
 
@@ -563,4 +620,18 @@ button{cursor:pointer}
   .logo-name{font-size:18px}
   .logo-119{font-size:19px}
   .callbar a{font-size:16px;height:54px}
+}
+
+/* 신문 섹션 헤더 — 종이 배경에 맞춘 톤 */
+.press .eyebrow{color:#8E3B26;border-color:rgba(142,59,38,.45);background:rgba(142,59,38,.08)}
+.press .sec-head h2{color:#14100A;font-weight:900}
+.press .sec-head .sub{color:#5C5341}
+
+/* 모바일 — 신문 조각 */
+@media(max-width:640px){
+  .press{background-size:auto,auto,auto,auto,auto,auto}
+  .clip{padding:22px 18px 20px;box-shadow:0 8px 18px rgba(60,45,15,.18), inset 0 0 30px rgba(150,125,70,.08)}
+  .clip h4{font-size:16.5px}
+  .clip p{font-size:14px;text-align:left}
+  .clip-src{font-size:11.5px}
 }
