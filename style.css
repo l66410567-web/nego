@@ -120,6 +120,7 @@ button{cursor:pointer}
 .hero-in{position:relative;z-index:2;width:100%;padding-top:76px;padding-bottom:76px}
 .hero-copy{max-width:680px;color:#fff}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:14px;font-weight:700;color:#C3D4BC;margin-bottom:20px}
+.hero-lead{font-size:19px;font-weight:600;color:#E7ECE1;line-height:1.6;margin-bottom:12px}
 .hero h1{font-size:44px;font-weight:700;line-height:1.4;letter-spacing:-.015em}
 .hero h1 .hl{color:var(--brass)}
 .hero-sub{margin-top:18px;font-size:19px;font-weight:500;color:#C3D4BC;line-height:1.7}
@@ -149,6 +150,7 @@ button{cursor:pointer}
   .hero-in{padding-top:52px;padding-bottom:48px}
   .hero h1{font-size:27px;line-height:1.45}
   .hero-sub{font-size:15.5px;margin-top:14px;line-height:1.65}
+  .hero-lead{font-size:16px;margin-bottom:10px}
   .hero-eyebrow{font-size:12.5px;margin-bottom:16px}
   .hero-benefits{gap:10px;margin-top:24px}
   /* 태그를 위로 올려 2줄 구조 — 좁은 화면에서 문구가 뭉치지 않게 */
