@@ -644,6 +644,23 @@ button{cursor:pointer}
   .core-cta p{font-size:15px}
   .core-cta .btn{width:100%}
 
+  /* 모바일: '빛고을장례119란?' 상단 core 섹션을 밝게 전환
+     (헤더가 이미 어두워, 바로 이어지는 core까지 어두우면 화면이 통째로 무겁게 보임) */
+  .core{background:var(--hanji);color:#1A1F19;border-top:1px solid var(--line)}
+  .core .eyebrow.on-dark{color:var(--brass-dp);border-color:rgba(200,155,74,.45);background:rgba(200,155,74,.10)}
+  .core .sec-head.on-dark h2{color:var(--pine)}
+  .core .swap-old{background:#fff;border:1px solid var(--line)}
+  .core .swap-new{background:rgba(200,155,74,.12);border:2px solid var(--brass)}
+  .core .swap-lab{color:var(--gray-lt)}
+  .core .swap-new .swap-lab{color:var(--brass-dp)}
+  .core .swap-old .swap-word{color:#8A9583}
+  .core .swap-old p{color:var(--gray)}
+  .core .swap-new p{color:var(--gray)}
+  .core .pledge{background:#fff;border:1px solid var(--line);box-shadow:0 4px 16px rgba(20,38,28,.05)}
+  .core .pledge h3{color:var(--pine)}
+  .core .pledge p{color:var(--gray)}
+  .core-cta p{color:var(--gray)}
+
   /* 혜택 상자 */
   .bx{padding:24px 20px}
   .bx h3{font-size:17.5px;margin-bottom:14px}
@@ -963,3 +980,18 @@ button{cursor:pointer}
 .chip-logo{padding:8px 14px;background:#fff}
 .chip-logo img{height:30px;width:auto;display:block}
 @media(max-width:640px){.chip-logo{padding:7px 12px}.chip-logo img{height:26px}}
+
+/* ---------- 이용약관 · 개인정보처리방침 (legal) ---------- */
+.legal{padding:64px 0 80px}
+.legal .legal-meta{font-size:14px;color:var(--gray-lt);margin-bottom:30px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.legal h2{font-size:20px;color:var(--pine);font-weight:700;margin:34px 0 12px}
+.legal h2:first-of-type{margin-top:0}
+.legal h3{font-size:16px;color:var(--pine);font-weight:700;margin:20px 0 8px}
+.legal p{font-size:15px;color:var(--gray);line-height:1.85;margin-bottom:12px}
+.legal ul,.legal ol{margin:6px 0 14px;padding-left:20px}
+.legal li{font-size:15px;color:var(--gray);line-height:1.8;margin-bottom:6px}
+.legal .legal-note{background:var(--hanji);border:1px solid var(--line);border-radius:10px;padding:16px 18px;font-size:14px;color:var(--gray);line-height:1.75;margin:14px 0}
+.legal table.legal-tbl{width:100%;border-collapse:collapse;margin:10px 0 18px;font-size:14px}
+.legal table.legal-tbl th,.legal table.legal-tbl td{border:1px solid var(--line);padding:10px 12px;text-align:left;color:var(--gray);vertical-align:top}
+.legal table.legal-tbl th{background:var(--hanji);color:var(--pine);font-weight:700;white-space:nowrap}
+@media(max-width:640px){.legal{padding:44px 0 60px}.legal h2{font-size:18px}.legal p,.legal li{font-size:14.5px}}
