@@ -814,10 +814,7 @@ button{cursor:pointer}
   .callbar a{font-size:16px;height:54px}
 }
 
-/* 신문 섹션 헤더 — 종이 배경에 맞춘 톤 */
-.press .eyebrow{color:#F2F2F2;border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.12)}
-.press .sec-head h2{color:#fff;font-weight:900}
-.press .sec-head .sub{color:#D8D8D8}
+/* 신문 섹션 헤더 — 다른 어두운 배경 섹션과 동일하게 on-dark 공통 스타일 사용 */
 
 /* 모바일 — 신문 조각 */
 @media(max-width:640px){
