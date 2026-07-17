@@ -129,6 +129,14 @@ button{cursor:pointer}
 .bene>span:not(.bene-tag){position:relative;z-index:1}
 .bene b{color:var(--siren-lt);font-weight:900}
 .bene-site b{color:#FFD24A}
+.bene-check{list-style:none;display:flex;flex-direction:column;gap:9px;position:relative;z-index:1;width:100%}
+.bene-check li{display:flex;align-items:baseline;gap:8px;font-size:17px;font-weight:700;color:#fff;line-height:1.5}
+.bene-check .ck{color:var(--brass);font-weight:900;flex-shrink:0}
+.bene-site .bene-check .ck{color:#6FBF92}
+.bene-check b.y{color:#FFD24A;font-weight:900}
+.bene-plus{color:#fff;font-weight:900;margin-right:2px}
+.bene-check-inline{flex-direction:row;flex-wrap:wrap;row-gap:8px;column-gap:16px}
+.bene-check-inline li{width:auto}
 .bene-note{display:inline-block;font-size:13.5px;color:#D9E4D3;background:rgba(255,255,255,.10);border-left:3px solid var(--brass);padding:9px 13px;margin-top:6px;border-radius:0 6px 6px 0;line-height:1.6}
 .hero-cta{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
 @media(max-width:900px){
@@ -147,6 +155,8 @@ button{cursor:pointer}
   .hero-benefits{gap:10px;margin-top:24px}
   /* 태그를 위로 올려 2줄 구조 — 좁은 화면에서 문구가 뭉치지 않게 */
   .bene{flex-direction:column;align-items:flex-start;gap:9px;padding:14px 15px;font-size:15.5px;line-height:1.55}
+  .bene-check{gap:8px}
+  .bene-check li{font-size:15.5px}
   .bene-tag{font-size:12px;padding:5px 11px}
   .bene-note{font-size:13px;padding:9px 12px}
   .hero-cta{display:none}  /* 하단에 항상 떠 있는 고정 상담바(callbar)와 기능이 겹쳐 모바일에서는 숨김 */
