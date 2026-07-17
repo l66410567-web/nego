@@ -178,6 +178,8 @@ button{cursor:pointer}
 /* ---------- 경고 띠 ---------- */
 .alert{background:linear-gradient(94deg,#7A5A22,#A87F35);color:#fff}
 .alert-in{display:flex;align-items:center;gap:22px;padding-top:24px;padding-bottom:24px;flex-wrap:wrap}
+.alert-head{display:contents}
+.alert-lab-m{display:none}
 .alert-ico{width:54px;height:54px;border-radius:50%;background:var(--siren);display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;box-shadow:0 0 0 4px rgba(255,255,255,.18)}
 .alert-ico::after{content:'';position:absolute;inset:-7px;border:2px solid #fff;border-radius:50%;opacity:.65;animation:ping 1.9s ease-out infinite}
 .alert-txt{flex:1 1 520px;min-width:0}
@@ -661,10 +663,13 @@ button{cursor:pointer}
   .phead p{font-size:15px;line-height:1.75}
   .crumb{font-size:13px;margin-bottom:11px}
 
-  /* 경고 띠 — 세로 정렬 */
+  /* 경고 띠 — 세로 정렬, 아이콘 옆에 라벨 배치 */
   .alert-in{flex-direction:column;align-items:flex-start;gap:15px;padding-top:22px;padding-bottom:22px}
+  .alert-head{display:flex;align-items:center;gap:12px}
   .alert-ico{width:46px;height:46px}
+  .alert-lab-m{display:inline-block;font-size:13.5px;font-weight:900;color:#FFE9C9;border-bottom:2px solid #17130A;padding-bottom:3px}
   .alert-txt{flex:1 1 auto;min-width:0}
+  .alert-txt .alert-lab{display:none}
   .alert-txt h3{font-size:16.5px;line-height:1.6}
   .alert-txt p{font-size:13.5px}
   .alert .btn-alert{width:auto;align-self:center;margin:6px auto 0;padding:15px 26px;font-size:15.5px}
