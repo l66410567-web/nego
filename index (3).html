@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>광주·전남 장례 통합 플랫폼 | 빛고을장례119</title>
+<meta name="description" content="장례식장, 소개받지 않아도 됩니다. 누구나 같은 혜택을 부탁 없이 투명하게 확인하세요. 광주·전남 21개 장례식장, 수목장·봉안당, 묘 이장·개장, 무빈소 장례 24시간 무료 상담.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;700;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="nav">
+<div class="nav-in">
+<a href="index.html" class="logo" aria-label="빛고을장례119 홈">
+<img src="logo.png" alt="빛고을장례119 — 광주·전남 장례 통합 플랫폼" class="logo-img">
+</a>
+<div class="gnb">
+<a href="emergency.html">임종 시 대처</a>
+<a href="about.html">빛고을장례119란?</a>
+<a href="hall.html">장례식장</a>
+<a href="burial.html">수목장·봉안당</a>
+<a href="relocation.html">묘이장·개장</a>
+<a href="simple.html">무빈소장례</a>
+<a href="faq.html">자주 묻는 질문</a>
+</div>
+<div class="nav-tel">
+<div class="tel-txt">
+<span class="tel-lab"><span class="blink"></span>24시간 긴급 연결</span>
+<a href="tel:15339657" class="tel-num">☎ 1533-9657</a>
+</div>
+<button class="burger" id="burger" aria-label="메뉴 열기" aria-expanded="false">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+<div class="m-menu" id="mmenu">
+<a href="emergency.html">임종 시 대처</a>
+<a href="about.html">빛고을장례119란?</a>
+<a href="hall.html">장례식장</a>
+<a href="burial.html">수목장·봉안당</a>
+<a href="relocation.html">묘이장·개장</a>
+<a href="simple.html">무빈소장례</a>
+<a href="faq.html">자주 묻는 질문</a>
+</div>
+</nav>
+<header class="hero">
+<div class="hero-bg" style="background-image:url('bg-hero.jpg')"></div>
+<div class="hero-veil"></div>
+<div class="wrap hero-in">
+<div class="hero-copy">
+<span class="hero-eyebrow"><span class="blink"></span>광주·전남 장례 통합 플랫폼</span>
+<p class="hero-lead">아는 사람 없이 장례를 준비해 막막하신가요?</p>
+<h1>장례식장,<br><span class="hl">소개받지 않아도 됩니다.</span></h1>
+<p class="hero-sub">인맥 없이도 받을 수 있는 혜택부터 알려드립니다.</p>
+<div class="hero-benefits">
+<div class="bene bene-hall">
+<span class="bene-tag">장례식장 혜택</span>
+<ul class="bene-check">
+<li><span class="ck">✔</span> 접객실 지원</li>
+<li><span class="ck">✔</span> 분향소 지원</li>
+<li><span class="ck">✔</span> 관·수의·리무진 지원</li>
+<li><span class="ck">✔</span> 상복·제단장식 <b class="y">최대 지원</b></li>
+</ul>
+</div>
+<div class="bene bene-site">
+<span class="bene-tag">수목장·봉안당 혜택</span>
+<ul class="bene-check bene-check-inline">
+<li><span class="ck">✔</span> 봉안함 지원</li>
+<li><span class="ck">✔</span> 표지석 지원</li>
+<li><span class="bene-plus">+</span><span class="ck">✔</span> 관리비 지원</li>
+</ul>
+</div>
+<p class="bene-note">※ 시설과 조문객 규모에 따라 제공되는 혜택이 달라집니다. 상담 시 정확히 안내해드립니다.</p>
+</div>
+<div class="hero-cta">
+<button class="btn btn-brass" onclick="openModal()">📞 무료 상담받기</button>
+<a href="#apply" class="btn btn-line">💬 카카오톡 상담</a>
+</div>
+</div>
+</div>
+</header>
+<section class="alert">
+<div class="wrap alert-in">
+<div class="alert-head">
+<div class="alert-ico" aria-hidden="true">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg>
+</div>
+<span class="alert-lab-m" aria-hidden="true">꼭 확인하고 시작하세요!</span>
+</div>
+<div class="alert-txt">
+<span class="alert-lab">꼭 확인하고 시작하세요!</span>
+<h3>아는 만큼 받으실 수 있습니다. 상담 전, 받을 수 있는 혜택부터 먼저 확인하세요.</h3>
+<p>(시설과 조문객 규모에 따라 받으실 수 있는 혜택이 달라집니다. 저희가 먼저 꼼꼼히 확인해서, 놓치는 것 없이 정확히 알려드립니다.)</p>
+</div>
+<a href="about.html" class="btn btn-alert">
+내가 받을 혜택 확인하기
+<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+</a>
+</div>
+</section>
+<!-- 왜 빛고을장례119인가 -->
+<section class="sec why">
+<div class="wrap">
+<div class="why-box">
+<span class="why-flag">꼭 확인하세요!</span>
+<div class="why-col">
+<h3 class="why-h">왜 빛고을장례119인가?</h3>
+<ul class="why-list">
+<li><span class="why-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><span>광주·전남 장례식장 상담</span></li>
+<li><span class="why-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><span>장지까지 한번에 안내</span></li>
+<li><span class="why-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><span>24시간 상담</span></li>
+<li><span class="why-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><span>소개 없이도 이용 가능</span></li>
+<li><span class="why-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><span>가족 상황에 맞는 시설 안내</span></li>
+</ul>
+</div>
+<div class="why-div" aria-hidden="true"></div>
+<div class="why-col">
+<h3 class="why-h why-h-alt">이런 분들에게 추천합니다!</h3>
+<ul class="why-list why-list-alt">
+<li><span class="why-ico alt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><span>갑자기 장례를 준비해야 하는 가족</span></li>
+<li><span class="why-ico alt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><span>어디에 전화해야 할지 모르시는 분</span></li>
+<li><span class="why-ico alt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><span>소개받을 사람이 없는 분</span></li>
+<li><span class="why-ico alt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><span>장례비용이 걱정되는 분</span></li>
+<li><span class="why-ico alt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><span>장지까지 함께 알아보고 싶은 분</span></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="sec">
+<div class="wrap">
+<div class="sec-head">
+<span class="eyebrow">서비스 안내</span>
+<h2>무엇을 도와드릴까요?</h2>
+<div class="hr-brass"></div>
+</div>
+<div class="svc-grid">
+<a class="svc" href="hall.html">
+<div class="svc-img"><img class="svc-photo" src="svc-hall.jpg" alt="장례식장" loading="lazy" onerror="this.remove()"><span class="svc-badge">최대 무료</span>
+<svg class="scene" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs>
+<linearGradient id="hallBg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#1B3427"/><stop offset="1" stop-color="#0E1F17"/>
+</linearGradient>
+<radialGradient id="hallGlow" cx="50%" cy="42%" r="45%">
+<stop offset="0" stop-color="#E8D7A8" stop-opacity=".26"/>
+<stop offset="1" stop-color="#E8D7A8" stop-opacity="0"/>
+</radialGradient>
+</defs>
+<rect width="400" height="200" fill="url(#hallBg)"/>
+<rect width="400" height="200" fill="url(#hallGlow)"/>
+<g stroke="#C89B4A" stroke-opacity=".16" stroke-width="1">
+<path d="M60 34v112M140 34v112M260 34v112M340 34v112M20 60h360M20 96h360M20 132h360"/>
+</g>
+<rect x="118" y="132" width="164" height="10" rx="2" fill="#C89B4A" fill-opacity=".55"/>
+<rect x="128" y="142" width="144" height="30" fill="#0B1811" fill-opacity=".55"/>
+<rect x="168" y="60" width="64" height="72" rx="2" fill="#0B1811" stroke="#C89B4A" stroke-width="2"/>
+<rect x="176" y="68" width="48" height="56" fill="#C89B4A" fill-opacity=".13"/>
+<g transform="translate(140,116)" fill="#F2ECDD" fill-opacity=".9">
+<circle cx="0" cy="0" r="4.5"/>
+<g fill-opacity=".55">
+<ellipse cx="0" cy="-9" rx="3" ry="7"/><ellipse cx="0" cy="9" rx="3" ry="7"/>
+<ellipse cx="-9" cy="0" rx="7" ry="3"/><ellipse cx="9" cy="0" rx="7" ry="3"/>
+<ellipse cx="-6.4" cy="-6.4" rx="6" ry="2.6" transform="rotate(45 -6.4 -6.4)"/>
+<ellipse cx="6.4" cy="6.4" rx="6" ry="2.6" transform="rotate(45 6.4 6.4)"/>
+<ellipse cx="-6.4" cy="6.4" rx="6" ry="2.6" transform="rotate(-45 -6.4 6.4)"/>
+<ellipse cx="6.4" cy="-6.4" rx="6" ry="2.6" transform="rotate(-45 6.4 -6.4)"/>
+</g>
+</g>
+<g transform="translate(260,116)" fill="#F2ECDD" fill-opacity=".9">
+<circle cx="0" cy="0" r="4.5"/>
+<g fill-opacity=".55">
+<ellipse cx="0" cy="-9" rx="3" ry="7"/><ellipse cx="0" cy="9" rx="3" ry="7"/>
+<ellipse cx="-9" cy="0" rx="7" ry="3"/><ellipse cx="9" cy="0" rx="7" ry="3"/>
+<ellipse cx="-6.4" cy="-6.4" rx="6" ry="2.6" transform="rotate(45 -6.4 -6.4)"/>
+<ellipse cx="6.4" cy="6.4" rx="6" ry="2.6" transform="rotate(45 6.4 6.4)"/>
+<ellipse cx="-6.4" cy="6.4" rx="6" ry="2.6" transform="rotate(-45 -6.4 6.4)"/>
+<ellipse cx="6.4" cy="-6.4" rx="6" ry="2.6" transform="rotate(-45 6.4 -6.4)"/>
+</g>
+</g>
+<g fill="#C89B4A" fill-opacity=".75">
+<rect x="150" y="112" width="4" height="20"/><rect x="146" y="130" width="12" height="3"/>
+<rect x="246" y="112" width="4" height="20"/><rect x="242" y="130" width="12" height="3"/>
+</g>
+<ellipse cx="152" cy="108" rx="3" ry="5" fill="#FFD98A" fill-opacity=".9"/>
+<ellipse cx="248" cy="108" rx="3" ry="5" fill="#FFD98A" fill-opacity=".9"/>
+</svg>
+</div>
+<div class="svc-body"><h3>장례식장</h3><p>광주 21개 장례식장 어디든 연결하고, 받으실 혜택을 먼저 안내합니다.</p><span class="svc-go">자세히 보기 →</span></div>
+</a>
+<a class="svc" href="burial.html">
+<div class="svc-img"><img class="svc-photo" src="svc-burial.jpg" alt="수목장·봉안당" loading="lazy" onerror="this.remove()"><span class="svc-badge">봉안함·표지석 무료</span>
+<svg class="scene" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs>
+<linearGradient id="forestSky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#7FA47F"/><stop offset="1" stop-color="#2E5240"/>
+</linearGradient>
+</defs>
+<rect width="400" height="200" fill="url(#forestSky)"/>
+<g fill="#FFF6D8" fill-opacity=".10">
+<polygon points="90,0 130,0 76,200 30,200"/>
+<polygon points="200,0 224,0 186,200 158,200"/>
+<polygon points="300,0 336,0 300,200 258,200"/>
+</g>
+<g fill="#24402F" fill-opacity=".55">
+<polygon points="30,150 52,74 74,150"/><polygon points="80,150 104,60 128,150"/>
+<polygon points="270,150 296,66 322,150"/><polygon points="330,150 352,82 374,150"/>
+</g>
+<rect x="192" y="120" width="14" height="52" fill="#3A2A1C"/>
+<path d="M199 120c-16 0-30-6-30-22 0-8 6-14 12-16-2-14 8-24 20-24s22 10 20 24c6 2 12 8 12 16 0 16-14 22-30 22h-4Z" fill="#1F3A2B"/>
+<path d="M199 118c-12 0-24-5-24-18 0-7 5-12 10-13-2-11 6-19 16-19s18 8 16 19c5 1 10 6 10 13 0 13-12 18-24 18h-4Z" fill="#2E5240"/>
+<rect y="168" width="400" height="32" fill="#1B3325"/>
+<rect x="176" y="172" width="46" height="18" rx="2" fill="#D6CFC0"/>
+<rect x="182" y="177" width="34" height="2" fill="#8E887C"/>
+<rect x="182" y="182" width="24" height="2" fill="#8E887C"/>
+<rect x="98" y="176" width="28" height="12" rx="2" fill="#D6CFC0" fill-opacity=".5"/>
+<rect x="278" y="176" width="28" height="12" rx="2" fill="#D6CFC0" fill-opacity=".5"/>
+</svg>
+</div>
+<div class="svc-body"><h3>수목장 · 봉안당</h3><p>자연장부터 사찰 봉안당까지. 봉안함·표지석 무료, 관리비까지 지원합니다.</p><span class="svc-go">자세히 보기 →</span></div>
+</a>
+<a class="svc" href="relocation.html">
+<div class="svc-img"><img class="svc-photo" src="svc-relocation.jpg" alt="묘 이장·개장" loading="lazy" onerror="this.remove()">
+<svg class="scene" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs>
+<linearGradient id="hillSky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#C6B48E"/><stop offset="1" stop-color="#8A6E4E"/>
+</linearGradient>
+</defs>
+<rect width="400" height="200" fill="url(#hillSky)"/>
+<path d="M0 96 L70 56 L130 92 L190 46 L260 90 L330 60 L400 98 V200 H0Z" fill="#6B563C" fill-opacity=".5"/>
+<path d="M0 130 Q100 108 200 130 T400 128 V200 H0Z" fill="#4E4230"/>
+<ellipse cx="120" cy="152" rx="52" ry="26" fill="#3D3426"/>
+<path d="M68 152a52 26 0 0 1 104 0Z" fill="#5C5039"/>
+<g stroke="#F2E7CF" stroke-width="3" stroke-linecap="round" fill="none" opacity=".85">
+<path d="M186 132h44"/>
+<path d="M222 124l10 8-10 8"/>
+</g>
+<rect x="252" y="118" width="76" height="42" rx="3" fill="#2E5240"/>
+<rect x="262" y="128" width="56" height="24" rx="2" fill="#3F6B52"/>
+<rect x="268" y="134" width="18" height="12" rx="1" fill="#D6CFC0" fill-opacity=".7"/>
+<rect x="294" y="134" width="18" height="12" rx="1" fill="#D6CFC0" fill-opacity=".4"/>
+<rect x="248" y="158" width="84" height="6" rx="2" fill="#1F3A2B"/>
+<rect y="176" width="400" height="24" fill="#3A3226"/>
+</svg>
+</div>
+<div class="svc-body"><h3>묘 이장 · 개장</h3><p>개장허가 서류부터 현장 작업, 새 장지 안치까지 한 번에 대행합니다.</p><span class="svc-go">자세히 보기 →</span></div>
+</a>
+<a class="svc" href="simple.html">
+<div class="svc-img"><img class="svc-photo" src="svc-simple.jpg" alt="무빈소 장례" loading="lazy" onerror="this.remove()">
+<svg class="scene" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs>
+<radialGradient id="quietGlow" cx="50%" cy="52%" r="42%">
+<stop offset="0" stop-color="#FFD98A" stop-opacity=".38"/>
+<stop offset="1" stop-color="#FFD98A" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="quietBg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#3A3630"/><stop offset="1" stop-color="#16140F"/>
+</linearGradient>
+</defs>
+<rect width="400" height="200" fill="url(#quietBg)"/>
+<rect width="400" height="200" fill="url(#quietGlow)"/>
+<g stroke="#C89B4A" stroke-opacity=".14" stroke-width="1.5" fill="none">
+<rect x="36" y="26" width="64" height="86"/><path d="M68 26v86M36 69h64"/>
+<rect x="300" y="26" width="64" height="86"/><path d="M332 26v86M300 69h64"/>
+</g>
+<rect y="150" width="400" height="50" fill="#241F18"/>
+<rect y="146" width="400" height="6" fill="#4A4034"/>
+<rect x="196" y="104" width="8" height="42" fill="#E8DFC9"/>
+<path d="M180 146h40l-6 6h-28Z" fill="#C89B4A"/>
+<path d="M200 78c6 8 10 13 10 19a10 10 0 0 1-20 0c0-6 4-11 10-19Z" fill="#FFC65C"/>
+<path d="M200 88c3 5 5 8 5 11a5 5 0 0 1-10 0c0-3 2-6 5-11Z" fill="#FFF0C4"/>
+<g transform="translate(268,138)" fill="#EFE9DA" fill-opacity=".8">
+<circle cx="0" cy="0" r="3.5"/>
+<g fill-opacity=".5">
+<ellipse cx="0" cy="-7" rx="2.4" ry="5.5"/><ellipse cx="0" cy="7" rx="2.4" ry="5.5"/>
+<ellipse cx="-7" cy="0" rx="5.5" ry="2.4"/><ellipse cx="7" cy="0" rx="5.5" ry="2.4"/>
+<ellipse cx="-5" cy="-5" rx="5" ry="2.2" transform="rotate(45 -5 -5)"/>
+<ellipse cx="5" cy="5" rx="5" ry="2.2" transform="rotate(45 5 5)"/>
+<ellipse cx="-5" cy="5" rx="5" ry="2.2" transform="rotate(-45 -5 5)"/>
+<ellipse cx="5" cy="-5" rx="5" ry="2.2" transform="rotate(-45 5 -5)"/>
+</g>
+</g>
+</svg>
+</div>
+<div class="svc-body"><h3>무빈소 장례</h3><p>빈소 없이 가까운 가족만 모여 조용히. 비용도 절차도 최소화합니다.</p><span class="svc-go">자세히 보기 →</span></div>
+</a>
+<a class="svc" href="about.html">
+<div class="svc-img"><img class="svc-photo" src="svc-about.jpg" alt="빛고을장례119란?" loading="lazy" onerror="this.remove()">
+<svg class="scene" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs>
+<linearGradient id="brandBg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#14261C"/><stop offset="1" stop-color="#1F3A2B"/>
+</linearGradient>
+<radialGradient id="sirenGlow" cx="50%" cy="42%" r="40%">
+<stop offset="0" stop-color="#D93025" stop-opacity=".35"/>
+<stop offset="1" stop-color="#D93025" stop-opacity="0"/>
+</radialGradient>
+</defs>
+<rect width="400" height="200" fill="url(#brandBg)"/>
+<rect width="400" height="200" fill="url(#sirenGlow)"/>
+<g stroke="#D93025" stroke-opacity=".45" stroke-width="3" stroke-linecap="round">
+<path d="M200 24V6M150 42l-12-15M250 42l12-15M120 84l-19-7M280 84l19-7"/>
+</g>
+<ellipse cx="200" cy="98" rx="34" ry="8" fill="#2A2A2A"/>
+<path d="M170 98c0-24 12-42 30-42s30 18 30 42Z" fill="#D93025"/>
+<path d="M182 98c0-17 7-30 18-30v30Z" fill="#FF6B5E" fill-opacity=".55"/>
+<rect x="164" y="98" width="72" height="12" rx="3" fill="#3A3A3A"/>
+<g transform="translate(200,152)" fill="#C89B4A">
+<circle cx="0" cy="0" r="6" fill="#E8D7A8"/>
+<g fill-opacity=".75">
+<ellipse cx="0" cy="-15" rx="4.5" ry="11"/><ellipse cx="0" cy="15" rx="4.5" ry="11"/>
+<ellipse cx="-15" cy="0" rx="11" ry="4.5"/><ellipse cx="15" cy="0" rx="11" ry="4.5"/>
+<ellipse cx="-10.6" cy="-10.6" rx="10" ry="4" transform="rotate(45 -10.6 -10.6)"/>
+<ellipse cx="10.6" cy="10.6" rx="10" ry="4" transform="rotate(45 10.6 10.6)"/>
+<ellipse cx="-10.6" cy="10.6" rx="10" ry="4" transform="rotate(-45 -10.6 10.6)"/>
+<ellipse cx="10.6" cy="-10.6" rx="10" ry="4" transform="rotate(-45 10.6 -10.6)"/>
+</g>
+<g fill-opacity=".5">
+<ellipse cx="-7.7" cy="-18.5" rx="3.4" ry="8.5" transform="rotate(22.5 -7.7 -18.5)"/>
+<ellipse cx="7.7" cy="-18.5" rx="3.4" ry="8.5" transform="rotate(-22.5 7.7 -18.5)"/>
+<ellipse cx="-18.5" cy="-7.7" rx="8.5" ry="3.4" transform="rotate(22.5 -18.5 -7.7)"/>
+<ellipse cx="18.5" cy="7.7" rx="8.5" ry="3.4" transform="rotate(22.5 18.5 7.7)"/>
+</g>
+</g>
+<text x="200" y="196" text-anchor="middle" font-family="Arial Black, Noto Sans KR, sans-serif" font-size="30" font-weight="900" font-style="italic" fill="#D93025" opacity=".9">119</text>
+</svg>
+</div>
+<div class="svc-body"><h3>빛고을장례119란?</h3><p>왜 소개 없이도 혜택을 받을 수 있는지, 저희가 어떻게 일하는지 알려드립니다.</p><span class="svc-go">자세히 보기 →</span></div>
+</a>
+<a class="svc" href="faq.html">
+<div class="svc-img"><img class="svc-photo" src="svc-faq.jpg" alt="자주 묻는 질문" loading="lazy" onerror="this.remove()">
+<svg class="scene" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs>
+<linearGradient id="faqBg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#26402F"/><stop offset="1" stop-color="#4E7A54"/>
+</linearGradient>
+</defs>
+<rect width="400" height="200" fill="url(#faqBg)"/>
+<g>
+<rect x="52" y="42" width="150" height="60" rx="12" fill="#F1F4EC" fill-opacity=".92"/>
+<path d="M76 102l-4 20 24-20Z" fill="#F1F4EC" fill-opacity=".92"/>
+<text x="127" y="82" text-anchor="middle" font-family="Noto Serif KR, serif" font-size="34" font-weight="900" fill="#1F3A2B">Q</text>
+</g>
+<g>
+<rect x="204" y="102" width="150" height="60" rx="12" fill="#C89B4A" fill-opacity=".95"/>
+<path d="M330 162l4 20-24-20Z" fill="#C89B4A" fill-opacity=".95"/>
+<text x="279" y="142" text-anchor="middle" font-family="Noto Serif KR, serif" font-size="34" font-weight="900" fill="#14261C">A</text>
+</g>
+</svg>
+</div>
+<div class="svc-body"><h3>자주 묻는 질문</h3><p>상담 전 궁금하신 점, 비용과 절차에 대한 답을 모았습니다.</p><span class="svc-go">자세히 보기 →</span></div>
+</a>
+</div>
+</div>
+</section>
+<section class="sec press">
+<div class="wrap">
+<div class="sec-head on-dark">
+<span class="eyebrow on-dark">언론이 전하는 이야기</span>
+<h2>"장례비용 문제, 저희만의 이야기가 아닙니다"</h2>
+<p class="sub">이미 여러 언론에서 다뤄온 내용입니다. 그래서 저희는 이 문제를 조금 다르게 풀어보려 합니다.</p>
+</div>
+<div class="clips">
+<article class="clip"><span class="tape"></span>
+<div class="clip-src">한국일보 · 2025.7.21</div>
+<h4>"부모님 마지막 길에 터무니없는 바가지?"</h4>
+<p>상조에 가입해도 장례식장 임대료·제단 장식비·운구 차량 등 예상 못한 비용이 계속 추가된다는 점을 짚었습니다.</p>
+</article>
+<article class="clip"><span class="tape"></span>
+<div class="clip-src">지데일리 · 2026.4.4</div>
+<h4>"1500만원 장례비 논란, '2일장'으로 한다면"</h4>
+<p>10년 전 1000만원대였던 평균 장례비가 최근 1500만원 안팎까지 올라, 10년 사이 약 50% 상승했다고 전했습니다.</p>
+</article>
+<article class="clip"><span class="tape"></span>
+<div class="clip-src">이투데이 · 해피엔딩 장례</div>
+<h4>"슬픔도 잠시, 장례비용은 눈덩이"</h4>
+<p>장례 과정이 비즈니스화되면서 유족이 경황없는 와중에도 크고 작은 지출을 반복하게 된다고 지적했습니다.</p>
+</article>
+<article class="clip"><span class="tape"></span>
+<div class="clip-src">이데일리</div>
+<h4>"1000만원 훌쩍 넘는 장례비에… 無빈소 장례식 해요"</h4>
+<p>평균 장례비용 부담으로 빈소 없이 조용히 치르는 무빈소 장례를 찾는 이들이 늘고 있다고 보도했습니다.</p>
+</article>
+</div>
+<p class="clip-note">※ 각 매체의 보도 내용을 요약한 것으로, 전문은 해당 언론사에서 확인하실 수 있습니다.</p>
+</div>
+</section>
+<!-- 이용후기 -->
+<section class="sec review">
+<div class="wrap">
+<div class="sec-head">
+<span class="eyebrow">이용후기</span>
+<h2>실제 이용하신 분들의 이야기</h2>
+<p class="sub">소개나 인맥 없이 빛고을장례119를 이용하신 가족분들이 남겨주신 후기입니다.</p>
+</div>
+</div>
+<div class="review-track-wrap">
+<div class="review-track">
+<!-- 세트 1 -->
+<article class="rv-card">
+<span class="rv-cat">함께한 이야기</span>
+<div class="rv-stars">★★★★★</div>
+<p class="rv-quote">이런 곳이 있는 줄 몰랐어요. 지인 소개 없이도 이렇게 좋은 조건으로 진행할 수 있다는 게 놀라웠습니다.</p>
+<div class="rv-who"><b>박OO</b><span>광주 북구</span></div>
+</article>
+<article class="rv-card">
+<span class="rv-cat">함께한 이야기</span>
+<div class="rv-stars">★★★★★</div>
+<p class="rv-quote">장례식장 고르는 것부터 막막했는데 비교해서 알려주시니 훨씬 수월했어요. 진작 알았으면 지인 소개 안 받았을 텐데요.</p>
+<div class="rv-who"><b>이OO</b><span>전남 나주시</span></div>
+</article>
+<article class="rv-card">
+<span class="rv-cat">함께한 이야기</span>
+<div class="rv-stars">★★★★★</div>
+<p class="rv-quote">갑자기 상을 치르게 돼서 정신이 없었는데 전화 한 통으로 다 해결됐습니다. 왜 이제야 알았을까 싶어요.</p>
+<div class="rv-who"><b>정OO</b><span>광주 서구</span></div>
+</article>
+<article class="rv-card">
+<span class="rv-cat">함께한 이야기</span>
+<div class="rv-stars">★★★★★</div>
+<p class="rv-quote">받을 수 있는 혜택을 미리 알려주셔서 비용 부담을 많이 줄일 수 있었습니다. 정말 감사했습니다.</p>
+<div class="rv-who"><b>최OO</b><span>광주 남구</span></div>
+</article>
+<article class="rv-card">
+<span class="rv-cat">함께한 이야기</span>
+<div class="rv-stars">★★★★★</div>
+<p class="rv-quote">친절하게 안내해주셔서 큰 도움이 됐습니다. 처음이라 걱정 많았는데 편하게 진행했어요.</p>
+<div class="rv-who"><b>김OO</b><span>광주 동구</span></div>
+</article>
+<article class="rv-card">
+<span class="rv-cat">함께한 이야기</span>
+<div class="rv-stars">★★★★★</div>
+<p class="rv-quote">필요한 것만 딱 짚어서 알려주셔서 좋았어요. 불필요하게 권하시는 것도 없었습니다.</p>
+<div class="rv-who"><b>한OO</b><span>전남 목포시</span></div>
+</article>
+<article class="rv-card">
+<span class="rv-cat">함께한 이야기</span>
+<div class="rv-stars">★★★★★</div>
+<p class="rv-quote">수목장이랑 봉안당 차이도 잘 몰랐는데 하나하나 비교해서 알려주셔서 좋은 곳으로 모실 수 있었습니다.</p>
+<div class="rv-who"><b>조OO</b><span>광주 광산구</span></div>
+</article>
+<article class="rv-card">
+<span class="rv-cat">함께한 이야기</span>
+<div class="rv-stars">★★★★★</div>
+<p class="rv-quote">봉안함이랑 표지석까지 챙겨주셔서 예상보다 부담이 훨씬 적었어요. 관리비 지원도 큰 도움이 됐습니다.</p>
+<div class="rv-who"><b>윤OO</b><span>전남 순천시</span></div>
+</article>
+<article class="rv-card">
+<span class="rv-cat">함께한 이야기</span>
+<div class="rv-stars">★★★★★</div>
+<p class="rv-quote">임종부터 발인까지 계속 옆에서 챙겨주셔서 정말 든든했습니다. 이렇게까지 자세히 알려주실 줄 몰랐습니다.</p>
+<div class="rv-who"><b>강OO</b><span>광주 서구</span></div>
+</article>
+<article class="rv-card">
+<span class="rv-cat">함께한 이야기</span>
+<div class="rv-stars">★★★★★</div>
+<p class="rv-quote">아무것도 몰랐던 저희 가족을 처음부터 끝까지 이끌어주셔서 무사히 잘 치를 수 있었습니다. 정말 감사했습니다.</p>
+<div class="rv-who"><b>배OO</b><span>전남 화순군</span></div>
+</article>
+<!-- 세트 2 (무한 루프용 복제) -->
+<article class="rv-card" aria-hidden="true">
+<span class="rv-cat">함께한 이야기</span>
+<div class="rv-stars">★★★★★</div>
+<p class="rv-quote">이런 곳이 있는 줄 몰랐어요. 지인 소개 없이도 이렇게 좋은 조건으로 진행할 수 있다는 게 놀라웠습니다.</p>
+<div class="rv-who"><b>박OO</b><span>광주 북구</span></div>
+</article>
+<article class="rv-card" aria-hidden="true">
+<span class="rv-cat">함께한 이야기</span>
+<div class="rv-stars">★★★★★</div>
+<p class="rv-quote">장례식장 고르는 것부터 막막했는데 비교해서 알려주시니 훨씬 수월했어요. 진작 알았으면 지인 소개 안 받았을 텐데요.</p>
+<div class="rv-who"><b>이OO</b><span>전남 나주시</span></div>
+</article>
+<article class="rv-card" aria-hidden="true">
+<span class="rv-cat">함께한 이야기</span>
+<div class="rv-stars">★★★★★</div>
+<p class="rv-quote">갑자기 상을 치르게 돼서 정신이 없었는데 전화 한 통으로 다 해결됐습니다. 왜 이제야 알았을까 싶어요.</p>
+<div class="rv-who"><b>정OO</b><span>광주 서구</span></div>
+</article>
+<article class="rv-card" aria-hidden="true">
+<span class="rv-cat">함께한 이야기</span>
+<div class="rv-stars">★★★★★</div>
+<p class="rv-quote">받을 수 있는 혜택을 미리 알려주셔서 비용 부담을 많이 줄일 수 있었습니다. 정말 감사했습니다.</p>
+<div class="rv-who"><b>최OO</b><span>광주 남구</span></div>
+</article>
+<article class="rv-card" aria-hidden="true">
+<span class="rv-cat">함께한 이야기</span>
+<div class="rv-stars">★★★★★</div>
+<p class="rv-quote">친절하게 안내해주셔서 큰 도움이 됐습니다. 처음이라 걱정 많았는데 편하게 진행했어요.</p>
+<div class="rv-who"><b>김OO</b><span>광주 동구</span></div>
+</article>
+<article class="rv-card" aria-hidden="true">
+<span class="rv-cat">함께한 이야기</span>
+<div class="rv-stars">★★★★★</div>
+<p class="rv-quote">필요한 것만 딱 짚어서 알려주셔서 좋았어요. 불필요하게 권하시는 것도 없었습니다.</p>
+<div class="rv-who"><b>한OO</b><span>전남 목포시</span></div>
+</article>
+<article class="rv-card" aria-hidden="true">
+<span class="rv-cat">함께한 이야기</span>
+<div class="rv-stars">★★★★★</div>
+<p class="rv-quote">수목장이랑 봉안당 차이도 잘 몰랐는데 하나하나 비교해서 알려주셔서 좋은 곳으로 모실 수 있었습니다.</p>
+<div class="rv-who"><b>조OO</b><span>광주 광산구</span></div>
+</article>
+<article class="rv-card" aria-hidden="true">
+<span class="rv-cat">함께한 이야기</span>
+<div class="rv-stars">★★★★★</div>
+<p class="rv-quote">봉안함이랑 표지석까지 챙겨주셔서 예상보다 부담이 훨씬 적었어요. 관리비 지원도 큰 도움이 됐습니다.</p>
+<div class="rv-who"><b>윤OO</b><span>전남 순천시</span></div>
+</article>
+<article class="rv-card" aria-hidden="true">
+<span class="rv-cat">함께한 이야기</span>
+<div class="rv-stars">★★★★★</div>
+<p class="rv-quote">임종부터 발인까지 계속 옆에서 챙겨주셔서 정말 든든했습니다. 이렇게까지 자세히 알려주실 줄 몰랐습니다.</p>
+<div class="rv-who"><b>강OO</b><span>광주 서구</span></div>
+</article>
+<article class="rv-card" aria-hidden="true">
+<span class="rv-cat">함께한 이야기</span>
+<div class="rv-stars">★★★★★</div>
+<p class="rv-quote">아무것도 몰랐던 저희 가족을 처음부터 끝까지 이끌어주셔서 무사히 잘 치를 수 있었습니다. 정말 감사했습니다.</p>
+<div class="rv-who"><b>배OO</b><span>전남 화순군</span></div>
+</article>
+</div>
+</div>
+<div class="review-cta">
+<p>여러분이 겪으신 소중한 경험도 다른 가족들에게 큰 힘이 됩니다.</p>
+<button class="btn btn-brass" onclick="openReviewModal()">✍️ 함께한 이야기 남기기</button>
+</div>
+</section>
+<section class="sec promise">
+<div class="wrap">
+<div class="sec-head on-dark">
+<span class="eyebrow on-dark">믿을 수 있는</span>
+<h2>빛고을장례119의 약속</h2>
+</div>
+<div class="pm-hero">
+<article class="pm-big">
+<span class="pm-tag">핵심 1</span>
+<div class="pm-big-ico">
+<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="12" width="20" height="15" rx="1"/><path d="M16 12V6M11 6h10"/></svg>
+</div>
+<h3>광주·전남 장례식장 <b>제휴 채널</b></h3>
+<p>영업자·지인·병원을 거치지 않아도,<br><b>누구나 같은 혜택</b>을 받습니다</p>
+</article>
+<article class="pm-big">
+<span class="pm-tag">핵심 2</span>
+<div class="pm-big-ico">
+<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M16 28V12"/><path d="M16 12C16 6 9 4 5 6c1 6 5 9 11 6Z"/><path d="M16 16c0-6 7-8 11-6-1 6-5 9-11 6Z"/></svg>
+</div>
+<h3>수목장·봉안당 <b>제휴 할인</b></h3>
+<p><b>봉안함·표지석 무료</b><br><b>관리비 지원</b> 혜택 제공</p>
+</article>
+</div>
+<div class="pm-grid pm-sub">
+<div class="pm">
+<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="16" cy="16" r="12"/><path d="M16 9v7l5 3"/></svg>
+<h4>24시간 즉시 출동 체계</h4>
+<p>새벽이든 명절이든, 언제 연락하셔도 바로 대응합니다</p>
+</div>
+<div class="pm">
+<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 27h20M11 27V14h10v13M16 14V6"/></svg>
+<h4>이장·개장 협력 업체 운영</h4>
+<p>행정 절차부터 현장 작업까지 함께 안내합니다</p>
+</div>
+<div class="pm">
+<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="16" cy="12" r="5"/><path d="M7 27c0-5 4-8 9-8s9 3 9 8"/></svg>
+<h4>장례 전문가 1:1 맞춤 상담</h4>
+<p>가족 상황에 맞춘 안내를 처음부터 끝까지</p>
+</div>
+</div>
+</div>
+</section>
+<section class="sec flow">
+<div class="wrap">
+<div class="sec-head">
+<span class="eyebrow">진행 절차</span>
+<h2>임종 전 사전상담부터 장지까지, 같은 길을 걷습니다</h2>
+<p class="sub">임종 후뿐 아니라, 임종 전에 미리 상담하시는 것도 가능합니다.</p>
+</div>
+<div class="steps">
+<div class="step pre"><div class="step-n">01</div><h4>사전상담 <span class="opt">(선택)</span></h4><p>임종 전, 미리 절차·비용을 확인</p></div>
+<div class="step"><div class="step-n">02</div><h4>임종 · 연락</h4><p>1533-9657, 24시간 연결</p></div>
+<div class="step"><div class="step-n">03</div><h4>운구 · 안치</h4><p>운구차가 즉시 출동합니다</p></div>
+<div class="step"><div class="step-n">04</div><h4>빈소·용품 결정</h4><p>받으실 혜택 품목을 반영해 안내</p></div>
+<div class="step"><div class="step-n">05</div><h4>입관 · 성복</h4><p>고인을 모시고 상복을 갖춥니다</p></div>
+<div class="step"><div class="step-n">06</div><h4>발인 · 운구</h4><p>장지·화장장으로 이동합니다</p></div>
+<div class="step"><div class="step-n">07</div><h4>화장 · 안치</h4><p>봉안당·수목장으로 모십니다</p></div>
+<div class="step"><div class="step-n">08</div><h4>사후 행정 안내</h4><p>사망신고 등 절차를 지원합니다</p></div>
+</div>
+</div>
+</section>
+<section class="sec">
+<div class="wrap">
+<div class="news-head">
+<h2>장례 정보센터</h2>
+<a href="#" class="news-more">더 많은 정보 보기 →</a>
+</div>
+<div class="news-grid">
+<article class="news">
+<div class="news-img"><img class="news-photo" src="news-1.jpg" alt="수목장" loading="lazy" onerror="this.remove()"><svg class="scene" viewBox="0 0 300 120" preserveAspectRatio="xMidYMid slice">
+<rect width="300" height="120" fill="#3F6B52"/>
+<g fill="#24402F" fill-opacity=".55"><polygon points="30,96 48,44 66,96"/><polygon points="234,96 254,50 274,96"/></g>
+<rect x="144" y="66" width="10" height="34" fill="#3A2A1C"/>
+<path d="M149 66c-12 0-22-5-22-16 0-6 4-10 9-12-1-10 6-17 13-17s14 7 13 17c5 2 9 6 9 12 0 11-10 16-22 16Z" fill="#1F3A2B"/>
+<rect y="98" width="300" height="22" fill="#1B3325"/>
+<rect x="132" y="100" width="34" height="12" rx="2" fill="#D6CFC0"/>
+</svg></div>
+<div class="news-body"><h4>광주 수목장 비용, 얼마나 절약될까?</h4><span class="news-go">자세히 보기 →</span></div>
+</article>
+<article class="news">
+<div class="news-img"><img class="news-photo" src="news-2.jpg" alt="봉안당" loading="lazy" onerror="this.remove()"><svg class="scene" viewBox="0 0 300 120" preserveAspectRatio="xMidYMid slice">
+<rect width="300" height="120" fill="#6B5426"/>
+<rect x="40" y="16" width="220" height="88" rx="3" fill="#8A6E33"/>
+<g fill="#E8D7A8" fill-opacity=".55">
+<rect x="54" y="30" width="44" height="26" rx="2"/><rect x="110" y="30" width="44" height="26" rx="2"/>
+<rect x="166" y="30" width="44" height="26" rx="2"/><rect x="54" y="64" width="44" height="26" rx="2"/>
+<rect x="110" y="64" width="44" height="26" rx="2"/><rect x="166" y="64" width="44" height="26" rx="2"/>
+</g>
+<rect x="110" y="30" width="44" height="26" rx="2" fill="#F1E7CC"/>
+</svg></div>
+<div class="news-body"><h4>봉안당 선택 시 꼭 확인해야 할 5가지</h4><span class="news-go">자세히 보기 →</span></div>
+</article>
+<article class="news">
+<div class="news-img"><img class="news-photo" src="news-3.jpg" alt="가족장" loading="lazy" onerror="this.remove()"><svg class="scene" viewBox="0 0 300 120" preserveAspectRatio="xMidYMid slice">
+<rect width="300" height="120" fill="#14261C"/>
+<g stroke="#C89B4A" stroke-opacity=".18"><path d="M60 14v92M240 14v92M20 52h260"/></g>
+<rect x="120" y="30" width="60" height="52" rx="2" fill="#0B1811" stroke="#C89B4A" stroke-width="2"/>
+<rect x="94" y="84" width="112" height="8" rx="2" fill="#C89B4A" fill-opacity=".5"/>
+<ellipse cx="106" cy="76" rx="9" ry="9" fill="#F2ECDD" fill-opacity=".65"/>
+<ellipse cx="194" cy="76" rx="9" ry="9" fill="#F2ECDD" fill-opacity=".65"/>
+</svg></div>
+<div class="news-body"><h4>가족장·일반장, 비용 차이는 얼마나 될까?</h4><span class="news-go">자세히 보기 →</span></div>
+</article>
+<article class="news">
+<div class="news-img"><img class="news-photo" src="news-4.jpg" alt="묘 이장" loading="lazy" onerror="this.remove()"><svg class="scene" viewBox="0 0 300 120" preserveAspectRatio="xMidYMid slice">
+<rect width="300" height="120" fill="#8A6E4E"/>
+<path d="M0 54 L60 30 L120 52 L180 26 L240 50 L300 32 V120 H0Z" fill="#6B563C" fill-opacity=".55"/>
+<path d="M0 76 Q75 62 150 76 T300 74 V120 H0Z" fill="#4E4230"/>
+<ellipse cx="86" cy="92" rx="40" ry="20" fill="#3D3426"/>
+<path d="M46 92a40 20 0 0 1 80 0Z" fill="#5C5039"/>
+<g stroke="#F2E7CF" stroke-width="3" stroke-linecap="round" fill="none" opacity=".8">
+<path d="M144 80h30"/><path d="M167 73l8 7-8 7"/>
+</g>
+<rect x="192" y="66" width="62" height="34" rx="3" fill="#2E5240"/>
+<rect x="200" y="74" width="46" height="18" rx="2" fill="#3F6B52"/>
+</svg></div>
+<div class="news-body"><h4>묘 이장 절차, 한눈에 알아보기</h4><span class="news-go">자세히 보기 →</span></div>
+</article>
+</div>
+</div>
+</section>
+<section class="sec apply" id="apply">
+<div class="wrap">
+<div class="apply-grid">
+<div class="apply-l">
+<h2>미리 준비하는 것이 <span class="hl">아닙니다.</span><br>이미 가족의 후회를 줄이는 일입니다.</h2>
+<p>새벽이든 명절이든 24시간 연결됩니다.<br>지금 상황을 말씀해주시면, 받으실 수 있는 혜택부터 알려드리겠습니다.</p>
+<div class="tel-box">
+<span class="lab"><span class="blink"></span>24시간 무료 상담</span>
+<a href="tel:15339657" class="num">1533-9657</a>
+<p class="memo">상담은 무료이며, 상담 후 반드시 이용하셔야 하는 것은 아닙니다.</p>
+</div>
+</div>
+<form class="form">
+<h3>무료 상담 예약하기</h3>
+<p class="fsub">아래 정보를 남겨주시면, 빠르게 연락드리겠습니다.</p>
+<label>성함</label>
+<input type="text" placeholder="예) 홍길동" required>
+<label>연락처</label>
+<input type="tel" placeholder="010-0000-0000" required>
+<label>상담 가능 시간</label>
+<select>
+<option>지금 바로 (긴급)</option>
+<option>오전 (09:00~12:00)</option>
+<option>오후 (12:00~18:00)</option>
+<option>저녁 (18:00~22:00)</option>
+<option>시간 무관</option>
+</select>
+<label class="agree"><input type="checkbox" required> 상담을 위한 개인정보 수집·이용에 동의합니다</label>
+<button type="submit" class="btn btn-brass">상담 신청하기</button>
+</form>
+</div>
+</div>
+</section>
+<section class="biz">
+<div class="wrap biz-in">
+<div class="biz-txt">
+<span class="biz-lab">제휴 · 광고 문의</span>
+<h3>장례식장 · 장지 시설 · 협력업체 제휴를 환영합니다</h3>
+<p>광주·전남 지역 장례식장, 수목장·봉안당, 이장 업체와의 제휴를 상시 받고 있습니다.<br>별도 비용 없이 온라인에 노출되며, 상담 의사가 있는 유가족과 연결됩니다.</p>
+</div>
+<div class="biz-cta">
+<a href="tel:15339657" class="btn btn-brass">제휴/광고 문의 1533-9657</a>
+<span class="biz-memo">평일 09:00~18:00 · 담당자 직접 연결</span>
+</div>
+</div>
+</section>
+<footer class="foot">
+<div class="wrap">
+<div class="foot-top">
+<div class="foot-brand-box">
+<div class="foot-brand">빛고을장례119</div>
+<p>광주·전남 장례 통합 플랫폼</p>
+<p class="foot-tel">24시간 상담 <b>1533-9657</b></p>
+</div>
+<nav class="foot-nav">
+<div class="foot-col">
+<b>서비스</b>
+<a href="emergency.html">임종 시 대처</a>
+<a href="hall.html">장례식장</a>
+<a href="burial.html">수목장·봉안당</a>
+<a href="relocation.html">묘 이장·개장</a>
+<a href="simple.html">무빈소 장례</a>
+</div>
+<div class="foot-col">
+<b>안내</b>
+<a href="about.html">빛고을장례119란?</a>
+<a href="faq.html">자주 묻는 질문</a>
+<a href="terms.html">이용약관</a>
+<a href="privacy.html">개인정보처리방침</a>
+</div>
+</nav>
+</div>
+<div class="foot-biz">
+<dl>
+<div><dt>상호</dt><dd>주식회사 푸르미르</dd></div>
+<div><dt>대표</dt><dd>이정록</dd></div>
+<div class="wide"><dt>주소</dt><dd>광주광역시 서구 천변좌로 260, 2층 (양동)</dd></div>
+<div><dt>전화</dt><dd>1533-9657</dd></div>
+<div><dt>사업자번호</dt><dd>678-81-02737</dd></div>
+<div><dt>개인정보보호책임자</dt><dd>이정록</dd></div>
+</dl>
+</div>
+<div class="foot-copy">
+<p>© 2026 주식회사 푸르미르. All rights reserved.</p>
+<p class="foot-disc">빛고을장례119는 장례 정보를 제공하고 제휴 시설을 연결하는 플랫폼입니다. 실제 장례 서비스 및 시설 이용 계약은 유가족과 해당 시설 간에 체결되며, 최종 이용 조건은 해당 시설의 약관과 계약에 따릅니다.</p>
+</div>
+</div>
+</footer>
+<div class="float">
+<a href="#apply" class="fab fab-k" aria-label="카카오톡 상담">
+<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7l-1 3.6c-.1.3.2.6.5.4l4.3-2.8c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg>
+</a>
+<a href="tel:15339657" class="fab fab-c" aria-label="전화 상담">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg>
+</a>
+</div>
+<div class="callbar">
+<a href="tel:15339657" class="cb-tel">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg>
+24시간 전화상담
+</a>
+<a href="#apply" class="cb-kakao">
+<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7l-1 3.6c-.1.3.2.6.5.4l4.3-2.8c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg>
+카톡 상담
+</a>
+</div>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="무료 상담 예약">
+<div class="modal-box">
+<button class="modal-x" onclick="closeModal()" aria-label="닫기">✕</button>
+<form class="form" id="modalForm" style="padding:0">
+<h3>무료 상담 예약하기</h3>
+<p class="fsub">아래 정보를 남겨주시면, 빠르게 연락드리겠습니다.</p>
+<label>성함</label>
+<input type="text" placeholder="예) 홍길동" required>
+<label>연락처</label>
+<input type="tel" placeholder="010-0000-0000" required>
+<label>상담 가능 시간</label>
+<select>
+<option>지금 바로 (긴급)</option>
+<option>오전 (09:00~12:00)</option>
+<option>오후 (12:00~18:00)</option>
+<option>저녁 (18:00~22:00)</option>
+<option>시간 무관</option>
+</select>
+<label class="agree"><input type="checkbox" required> 상담을 위한 개인정보 수집·이용에 동의합니다</label>
+<button type="submit" class="btn btn-brass">상담 신청하기</button>
+</form>
+</div>
+</div>
+<!-- 후기 작성 모달 -->
+<div class="modal" id="reviewModal" role="dialog" aria-modal="true" aria-label="함께한 이야기 남기기">
+<div class="modal-box">
+<button class="modal-x" onclick="closeReviewModal()" aria-label="닫기">✕</button>
+<form class="form" id="reviewForm" style="padding:0" onsubmit="return submitReview(event)">
+<h3>함께한 이야기 남기기</h3>
+<p class="fsub">이용하시면서 느끼셨던 점을 다른 가족들과 나눠주세요.</p>
+<label>성함 <span style="font-weight:400;color:var(--gray-lt)">(성만 노출됩니다)</span></label>
+<input type="text" placeholder="예) 홍길동" required>
+<label>거주지</label>
+<input type="text" placeholder="예) 광주 서구" required>
+<label>이용하신 서비스</label>
+<select>
+<option>장례식장</option>
+<option>수목장·봉안당</option>
+<option>묘 이장·개장</option>
+<option>무빈소 장례</option>
+<option>기타</option>
+</select>
+<label>후기 내용</label>
+<textarea rows="5" placeholder="이용하시면서 느끼셨던 점을 자유롭게 남겨주세요" required style="width:100%;padding:14px 15px;border:1px solid var(--line);border-radius:8px;font-size:16px;font-family:inherit;resize:vertical;color:#1A1F19"></textarea>
+<label class="agree"><input type="checkbox" required> 후기 등록 및 개인정보 수집·이용에 동의합니다</label>
+<button type="submit" class="btn btn-brass">후기 남기기</button>
+</form>
+</div>
+</div>
+<script>
+function openReviewModal(){document.getElementById('reviewModal').classList.add('on')}
+function closeReviewModal(){document.getElementById('reviewModal').classList.remove('on')}
+function submitReview(e){
+  e.preventDefault();
+  alert('소중한 이야기를 남겨주셔서 감사합니다. 확인 후 정성껏 반영하겠습니다.');
+  e.target.reset();
+  closeReviewModal();
+  return false;
+}
+</script>
+<script src="script.js"></script>
+<script src="bot.js"></script>
+</body>
+</html>
