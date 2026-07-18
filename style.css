@@ -198,10 +198,11 @@ button{cursor:pointer}
 .why-col{flex:1;padding:42px 36px 34px;min-width:0}
 .why-div{width:1px;background:linear-gradient(180deg,transparent,var(--line) 15%,var(--line) 85%,transparent);margin:42px 0 34px}
 .why-h{
-  font-size:19px;font-weight:700;color:var(--pine);
+  font-size:23px;font-weight:800;color:var(--pine);
   margin-bottom:22px;padding-bottom:15px;
   border-bottom:2px solid rgba(200,155,74,.28);
 }
+@media(max-width:900px){.why-h{font-size:19px;font-weight:700}}
 .why-h-alt{border-bottom-color:rgba(111,191,146,.35)}
 .why-list{list-style:none;display:flex;flex-direction:column;gap:15px}
 .why-list li{display:flex;align-items:center;gap:13px}
