@@ -76,8 +76,9 @@ button{cursor:pointer}
 /* ---------- 네비게이션 ---------- */
 .nav{position:sticky;top:0;z-index:90;background:#fff;border-bottom:1px solid var(--line)}
 .nav-in{max-width:1180px;margin:0 auto;padding:0 24px;height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{display:flex;align-items:center;gap:11px;flex-shrink:0}
-.logo-img{height:46px;width:auto;display:block}
+.logo{display:flex;flex-direction:column;align-items:flex-start;gap:3px;flex-shrink:0}
+.logo-tagline{font-size:12.5px;font-weight:700;color:var(--siren);letter-spacing:.01em;white-space:nowrap}
+.logo-img{height:40px;width:auto;display:block}
 .gnb{display:flex;gap:26px;font-size:16px;font-weight:700;color:var(--pine)}
 .gnb a{padding:6px 0;border-bottom:2px solid transparent;transition:.16s;white-space:nowrap}
 .gnb a:hover{color:var(--brass-dp);border-bottom-color:var(--brass)}
@@ -100,7 +101,8 @@ button{cursor:pointer}
 @media(max-width:700px){
   .nav-in{height:74px;padding:0 16px;gap:10px}
   .nav-tel .tel-txt{display:none}   /* 좁은 화면에선 하단 고정바로 전화 연결 */
-  .logo-img{height:52px}
+  .logo-tagline{font-size:11.5px}
+  .logo-img{height:46px}
 }
 
 /* ---------- 메인 히어로 ---------- */
@@ -202,7 +204,19 @@ button{cursor:pointer}
   margin-bottom:22px;padding-bottom:15px;
   border-bottom:2px solid rgba(200,155,74,.28);
 }
-@media(max-width:900px){.why-h{font-size:19px;font-weight:700}}
+@media(max-width:900px){
+  .why-h{
+    font-size:18px;font-weight:900;letter-spacing:-.01em;
+    display:inline-block;
+    background:rgba(200,155,74,.12);
+    border:1px solid rgba(200,155,74,.4);
+    border-bottom:2.5px solid #D99A00;
+    border-radius:8px 8px 0 0;
+    padding:8px 14px 10px;
+    margin-bottom:18px;
+    text-shadow:0 1px 0 rgba(255,255,255,.4);
+  }
+}
 .why-h-alt{border-bottom-color:rgba(111,191,146,.35)}
 .why-list{list-style:none;display:flex;flex-direction:column;gap:15px}
 .why-list li{display:flex;align-items:center;gap:13px}
@@ -930,7 +944,8 @@ button{cursor:pointer}
 @media(max-width:380px){
   .hero h1{font-size:25px}
   .sec-head h2{font-size:21px}
-  .logo-img{height:42px}
+  .logo-tagline{font-size:10.5px}
+  .logo-img{height:38px}
   .callbar a{font-size:16px;height:54px}
 }
 
