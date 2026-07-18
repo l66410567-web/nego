@@ -255,6 +255,32 @@ button{cursor:pointer}
 @media(max-width:520px){.g4{grid-template-columns:1fr}}
 
 .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:30px 22px}
+
+/* ---------- Q&A 카드 (정보센터) ---------- */
+.qa-card{
+  display:block;background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:26px 24px;transition:.18s;
+}
+.qa-card:hover{border-color:var(--brass);box-shadow:0 12px 28px rgba(200,155,74,.15);transform:translateY(-2px)}
+.qa-q{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px dashed var(--line)}
+.qa-q-badge{
+  width:26px;height:26px;border-radius:50%;background:var(--pine);color:#fff;
+  font-size:13px;font-weight:900;font-family:'Noto Serif KR',serif;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.qa-q-text{font-size:16.5px;font-weight:700;color:var(--pine);line-height:1.5;padding-top:3px}
+.qa-a{display:flex;align-items:flex-start;gap:12px}
+.qa-a-badge{
+  width:26px;height:26px;border-radius:50%;background:rgba(200,155,74,.16);color:var(--brass-dp);
+  font-size:13px;font-weight:900;font-family:'Noto Serif KR',serif;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.qa-a-text{font-size:14.5px;color:var(--gray);line-height:1.75;padding-top:3px}
+@media(max-width:520px){
+  .qa-card{padding:22px 20px}
+  .qa-q-text{font-size:15.5px}
+  .qa-a-text{font-size:14px}
+}
 .card-c{text-align:center}
 .card h3{font-size:17px;font-weight:700;margin-bottom:9px;color:var(--pine)}
 .card p{font-size:15px;color:var(--gray);line-height:1.75}
@@ -497,12 +523,17 @@ button{cursor:pointer}
   .pm-big p{font-size:15.5px}
   .pm-sub.pm-grid{grid-template-columns:1fr;row-gap:30px;padding-top:30px}
 }
-.pm{text-align:center;padding:0 16px;border-left:1px solid rgba(255,255,255,.13)}
-.pm:first-child{border-left:none}
+.pm-sub.pm-grid{gap:20px}
+.pm{
+  text-align:center;padding:28px 20px;
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);
+  border-radius:14px;transition:.18s;
+}
+.pm:hover{background:rgba(255,255,255,.08);border-color:rgba(200,155,74,.4)}
 .pm svg{width:32px;height:32px;color:var(--brass);margin:0 auto 14px}
-.pm h4{font-size:15px;font-weight:700;margin-bottom:7px;line-height:1.45}
+.pm h4{font-size:15px;font-weight:700;margin-bottom:7px;line-height:1.45;color:#fff}
 .pm p{font-size:13.5px;color:#B7C9B0;line-height:1.6}
-@media(max-width:900px){.pm-grid{grid-template-columns:repeat(2,1fr);row-gap:34px}.pm{border-left:none}}
+@media(max-width:900px){.pm-grid{grid-template-columns:repeat(2,1fr);row-gap:20px}}
 @media(max-width:520px){.pm-grid{grid-template-columns:1fr}}
 
 /* ---------- 진행 절차 ---------- */
@@ -589,7 +620,8 @@ button{cursor:pointer}
 .faq-i.on .pm-i{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .28s ease}
 .faq-a p{padding:0 24px 22px;font-size:15px;color:var(--gray);line-height:1.85}
-.faq-cat{font-size:15px;font-weight:900;color:var(--brass-dp);margin:34px 0 14px;padding-left:2px}
+.faq-cat{display:flex;align-items:center;gap:9px;font-size:15px;font-weight:900;color:var(--brass-dp);margin:34px 0 14px;padding-left:2px}
+.faq-cat svg{width:19px;height:19px;flex-shrink:0}
 .faq-cat:first-child{margin-top:0}
 
 /* ---------- 제휴 장례식장 ---------- */
@@ -851,7 +883,7 @@ button{cursor:pointer}
   .clip p{font-size:13.5px}
 
   /* 약속 리본 */
-  .pm{padding:0}
+  .pm{padding:22px 16px}
   .pm h4{font-size:15.5px}
   .pm p{font-size:13.5px}
 
