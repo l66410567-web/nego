@@ -360,7 +360,7 @@ button{cursor:pointer}
 }
 .review-track{display:flex;gap:20px;width:max-content;animation:reviewScroll 75s linear infinite}
 .review-track:hover{animation-play-state:paused}
-@keyframes reviewScroll{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+@keyframes reviewScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .rv-card{
   flex:0 0 300px;background:#fff;border:1px solid var(--line);border-radius:14px;
   padding:24px 22px;display:flex;flex-direction:column;gap:11px;
@@ -373,6 +373,8 @@ button{cursor:pointer}
 .rv-who{display:flex;align-items:center;justify-content:space-between;font-size:13.5px;
   color:var(--gray-lt);border-top:1px solid var(--line);padding-top:12px;margin-top:2px}
 .rv-who b{color:var(--pine);font-weight:700}
+.review-cta{text-align:center;margin-top:34px}
+.review-cta p{font-size:15px;color:var(--gray);margin-bottom:14px}
 @media(max-width:640px){
   .rv-card{flex:0 0 258px;padding:20px 17px;gap:9px}
   .rv-quote{font-size:14px;line-height:1.7}
@@ -587,7 +589,7 @@ button{cursor:pointer}
 .form label:first-of-type{margin-top:0}
 .form input[type=text],.form input[type=tel],.form select{
   width:100%;padding:14px 15px;border:1px solid var(--line);border-radius:8px;font-size:16px;background:#fff;color:#1A1F19}
-.form input:focus,.form select:focus{border-color:var(--brass);outline:none}
+.form input:focus,.form select:focus,.form textarea:focus{border-color:var(--brass);outline:none}
 .agree{display:flex;align-items:flex-start;gap:9px;font-size:13.5px;color:var(--gray);line-height:1.6;margin:18px 0 0;font-weight:500}
 .agree input{margin-top:3px;width:17px;height:17px;flex-shrink:0}
 .form .btn{width:100%;margin-top:20px}
