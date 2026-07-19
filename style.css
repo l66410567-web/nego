@@ -76,9 +76,9 @@ button{cursor:pointer}
 /* ---------- 네비게이션 ---------- */
 .nav{position:sticky;top:0;z-index:90;background:#fff;border-bottom:1px solid var(--line)}
 .nav-in{max-width:1180px;margin:0 auto;padding:0 24px;height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{display:flex;flex-direction:column;align-items:flex-start;gap:2px;flex-shrink:0}
-.logo-tagline{font-size:13px;font-weight:700;color:var(--siren);letter-spacing:.01em;white-space:nowrap}
-.logo-img{height:46px;width:auto;display:block}
+.logo{display:flex;align-items:center;flex-shrink:0}
+.logo-tagline{display:none}
+.logo-img{height:66px;width:auto;display:block}
 .gnb{display:flex;gap:26px;font-size:16px;font-weight:700;color:var(--pine)}
 .gnb a{padding:6px 0;border-bottom:2px solid transparent;transition:.16s;white-space:nowrap}
 .gnb a:hover{color:var(--brass-dp);border-bottom-color:var(--brass)}
@@ -99,10 +99,10 @@ button{cursor:pointer}
 .m-menu a.on{color:var(--brass-dp)}
 @media(max-width:1080px){.gnb{display:none}.burger{display:flex}}
 @media(max-width:700px){
-  .nav-in{height:74px;padding:0 16px;gap:10px}
+  .nav-in{height:88px;padding:0 16px;gap:10px}
   .nav-tel .tel-txt{display:none}   /* 좁은 화면에선 하단 고정바로 전화 연결 */
   .logo-tagline{font-size:12px}
-  .logo-img{height:52px}
+  .logo-img{height:75px}
 }
 
 /* ---------- 메인 히어로 ---------- */
@@ -945,7 +945,7 @@ button{cursor:pointer}
   .hero h1{font-size:25px}
   .sec-head h2{font-size:21px}
   .logo-tagline{font-size:11px}
-  .logo-img{height:42px}
+  .logo-img{height:60px}
   .callbar a{font-size:16px;height:54px}
 }
 
