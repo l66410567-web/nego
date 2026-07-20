@@ -615,6 +615,7 @@ button{cursor:pointer}
 /* ---------- 정보센터 ---------- */
 .news-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:30px;flex-wrap:wrap;gap:12px}
 .news-head h2{font-size:28px;font-weight:700;color:var(--pine)}
+.news-sub{font-size:15px;color:var(--gray);margin-top:8px;line-height:1.7}
 .news-more{font-size:14px;font-weight:700;color:var(--gray-lt)}
 .news-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .news{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:.18s}
@@ -919,6 +920,7 @@ button{cursor:pointer}
 
   /* 정보센터 */
   .news-head h2{font-size:22px}
+  .news-sub{font-size:14px;margin-top:6px}
   .news-body h4{font-size:14.5px}
 
   /* 상담 신청 */
