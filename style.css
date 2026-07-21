@@ -247,7 +247,7 @@ button{cursor:pointer}
 .alert-ico::after{content:'';position:absolute;inset:-7px;border:2px solid #fff;border-radius:50%;opacity:.65;animation:ping 1.9s ease-out infinite}
 .alert-body{flex:0 1 640px;min-width:0}
 .alert-title{font-size:24px;font-weight:800;line-height:1.45;color:#fff}
-.alert-ul{font-weight:900}
+.alert-ul{font-weight:900;text-shadow:0 2px 4px rgba(0,0,0,.35)}
 .alert-note{margin-top:8px;font-size:14px;color:#F3E3C8;line-height:1.7}
 .btn-alert{
   flex-shrink:0;
