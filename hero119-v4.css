@@ -118,21 +118,6 @@
 .hero119-link svg{width:14px;height:14px}
 
 /* ==========================================================
-   Trust Bar — 한 줄, 최소한의 존재감
-   ========================================================== */
-.hero119-trustbar{background:var(--hero119-pine);padding:12px 0}
-.hero119-trustbar-wrap{
-  max-width:1180px;margin:0 auto;padding:0 24px;
-  text-align:center;font-size:13.5px;font-weight:400;
-  color:var(--hero119-text-soft);
-}
-.hero119-trustbar-wrap strong{color:var(--hero119-white);font-weight:600}
-
-/* 데스크톱/태블릿에서는 긴 문구, 모바일에서는 짧은 문구 —
-   CSS만으로 전환 (JS/추가 마크업 중복 없음) */
-.hero119-trustbar-short{display:none}
-
-/* ==========================================================
    반응형 — Tablet
    ========================================================== */
 @media (max-width:900px){
@@ -174,10 +159,6 @@
 
   .hero119-bene-cols{grid-template-columns:1fr;gap:24px}
   .hero119-check-list li{font-size:14px}
-
-  .hero119-trustbar-wrap{font-size:12.5px;line-height:1.6}
-  .hero119-trustbar-full{display:none}
-  .hero119-trustbar-short{display:inline}
 }
 
 
