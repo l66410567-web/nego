@@ -37,7 +37,7 @@
 /* ---------- Hero ---------- */
 .hero119{
   position:relative;overflow:hidden;
-  min-height:680px;display:flex;align-items:center;
+  min-height:700px;display:flex;align-items:center;
 }
 .hero119-bg{
   position:absolute;inset:0;
@@ -56,7 +56,7 @@
 }
 .hero119-wrap{
   position:relative;z-index:2;width:100%;
-  max-width:1180px;margin:0 auto;padding:0 24px;
+  max-width:1180px;margin:0 auto;padding:76px 24px 88px;
 }
 .hero119-copy{
   max-width:600px;color:var(--hero119-white);
@@ -141,7 +141,7 @@
 @media (max-width:640px){
   .hero119{min-height:auto}
   .hero119-copy{transform:none}
-  .hero119-wrap{padding-top:34px;padding-bottom:64px}
+  .hero119-wrap{padding-top:34px;padding-bottom:62px}
   .hero119-eyebrow{font-size:12px;margin-bottom:20px}
   .hero119-title{font-size:28px;line-height:1.32}
   .hero119-sub{font-size:15px;margin-top:14px;line-height:1.6}
