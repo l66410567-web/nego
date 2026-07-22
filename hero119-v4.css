@@ -176,3 +176,38 @@
   .hero119-trustbar-full{display:none}
   .hero119-trustbar-short{display:inline}
 }
+
+
+/* ==========================================================
+   Desktop SVG emblem hard fix
+   기존 전역 SVG 스타일이 데스크톱에서 엠블럼 크기를 덮어쓰는 문제 방지
+   ========================================================== */
+.hero119-root .hero119-bene-col h2 > svg.hero119-benefit-emblem{
+  display:block !important;
+  width:15px !important;
+  min-width:15px !important;
+  max-width:15px !important;
+  height:15px !important;
+  min-height:15px !important;
+  max-height:15px !important;
+  flex:0 0 15px !important;
+  margin:0 !important;
+  padding:0 !important;
+  position:static !important;
+  inset:auto !important;
+  transform:none !important;
+  background:none !important;
+  border:0 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  fill:none !important;
+  stroke:#C8A96A !important;
+  stroke-width:1.35 !important;
+  overflow:visible !important;
+}
+.hero119-root .hero119-bene-col h2 > svg.hero119-benefit-emblem path{
+  fill:none !important;
+  stroke:#C8A96A !important;
+  stroke-width:1.35 !important;
+  vector-effect:non-scaling-stroke;
+}
