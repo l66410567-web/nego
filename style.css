@@ -117,29 +117,31 @@ button{cursor:pointer}
 .hero h1{font-size:48px;font-weight:800;line-height:1.18;letter-spacing:-.022em}
 .hero h1 .hl{color:var(--brass)}
 .hero-sub{margin-top:20px;font-size:18px;font-weight:500;color:#B4C4AD;line-height:1.7;max-width:540px}
-.hero-benefits{display:flex;flex-direction:column;gap:12px;margin-top:28px;max-width:620px}
-.bene{position:relative;display:flex;align-items:center;gap:14px;flex-wrap:wrap;border-radius:10px;padding:16px 18px 16px 22px;font-size:17px;font-weight:700;color:#fff;border:1.5px solid;overflow:hidden}
-/* 왼쪽 강조 바 */
-.bene::before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px}
-.bene-hall{background:linear-gradient(92deg,rgba(200,155,74,.34),rgba(200,155,74,.12));border-color:var(--brass);box-shadow:0 6px 22px rgba(200,155,74,.22)}
-.bene-hall::before{background:var(--brass)}
-.bene-site{background:linear-gradient(92deg,rgba(90,155,115,.42),rgba(70,130,95,.16));border-color:#6FBF92;box-shadow:0 6px 22px rgba(90,180,130,.22)}
-.bene-site::before{background:#6FBF92}
-.bene-tag{position:relative;z-index:1;flex-shrink:0;font-size:13px;font-weight:900;padding:6px 13px;border-radius:99px;white-space:nowrap}
-.bene-hall .bene-tag{background:var(--brass);color:#22190A}
-.bene-site .bene-tag{background:#6FBF92;color:#0E2A1B}
-.bene>span:not(.bene-tag){position:relative;z-index:1}
-.bene b{color:var(--siren-lt);font-weight:900}
-.bene-site b{color:#FFD24A}
-.bene-check{list-style:none;display:flex;flex-direction:column;gap:9px;position:relative;z-index:1;width:100%}
-.bene-check li{display:flex;align-items:baseline;gap:8px;font-size:17px;font-weight:700;color:#fff;line-height:1.5}
-.bene-check .ck{color:var(--brass);font-weight:900;flex-shrink:0}
-.bene-site .bene-check .ck{color:#6FBF92}
-.bene-check b.y{color:#FFD24A;font-weight:900}
-.bene-plus{color:#fff;font-weight:900;margin-right:2px}
-.bene-check-inline{flex-direction:row;flex-wrap:wrap;row-gap:8px;column-gap:16px}
-.bene-check-inline li{width:auto}
-.bene-note{display:inline-block;font-size:13.5px;color:#D9E4D3;background:rgba(255,255,255,.10);border-left:3px solid var(--brass);padding:9px 13px;margin-top:6px;border-radius:0 6px 6px 0;line-height:1.6}
+.hero-benefits{margin-top:28px;max-width:640px}
+.bene-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.bene-card{
+  position:relative;background:#fff;border-radius:14px;
+  padding:22px 20px 20px;box-shadow:0 14px 32px rgba(0,0,0,.28);
+}
+.bene-badge{
+  position:absolute;top:14px;right:14px;
+  font-size:10.5px;font-weight:800;letter-spacing:.01em;
+  color:var(--brass-dp);background:rgba(191,160,106,.14);
+  border:1px solid rgba(191,160,106,.4);
+  border-radius:99px;padding:4px 9px;white-space:nowrap;
+}
+.bene-ico{
+  width:42px;height:42px;border-radius:10px;
+  background:rgba(28,51,72,.08);color:var(--pine);
+  display:flex;align-items:center;justify-content:center;margin-bottom:12px;
+}
+.bene-ico svg{width:22px;height:22px}
+.bene-card h4{font-size:16.5px;font-weight:800;color:var(--pine);margin-bottom:11px}
+.bene-list2{list-style:none;display:flex;flex-direction:column;gap:8px}
+.bene-list2 li{position:relative;padding-left:14px;font-size:14.5px;font-weight:600;color:#3B372F;line-height:1.5}
+.bene-list2 li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--brass)}
+.bene-list2 b.y{color:var(--siren);font-weight:900}
+.bene-note{display:inline-block;font-size:13.5px;color:#D9E4D3;background:rgba(255,255,255,.10);border-left:3px solid var(--brass);padding:9px 13px;margin-top:14px;border-radius:0 6px 6px 0;line-height:1.6}
 .hero-cta{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
 @media(max-width:900px){
   .hero h1{font-size:37px}
@@ -154,13 +156,15 @@ button{cursor:pointer}
   .hero-sub{font-size:15.5px;margin-top:14px;line-height:1.65}
   .hero-lead{font-size:15.5px;margin-bottom:11px}
   .hero-eyebrow{font-size:12.5px;margin-bottom:16px}
-  .hero-benefits{gap:10px;margin-top:24px}
-  /* 태그를 위로 올려 2줄 구조 — 좁은 화면에서 문구가 뭉치지 않게 */
-  .bene{flex-direction:column;align-items:flex-start;gap:9px;padding:14px 15px;font-size:15.5px;line-height:1.55}
-  .bene-check{gap:8px}
-  .bene-check li{font-size:15.5px}
-  .bene-tag{font-size:12px;padding:5px 11px}
-  .bene-note{font-size:13px;padding:9px 12px}
+  .hero-benefits{margin-top:22px}
+  .bene-grid{grid-template-columns:1fr;gap:10px}
+  .bene-card{padding:18px 16px}
+  .bene-badge{font-size:10px;padding:3px 8px}
+  .bene-ico{width:36px;height:36px}
+  .bene-ico svg{width:19px;height:19px}
+  .bene-card h4{font-size:15.5px}
+  .bene-list2 li{font-size:14px}
+  .bene-note{font-size:13px;padding:9px 12px;margin-top:10px}
   .hero-cta{display:none}  /* 하단에 항상 떠 있는 고정 상담바(callbar)와 기능이 겹쳐 모바일에서는 숨김 */
   .hero-benefits{margin-bottom:6px}
 }
