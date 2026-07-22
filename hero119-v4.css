@@ -37,7 +37,7 @@
 /* ---------- Hero ---------- */
 .hero119{
   position:relative;overflow:hidden;
-  min-height:710px;display:flex;align-items:center;
+  min-height:640px;display:flex;align-items:center;
 }
 .hero119-bg{
   position:absolute;inset:0;
