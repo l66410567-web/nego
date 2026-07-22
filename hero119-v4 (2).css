@@ -1,0 +1,197 @@
+/* ==========================================================
+   HERO119 v4 — 독립형 Hero 섹션 시안 (최종 마감판)
+   - v3의 시각 디자인은 그대로 유지 (카드/배지/아이콘 없음)
+   - 아래 항목만 기술적으로 개선:
+     1) 배경 이미지: JS가 아닌 CSS 변수로 직접 적용 (LCP 개선)
+     2) 폰트: 시스템 폰트 스택 사용, 구글 폰트 요청 제거
+     3) 모바일 정보 순서: display:contents + order로 재배치 (HTML 중복 없음)
+     4) 여백 미세 조정
+     5) 접근성: section + aria-labelledby, 의미있는 제목 계층
+   - 모든 클래스명 hero119- 접두사 / 전역 선택자 없음
+   ========================================================== */
+
+.hero119-root{
+  --hero119-ink:#12211B;
+  --hero119-pine:#1D342B;
+  --hero119-brass:#C8A46A;
+  --hero119-brass-dp:#A3814F;
+  --hero119-white:#FFFFFF;
+  --hero119-text-soft:#CBD3CC;
+  --hero119-text-softer:#9FAAA1;
+
+  /* TODO(통합 시 필수 확인): 배경 이미지 경로.
+     기존 사이트의 실제 파일 경로로 교체하세요.
+     CSS 변수이므로 통합 시 이 한 줄만 바꾸면 됩니다(JS 불필요). */
+  --hero119-bg-image: url('bg-hero.jpg');
+
+  /* 폰트: Pretendard/시스템 폰트 우선 사용.
+     사이트에 Pretendard가 이미 로드되어 있다면 별도 @font-face나
+     외부 요청 없이 그대로 적용됩니다. */
+  font-family:Pretendard,"Apple SD Gothic Neo","Noto Sans KR",
+    -apple-system,BlinkMacSystemFont,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.hero119-root *{box-sizing:border-box}
+.hero119-root img{max-width:100%;display:block}
+
+/* ---------- Hero ---------- */
+.hero119{
+  position:relative;overflow:hidden;
+  min-height:680px;display:flex;align-items:center;
+}
+.hero119-bg{
+  position:absolute;inset:0;
+  background-image:var(--hero119-bg-image);
+  background-size:cover;
+  background-position:87% center;
+  z-index:0;
+}
+.hero119-veil{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(96deg,
+    rgba(18,33,27,.97) 0%,
+    rgba(18,33,27,.93) 42%,
+    rgba(18,33,27,.58) 66%,
+    rgba(18,33,27,.14) 100%);
+}
+.hero119-wrap{
+  position:relative;z-index:2;width:100%;
+  max-width:1180px;margin:0 auto;padding:0 24px;
+}
+.hero119-copy{
+  max-width:600px;color:var(--hero119-white);
+  animation:hero119In 1s cubic-bezier(.16,1,.3,1) both;
+}
+@keyframes hero119In{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@media (prefers-reduced-motion:reduce){.hero119-copy{animation:none!important;transform:none}}
+
+/* 브랜드 라벨 */
+.hero119-eyebrow{
+  display:block;font-size:13px;font-weight:600;letter-spacing:.04em;
+  color:var(--hero119-text-softer);margin-bottom:28px;
+}
+
+/* 메인 카피 */
+.hero119-title{font-size:52px;font-weight:700;line-height:1.24;letter-spacing:-.025em;margin:0}
+.hero119-title .hero119-hl{color:var(--hero119-brass)}
+.hero119-sub{margin-top:18px;font-size:19px;font-weight:400;color:var(--hero119-text-soft);line-height:1.6;max-width:440px}
+
+/* ---------- 혜택 — 카드 없이 타이포그래피만 ----------
+   여백: 메인 메시지와 분리된 느낌이 들지 않도록 40~46px / 26~30px 범위로 조정 */
+.hero119-benefits{margin-top:42px;padding-top:28px;border-top:1px solid rgba(255,255,255,.14)}
+.hero119-bene-cols{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.hero119-bene-col h2{
+  display:flex;align-items:center;gap:8px;
+  font-size:14px;font-weight:600;letter-spacing:.02em;
+  color:var(--hero119-brass);margin:0 0 16px;
+  /* 얇은 골드 라인 엠블럼으로 지원 혜택을 3초 안에 인지하도록 강조 */
+}
+.hero119-benefit-emblem{
+  width:15px;height:15px;flex:0 0 15px;
+  fill:none;stroke:#C8A96A;stroke-width:1.35;
+  stroke-linejoin:round;overflow:visible;
+}
+.hero119-check-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.hero119-check-list li{
+  font-size:15px;font-weight:400;color:var(--hero119-text-soft);line-height:1.5;
+}
+.hero119-check-list li strong{color:var(--hero119-white);font-weight:600}
+
+/* ---------- CTA ---------- */
+.hero119-cta{display:flex;align-items:center;gap:28px;margin-top:44px;flex-wrap:wrap}
+.hero119-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:16px 32px;border-radius:980px;
+  font-size:16px;font-weight:600;
+  background:var(--hero119-brass);color:#241C0E;border:none;
+  font-family:inherit;cursor:pointer;
+  transition:opacity .2s ease;
+}
+.hero119-btn:hover{opacity:.88}
+.hero119-link{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:15px;font-weight:500;color:var(--hero119-white);
+  text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);
+  padding-bottom:2px;transition:border-color .2s ease;
+}
+.hero119-link:hover{border-color:rgba(255,255,255,.9)}
+.hero119-link svg{width:14px;height:14px}
+
+/* ==========================================================
+   반응형 — Tablet
+   ========================================================== */
+@media (max-width:900px){
+  .hero119{min-height:680px}
+  .hero119-copy{transform:translateY(10px)}
+  .hero119-title{font-size:39px}
+  .hero119-sub{font-size:17px}
+  .hero119-bg{background-position:84% 20%}
+  .hero119-veil{
+    background:linear-gradient(100deg,
+      rgba(18,33,27,.96) 0%,rgba(18,33,27,.92) 50%,
+      rgba(18,33,27,.60) 74%,rgba(18,33,27,.28) 100%);
+  }
+}
+
+/* ==========================================================
+   반응형 — Mobile
+   정보 순서: 라벨 → 제목 → 서브카피 → CTA버튼 → 혜택 → 카톡링크 → (Trust Bar는 별도 섹션)
+   HTML 구조는 그대로 두고 display:contents + order로만 재배치
+   ========================================================== */
+@media (max-width:640px){
+  .hero119{min-height:auto}
+  .hero119-copy{transform:none}
+  .hero119-wrap{padding-top:34px;padding-bottom:64px}
+  .hero119-eyebrow{font-size:12px;margin-bottom:20px}
+  .hero119-title{font-size:28px;line-height:1.32}
+  .hero119-sub{font-size:15px;margin-top:14px;line-height:1.6}
+
+  /* 순서 재배치를 위해 copy를 flex column으로 전환 */
+  .hero119-copy{display:flex;flex-direction:column}
+  .hero119-eyebrow{order:1}
+  .hero119-title{order:2}
+  .hero119-sub{order:3}
+  /* .hero119-cta 래퍼는 시각적 박스 없이 자식(버튼/링크)만 flex 아이템으로 승격 */
+  .hero119-cta{display:contents}
+  .hero119-btn{order:4;width:100%;padding:16px 24px;margin-top:32px}
+  .hero119-benefits{order:5;margin-top:34px;padding-top:24px}
+  .hero119-link{order:6;width:100%;justify-content:center;border-bottom:none;margin-top:18px}
+
+  .hero119-bene-cols{grid-template-columns:1fr;gap:24px}
+  .hero119-check-list li{font-size:14px}
+}
+
+
+/* ==========================================================
+   Desktop SVG emblem hard fix
+   기존 전역 SVG 스타일이 데스크톱에서 엠블럼 크기를 덮어쓰는 문제 방지
+   ========================================================== */
+.hero119-root .hero119-bene-col h2 > svg.hero119-benefit-emblem{
+  display:block !important;
+  width:15px !important;
+  min-width:15px !important;
+  max-width:15px !important;
+  height:15px !important;
+  min-height:15px !important;
+  max-height:15px !important;
+  flex:0 0 15px !important;
+  margin:0 !important;
+  padding:0 !important;
+  position:static !important;
+  inset:auto !important;
+  transform:none !important;
+  background:none !important;
+  border:0 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  fill:none !important;
+  stroke:#C8A96A !important;
+  stroke-width:1.35 !important;
+  overflow:visible !important;
+}
+.hero119-root .hero119-bene-col h2 > svg.hero119-benefit-emblem path{
+  fill:none !important;
+  stroke:#C8A96A !important;
+  stroke-width:1.35 !important;
+  vector-effect:non-scaling-stroke;
+}
