@@ -81,9 +81,15 @@
 .hero119-benefits{margin-top:42px;padding-top:28px;border-top:1px solid rgba(255,255,255,.14)}
 .hero119-bene-cols{display:grid;grid-template-columns:1fr 1fr;gap:36px}
 .hero119-bene-col h2{
-  font-size:13px;font-weight:600;letter-spacing:.03em;
+  display:flex;align-items:center;gap:8px;
+  font-size:14px;font-weight:600;letter-spacing:.02em;
   color:var(--hero119-brass);margin:0 0 16px;
-  /* 시각 크기는 작게 유지하되, 의미상 올바른 제목 요소(h2) 사용 */
+  /* 얇은 골드 라인 엠블럼으로 지원 혜택을 3초 안에 인지하도록 강조 */
+}
+.hero119-benefit-emblem{
+  width:15px;height:15px;flex:0 0 15px;
+  fill:none;stroke:#C8A96A;stroke-width:1.35;
+  stroke-linejoin:round;overflow:visible;
 }
 .hero119-check-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
 .hero119-check-list li{
