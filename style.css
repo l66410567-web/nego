@@ -1177,3 +1177,51 @@ button{cursor:pointer}
 .legal table.legal-tbl th,.legal table.legal-tbl td{border:1px solid var(--line);padding:10px 12px;text-align:left;color:var(--gray);vertical-align:top}
 .legal table.legal-tbl th{background:var(--hanji);color:var(--pine);font-weight:700;white-space:nowrap}
 @media(max-width:640px){.legal{padding:44px 0 60px}.legal h2{font-size:18px}.legal p,.legal li{font-size:14.5px}}
+
+/* ==========================================================
+   메인 Hero v4 — 빛고을장례119 최종 통합본
+   ========================================================== */
+.hero119-root{
+  --hero119-ink:#12211B;--hero119-pine:#1D342B;--hero119-brass:#C8A46A;
+  --hero119-white:#fff;--hero119-text-soft:#CBD3CC;--hero119-text-softer:#AAB5AC;
+  --hero119-bg-image:url('bg-hero.jpg');
+  font-family:Pretendard,"Noto Sans KR","Apple SD Gothic Neo",-apple-system,BlinkMacSystemFont,sans-serif;
+  -webkit-font-smoothing:antialiased
+}
+.hero119-root *{box-sizing:border-box}
+.hero119{position:relative;overflow:hidden;min-height:660px;display:flex;align-items:center}
+.hero119-bg{position:absolute;inset:0;background-image:var(--hero119-bg-image);background-size:cover;background-position:87% center;z-index:0}
+.hero119-veil{position:absolute;inset:0;z-index:1;background:linear-gradient(96deg,rgba(18,33,27,.97) 0%,rgba(18,33,27,.93) 42%,rgba(18,33,27,.58) 66%,rgba(18,33,27,.14) 100%)}
+.hero119-wrap{position:relative;z-index:2;width:100%;max-width:1180px;margin:0 auto;padding:76px 24px}
+.hero119-copy{max-width:620px;color:#fff;animation:hero119In .8s cubic-bezier(.16,1,.3,1) both}
+@keyframes hero119In{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.hero119-copy{animation:none!important}}
+.hero119-eyebrow{display:block;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--hero119-text-softer);margin-bottom:28px}
+.hero119-title{font-size:52px;font-weight:700;line-height:1.24;letter-spacing:-.025em;margin:0}
+.hero119-title .hero119-hl{color:var(--hero119-brass)}
+.hero119-sub{margin:18px 0 0;font-size:19px;font-weight:400;color:var(--hero119-text-soft);line-height:1.65;max-width:500px}
+.hero119-benefits{margin-top:42px;padding-top:28px;border-top:1px solid rgba(255,255,255,.14)}
+.hero119-bene-cols{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.hero119-bene-col h2{font-size:13px;font-weight:700;letter-spacing:.03em;color:var(--hero119-brass);margin:0 0 16px}
+.hero119-check-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.hero119-check-list li{font-size:15px;font-weight:400;color:var(--hero119-text-soft);line-height:1.5}
+.hero119-check-list li strong{color:#fff;font-weight:700}
+.hero119-note{margin:20px 0 0;font-size:12px;line-height:1.6;color:rgba(203,211,204,.7)}
+.hero119-cta{display:flex;align-items:center;gap:28px;margin-top:38px;flex-wrap:wrap}
+.hero119-btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 32px;border-radius:999px;font-size:16px;font-weight:700;background:var(--hero119-brass);color:#241C0E;border:0;font-family:inherit;cursor:pointer;transition:transform .2s ease,opacity .2s ease,box-shadow .2s ease;box-shadow:0 8px 24px rgba(0,0,0,.16)}
+.hero119-btn:hover{opacity:.92;transform:translateY(-1px)}
+.hero119-btn:focus-visible,.hero119-link:focus-visible{outline:3px solid rgba(255,255,255,.85);outline-offset:4px}
+.hero119-link{display:inline-flex;align-items:center;gap:5px;font-size:15px;font-weight:600;color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:2px}
+.hero119-link svg{width:14px;height:14px}
+.hero119-trustbar{background:var(--hero119-pine);padding:15px 0}
+.hero119-trustbar-wrap{max-width:1180px;margin:0 auto;padding:0 24px;text-align:center;font-size:13.5px;color:var(--hero119-text-soft)}
+.hero119-trustbar-wrap strong{color:#fff;font-weight:700}.hero119-trustbar-short{display:none}
+@media (max-width:900px){.hero119-title{font-size:39px}.hero119-sub{font-size:17px}.hero119-bg{background-position:84% 20%}.hero119-veil{background:linear-gradient(100deg,rgba(18,33,27,.97) 0%,rgba(18,33,27,.93) 52%,rgba(18,33,27,.63) 76%,rgba(18,33,27,.3) 100%)}}
+@media (max-width:640px){
+  .hero119{min-height:auto}.hero119-wrap{padding:50px 22px 46px}.hero119-copy{display:flex;flex-direction:column}
+  .hero119-eyebrow{order:1;font-size:12px;margin-bottom:20px}.hero119-title{order:2;font-size:28px;line-height:1.32}.hero119-sub{order:3;font-size:15px;margin-top:14px;line-height:1.6}
+  .hero119-cta{display:contents}.hero119-btn{order:4;width:100%;padding:16px 20px;margin-top:30px}.hero119-benefits{order:5;margin-top:32px;padding-top:23px}.hero119-link{order:6;width:100%;justify-content:center;border-bottom:0;margin-top:18px}
+  .hero119-bene-cols{grid-template-columns:1fr;gap:23px}.hero119-check-list li{font-size:14px}.hero119-note{font-size:11px;margin-top:18px}
+  .hero119-bg{background-position:72% center}.hero119-veil{background:linear-gradient(100deg,rgba(18,33,27,.98) 0%,rgba(18,33,27,.95) 58%,rgba(18,33,27,.72) 100%)}
+  .hero119-trustbar-wrap{font-size:12.5px;line-height:1.6}.hero119-trustbar-full{display:none}.hero119-trustbar-short{display:inline}
+}
