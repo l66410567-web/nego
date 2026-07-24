@@ -224,16 +224,23 @@ button{cursor:pointer}
 }
 .figure-arrow{font-size:20px;color:var(--gray-lt);opacity:.5}
 
-.figure-items-line{margin:36px 0 0;font-size:13px;color:var(--gray-lt)}
-
-.figure-tags{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:9px;margin:18px 0 0}
-.figure-tag{
-  font-size:12.5px;font-weight:600;color:var(--pine);
-  border:1px solid rgba(24,52,45,.22);border-radius:99px;padding:6px 14px;
+.figure-groups{
+  display:grid;grid-template-columns:1fr 1fr;gap:20px;
+  max-width:820px;margin:28px auto 0;
 }
-.figure-divider{width:44px;height:1px;background:rgba(191,160,106,.4);margin:26px auto 0}
-.figure-group-label{margin:16px 0 0;font-size:12px;font-weight:700;color:var(--brass-dp);letter-spacing:.03em}
-.figure-group-sub{margin:5px 0 0;font-size:11.5px;color:var(--gray-lt)}
+.figure-group{
+  border:1.5px solid rgba(24,52,45,.20);border-radius:16px;
+  padding:24px 22px;background:rgba(255,255,255,.5);text-align:center;
+}
+.figure-group-title{display:block;font-size:15.5px;font-weight:800;color:var(--pine)}
+.figure-group-sub{margin:8px 0 0;font-size:12px;line-height:1.6;color:var(--gray-lt)}
+
+.figure-tags{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;margin:16px 0 0}
+.figure-tag{
+  font-size:12px;font-weight:600;color:var(--pine);
+  border:1px solid rgba(24,52,45,.22);border-radius:99px;padding:6px 12px;
+  background:#fff;
+}
 .figure-tag-amount{
   color:var(--brass-dp);font-weight:800;
   background:rgba(200,164,106,.12);border-color:var(--brass);
@@ -262,8 +269,8 @@ button{cursor:pointer}
   .figure-num-diff-item{margin-top:6px;padding-top:18px;border-top:1px solid rgba(24,52,45,.14);width:100%}
   .figure-num{font-size:22px;padding:11px 20px;width:auto;min-width:170px}
   .num-diff{font-size:25px}
-  .figure-items-line{margin-top:28px;font-size:12.5px}
-  .figure-tags{margin-top:14px}
+  .figure-groups{grid-template-columns:1fr;gap:14px;margin-top:24px}
+  .figure-group{padding:20px 18px}
   .figure-cta{width:100%}
 }
 .alert-ico{width:54px;height:54px;border-radius:50%;background:linear-gradient(150deg,#E8C371,var(--brass-dp));display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;box-shadow:0 0 0 4px rgba(255,255,255,.22)}
