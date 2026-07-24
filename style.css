@@ -233,6 +233,12 @@ button{cursor:pointer}
 }
 .figure-divider{width:44px;height:1px;background:rgba(191,160,106,.4);margin:26px auto 0}
 .figure-group-label{margin:16px 0 0;font-size:12px;font-weight:700;color:var(--brass-dp);letter-spacing:.03em}
+.figure-group-sub{margin:5px 0 0;font-size:11.5px;color:var(--gray-lt)}
+.figure-tag-amount{
+  color:var(--brass-dp);font-weight:800;
+  background:rgba(200,164,106,.12);border-color:var(--brass);
+  box-shadow:0 4px 12px rgba(200,164,106,.18);
+}
 
 .figure-note{margin:26px 0 0;font-size:12px;color:var(--gray-lt)}
 .figure-cta{margin-top:22px;background:var(--pine);color:var(--hanji)}
