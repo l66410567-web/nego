@@ -189,55 +189,58 @@ button{cursor:pointer}
 /* ---------- 꼭 확인하세요 — Hero와 이어지는 Warm Ivory Premium Section ---------- */
 /* ---------- 장례 준비의 기준을 바꿉니다 (reason) ---------- */
 /* ---------- 지원을 알고 시작하면, 부담은 달라질 수 있습니다 (figure) ---------- */
-.figure{padding:88px 0;background:var(--hanji)}
-.figure-wrap{max-width:1180px;text-align:center}
-.figure-title{margin:0;font-size:26px;font-weight:700;color:var(--pine);letter-spacing:-.02em}
-.figure-sub{margin:10px 0 0;font-size:14.5px;color:var(--gray-lt)}
+/* ---------- 장례식장 지원 안내 (figure — 프리미엄 패널) ---------- */
+.figure{padding:88px 0;background:#F3EDE1}
+.figure-wrap{max-width:900px;text-align:center}
+.figure-kicker{display:inline-block;font-size:12.5px;font-weight:800;letter-spacing:.08em;color:#A9772E;margin-bottom:16px}
+.figure-title{margin:0;font-size:26px;font-weight:700;color:#17372F;line-height:1.5;letter-spacing:-.015em}
 
-.figure-numbers{
-  display:flex;align-items:center;justify-content:center;gap:40px;
-  margin:48px 0 0;flex-wrap:wrap;
+.figure-panel{
+  margin:40px auto 0;max-width:760px;
+  background:#E4E9E0;border:1px solid rgba(180,145,88,.35);border-radius:18px;
+  padding:40px 44px;box-shadow:0 6px 20px rgba(23,55,47,.06);
 }
-.figure-num-item{display:flex;flex-direction:column;align-items:center;gap:8px}
-.figure-num-label{font-size:13px;font-weight:600;color:var(--gray-lt)}
-.figure-num{font-family:'Noto Serif KR',serif;font-weight:900;font-size:38px;letter-spacing:-.02em}
-.num-normal{color:#8A8478;text-decoration:line-through;text-decoration-color:rgba(138,132,120,.55);text-decoration-thickness:1.5px}
-.num-support{color:var(--pine)}
-.num-diff{color:var(--brass-dp);font-size:44px}
-.figure-arrow{font-size:20px;color:var(--gray-lt);opacity:.5}
+.figure-compare{display:flex;align-items:center;justify-content:center;gap:36px}
+.figure-compare-item{display:flex;flex-direction:column;align-items:center;gap:9px}
+.figure-compare-label{font-size:13px;font-weight:600;color:#444A46}
+.figure-compare-num{font-family:'Noto Serif KR',serif;font-weight:900;font-size:32px;letter-spacing:-.02em}
+.num-normal{color:#77766F;text-decoration:line-through;text-decoration-color:rgba(119,118,111,.5);text-decoration-thickness:1.5px}
+.num-support{color:#17372F}
+.figure-connector{display:flex;flex-direction:column;align-items:center;gap:4px;padding-top:18px}
+.figure-connector-arrow{font-size:16px;color:#A9772E;transform:rotate(-90deg)}
+.figure-connector-text{font-size:11.5px;font-weight:700;color:#A9772E;white-space:nowrap}
 
-.figure-items-line{margin:36px 0 0;font-size:13px;color:var(--gray-lt)}
-
-.figure-tags{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:9px;margin:18px 0 0}
-.figure-tag{
-  font-size:12.5px;font-weight:600;color:var(--pine);
-  border:1px solid rgba(24,52,45,.22);border-radius:99px;padding:6px 14px;
+.figure-diff-line{
+  margin:28px 0 0;padding-top:24px;border-top:1px solid rgba(180,145,88,.35);
+  font-size:17px;font-weight:600;color:#444A46;
 }
-.figure-divider{width:44px;height:1px;background:rgba(191,160,106,.4);margin:26px auto 0}
-.figure-group-label{margin:16px 0 0;font-size:12px;font-weight:700;color:var(--brass-dp);letter-spacing:.03em}
+.figure-diff-line strong{font-family:'Noto Serif KR',serif;font-weight:900;font-size:30px;color:#A9772E;margin:0 2px}
 
-.figure-note{margin:26px 0 0;font-size:12px;color:var(--gray-lt)}
-.figure-cta{margin-top:22px;background:var(--pine);color:var(--hanji)}
-.figure-cta:hover{background:var(--pine-lite)}
+.figure-caption{margin:28px 0 0;font-size:13.5px;line-height:1.7;color:#444A46}
+.figure-caption-br{display:none}
+
+.figure-cta{margin-top:26px;background:#17372F;color:#F3EDE1}
+.figure-cta:hover{background:#204A3F}
 
 @media(max-width:900px){
   .figure{padding:72px 0}
-  .figure-numbers{gap:28px}
-  .figure-num{font-size:32px}
-  .num-diff{font-size:38px}
+  .figure-panel{padding:34px 28px}
+  .figure-compare-num{font-size:28px}
+  .figure-diff-line strong{font-size:26px}
 }
 @media(max-width:640px){
   .figure{padding:56px 0}
   .wrap.figure-wrap{padding:0 24px}
-  .figure-title{font-size:21px;line-height:1.4}
-  .figure-sub{font-size:13.5px}
-  .figure-numbers{flex-direction:column;gap:18px;margin-top:36px}
-  .figure-arrow{transform:none}
-  .figure-num-diff-item{margin-top:6px;padding-top:18px;border-top:1px solid rgba(24,52,45,.14);width:100%}
-  .figure-num{font-size:30px}
-  .num-diff{font-size:34px}
-  .figure-items-line{margin-top:28px;font-size:12.5px}
-  .figure-tags{margin-top:14px}
+  .figure-title{font-size:20px;line-height:1.45}
+  .figure-panel{margin-top:32px;padding:28px 22px}
+  .figure-compare{flex-direction:column;gap:22px}
+  .figure-connector{flex-direction:row;gap:8px;padding-top:0}
+  .figure-connector-arrow{transform:none;font-size:15px}
+  .figure-compare-num{font-size:27px}
+  .figure-diff-line{margin-top:22px;padding-top:20px;font-size:15px}
+  .figure-diff-line strong{font-size:25px}
+  .figure-caption{margin-top:24px;font-size:13px}
+  .figure-caption-br{display:inline}
   .figure-cta{width:100%}
 }
 .alert-in{display:flex;align-items:center;gap:24px;padding-top:26px;padding-bottom:26px;flex-wrap:wrap}
