@@ -502,6 +502,7 @@ button{cursor:pointer}
   color:var(--gray-lt);border-top:1px solid var(--line);padding-top:12px;margin-top:2px}
 .rv-who b{color:var(--pine);font-weight:700}
 .review-cta{text-align:center;margin-top:34px}
+.review-cta-br{display:none}
 .review-cta p{font-size:15px;color:var(--gray);margin-bottom:14px}
 @media(max-width:640px){
   .rv-card{flex:0 0 258px;padding:20px 17px;gap:9px}
@@ -816,6 +817,7 @@ button{cursor:pointer}
    ========================================================== */
 @media(max-width:640px){
   .wrap,.wrap-narrow{padding:0 18px}
+  .review-cta-br{display:inline}
   .sec{padding:50px 0 58px}
   .sec-sm{padding:42px 0}
   .sec-head{margin-bottom:32px}
