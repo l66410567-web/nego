@@ -148,3 +148,60 @@
   /* 데스크톱용 기존 혜택 2단 블록은 모바일에서 감춤 */
   .hero119-benefits{display:none}
 }
+
+/* ==========================================================
+   "왜 빛고을장례119인가" 킥 박스 (figure 섹션 / PC·모바일 공통)
+   - '약속' 섹션 톤: 딥그린 + 골드. 테두리를 굵게(2.5px) 강조.
+   ========================================================== */
+.why119{
+  position:relative;max-width:820px;margin:44px auto 0;text-align:left;
+  background:linear-gradient(180deg,#FFFFFF 0%,#FBF7EC 100%);
+  border:2.5px solid var(--brass);border-radius:18px;
+  padding:32px 30px 28px;
+  box-shadow:0 16px 40px rgba(24,52,45,.13);
+}
+.why119-tag{
+  position:absolute;top:-15px;left:50%;transform:translateX(-50%);
+  background:var(--brass);color:#22190A;white-space:nowrap;
+  font-size:13px;font-weight:900;padding:6px 18px;border-radius:99px;
+  box-shadow:0 5px 14px rgba(200,164,106,.42);
+}
+.why119-head{
+  margin:8px 0 0;text-align:center;
+  font-size:25px;font-weight:800;color:var(--pine);line-height:1.4;letter-spacing:-.02em;
+}
+.why119-head .why119-hl{color:var(--brass-dp)}
+.why119-sub{
+  margin:15px auto 0;max-width:660px;text-align:center;
+  font-size:15px;color:var(--gray);line-height:1.78;
+}
+.why119-sub b{color:var(--pine);font-weight:800}
+.why119-list{
+  list-style:none;margin:24px 0 0;padding:22px 0 0;
+  border-top:1px solid rgba(24,52,45,.12);
+  display:flex;flex-direction:column;gap:17px;
+}
+.why119-list li{display:flex;gap:14px;align-items:flex-start}
+.why119-n{
+  flex:0 0 31px;width:31px;height:31px;border-radius:50%;margin-top:1px;
+  background:var(--pine);color:var(--brass);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Noto Serif KR',serif;font-weight:900;font-size:15px;
+  box-shadow:inset 0 0 0 1px rgba(200,164,106,.4);
+}
+.why119-list b{display:block;font-size:16px;font-weight:800;color:var(--pine);margin-bottom:3px}
+.why119-list p{font-size:14px;color:var(--gray);line-height:1.66}
+.why119-list em{font-style:normal;color:var(--brass-dp);font-weight:800}
+.why119-note{
+  max-width:820px;margin:16px auto 0;text-align:center;
+  font-size:12.5px;color:var(--gray-lt);line-height:1.65;
+}
+@media(max-width:640px){
+  .why119{margin-top:36px;padding:28px 18px 22px;border-radius:16px}
+  .why119-head{font-size:20px}
+  .why119-sub{font-size:14px;margin-top:13px}
+  .why119-list{margin-top:20px;padding-top:18px;gap:15px}
+  .why119-list b{font-size:15px}
+  .why119-list p{font-size:13.5px}
+  .why119-note{font-size:12px}
+}
