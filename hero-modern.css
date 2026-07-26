@@ -38,15 +38,14 @@
 
   /* 상단 네비(로고·연락처)는 기존 그대로 — 건드리지 않음 */
 
-  /* 히어로 배경: 실제 국화 사진을 밝게 살리고, 얇은 크림 오버레이만 덧입힘 */
+  /* 히어로 배경: 옅은 하늘색(신뢰·차분·희망) + 위쪽 은은한 빛 */
   .hero119{min-height:auto}
-  .hero119-bg{opacity:1;background-position:72% 18%}
+  .hero119-bg{opacity:0}
   .hero119-veil{
     background:
-      linear-gradient(180deg,
-        rgba(250,246,238,.30) 0%,
-        rgba(247,242,232,.58) 44%,
-        rgba(244,239,227,.90) 100%);
+      radial-gradient(85% 55% at 76% 4%, rgba(255,255,255,.85), rgba(255,255,255,0) 56%),
+      radial-gradient(120% 85% at 16% 106%, rgba(172,204,230,.42), rgba(172,204,230,0) 60%),
+      linear-gradient(180deg,#EFF7FC 0%,#E3F0F8 50%,#D7E8F4 100%);
   }
   .hero119-wrap{padding-top:26px;padding-bottom:30px}
   .hero119-copy{display:flex;flex-direction:column}
@@ -54,13 +53,13 @@
   .hero119-eyebrow{
     display:inline-block;order:1;align-self:flex-start;
     font-size:12px;font-weight:700;letter-spacing:.01em;
-    color:#9A7638;background:rgba(200,164,106,.16);
-    border:1px solid rgba(200,164,106,.42);
+    color:#2B5E7A;background:rgba(88,148,184,.14);
+    border:1px solid rgba(78,140,178,.34);
     padding:6px 14px;border-radius:999px;margin-bottom:16px;
   }
-  .hero119-title{order:2;color:#18342D;font-size:28px;line-height:1.34;letter-spacing:-.02em}
-  .hero119-title .hero119-hl{color:#9C7532}
-  .hero119-sub{order:3;font-size:15px;margin-top:11px;color:#4C5A50}
+  .hero119-title{order:2;color:#1B3A57;font-size:28px;line-height:1.34;letter-spacing:-.02em}
+  .hero119-title .hero119-hl{color:#2C7A93}
+  .hero119-sub{order:3;font-size:15px;margin-top:11px;color:#3E5666}
 
   /* ---------- 지원 요약 3D 카드 (밝은 버전) ---------- */
   .hero119-helpcard{
@@ -132,8 +131,8 @@
   .hero119-btn{order:5;width:100%;padding:17px 24px;margin-top:18px;
     font-size:16.5px;border-radius:15px}
   .hero119-link{order:8;width:100%;justify-content:center;
-    border-bottom:none;margin-top:12px;color:#5C6A5E;font-size:14.5px}
-  .hero119-link svg{color:#9C7532}
+    border-bottom:none;margin-top:12px;color:#41586A;font-size:14.5px}
+  .hero119-link svg{color:#2C7A93}
 
   /* ---------- 신뢰 칩 ---------- */
   .hero119-trust{
@@ -142,11 +141,11 @@
   }
   .hero119-trust span{
     display:inline-flex;align-items:center;gap:6px;
-    font-size:12.5px;font-weight:700;color:#3C4A40;
-    background:#F4EEE0;border:1px solid #E7DCC4;
+    font-size:12.5px;font-weight:700;color:#2C4A5E;
+    background:#E9F1F8;border:1px solid #CDE0EE;
     padding:8px 13px;border-radius:999px;
   }
-  .hero119-trust svg{width:15px;height:15px;color:#A3814F}
+  .hero119-trust svg{width:15px;height:15px;color:#3E7FA0}
 
   /* 데스크톱용 기존 혜택 2단 블록은 모바일에서 감춤 */
   .hero119-benefits{display:none}
