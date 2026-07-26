@@ -329,3 +329,45 @@
   box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 5px 14px rgba(200,164,106,.42);
   font-weight:900;letter-spacing:.02em;
 }
+
+/* ==========================================================
+   후기 / 절차 / 정보센터 — 같은 톤(3D·골드)으로 다듬기
+   ========================================================== */
+/* 후기 카드 */
+.rv-card{
+  border-radius:16px;border:1px solid #E7DDC7;
+  box-shadow:0 8px 20px rgba(24,52,45,.07);
+}
+.rv-cat{
+  color:var(--brass-dp);
+  background:rgba(200,164,106,.14);border:1px solid rgba(200,164,106,.34);
+}
+
+/* 절차 — 번호 원형을 은은한 3D 골드 코인으로 */
+.step-n{
+  background:linear-gradient(180deg,#FFFFFF 0%,#F4ECD9 100%);
+  border:1.5px solid rgba(163,129,79,.7);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.85),0 5px 12px rgba(24,52,45,.12);
+}
+.step.pre .step-n{
+  color:#22190A;
+  background:
+    radial-gradient(120% 90% at 50% 0%, rgba(255,255,255,.45), rgba(255,255,255,0) 46%),
+    linear-gradient(180deg,#E4C588 0%,#C8A46A 55%,#B0884A 100%);
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.6),0 5px 12px rgba(150,110,45,.35),0 0 0 5px rgba(200,164,106,.18);
+}
+
+/* 정보센터 카드 */
+.news{
+  border-radius:16px;border:1px solid #E7DDC7;
+  box-shadow:0 6px 16px rgba(24,52,45,.06);
+}
+.news:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 38px rgba(24,52,45,.15);
+}
+.news-more{
+  display:inline-block;color:#2A1E0A;font-weight:800;
+  background:rgba(200,164,106,.16);border:1px solid rgba(200,164,106,.42);
+  padding:7px 15px;border-radius:999px;
+}
