@@ -205,3 +205,45 @@
   .why119-t b{font-size:15px}
   .why119-t span{font-size:12.5px}
 }
+
+/* ==========================================================
+   figure 섹션 강조 보강 (요청 반영)
+   ========================================================== */
+/* 깜빡임 강조 (동작 최소화 설정 시 자동 정지 — style.css의 reduced-motion 규칙) */
+@keyframes negoBlink{0%,100%{opacity:1}50%{opacity:.38}}
+.hc-blink{animation:negoBlink 1.15s ease-in-out infinite}
+
+/* 비용 박스 + 가격 색 강조 */
+.figure-frame{
+  border-width:2px;
+  background:linear-gradient(180deg,#FFFFFF,#FBF7EC);
+  box-shadow:0 14px 36px rgba(24,52,45,.12);
+}
+.num-support{
+  color:#1C6B49;background:rgba(31,107,73,.09);border-color:rgba(31,107,73,.42);
+}
+.num-diff{
+  color:#A3814F;background:rgba(200,164,106,.18);
+  border-color:var(--brass);border-width:2px;
+  font-size:31px;box-shadow:0 10px 24px rgba(200,164,106,.30);
+}
+.figure-num-diff-item .figure-num-label{color:var(--brass-dp);font-weight:800}
+
+/* 지원 박스 테두리 강조 (장례식장 / 수목장·봉안당) */
+.figure-group{
+  border:2px solid rgba(200,164,106,.6);
+  background:linear-gradient(180deg,#FFFFFF,#FCF8EF);
+}
+
+/* 약 50~80만원 추가 지원 태그 강조 */
+.figure-tag-amount{
+  font-size:13px;font-weight:900;
+  background:rgba(200,164,106,.2);border:1.5px solid var(--brass);
+  box-shadow:0 6px 16px rgba(200,164,106,.28);
+}
+
+/* 안내 문구(참고) 앞 작은 아이콘 */
+.note-ico{
+  width:13px;height:13px;flex:0 0 13px;color:var(--brass-dp);
+  vertical-align:-2px;margin-right:5px;
+}
