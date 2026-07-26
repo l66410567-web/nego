@@ -209,37 +209,66 @@
 /* ==========================================================
    figure 섹션 강조 보강 (요청 반영)
    ========================================================== */
-/* 깜빡임 강조 (동작 최소화 설정 시 자동 정지 — style.css의 reduced-motion 규칙) */
-@keyframes negoBlink{0%,100%{opacity:1}50%{opacity:.38}}
+/* 깜빡임 강조 (동작 최소화 설정 시 자동 정지 — style.css의 reduced-motion 규칙)
+   - 은은한 페이드, 요소별 지속시간을 달리해 타이밍이 어긋나도록 */
+@keyframes negoBlink{0%,100%{opacity:1}50%{opacity:.4}}
+@keyframes negoBlinkSoft{0%,100%{opacity:1}50%{opacity:.74}}
 .hc-blink{animation:negoBlink 1.15s ease-in-out infinite}
+.nego-blink{animation:negoBlink 1.25s ease-in-out infinite}
+.nego-blink-soft{animation:negoBlinkSoft 1.5s ease-in-out infinite}
+.nego-blink-d1{animation-delay:.5s}
 
-/* 비용 박스 + 가격 색 강조 */
+/* 비용 박스 — 3D 강조 */
 .figure-frame{
   border-width:2px;
   background:linear-gradient(180deg,#FFFFFF,#FBF7EC);
-  box-shadow:0 14px 36px rgba(24,52,45,.12);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 6px 14px rgba(24,52,45,.08),0 22px 48px rgba(24,52,45,.16);
 }
 .num-support{
-  color:#1C6B49;background:rgba(31,107,73,.09);border-color:rgba(31,107,73,.42);
+  color:#1C6B49;background:rgba(31,107,73,.10);border-color:rgba(31,107,73,.45);
 }
+/* 예상 차이(절감액) — 녹색 3D 칩 */
 .num-diff{
-  color:#A3814F;background:rgba(200,164,106,.18);
-  border-color:var(--brass);border-width:2px;
-  font-size:31px;box-shadow:0 10px 24px rgba(200,164,106,.30);
+  color:#FFFFFF;border:none;font-size:31px;
+  background:
+    radial-gradient(120% 90% at 50% 0%, rgba(255,255,255,.42), rgba(255,255,255,0) 46%),
+    linear-gradient(180deg,#3FB07C 0%,#2E8F63 55%,#1E6647 100%);
+  box-shadow:
+    inset 0 1.5px 0 rgba(255,255,255,.55),
+    0 5px 0 #17513A,
+    0 13px 24px rgba(30,110,70,.42);
 }
-.figure-num-diff-item .figure-num-label{color:var(--brass-dp);font-weight:800}
+.figure-num-diff-item .figure-num-label{color:#1C6B49;font-weight:800}
 
-/* 지원 박스 테두리 강조 (장례식장 / 수목장·봉안당) */
+/* 지원 박스 — 3D 살짝 띄우고 골드 테두리 유지 */
 .figure-group{
   border:2px solid rgba(200,164,106,.6);
   background:linear-gradient(180deg,#FFFFFF,#FCF8EF);
+  box-shadow:0 10px 26px rgba(24,52,45,.10);
+}
+/* 지원 박스 제목 — 녹색 3D 배지 */
+.figure-group-title{
+  display:inline-block;color:#FFFFFF;font-size:15px;font-weight:800;
+  padding:8px 18px;border-radius:999px;
+  background:
+    radial-gradient(120% 90% at 50% 0%, rgba(255,255,255,.4), rgba(255,255,255,0) 46%),
+    linear-gradient(180deg,#3FB07C 0%,#2E8F63 55%,#1F6B49 100%);
+  box-shadow:
+    inset 0 1.5px 0 rgba(255,255,255,.5),
+    0 4px 0 #185738,
+    0 10px 18px rgba(30,110,70,.34);
 }
 
-/* 약 50~80만원 추가 지원 태그 강조 */
+/* 약 50~80만원 추가 지원 — 녹색 3D 칩 */
 .figure-tag-amount{
-  font-size:13px;font-weight:900;
-  background:rgba(200,164,106,.2);border:1.5px solid var(--brass);
-  box-shadow:0 6px 16px rgba(200,164,106,.28);
+  color:#FFFFFF;font-weight:900;font-size:13px;border:none;padding:7px 15px;
+  background:
+    radial-gradient(120% 90% at 50% 0%, rgba(255,255,255,.4), rgba(255,255,255,0) 46%),
+    linear-gradient(180deg,#3FB07C 0%,#2E8F63 55%,#1F6B49 100%);
+  box-shadow:
+    inset 0 1.5px 0 rgba(255,255,255,.5),
+    0 3px 0 #185738,
+    0 8px 14px rgba(30,110,70,.32);
 }
 
 /* 안내 문구(참고) 앞 작은 아이콘 */
