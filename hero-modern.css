@@ -541,3 +541,33 @@
 .pkg{transition:transform .2s ease, box-shadow .2s ease}
 .pkg:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(24,52,45,.15)}
 .pkg.pick:hover{box-shadow:0 22px 46px rgba(200,164,106,.30)}
+
+/* ==========================================================
+   하단 상담 안내(apply-l) — 감성 카피 에디토리얼 디자인
+   ========================================================== */
+.apply-l{position:relative}
+.apply-l::before{
+  content:'\201C';
+  position:absolute;top:-40px;left:-8px;z-index:0;pointer-events:none;
+  font-family:Georgia,'Noto Serif KR',serif;font-size:130px;line-height:1;
+  color:rgba(200,164,106,.16);
+}
+.apply-l h2{
+  position:relative;z-index:1;
+  font-size:31px;line-height:1.62;letter-spacing:-.01em;color:#F4EFE1;
+}
+.apply-l h2 .hl{color:#E7C888}
+.apply-l>p{
+  position:relative;z-index:1;
+  color:#D3DFCA;font-size:16.5px;line-height:1.9;
+}
+.apply-l>p::before{
+  content:'';display:block;width:46px;height:2px;border-radius:2px;
+  margin:0 0 18px;background:linear-gradient(90deg,#C8A46A,rgba(200,164,106,0));
+}
+.apply .tel-box{border-color:rgba(200,164,106,.35);box-shadow:0 10px 30px rgba(0,0,0,.22)}
+.apply .tel-box .num{color:#F2EAD8}
+@media(max-width:640px){
+  .apply-l::before{font-size:92px;top:-26px;left:-4px}
+  .apply-l h2{font-size:23px;line-height:1.6}
+}
