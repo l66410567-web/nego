@@ -440,9 +440,10 @@
   .hero119-root .hero119-bene-cols{
     grid-template-columns:1fr 1fr;gap:36px;align-items:center;
   }
-  .hero119-root .hero119-bene-col:last-child{text-align:right}
-  .hero119-root .hero119-bene-col:last-child h2{justify-content:flex-end}
-  .hero119-root .hero119-bene-col:last-child .hero119-check-list li{text-align:right}
+  .hero119-root .hero119-bene-col:last-child{text-align:center}
+  .hero119-root .hero119-bene-col:last-child h2{justify-content:center}
+  .hero119-root .hero119-bene-col:last-child .hero119-check-list li{text-align:center}
+  .hero119-root .hero119-bene-col:last-child .hero119-check-list{align-items:center}
   /* 상단 라벨 — 모바일과 동일한 골드 pill */
   .hero119-eyebrow{
     display:inline-block;
