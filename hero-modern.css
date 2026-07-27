@@ -492,30 +492,31 @@
    빛고을장례119란? — '가장 중요한 것'(core) 섹션 대폭 개선
    (어두워서 안 보이던 문제 → 밝기·대비·3D·골드 강조)
    ========================================================== */
-.core .sec-head h2{color:#F7F1E5}
+.core .sec-head.on-dark h2{color:#F7F1E5 !important}
 
-/* 부탁 → 권리 비교 카드 */
+/* 부탁(흰 카드) → 권리(딥그린+골드) 비교 — 대비 강화 */
 .swap-card{border-radius:18px}
-.swap-old{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15)}
-.swap-old .swap-lab{color:#C2CEBB}
-.swap-old p{color:#D2DCCB}
+.swap-old{background:#F6F2E8 !important;border:1px solid #E3DAC6 !important}
+.swap-old .swap-lab{color:#7C8778 !important}
+.swap-old .swap-word{color:#586A54 !important}
+.swap-old p{color:#4C5748 !important}
 .swap-new{
   background:
-    radial-gradient(120% 85% at 50% 0%, rgba(200,164,106,.26), rgba(200,164,106,0) 56%),
-    linear-gradient(180deg, rgba(200,164,106,.16), rgba(200,164,106,.05));
-  border:2px solid var(--brass);
-  box-shadow:0 18px 42px rgba(0,0,0,.36), inset 0 1px 0 rgba(255,255,255,.14);
+    radial-gradient(130% 95% at 50% -8%, rgba(200,164,106,.24), transparent 62%),
+    linear-gradient(180deg,#1C3827 0%,#122519 100%) !important;
+  border:2px solid var(--brass) !important;
+  box-shadow:0 18px 42px rgba(0,0,0,.42), inset 0 1px 0 rgba(255,255,255,.12);
 }
-.swap-new .swap-lab{color:#EDDBAF}
-.swap-new .swap-word{color:#ECC981}
-.swap-new p{color:#F4ECDC}
-.swap-new p strong{color:#ECC981}
-.swap-arrow{color:#E2C078;font-size:34px}
+.swap-new .swap-lab{color:#EFDCAF !important}
+.swap-new .swap-word{color:#F0CE86 !important}
+.swap-new p{color:#F6EFE1 !important}
+.swap-new p strong{color:#F0CE86 !important}
+.swap-arrow{color:#E2C078 !important;font-size:34px}
 
 /* 4가지 약속 카드 — 밝게 + 3D 골드 아이콘 + 호버 */
 .pledge{
-  background:linear-gradient(180deg, rgba(255,255,255,.085), rgba(255,255,255,.035));
-  border:1px solid rgba(200,164,106,.30);border-radius:16px;
+  background:linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.04)) !important;
+  border:1px solid rgba(200,164,106,.32) !important;border-radius:16px;
   transition:transform .18s ease, box-shadow .18s ease;
 }
 .pledge:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(0,0,0,.30)}
@@ -526,6 +527,6 @@
     linear-gradient(150deg,#EAD196 0%,#C8A46A 55%,#A67B36 100%);
   box-shadow:inset 0 2px 2px rgba(255,255,255,.7),inset 0 -3px 6px rgba(110,78,28,.4),0 8px 15px rgba(150,110,45,.34);
 }
-.pledge h3{color:#FCF8EF;font-size:16.5px}
-.pledge p{color:#E7EDE1}
-.core-cta p{color:#E7EDE1}
+.pledge h3{color:#FCF8EF !important;font-size:16.5px}
+.pledge p{color:#E9EFE3 !important}
+.core-cta p{color:#E9EFE3 !important}
