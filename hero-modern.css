@@ -414,3 +414,37 @@
 }
 /* 데스크톱 플로팅 전화 버튼도 딥그린으로 통일 */
 .fab-c{background:linear-gradient(180deg,#24463B,#18342D);color:#fff}
+
+/* ==========================================================
+   PC 히어로 혜택 제목 아이콘 (장례식장=골드 건물 / 수목장=그린 나무)
+   - hero119-v4의 emblem hard-fix보다 높은 특이도로 크기·색 재정의
+   ========================================================== */
+.hero119-root .hero119-bene-col h2 > svg.hero119-benefit-emblem.emblem-hall,
+.hero119-root .hero119-bene-col h2 > svg.hero119-benefit-emblem.emblem-tree{
+  width:19px !important;height:19px !important;
+  min-width:19px !important;max-width:19px !important;
+  min-height:19px !important;max-height:19px !important;
+  flex:0 0 19px !important;stroke-width:1.8 !important;
+}
+.hero119-root .hero119-bene-col h2 > svg.hero119-benefit-emblem.emblem-hall,
+.hero119-root .hero119-bene-col h2 > svg.hero119-benefit-emblem.emblem-hall path{
+  stroke:#D9B879 !important;stroke-width:1.8 !important;
+}
+.hero119-root .hero119-bene-col h2 > svg.hero119-benefit-emblem.emblem-tree,
+.hero119-root .hero119-bene-col h2 > svg.hero119-benefit-emblem.emblem-tree path{
+  stroke:#4FB07C !important;stroke-width:1.8 !important;
+}
+
+/* ==========================================================
+   PC 비용 화살표 — 골드, 길게, 164→384 방향 표시
+   ========================================================== */
+.fig-arrow-svg{
+  width:48px;height:15px;display:block;
+  stroke:#C8A46A;stroke-width:2.4;fill:none;
+  stroke-linecap:round;stroke-linejoin:round;
+}
+.figure-arrow,.figure-arrow-2{opacity:1}
+@media(max-width:640px){
+  .figure-arrow .fig-arrow-svg{transform:rotate(90deg);width:40px}
+  .figure-arrow-2{display:none}
+}
