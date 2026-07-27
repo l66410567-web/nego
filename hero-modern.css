@@ -435,6 +435,15 @@
   stroke:#4FB07C !important;stroke-width:1.8 !important;
 }
 
+/* PC 히어로 혜택 2열 — 내용 폭에 맞춰 나란히(왼쪽 쏠림/빈공간 완화). PC 전용 */
+@media (min-width:641px){
+  .hero119-root .hero119-bene-cols{
+    grid-template-columns:auto auto;gap:52px;justify-content:start;
+  }
+}
+/* PC 히어로 부제 아이콘 — 어두운 배경용 밝은 골드 */
+.hero119-note .note-ico{color:#D9B879;vertical-align:-2px;margin-right:5px}
+
 /* ==========================================================
    PC 비용 화살표 — 골드, 길게, 164→384 방향 표시
    ========================================================== */
@@ -448,3 +457,16 @@
   .figure-arrow .fig-arrow-svg{transform:rotate(90deg);width:40px}
   .figure-arrow-2{display:none}
 }
+
+/* ==========================================================
+   임종 시 대처 — 긴급 전화 박스: 딥그린 배너 + 골드 깜빡이는 버튼 (PC·모바일)
+   ========================================================== */
+.er-call{background:linear-gradient(94deg,#1E3E33 0%,#18342D 100%)}
+.er-lab{background:rgba(200,164,106,.22);color:#F0D89A}
+.er-btn{
+  color:#2A1E0A;
+  background:linear-gradient(180deg,#E4C588 0%,#C8A46A 55%,#B58E4F 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 10px 22px rgba(200,164,106,.42);
+  animation:negoBlinkSoft 1.4s ease-in-out infinite;
+}
+.er-btn:hover{color:#2A1E0A;background:linear-gradient(180deg,#E9CE90 0%,#CDA96F 55%,#BB944F 100%)}
