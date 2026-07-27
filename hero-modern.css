@@ -487,3 +487,45 @@
   animation:negoBlinkSoft 1.4s ease-in-out infinite;
 }
 .er-btn:hover{color:#2A1E0A;background:linear-gradient(180deg,#E9CE90 0%,#CDA96F 55%,#BB944F 100%)}
+
+/* ==========================================================
+   빛고을장례119란? — '가장 중요한 것'(core) 섹션 대폭 개선
+   (어두워서 안 보이던 문제 → 밝기·대비·3D·골드 강조)
+   ========================================================== */
+.core .sec-head h2{color:#F3EDDF}
+
+/* 부탁 → 권리 비교 카드 */
+.swap-card{border-radius:18px}
+.swap-old{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13)}
+.swap-old .swap-lab{color:#AAB8A3}
+.swap-old p{color:#B2C1AB}
+.swap-new{
+  background:
+    radial-gradient(120% 85% at 50% 0%, rgba(200,164,106,.26), rgba(200,164,106,0) 56%),
+    linear-gradient(180deg, rgba(200,164,106,.16), rgba(200,164,106,.05));
+  border:2px solid var(--brass);
+  box-shadow:0 18px 42px rgba(0,0,0,.36), inset 0 1px 0 rgba(255,255,255,.14);
+}
+.swap-new .swap-lab{color:#EDDBAF}
+.swap-new .swap-word{color:#ECC981}
+.swap-new p{color:#F4ECDC}
+.swap-new p strong{color:#ECC981}
+.swap-arrow{color:#E2C078;font-size:34px}
+
+/* 4가지 약속 카드 — 밝게 + 3D 골드 아이콘 + 호버 */
+.pledge{
+  background:linear-gradient(180deg, rgba(255,255,255,.085), rgba(255,255,255,.035));
+  border:1px solid rgba(200,164,106,.30);border-radius:16px;
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.pledge:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(0,0,0,.30)}
+.pledge-ico{
+  width:52px;height:52px;border-radius:15px;color:#2C2008;
+  background:
+    radial-gradient(68% 58% at 32% 26%, rgba(255,255,255,.7), rgba(255,255,255,0) 62%),
+    linear-gradient(150deg,#EAD196 0%,#C8A46A 55%,#A67B36 100%);
+  box-shadow:inset 0 2px 2px rgba(255,255,255,.7),inset 0 -3px 6px rgba(110,78,28,.4),0 8px 15px rgba(150,110,45,.34);
+}
+.pledge h3{color:#F3EDDF;font-size:16.5px}
+.pledge p{color:#CFDBC9}
+.core-cta p{color:#D8E3D1}
