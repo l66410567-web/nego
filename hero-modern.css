@@ -567,6 +567,9 @@
 }
 .apply .tel-box{border-color:rgba(200,164,106,.35);box-shadow:0 10px 30px rgba(0,0,0,.22)}
 .apply .tel-box .num{color:#F2EAD8}
+
+/* 메인 부제 브랜드명 강조 */
+.hero119-sub .sub-brand{color:#E7C888;font-weight:800}
 @media(max-width:640px){
   .apply-l::before{font-size:92px;top:-26px;left:-4px}
   .apply-l h2{font-size:23px;line-height:1.6}
