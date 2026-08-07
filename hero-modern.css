@@ -570,6 +570,20 @@
 
 /* 메인 부제 브랜드명 강조 */
 .hero119-sub .sub-brand{color:#E7C888;font-weight:800}
+
+/* ==========================================================
+   전문성·신뢰 밴드 (비용 섹션 ↔ 서비스 섹션 사이)
+   ========================================================== */
+.trustband{background:var(--hanji);text-align:center;padding:6px 0 22px}
+.trustband .wrap{max-width:780px}
+.tb-title{font-size:26px;font-weight:700;color:var(--pine);line-height:1.5;letter-spacing:-.01em;margin-top:15px}
+.tb-desc{margin-top:16px;font-size:16px;color:var(--gray);line-height:1.85}
+.tb-desc b{color:var(--pine-lite);font-weight:800}
+@media(max-width:640px){
+  .trustband{padding:2px 0 14px}
+  .tb-title{font-size:21px;line-height:1.5}
+  .tb-desc{font-size:15px;line-height:1.8}
+}
 @media(max-width:640px){
   .apply-l::before{font-size:92px;top:-26px;left:-4px}
   .apply-l h2{font-size:23px;line-height:1.6}
