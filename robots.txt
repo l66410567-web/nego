@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://l66410567-web.github.io/nego/sitemap.xml
