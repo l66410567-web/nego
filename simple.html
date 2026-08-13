@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;700;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="hero-modern.css?v=20260727-m10">
+<link rel="stylesheet" href="hero-modern.css?v=20260727-m11">
 </head>
 <body>
 <nav class="nav">
@@ -28,9 +28,14 @@
 <a href="simple.html">무빈소 장례</a>
 <a href="family.html">가족장</a>
 <a href="burial.html">수목장·봉안당</a>
+<div class="gnb-more">
+<span class="gnb-more-btn" tabindex="0">부가 안내 <span class="gnb-more-arw">▾</span></span>
+<div class="gnb-more-menu">
 <a href="relocation.html">묘 이장·평장</a>
 <a href="about.html">빛고을장례119란?</a>
 <a href="faq.html">자주 묻는 질문</a>
+</div>
+</div>
 <a href="emergency.html" class="gnb-emergency">임종 시 대처</a>
 </div>
 <div class="nav-tel">
@@ -59,7 +64,7 @@
 <div class="crumb"><a href="index.html">홈</a> › 무빈소 장례</div>
 <span class="eyebrow on-dark">광주 무빈소 장례</span>
 <h1>조문객 없이,<br><span class="hl">가족끼리 조용하게</span> 모시는 장례</h1>
-<p>빈소와 접객의 부담은 줄이고, 안치·입관·발인·화장 등 필요한 장례절차는 정성스럽게 진행합니다. 광주 무빈소 장례와 소규모 가족장, 빛고을장례119가 가족 상황에 맞게 안내해 드립니다.</p>
+<p>빈소를 차리지 않고, 조문을 받지 않으며 가족만 모여 조용히 치르는 장례입니다. 안치·입관·발인·화장 등 필요한 절차는 정성스럽게 진행합니다. 광주 무빈소 장례, 빛고을장례119가 가족 상황에 맞게 안내해 드립니다.</p>
 </div>
 </header>
 
@@ -70,7 +75,7 @@
 <h2>조문은 받지 않아도,<br>보내드리는 절차는 정성스럽게</h2>
 <div class="hr-brass"></div>
 </div>
-<p style="text-align:center;font-size:16px;color:var(--gray);line-height:1.9;max-width:740px;margin:0 auto">무빈소 장례는 빈소를 차리고 많은 조문객을 받는 대신, 고인을 안치하고 <b>염습·입관·발인·화장</b> 등 필요한 절차를 가족 중심으로 진행하는 장례 방식입니다. ‘아무것도 하지 않는 장례’가 아니라, 조문 접대의 부담을 덜고 <b>고인과 가족에게 더 집중하는 방식</b>입니다. 원하시면 짧은 추모 시간이나 소규모 가족장도 함께 준비하실 수 있습니다.</p>
+<p style="text-align:center;font-size:16px;color:var(--gray);line-height:1.9;max-width:740px;margin:0 auto">무빈소 장례는 빈소를 차리고 많은 조문객을 받는 대신, 고인을 안치하고 <b>염습·입관·발인·화장</b> 등 필요한 절차를 가족 중심으로 진행하는 장례 방식입니다. ‘아무것도 하지 않는 장례’가 아니라, 조문 접대의 부담을 덜고 <b>고인과 가족에게 더 집중하는 방식</b>입니다. 원하시면 가족끼리 짧은 추모 시간을 가지실 수도 있습니다.</p>
 </div>
 </section>
 
@@ -116,47 +121,25 @@
 </div>
 </section>
 
-<section class="sec pkgs">
-<div class="wrap">
+<section class="sec">
+<div class="wrap-narrow">
 <div class="sec-head">
-<span class="eyebrow">가족 상황에 맞게</span>
-<h2>세 가지 방식 중에서 선택하실 수 있습니다</h2>
+<span class="eyebrow">무엇이 다른가요</span>
+<h2>무빈소 장례와 가족장,<br>이렇게 다릅니다</h2>
 <div class="hr-brass"></div>
 </div>
-<div class="pkg-grid">
-<article class="pkg">
-<div class="pkg-size">방식 ①</div>
-<h3>무빈소 장례</h3>
-<ul>
-<li><span class="ck">✓</span> 조문객 없이 가족 중심으로 진행</li>
-<li><span class="ck">✓</span> 안치 · 염습 · 입관 · 발인 · 화장</li>
-<li><span class="ck">✓</span> 접객·음식 부담 없이 절차에 집중</li>
-</ul>
-<button class="btn btn-pine" onclick="openModal()">상담하기</button>
+<div class="g2">
+<article class="card" style="border:2px solid var(--brass)">
+<div class="card-ico brass"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+<h3>무빈소 장례 <span style="font-size:13px;font-weight:700;color:var(--brass-dp)">· 지금 이 페이지</span></h3>
+<p><b>빈소를 차리지 않고, 조문을 받지 않습니다.</b> 가족만 모여 안치·입관·발인·화장을 진행하는, 가장 조용하고 간소한 방식입니다.</p>
 </article>
-<article class="pkg pick">
-<span class="pkg-pick-tag">가족 추모 시간 포함</span>
-<div class="pkg-size">방식 ②</div>
-<h3>가족 추모형</h3>
-<ul>
-<li><span class="ck">✓</span> 직계·가까운 가족 5~15명 규모</li>
-<li><span class="ck">✓</span> 입관 전후·발인 전 짧은 추모 시간</li>
-<li><span class="ck">✓</span> 조용한 분위기에서 마지막 인사</li>
-</ul>
-<button class="btn btn-brass" onclick="openModal()">상담하기</button>
-</article>
-<article class="pkg">
-<div class="pkg-size">방식 ③</div>
-<h3>소규모 가족장</h3>
-<ul>
-<li><span class="ck">✓</span> 작은 빈소로 가족·가까운 친지 중심</li>
-<li><span class="ck">✓</span> 소규모로 조문을 받으며 정성껏</li>
-<li><span class="ck">✓</span> 자세한 내용은 가족장 페이지에서</li>
-</ul>
-<a href="family.html" class="btn btn-pine">가족장 자세히 →</a>
+<article class="card">
+<div class="card-ico brass"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></div>
+<h3>가족장</h3>
+<p><b>작은 빈소를 차려 소규모로 조문을 받습니다.</b> 가족·가까운 친지 중심으로, 부담은 줄이되 최소한의 조문 자리는 마련합니다. <a href="family.html" style="color:var(--brass-dp);font-weight:700">가족장 보기 →</a></p>
 </article>
 </div>
-<p class="figure-basis" style="text-align:center;margin-top:22px">※ 장례식장·이용 시간·장례용품·가족 상황에 따라 비용이 달라질 수 있어, 상담 후 정확하게 안내해 드립니다.</p>
 </div>
 </section>
 
