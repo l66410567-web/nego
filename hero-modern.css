@@ -638,3 +638,25 @@
   .apply-l::before{font-size:92px;top:-26px;left:-4px}
   .apply-l h2{font-size:23px;line-height:1.6}
 }
+
+/* ==========================================================
+   장례식장 자치구 바로가기 (dist-nav) — 허브/구별 페이지 상호 링크
+   ========================================================== */
+.dist-nav{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.dist-nav-a{
+  display:inline-block;padding:11px 20px;border-radius:999px;
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:15px;font-weight:800;letter-spacing:-.01em;
+  color:var(--pine);background:#fff;
+  border:1.5px solid rgba(24,52,45,.16);
+  box-shadow:0 2px 6px rgba(24,52,45,.05);
+  transition:.16s;white-space:nowrap;
+}
+.dist-nav-a:hover{
+  border-color:var(--brass);color:var(--brass-dp);
+  background:var(--hanji);box-shadow:0 4px 12px rgba(200,164,106,.22);
+  transform:translateY(-1px);
+}
+@media(max-width:640px){
+  .dist-nav-a{padding:10px 16px;font-size:14px}
+}
