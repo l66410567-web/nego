@@ -572,6 +572,22 @@
 .hero119-sub .sub-brand{color:#E7C888;font-weight:800}
 
 /* ==========================================================
+   임종 시 대처 — 상단 별도 강조 버튼 (긴급 레드)
+   ========================================================== */
+.gnb{gap:20px}
+.gnb .gnb-emergency{
+  color:#fff !important;background:var(--siren);
+  padding:8px 15px;border-radius:999px;font-weight:800;
+  border-bottom:2px solid transparent !important;
+  box-shadow:0 4px 12px rgba(194,59,46,.28);
+}
+.gnb .gnb-emergency:hover{
+  color:#fff !important;background:#A83228;
+  border-bottom-color:transparent !important;
+}
+.m-menu .m-emergency{color:var(--siren) !important;font-weight:900}
+
+/* ==========================================================
    전문성·신뢰 밴드 (비용 섹션 ↔ 서비스 섹션 사이)
    ========================================================== */
 .trustband{background:var(--hanji);text-align:center;padding:70px 0}
