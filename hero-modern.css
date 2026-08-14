@@ -717,3 +717,42 @@ a.dist:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(24,52,45,.14
 .dist-more{display:inline-block;margin-top:12px;font-family:'Noto Sans KR',sans-serif;
   font-weight:800;font-size:14.5px;color:var(--brass-dp);letter-spacing:-.01em}
 a.dist:hover .dist-more{color:var(--pine)}
+
+/* ==========================================================
+   언론 주목 트렌드 섹션 (무빈소/가족장 사회적 신뢰 유도)
+   ========================================================== */
+.trend-lead{text-align:center;font-size:16px;color:var(--gray);line-height:1.9;
+  max-width:760px;margin:0 auto 34px;word-break:keep-all}
+.trend-lead b{color:var(--pine)}
+.trend-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:30px}
+.trend-card{
+  background:#fff;border:1px solid rgba(24,52,45,.10);border-radius:16px;
+  padding:26px 24px;box-shadow:0 4px 16px rgba(24,52,45,.06);
+  display:flex;flex-direction:column;gap:8px;
+}
+.trend-num{
+  font-family:'Noto Sans KR',sans-serif;font-weight:900;letter-spacing:-.03em;
+  font-size:34px;line-height:1.15;color:var(--brass-dp);
+}
+.trend-num small{font-size:18px;font-weight:800;color:var(--pine)}
+.trend-card p{margin:0;font-size:15px;line-height:1.65;color:var(--ink);
+  font-family:'Noto Sans KR',sans-serif;word-break:keep-all}
+.trend-card .tc-src{margin-top:2px;font-size:12.5px;color:#9A9482;font-weight:600}
+.trend-src{
+  background:#fff;border-radius:14px;padding:20px 22px;
+  border:1px dashed rgba(163,129,79,.5);
+}
+.trend-src b{display:block;font-family:'Noto Sans KR',sans-serif;color:var(--pine);
+  font-size:14px;margin-bottom:10px}
+.trend-src a{display:block;font-family:'Noto Sans KR',sans-serif;font-size:14px;
+  color:var(--brass-dp);text-decoration:none;padding:5px 0;line-height:1.5;
+  border-bottom:1px solid rgba(24,52,45,.06)}
+.trend-src a:last-of-type{border-bottom:none}
+.trend-src a:hover{text-decoration:underline}
+.trend-src a::before{content:"📰 ";}
+.trend-note{margin:12px 0 0;font-size:12.5px;color:#9A9482;line-height:1.6;
+  font-family:'Noto Sans KR',sans-serif}
+@media(max-width:640px){
+  .trend-grid{grid-template-columns:1fr;gap:14px}
+  .trend-num{font-size:30px}
+}
