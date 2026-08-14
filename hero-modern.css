@@ -795,37 +795,63 @@ a.dist:hover .dist-more{color:var(--pine)}
    서비스 그리드 빈칸 채우는 상담 CTA 카드 (마지막 줄 2칸 span)
    ========================================================== */
 .svc-cta{
-  grid-column:span 2;text-decoration:none;
+  grid-column:span 2;
   background:linear-gradient(155deg,#22463A 0%,#173028 70%,#122720 100%);
   border:1px solid rgba(200,164,106,.30);border-radius:14px;
-  padding:34px 38px;display:flex;flex-direction:column;justify-content:center;
-  box-shadow:0 10px 26px rgba(18,39,32,.22);transition:transform .2s,box-shadow .2s;
+  padding:32px 36px;display:flex;flex-direction:column;justify-content:center;
+  box-shadow:0 10px 26px rgba(18,39,32,.22);
 }
-.svc-cta:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(18,39,32,.30)}
 .svc-cta .cta-lab{
   font-family:'Noto Sans KR',sans-serif;font-weight:800;font-size:13px;letter-spacing:.02em;
   color:#E4C888;margin-bottom:10px;
 }
 .svc-cta h3{
   font-family:'Noto Serif KR',serif;font-weight:700;font-size:23px;line-height:1.45;
-  color:#F6F2E8;margin:0 0 10px;word-break:keep-all;
+  color:#F6F2E8;margin:0 0 9px;word-break:keep-all;
 }
 .svc-cta p{
   font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.75;
-  color:#D9E2D2;margin:0 0 20px;max-width:560px;word-break:keep-all;
+  color:#D9E2D2;margin:0 0 18px;max-width:560px;word-break:keep-all;
 }
-.svc-cta .cta-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+/* 큰 전화 링크 (모바일에서 탭 시 통화 연결) */
+.svc-cta .cta-tel{
+  display:inline-flex;align-items:center;gap:14px;text-decoration:none;
+  background:rgba(255,255,255,.05);border:1.5px solid rgba(200,164,106,.45);
+  border-radius:14px;padding:14px 22px;margin-bottom:16px;align-self:flex-start;
+  transition:.16s;
+}
+.svc-cta .cta-tel:hover{background:rgba(200,164,106,.14);border-color:var(--brass)}
+.cta-tel-ico{
+  width:44px;height:44px;flex:none;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(180deg,#E4C888,#C8A46A);color:#20362C;
+}
+.cta-tel-ico svg{width:23px;height:23px}
+.cta-tel-txt{display:flex;flex-direction:column;line-height:1.2}
+.cta-tel-txt b{
+  font-family:'Noto Sans KR',sans-serif;font-weight:900;font-size:30px;
+  color:#F6F2E8;letter-spacing:.01em;
+}
+.cta-tel-txt small{font-family:'Noto Sans KR',sans-serif;font-size:12.5px;font-weight:600;color:#C0CFB8;margin-top:3px}
+.svc-cta .cta-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .svc-cta .cta-btn{
-  display:inline-flex;align-items:center;gap:7px;
+  display:inline-flex;align-items:center;gap:7px;text-decoration:none;
   font-family:'Noto Sans KR',sans-serif;font-weight:800;font-size:15px;
   color:#20362C;background:linear-gradient(180deg,#E4C888,#C8A46A);
-  padding:12px 24px;border-radius:999px;box-shadow:0 4px 12px rgba(163,129,79,.35);
+  padding:12px 22px;border-radius:999px;box-shadow:0 4px 12px rgba(163,129,79,.35);transition:.16s;
 }
-.svc-cta:hover .cta-btn{filter:brightness(1.05)}
-.svc-cta .cta-tel{
-  font-family:'Noto Sans KR',sans-serif;font-weight:800;font-size:18px;color:#F6F2E8;
-  letter-spacing:.01em;
+.svc-cta .cta-btn:hover{filter:brightness(1.05);transform:translateY(-1px)}
+.svc-cta .cta-btn2{
+  font-family:'Noto Sans KR',sans-serif;font-weight:800;font-size:15px;cursor:pointer;
+  color:#F6F2E8;background:transparent;border:1.5px solid rgba(246,242,232,.45);
+  padding:12px 22px;border-radius:999px;transition:.16s;
 }
-.svc-cta .cta-tel small{display:block;font-size:12px;font-weight:600;color:#AFC0A8;letter-spacing:0}
+.svc-cta .cta-btn2:hover{border-color:#F6F2E8;background:rgba(246,242,232,.08)}
 @media(max-width:900px){.svc-cta{grid-column:span 2}}
-@media(max-width:600px){.svc-cta{grid-column:auto;padding:28px 24px}.svc-cta h3{font-size:20px}}
+@media(max-width:600px){
+  .svc-cta{grid-column:auto;padding:26px 22px}
+  .svc-cta h3{font-size:20px}
+  .svc-cta .cta-tel{align-self:stretch;padding:13px 18px}
+  .cta-tel-txt b{font-size:26px}
+  .svc-cta .cta-row{width:100%}
+  .svc-cta .cta-btn,.svc-cta .cta-btn2{flex:1;justify-content:center;text-align:center}
+}
