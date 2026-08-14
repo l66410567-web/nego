@@ -874,19 +874,29 @@ section + footer::before{
 }
 
 /* ==========================================================
-   무빈소·소규모 가족장 지원 항목 추가
-   - 모바일 헬프카드: 신뢰 문구 라인(.hc-trust)
-   - PC 혜택 블록: 2열 → 3열
+   무빈소·소규모 가족장 지원 — PC 혜택 2열 아래에 한 줄로 배치
    ========================================================== */
-.hc-trust{
-  display:inline-block;margin-top:6px;font-family:'Noto Sans KR',sans-serif;
-  font-size:11.5px;font-weight:700;line-height:1.4;color:#E7C983;
-  background:rgba(200,164,106,.13);border:1px solid rgba(200,164,106,.34);
-  padding:4px 9px;border-radius:8px;
+.hero119-bene-extra{
+  display:flex;align-items:center;gap:11px;flex-wrap:wrap;
+  margin-top:20px;padding-top:18px;
+  border-top:1px solid rgba(200,164,106,.28);
 }
-.hc-trust::before{content:"✓ ";font-weight:900}
-/* PC 혜택 3열 */
-.hero119-root .hero119-bene-cols{grid-template-columns:repeat(3,1fr);gap:26px}
-@media(max-width:960px){.hero119-root .hero119-bene-cols{grid-template-columns:1fr;gap:22px}}
-/* PC 무빈소 컬럼의 신뢰 문구 강조 */
-.hero119-bene-col .bene-trust{color:#E7C983 !important;font-weight:600}
+.hero119-bene-extra b{
+  font-size:14px;font-weight:600;letter-spacing:.02em;color:#C8A96A;white-space:nowrap;
+}
+.hero119-bene-extra > span{
+  font-size:14.5px;font-weight:400;color:var(--hero119-text-soft,#C3D2BE);line-height:1.5;
+}
+.hero119-root .hero119-bene-extra > svg.hero119-benefit-emblem{
+  width:16px !important;height:16px !important;flex:0 0 16px !important;
+  fill:none !important;stroke:#C8A96A !important;stroke-width:1.35 !important;
+  position:static !important;transform:none !important;overflow:visible !important;margin:0 !important;
+}
+.hero119-root .hero119-bene-extra > svg.hero119-benefit-emblem path,
+.hero119-root .hero119-bene-extra > svg.hero119-benefit-emblem circle{
+  fill:none !important;stroke:#C8A96A !important;stroke-width:1.35 !important;
+}
+@media(max-width:520px){
+  .hero119-bene-extra{gap:8px}
+  .hero119-bene-extra > span{font-size:13.5px;width:100%}
+}
