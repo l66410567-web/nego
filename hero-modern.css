@@ -756,3 +756,37 @@ a.dist:hover .dist-more{color:var(--pine)}
   .trend-grid{grid-template-columns:1fr;gap:14px}
   .trend-num{font-size:30px}
 }
+
+/* ==========================================================
+   꼭 알아두실 안내 카드 (24시간 화장 규정 / 기초수급자 지원 등)
+   ========================================================== */
+.guide-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.guide-card{
+  background:#fff;border:1px solid rgba(24,52,45,.10);border-radius:16px;
+  padding:26px 24px;box-shadow:0 4px 16px rgba(24,52,45,.06);
+}
+.guide-ico{
+  width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(180deg,#22463A,#173028);color:#E4C888;margin-bottom:15px;
+  box-shadow:0 4px 10px rgba(23,48,40,.22);
+}
+.guide-ico svg{width:24px;height:24px}
+.guide-card h3{
+  margin:0 0 12px;font-family:'Noto Serif KR',serif;font-weight:700;
+  font-size:19px;line-height:1.45;color:var(--pine);word-break:keep-all;
+}
+.guide-card p{
+  margin:0 0 12px;font-family:'Noto Sans KR',sans-serif;font-size:15px;
+  line-height:1.78;color:var(--ink);word-break:keep-all;
+}
+.guide-card p:last-of-type{margin-bottom:0}
+.guide-card b{color:var(--brass-dp)}
+.guide-card .guide-em{
+  display:block;background:var(--hanji);border-left:3px solid var(--brass);
+  padding:11px 14px;border-radius:0 8px 8px 0;margin:14px 0;
+  font-size:14.5px;line-height:1.7;color:#3A4A3F;
+}
+.guide-card .guide-em b{color:var(--pine)}
+.guide-src{margin-top:14px;font-size:12.5px;color:#9A9482;line-height:1.6;
+  font-family:'Noto Sans KR',sans-serif}
+@media(max-width:720px){.guide-grid{grid-template-columns:1fr}}
