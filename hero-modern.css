@@ -855,3 +855,20 @@ a.dist:hover .dist-more{color:var(--pine)}
   .svc-cta .cta-row{width:100%}
   .svc-cta .cta-btn,.svc-cta .cta-btn2{flex:1;justify-content:center;text-align:center}
 }
+
+/* ==========================================================
+   섹션 층 구분 — 위 섹션이 드리우는 부드러운 그림자로 고급스러운 깊이감
+   (전체폭 섹션은 box-shadow가 가려지므로, 아래 섹션 상단에 그림자를 얹음)
+   ========================================================== */
+.hero119-root + section,
+section + section,
+header + section,
+section + footer{position:relative}
+.hero119-root + section::before,
+section + section::before,
+header + section::before,
+section + footer::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:26px;
+  background:linear-gradient(180deg, rgba(15,28,22,.085), rgba(15,28,22,0));
+  pointer-events:none;z-index:4;
+}
