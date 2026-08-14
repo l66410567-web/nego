@@ -790,3 +790,42 @@ a.dist:hover .dist-more{color:var(--pine)}
 .guide-src{margin-top:14px;font-size:12.5px;color:#9A9482;line-height:1.6;
   font-family:'Noto Sans KR',sans-serif}
 @media(max-width:720px){.guide-grid{grid-template-columns:1fr}}
+
+/* ==========================================================
+   서비스 그리드 빈칸 채우는 상담 CTA 카드 (마지막 줄 2칸 span)
+   ========================================================== */
+.svc-cta{
+  grid-column:span 2;text-decoration:none;
+  background:linear-gradient(155deg,#22463A 0%,#173028 70%,#122720 100%);
+  border:1px solid rgba(200,164,106,.30);border-radius:14px;
+  padding:34px 38px;display:flex;flex-direction:column;justify-content:center;
+  box-shadow:0 10px 26px rgba(18,39,32,.22);transition:transform .2s,box-shadow .2s;
+}
+.svc-cta:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(18,39,32,.30)}
+.svc-cta .cta-lab{
+  font-family:'Noto Sans KR',sans-serif;font-weight:800;font-size:13px;letter-spacing:.02em;
+  color:#E4C888;margin-bottom:10px;
+}
+.svc-cta h3{
+  font-family:'Noto Serif KR',serif;font-weight:700;font-size:23px;line-height:1.45;
+  color:#F6F2E8;margin:0 0 10px;word-break:keep-all;
+}
+.svc-cta p{
+  font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.75;
+  color:#D9E2D2;margin:0 0 20px;max-width:560px;word-break:keep-all;
+}
+.svc-cta .cta-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.svc-cta .cta-btn{
+  display:inline-flex;align-items:center;gap:7px;
+  font-family:'Noto Sans KR',sans-serif;font-weight:800;font-size:15px;
+  color:#20362C;background:linear-gradient(180deg,#E4C888,#C8A46A);
+  padding:12px 24px;border-radius:999px;box-shadow:0 4px 12px rgba(163,129,79,.35);
+}
+.svc-cta:hover .cta-btn{filter:brightness(1.05)}
+.svc-cta .cta-tel{
+  font-family:'Noto Sans KR',sans-serif;font-weight:800;font-size:18px;color:#F6F2E8;
+  letter-spacing:.01em;
+}
+.svc-cta .cta-tel small{display:block;font-size:12px;font-weight:600;color:#AFC0A8;letter-spacing:0}
+@media(max-width:900px){.svc-cta{grid-column:span 2}}
+@media(max-width:600px){.svc-cta{grid-column:auto;padding:28px 24px}.svc-cta h3{font-size:20px}}
