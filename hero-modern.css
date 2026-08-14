@@ -872,3 +872,21 @@ section + footer::before{
   background:linear-gradient(180deg, rgba(15,28,22,.085), rgba(15,28,22,0));
   pointer-events:none;z-index:4;
 }
+
+/* ==========================================================
+   무빈소·소규모 가족장 지원 항목 추가
+   - 모바일 헬프카드: 신뢰 문구 라인(.hc-trust)
+   - PC 혜택 블록: 2열 → 3열
+   ========================================================== */
+.hc-trust{
+  display:inline-block;margin-top:6px;font-family:'Noto Sans KR',sans-serif;
+  font-size:11.5px;font-weight:700;line-height:1.4;color:#E7C983;
+  background:rgba(200,164,106,.13);border:1px solid rgba(200,164,106,.34);
+  padding:4px 9px;border-radius:8px;
+}
+.hc-trust::before{content:"✓ ";font-weight:900}
+/* PC 혜택 3열 */
+.hero119-root .hero119-bene-cols{grid-template-columns:repeat(3,1fr);gap:26px}
+@media(max-width:960px){.hero119-root .hero119-bene-cols{grid-template-columns:1fr;gap:22px}}
+/* PC 무빈소 컬럼의 신뢰 문구 강조 */
+.hero119-bene-col .bene-trust{color:#E7C983 !important;font-weight:600}
