@@ -756,3 +756,54 @@ a.dist:hover .dist-more{color:var(--pine)}
   .trend-grid{grid-template-columns:1fr;gap:14px}
   .trend-num{font-size:30px}
 }
+
+/* ==========================================================
+   무빈소·소규모 가족장 신뢰 박스 (지원 박스 아래, CTA 위)
+   ========================================================== */
+.figure-trust{
+  position:relative;margin:26px 0 4px;padding:30px 30px 26px;
+  border-radius:20px;color:var(--hanji);
+  background:linear-gradient(160deg,#1F3A31 0%,#16302A 60%,#122720 100%);
+  box-shadow:0 14px 34px rgba(18,39,32,.30),inset 0 1px 0 rgba(255,255,255,.05);
+  border:1px solid rgba(200,164,106,.28);
+}
+.ft-badge{
+  display:inline-block;font-family:'Noto Sans KR',sans-serif;font-weight:800;
+  font-size:13.5px;letter-spacing:.01em;color:#2A2016;
+  background:linear-gradient(180deg,#E4C888,#C8A46A);
+  padding:7px 16px;border-radius:999px;margin-bottom:16px;
+  box-shadow:0 3px 9px rgba(163,129,79,.35);
+}
+.ft-head{
+  margin:0 0 12px;font-family:'Noto Serif KR',serif;font-weight:700;
+  font-size:25px;line-height:1.48;letter-spacing:-.02em;color:#F6F2E8;word-break:keep-all;
+}
+.ft-head b{color:#E4C888}
+.ft-body{
+  margin:0 0 18px;font-family:'Noto Sans KR',sans-serif;font-size:15.5px;
+  line-height:1.85;color:#D9E2D2;word-break:keep-all;
+}
+.ft-body b{color:#F2E7CF;font-weight:700}
+.ft-list{list-style:none;margin:0 0 20px;padding:0;display:grid;gap:10px}
+.ft-list li{
+  font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.55;
+  color:#EAF0E4;padding-left:30px;position:relative;word-break:keep-all;
+}
+.ft-list li::before{
+  content:"✓";position:absolute;left:0;top:-1px;
+  width:21px;height:21px;line-height:21px;text-align:center;border-radius:50%;
+  background:rgba(200,164,106,.20);color:#E4C888;font-weight:900;font-size:13px;
+}
+.ft-links{display:flex;gap:10px;flex-wrap:wrap}
+.ft-link{
+  display:inline-flex;align-items:center;gap:5px;
+  font-family:'Noto Sans KR',sans-serif;font-weight:800;font-size:14.5px;
+  color:#20362C!important;background:var(--hanji);
+  padding:11px 20px;border-radius:999px;text-decoration:none;transition:.16s;
+}
+.ft-link:hover{background:#fff;transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.22)}
+@media(max-width:640px){
+  .figure-trust{padding:24px 20px 22px}
+  .ft-head{font-size:21px;line-height:1.5}
+  .ft-body{font-size:14.5px}
+}
