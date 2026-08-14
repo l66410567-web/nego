@@ -660,3 +660,60 @@
 @media(max-width:640px){
   .dist-nav-a{padding:10px 16px;font-size:14px}
 }
+
+/* ==========================================================
+   장례식장 정보 카드 / 상세 표 (e하늘 공시 데이터 기반)
+   ========================================================== */
+.hall-list{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.hall-card{
+  background:#fff;border:1px solid rgba(24,52,45,.12);border-radius:18px;
+  padding:24px 22px;box-shadow:0 4px 16px rgba(24,52,45,.06);
+  display:flex;flex-direction:column;
+}
+.hall-card-h{display:flex;align-items:center;gap:13px;margin-bottom:16px}
+.hall-card-h h3{margin:0;font-size:20px;line-height:1.3;color:var(--pine)}
+.hall-meta{margin:3px 0 0;font-size:13px;font-weight:700;color:var(--brass-dp);
+  font-family:'Noto Sans KR',sans-serif;letter-spacing:-.01em}
+.hall-spec{list-style:none;margin:0 0 14px;padding:14px 0;
+  display:flex;gap:6px;border-top:1px solid rgba(24,52,45,.09);
+  border-bottom:1px solid rgba(24,52,45,.09)}
+.hall-spec li{flex:1;text-align:center;font-family:'Noto Sans KR',sans-serif}
+.hall-spec li span{display:block;font-size:12px;color:#8A8676;margin-bottom:4px}
+.hall-spec li b{font-size:17px;color:var(--ink);font-weight:800}
+.hall-addr{margin:0 0 18px;font-size:14px;color:#5B6560;line-height:1.5;
+  font-family:'Noto Sans KR',sans-serif;flex-grow:1}
+.hall-card-btns{display:flex;gap:9px}
+.hall-card-btns .btn{flex:1;padding:12px 8px;font-size:15px}
+.btn-line{
+  background:#fff;color:var(--pine)!important;border:1.5px solid rgba(24,52,45,.28);
+}
+.btn-line:hover{border-color:var(--brass);color:var(--brass-dp)!important;background:var(--hanji)}
+@media(max-width:720px){.hall-list{grid-template-columns:1fr}}
+
+/* 상세 페이지 표 */
+.spec-tbl{width:100%;border-collapse:collapse;font-family:'Noto Sans KR',sans-serif;
+  background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 3px 12px rgba(24,52,45,.06)}
+.spec-tbl th,.spec-tbl td{padding:14px 16px;text-align:left;font-size:15px;
+  border-bottom:1px solid rgba(24,52,45,.08);vertical-align:top}
+.spec-tbl th{background:var(--hanji);color:var(--pine);font-weight:800;width:34%;white-space:nowrap}
+.spec-tbl td{color:var(--ink)}
+.spec-tbl tr:last-child th,.spec-tbl tr:last-child td{border-bottom:none}
+.price-tbl{width:100%;border-collapse:collapse;font-family:'Noto Sans KR',sans-serif;
+  background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 3px 12px rgba(24,52,45,.06)}
+.price-tbl th,.price-tbl td{padding:13px 15px;font-size:14.5px;border-bottom:1px solid rgba(24,52,45,.08)}
+.price-tbl thead th{background:var(--pine);color:#fff;font-weight:700;text-align:left}
+.price-tbl td.amt{text-align:right;font-weight:800;color:var(--pine);white-space:nowrap}
+.price-tbl tbody tr:last-child td{border-bottom:none}
+.price-tbl .sub{color:#8A8676;font-size:13px}
+.src-note{font-size:13px;color:#8A8676;line-height:1.6;margin-top:14px;
+  font-family:'Noto Sans KR',sans-serif}
+.src-note a{color:var(--brass-dp);text-decoration:underline}
+.detail-back{display:inline-flex;align-items:center;gap:6px;margin-top:8px;
+  font-family:'Noto Sans KR',sans-serif;font-weight:800;color:var(--brass-dp);font-size:15px}
+
+/* 허브 자치구 카드가 링크(a)로 바뀜 — 카드 스타일 유지 + 더보기 라인 */
+a.dist{text-decoration:none;color:inherit;transition:.18s;cursor:pointer}
+a.dist:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(24,52,45,.14)}
+.dist-more{display:inline-block;margin-top:12px;font-family:'Noto Sans KR',sans-serif;
+  font-weight:800;font-size:14.5px;color:var(--brass-dp);letter-spacing:-.01em}
+a.dist:hover .dist-more{color:var(--pine)}
