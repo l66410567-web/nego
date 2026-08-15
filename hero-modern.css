@@ -900,3 +900,28 @@ section + footer::before{
   .hero119-bene-extra{gap:8px}
   .hero119-bene-extra > span{font-size:13.5px;width:100%}
 }
+
+/* ==========================================================
+   언론 트렌드 섹션(무빈소/가족장) — 딥그린 에디토리얼 배경으로 차별화
+   흰 통계 카드·골드 숫자가 도드라지는 '언론 특집' 느낌
+   ========================================================== */
+.trend-sec{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(120% 78% at 50% -12%, rgba(200,164,106,.16), rgba(200,164,106,0) 55%),
+    linear-gradient(165deg,#203D33 0%,#18342D 55%,#122720 100%);
+  border-top:1px solid rgba(200,164,106,.30);
+  border-bottom:1px solid rgba(200,164,106,.22);
+}
+/* 큰 인용부호 워터마크 — 에디토리얼 무드 */
+.trend-sec::before{
+  content:"\201C";position:absolute;top:-58px;right:14px;
+  font-family:'Noto Serif KR',serif;font-weight:900;font-size:250px;line-height:1;
+  color:rgba(200,164,106,.11);pointer-events:none;user-select:none;
+}
+.trend-sec > .wrap-narrow{position:relative;z-index:1}
+.trend-sec .sec-head h2{color:#F6F2E8}
+.trend-sec .trend-lead{color:#D3DECC}
+.trend-sec .trend-lead b{color:#EBD59A}
+/* 카드에 은은한 골드 상단 라인으로 프리미엄 강조 */
+.trend-sec .trend-card{border-top:3px solid rgba(200,164,106,.60)}
