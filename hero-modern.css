@@ -994,3 +994,54 @@ section + footer::before{
     0 8px 14px rgba(40,88,64,.28);
 }
 .figure-tag-trust::before{content:"✓ ";color:#EFE7CC;font-weight:900}
+
+/* ==========================================================
+   모바일 진행 절차 리디자인 — 밋밋한 리스트 → 골드 스파인 카드 타임라인
+   (≤640px. 데스크톱 카드/리스트는 위에서 이미 처리)
+   ========================================================== */
+@media(max-width:640px){
+  /* 가로형 절차(index·about)의 모바일 세로 리스트 */
+  .steps{gap:12px}
+  .steps .step{
+    background:linear-gradient(180deg,#FFFDF9 0%,#F5EFE0 100%);
+    border:1px solid #EBE0C9;border-left:4px solid var(--brass);
+    border-radius:12px;padding:15px 16px;
+    box-shadow:0 5px 14px rgba(24,52,45,.08);
+    align-items:center;gap:14px;
+  }
+  .steps .step.pre{
+    border-left-color:var(--brass-dp);
+    background:linear-gradient(180deg,#FFFDF5 0%,#FBF3DF 100%);
+    box-shadow:0 8px 20px rgba(200,155,74,.22);
+  }
+  .steps .step h4{font-size:15.5px}
+  .steps .step p{font-size:13.5px;color:var(--gray)}
+  /* 세로 점선 제거, 카드 사이 아래 화살표로 흐름 */
+  .steps .step::after{display:none}
+  .steps .step::before{
+    display:block;content:'';position:absolute;
+    top:auto;bottom:-10px;left:31px;right:auto;
+    width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;
+    border-top:7px solid rgba(163,129,79,.75);border-bottom:none;opacity:1;z-index:2;
+  }
+  .steps .step:last-child::before{display:none}
+
+  /* 서브페이지 세로 절차(vsteps) — 동일 카드 타임라인 */
+  .vsteps{gap:12px}
+  .vstep{
+    background:linear-gradient(180deg,#FFFDF9 0%,#F5EFE0 100%);
+    border:1px solid #EBE0C9;border-left:4px solid var(--brass);
+    border-bottom:none;border-radius:12px;
+    padding:15px 16px;gap:14px;align-items:center;
+    box-shadow:0 5px 14px rgba(24,52,45,.08);
+  }
+  .vstep:hover{background:linear-gradient(180deg,#FFFDF9 0%,#F5EFE0 100%)}
+  .vstep::after{display:none}
+  .vstep::before{
+    display:block;content:'';position:absolute;
+    left:30px;top:auto;bottom:-10px;
+    width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;
+    border-top:7px solid rgba(163,129,79,.75);border-bottom:none;opacity:1;z-index:2;
+  }
+  .vstep:last-child::before{display:none}
+}
