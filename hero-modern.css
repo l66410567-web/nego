@@ -980,13 +980,17 @@ section + footer::before{
    금액 바(녹색)와 구분 — '정직' 메시지는 딥그린 트러스트 바
    ========================================================== */
 .figure-group-wide{grid-column:1 / -1}
+/* 수목장 '약 50~80만원' 바와 동일한 녹색 3D 바, 길이는 가운데로 압축 */
 .figure-tag-trust{
-  color:#F6F2E8;font-weight:800;font-size:14px;border:none;
-  flex-basis:100%;width:100%;margin-top:4px;text-align:center;
-  padding:13px 18px;border-radius:12px;line-height:1.5;word-break:keep-all;
+  color:#FFFFFF;font-weight:800;font-size:14px;border:none;
+  flex-basis:100%;max-width:440px;margin:8px auto 0;text-align:center;
+  padding:12px 22px;border-radius:12px;line-height:1.5;word-break:keep-all;
   background:
-    radial-gradient(120% 90% at 50% 0%, rgba(255,255,255,.06), rgba(255,255,255,0) 50%),
-    linear-gradient(180deg,#22463A 0%,#173028 100%);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.10), 0 8px 18px rgba(18,39,32,.26);
+    radial-gradient(120% 90% at 50% 0%, rgba(255,255,255,.32), rgba(255,255,255,0) 46%),
+    linear-gradient(180deg,#589A79 0%,#3E7D61 55%,#2C5D47 100%);
+  box-shadow:
+    inset 0 1.5px 0 rgba(255,255,255,.45),
+    0 3px 0 #214838,
+    0 8px 14px rgba(40,88,64,.28);
 }
-.figure-tag-trust::before{content:"✓ ";color:#E7C983;font-weight:900}
+.figure-tag-trust::before{content:"✓ ";color:#EFE7CC;font-weight:900}
