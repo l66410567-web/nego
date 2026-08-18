@@ -925,3 +925,9 @@ section + footer::before{
 .trend-sec .trend-lead b{color:#EBD59A}
 /* 카드에 은은한 골드 상단 라인으로 프리미엄 강조 */
 .trend-sec .trend-card{border-top:3px solid rgba(200,164,106,.60)}
+
+/* ==========================================================
+   '빛고을장례119의 약속' 핵심 카드 2→3 (무빈소·소규모 가족장 부각)
+   ========================================================== */
+.pm-hero{grid-template-columns:repeat(3,1fr);max-width:1040px}
+@media(max-width:820px){.pm-hero{grid-template-columns:1fr}}
