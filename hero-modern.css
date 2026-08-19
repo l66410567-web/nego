@@ -1041,3 +1041,41 @@ section + footer::before{
   }
   .vstep:last-child::before{display:none}
 }
+
+/* ==========================================================
+   절차 그리드 빈칸 채우는 신뢰 카드 (이장·평장) — 2칸 span, 딥그린
+   ========================================================== */
+.flow .steps .step-trust{
+  grid-column:span 2;
+  background:linear-gradient(155deg,#22463A 0%,#173028 70%,#122720 100%);
+  border:1px solid rgba(200,164,106,.30);border-radius:14px;
+  padding:26px 28px;color:var(--hanji);
+  display:flex;flex-direction:column;justify-content:center;
+  box-shadow:0 8px 22px rgba(18,39,32,.20);
+}
+.step-trust .st-badge{
+  display:inline-block;align-self:flex-start;
+  font-family:'Noto Sans KR',sans-serif;font-weight:800;font-size:12px;letter-spacing:.02em;
+  color:#2A2016;background:linear-gradient(180deg,#E4C888,#C8A46A);
+  padding:5px 13px;border-radius:999px;margin-bottom:12px;
+  box-shadow:0 3px 9px rgba(163,129,79,.35);
+}
+.step-trust h3{
+  margin:0 0 9px;font-family:'Noto Serif KR',serif;font-weight:700;
+  font-size:19px;line-height:1.45;color:#F6F2E8;word-break:keep-all;
+}
+.step-trust p{
+  margin:0 0 14px;font-family:'Noto Sans KR',sans-serif;font-size:14.5px;
+  line-height:1.75;color:#D9E2D2;word-break:keep-all;
+}
+.step-trust .st-tel{
+  display:inline-flex;align-items:center;gap:8px;align-self:flex-start;text-decoration:none;
+  font-family:'Noto Sans KR',sans-serif;font-weight:800;font-size:16px;color:#F6F2E8;
+  border:1.5px solid rgba(200,164,106,.5);border-radius:999px;padding:9px 18px;transition:.16s;
+}
+.step-trust .st-tel:hover{background:rgba(200,164,106,.14);border-color:var(--brass)}
+.step-trust .st-tel small{font-size:12px;font-weight:600;color:#BFCFB8}
+/* 신뢰 카드 앞 스텝(06)의 점선 연결선은 숨김 (스텝이 아니므로) */
+.flow .steps .step:has(+ .step-trust)::after,
+.flow .steps .step:has(+ .step-trust)::before{display:none}
+@media(max-width:640px){.flow .steps .step-trust{grid-column:auto;padding:22px 20px}}
