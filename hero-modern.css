@@ -71,12 +71,14 @@
       0 16px 40px rgba(0,0,0,.30);
   }
   .hc-head{
-    display:inline-flex;align-items:center;gap:7px;
-    font-size:12.5px;font-weight:700;color:#E2C078;margin-bottom:14px;
+    display:inline-flex;align-items:center;gap:9px;
+    font-size:13.5px;font-weight:800;color:#F0D492;margin-bottom:14px;letter-spacing:-.01em;
   }
   .hc-head::before{
-    content:"";width:6px;height:6px;border-radius:50%;
-    background:#E2C078;box-shadow:0 0 0 4px rgba(200,164,106,.20);
+    content:"";width:9px;height:9px;border-radius:50%;flex:0 0 9px;
+    background:radial-gradient(circle at 35% 30%, #FBE8BF, #E2C078 70%);
+    box-shadow:0 0 0 0 rgba(233,201,122,.55);
+    animation:hcPulse 1.7s ease-out infinite;
   }
   .hc-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
   .hc-list li{display:flex;align-items:flex-start;gap:12px}
@@ -1079,3 +1081,10 @@ section + footer::before{
 .flow .steps .step:has(+ .step-trust)::after,
 .flow .steps .step:has(+ .step-trust)::before{display:none}
 @media(max-width:640px){.flow .steps .step-trust{grid-column:auto;padding:22px 20px}}
+
+/* 모바일 지원 요약 카드 헤더 앞 골드 비콘 — 맥동 강조 */
+@keyframes hcPulse{
+  0%{box-shadow:0 0 0 0 rgba(233,201,122,.55)}
+  70%{box-shadow:0 0 0 9px rgba(233,201,122,0)}
+  100%{box-shadow:0 0 0 0 rgba(233,201,122,0)}
+}
