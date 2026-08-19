@@ -982,19 +982,20 @@ section + footer::before{
    금액 바(녹색)와 구분 — '정직' 메시지는 딥그린 트러스트 바
    ========================================================== */
 .figure-group-wide{grid-column:1 / -1}
-/* 장례식장·무빈소 박스 하단 한 줄 바 — '약 50~80만원' 녹색 3D 바와 동일 색 (+ nego-blink 깜빡임) */
+/* 장례식장·무빈소 박스 하단 한 줄 바 — 채워진 골드 3D 바 (깜빡임 없음: 깜빡임은 녹색 금액 바에만)
+   골드=가치·약속 / 녹색=돈 으로 역할 구분, 밋밋한 아웃라인 대신 입체 골드로 무게감 */
 .figure-note-bar{
   display:block;max-width:480px;margin:16px auto 0;text-align:center;
   font-family:'Noto Sans KR',sans-serif;font-size:13.5px;font-weight:800;
-  letter-spacing:-.01em;color:#FFFFFF;line-height:1.55;word-break:keep-all;border:none;
+  letter-spacing:-.01em;color:#2A1E0A;line-height:1.55;word-break:keep-all;border:none;
   border-radius:12px;padding:12px 18px;
   background:
-    radial-gradient(120% 90% at 50% 0%, rgba(255,255,255,.32), rgba(255,255,255,0) 46%),
-    linear-gradient(180deg,#589A79 0%,#3E7D61 55%,#2C5D47 100%);
+    radial-gradient(120% 90% at 50% 0%, rgba(255,255,255,.5), rgba(255,255,255,0) 46%),
+    linear-gradient(180deg,#E4C588 0%,#C8A46A 52%,#B0884A 100%);
   box-shadow:
-    inset 0 1.5px 0 rgba(255,255,255,.45),
-    0 3px 0 #214838,
-    0 8px 14px rgba(40,88,64,.28);
+    inset 0 1.5px 0 rgba(255,255,255,.6),
+    0 3px 0 #96702F,
+    0 8px 14px rgba(150,110,45,.30);
 }
 
 /* ==========================================================
