@@ -626,8 +626,8 @@
 .trustband{background:var(--hanji);text-align:center;padding:70px 0}
 .trustband .wrap{max-width:940px}
 .tb-statement{
-  font-family:'Noto Sans KR',sans-serif;
-  font-size:41px;font-weight:700;letter-spacing:-.032em;line-height:1.42;
+  font-family:'Noto Serif KR',serif;font-style:italic;
+  font-size:39px;font-weight:600;letter-spacing:-.02em;line-height:1.5;
   color:#1C3A2C;margin:0;word-break:keep-all;
 }
 .tb-mute{color:#ADA491}
