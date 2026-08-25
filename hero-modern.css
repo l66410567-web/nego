@@ -1128,3 +1128,19 @@ section + footer::before{
 @media(max-width:640px){
   .chip.chip-logo-only{height:88px;padding:10px 14px}
 }
+/* 흐린/어두운 원본을 대체하는 텍스트 로고 (선명·통일) */
+.chip.chip-textlogo{
+  height:96px;padding:12px 16px;background:#fff;border:1px solid rgba(24,52,45,.12);
+  display:flex;align-items:center;justify-content:center;gap:10px;
+}
+.chip-textlogo .tl-emblem{flex:none;display:inline-flex}
+.chip-textlogo .tl-emblem svg{width:34px;height:34px;display:block}
+.chip-textlogo .tl-name{
+  font-family:'Noto Serif KR',serif;font-weight:900;font-size:22px;letter-spacing:-.03em;
+  color:var(--pine);line-height:1.2;word-break:keep-all;text-align:center;
+}
+@media(max-width:640px){
+  .chip.chip-textlogo{height:88px}
+  .chip-textlogo .tl-name{font-size:20px}
+  .chip-textlogo .tl-emblem svg{width:31px;height:31px}
+}
