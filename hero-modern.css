@@ -1149,3 +1149,21 @@ section + footer::before{
   .chip-textlogo .tl-name{font-size:20px}
   .chip-textlogo .tl-emblem svg{width:31px;height:31px}
 }
+
+/* 자치구 카드 좌측 패널 — 어두운 건물 일러스트 → 밝은 아이보리/골드(로고 카드와 통일) */
+.dist .dist-img{
+  background:linear-gradient(180deg,#FBF7EC 0%,#F1E7CF 100%);
+  border:1px solid rgba(200,164,106,.5);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;
+  overflow:visible;
+}
+.dist .dist-img .dist-mini{width:34px;height:34px;color:var(--brass-dp);flex:none}
+.dist .dist-img span{
+  position:static;z-index:auto;color:var(--pine);font-weight:800;font-size:16px;
+  padding-bottom:0;text-shadow:none;letter-spacing:-.01em;
+}
+@media(max-width:600px){
+  .dist .dist-img{flex-direction:row;gap:9px}
+  .dist .dist-img .dist-mini{width:26px;height:26px}
+  .dist .dist-img span{font-size:16px}
+}
