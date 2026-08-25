@@ -1095,23 +1095,23 @@ section + footer::before{
 }
 
 /* ==========================================================
-   장례식장 로고 (logos/{facilitycd}.png 있으면 표시, 없으면 기본 아이콘)
+   장례식장 로고 (logos/{facilitycd}.jpg 있으면 표시, 없으면 로고줄 숨김)
+   대부분 가로형 로고라 카드 상단 '가로 스트립'으로 표시
    ========================================================== */
-.hall-logo-box{position:relative;overflow:hidden}
-/* 캡처 로고(투명 아님/비율 제각각/살짝 흐림)도 정돈되어 보이도록:
-   흰 프레임 + 비율 유지(contain) + 여백 + 은은한 대비/채도 보정 */
-.hall-logo-box .hall-logo{
-  position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;
-  background:#fff;padding:4px;z-index:2;border-radius:inherit;
-  filter:contrast(1.05) saturate(1.06) brightness(1.01);
-  image-rendering:auto;
+.hall-logo-strip{
+  height:46px;margin:2px 0 13px;display:flex;align-items:center;
+  padding-bottom:12px;border-bottom:1px solid rgba(24,52,45,.08);
+}
+.hall-logo-strip .hall-logo{
+  max-height:34px;max-width:100%;object-fit:contain;object-position:left center;
+  filter:contrast(1.05) saturate(1.05);
 }
 /* 상세 페이지 헤더 로고 — 어두운 배경 위 흰 칩 (프레임으로 캡처 흠 완화) */
 .detail-logo-wrap{margin:8px 0 12px}
 .detail-logo{
-  height:60px;max-width:200px;object-fit:contain;object-position:left center;
+  height:60px;max-width:220px;object-fit:contain;object-position:left center;
   background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:12px;padding:8px 14px;
   box-shadow:0 6px 16px rgba(0,0,0,.22);
-  filter:contrast(1.05) saturate(1.06) brightness(1.01);
+  filter:contrast(1.05) saturate(1.05);
 }
-@media(max-width:640px){.detail-logo{height:50px;max-width:160px}}
+@media(max-width:640px){.detail-logo{height:52px;max-width:180px}}
