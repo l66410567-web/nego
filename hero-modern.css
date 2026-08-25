@@ -1093,3 +1093,20 @@ section + footer::before{
   70%{box-shadow:0 0 0 9px rgba(233,201,122,0)}
   100%{box-shadow:0 0 0 0 rgba(233,201,122,0)}
 }
+
+/* ==========================================================
+   장례식장 로고 (logos/{facilitycd}.png 있으면 표시, 없으면 기본 아이콘)
+   ========================================================== */
+.hall-logo-box{position:relative;overflow:hidden}
+.hall-logo-box .hall-logo{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:contain;
+  background:#fff;padding:3px;z-index:2;border-radius:inherit;
+}
+/* 상세 페이지 헤더 로고 — 어두운 배경 위 흰 칩 */
+.detail-logo-wrap{margin:6px 0 10px}
+.detail-logo{
+  height:56px;max-width:180px;object-fit:contain;
+  background:#fff;border-radius:12px;padding:8px 12px;
+  box-shadow:0 6px 16px rgba(0,0,0,.22);
+}
+@media(max-width:640px){.detail-logo{height:48px;max-width:150px}}
