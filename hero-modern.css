@@ -1116,10 +1116,8 @@ section + footer::before{
 }
 @media(max-width:640px){.detail-logo{height:52px;max-width:180px}}
 
-/* 허브 자치구 칩 — 플라워 아이콘 자리에 장례식장 로고 (없으면 플라워 유지) */
-.chip-logo-wrap{display:inline-flex;align-items:center;flex:none}
-.chip-logo-wrap .chip-logo{
-  height:18px;max-width:60px;object-fit:contain;object-position:left center;
+/* 허브 자치구 칩 — 플라워 아이콘 자리에 장례식장 로고 (파일 있으면 로고만) */
+.chip-mark .chip-logo{
+  height:24px;max-width:74px;flex:none;object-fit:contain;object-position:left center;
   filter:contrast(1.05) saturate(1.05);
 }
-.chip-logo-wrap:has(.chip-logo) .chip-flower{display:none}
