@@ -1150,22 +1150,19 @@ section + footer::before{
   .chip-textlogo .tl-emblem svg{width:31px;height:31px}
 }
 
-/* 자치구 카드: 좌측 별도 박스 제거 → 그리드 첫 타일을 '딥그린 자치구 배지'로
-   (배경 아이보리·흰 로고 타일과 대비되게 브랜드 색으로 구분) */
+/* 자치구 디렉터리: 지역명은 깔끔한 텍스트 헤더, 로고는 흰 카드 그리드
+   (최고 기업 '지점/제휴사' 디렉터리 방식) */
 a.dist{display:block}
-.dist-badge{
-  height:96px;
-  background:linear-gradient(160deg,#22463A 0%,#18342D 60%,#142C25 100%) !important;
-  border:1px solid rgba(200,164,106,.35) !important;
-  display:flex !important;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+.dist .dist-head{
+  display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:12px;
+  border-bottom:1px solid rgba(24,52,45,.10);
 }
-@media(min-width:701px){.dist-badge{height:108px}}
-@media(max-width:640px){.dist-badge{height:88px}}
-.dist-badge .dist-mini{width:30px;height:30px;color:#E4C888;flex:none}
-.dist-badge b{font-family:'Noto Serif KR',serif;font-weight:900;font-size:20px;color:#F6F2E8;letter-spacing:-.01em;line-height:1}
-.dist-badge i{font-style:normal;font-size:12.5px;font-weight:800;color:#E4C888}
-.dist-badge:hover{border-color:var(--brass) !important;box-shadow:0 6px 16px rgba(18,39,32,.28)}
+.dist .dist-name{
+  font-family:'Noto Serif KR',serif;font-weight:900;font-size:22px;color:var(--pine);letter-spacing:-.02em;
+}
+.dist .dist-head .cnt{
+  font-family:'Noto Sans KR',sans-serif;font-weight:800;font-size:12.5px;color:#2A2016;
+  background:linear-gradient(180deg,#E4C888,#C8A46A);padding:3px 11px;border-radius:999px;
+}
+.dist .chips{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
 .dist .dist-more{display:inline-block;margin-top:14px}
-@media(max-width:640px){
-  .dist-badge b{font-size:19px}
-}
