@@ -1207,10 +1207,7 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .detail-cta-btn{padding:16px 42px;font-size:16.5px}
 @media(max-width:640px){.detail-cta-hook{font-size:15px}.detail-cta-btn{width:100%;padding:16px 24px}}
 
-/* 신뢰 밴드 핵심 문구 강조 — 골드 + 은은한 하이라이터 (프리미엄) */
+/* 신뢰 밴드 핵심 문구 강조 — 깔끔한 골드 컬러 + 굵기 (배경 없음) */
 .tb-statement .tb-hl{
-  color:var(--brass-dp);font-weight:900;font-style:italic;
-  background:linear-gradient(transparent 60%, rgba(200,164,106,.30) 60%);
-  -webkit-box-decoration-break:clone;box-decoration-break:clone;
-  padding:0 .04em;
+  color:#A87C2E;font-weight:800;font-style:italic;
 }
