@@ -1128,6 +1128,11 @@ section + footer::before{
 @media(max-width:640px){
   .chip.chip-logo-only{height:88px;padding:10px 14px}
 }
+/* PC: 칸을 넓히고 타일을 키워 가로로 긴 로고(수완·스카이 등)도 크게 */
+@media(min-width:701px){
+  .dist .chips{grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+  .chip.chip-logo-only,.chip.chip-textlogo{height:108px}
+}
 /* 흐린/어두운 원본을 대체하는 텍스트 로고 (선명·통일) */
 .chip.chip-textlogo{
   height:96px;padding:12px 16px;background:#fff;border:1px solid rgba(24,52,45,.12);
