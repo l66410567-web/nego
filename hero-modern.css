@@ -1196,3 +1196,13 @@ a.dist{display:block}
 /* 마퀴 로고 = 상세 링크 (호버 시 살짝 떠오름; 트랙은 일시정지) */
 a.pmq-item{text-decoration:none;transition:transform .18s, box-shadow .18s, border-color .18s}
 a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45,.16);border-color:var(--brass)}
+
+/* 상세 페이지 상담 CTA — 지원내역 궁금증 유발 후크 */
+.detail-cta{text-align:center;margin-top:30px}
+.detail-cta-hook{
+  font-family:'Noto Sans KR',sans-serif;font-size:16px;line-height:1.75;color:var(--gray);
+  margin:0 0 18px;word-break:keep-all;
+}
+.detail-cta-hook b{color:var(--brass-dp);font-weight:800}
+.detail-cta-btn{padding:16px 42px;font-size:16.5px}
+@media(max-width:640px){.detail-cta-hook{font-size:15px}.detail-cta-btn{width:100%;padding:16px 24px}}
