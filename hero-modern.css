@@ -1103,51 +1103,43 @@ section + footer::before{
   padding-bottom:12px;border-bottom:1px solid rgba(24,52,45,.08);
 }
 .hall-logo-strip .hall-logo{
-  max-height:34px;max-width:100%;object-fit:contain;object-position:left center;
+  height:34px;width:auto;max-width:100%;object-fit:contain;object-position:left center;
   filter:contrast(1.05) saturate(1.05);
 }
-/* 상세 페이지 헤더 로고 — 어두운 배경 위 흰 칩 (프레임으로 캡처 흠 완화) */
+/* 상세 페이지 헤더 로고 — 어두운 배경 위 흰 칩 (고정 높이·자동 너비) */
 .detail-logo-wrap{margin:8px 0 12px}
 .detail-logo{
-  height:60px;max-width:220px;object-fit:contain;object-position:left center;
-  background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:12px;padding:8px 14px;
+  height:56px;width:auto;max-width:320px;object-fit:contain;object-position:left center;
+  background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:12px;padding:8px 16px;
   box-shadow:0 6px 16px rgba(0,0,0,.22);
   filter:contrast(1.05) saturate(1.05);
 }
-@media(max-width:640px){.detail-logo{height:52px;max-width:180px}}
+@media(max-width:640px){.detail-logo{height:50px;max-width:240px}}
 
-/* 허브 자치구 칩 — 로고만, 같은 크기 흰 카드 타일에 꽉 채움 (어르신 가독성) */
-.chip.chip-logo-only{
-  height:96px;padding:12px 16px;background:#fff;border:1px solid rgba(24,52,45,.12);
+/* 허브 자치구 칩 — 고정 높이·자동 너비(모든 로고 글씨 높이 균일), 플렉스 나열 */
+.dist .chips{display:flex !important;flex-wrap:wrap;gap:12px;grid-template-columns:none !important}
+.chip.chip-logo-only,.chip.chip-textlogo{
+  height:88px;padding:0 22px;background:#fff;border:1px solid rgba(24,52,45,.12);
   display:flex;align-items:center;justify-content:center;
 }
-.chip-logo-only .chip-logo{
-  max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;
-  filter:contrast(1.05) saturate(1.05);
-}
-@media(max-width:640px){
-  .chip.chip-logo-only{height:88px;padding:10px 14px}
-}
-/* PC: 칸을 넓히고 타일을 키워 가로로 긴 로고(수완·스카이 등)도 크게 */
-@media(min-width:701px){
-  .dist .chips{grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
-  .chip.chip-logo-only,.chip.chip-textlogo{height:108px}
-}
-/* 흐린/어두운 원본을 대체하는 텍스트 로고 (선명·통일) */
-.chip.chip-textlogo{
-  height:96px;padding:12px 16px;background:#fff;border:1px solid rgba(24,52,45,.12);
-  display:flex;align-items:center;justify-content:center;gap:10px;
-}
+.chip.chip-textlogo{gap:9px;padding:0 24px}
+.chip-logo-only .chip-logo{height:40px;width:auto;max-width:240px;object-fit:contain;filter:contrast(1.05) saturate(1.05)}
 .chip-textlogo .tl-emblem{flex:none;display:inline-flex}
 .chip-textlogo .tl-emblem svg{width:34px;height:34px;display:block}
 .chip-textlogo .tl-name{
-  font-family:'Noto Serif KR',serif;font-weight:900;font-size:22px;letter-spacing:-.03em;
-  color:var(--pine);line-height:1.2;word-break:keep-all;text-align:center;
+  font-family:'Noto Serif KR',serif;font-weight:900;font-size:21px;letter-spacing:-.03em;
+  color:var(--pine);line-height:1.2;word-break:keep-all;white-space:nowrap;
+}
+@media(min-width:701px){
+  .chip.chip-logo-only,.chip.chip-textlogo{height:96px}
+  .chip-logo-only .chip-logo{height:44px;max-width:290px}
+  .chip-textlogo .tl-name{font-size:22px}
 }
 @media(max-width:640px){
-  .chip.chip-textlogo{height:88px}
-  .chip-textlogo .tl-name{font-size:20px}
-  .chip-textlogo .tl-emblem svg{width:31px;height:31px}
+  .chip.chip-logo-only,.chip.chip-textlogo{height:78px;padding:0 16px}
+  .chip-logo-only .chip-logo{height:36px;max-width:200px}
+  .chip-textlogo .tl-name{font-size:19px}
+  .chip-textlogo .tl-emblem svg{width:30px;height:30px}
 }
 
 /* 자치구 디렉터리: 지역명은 깔끔한 텍스트 헤더, 로고는 흰 카드 그리드
@@ -1164,7 +1156,6 @@ a.dist{display:block}
   font-family:'Noto Sans KR',sans-serif;font-weight:800;font-size:12.5px;color:#2A2016;
   background:linear-gradient(180deg,#E4C888,#C8A46A);padding:3px 11px;border-radius:999px;
 }
-.dist .chips{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
 .dist .dist-more{display:inline-block;margin-top:14px}
 
 /* ==========================================================
@@ -1179,21 +1170,25 @@ a.dist{display:block}
 }
 .pmq-track{display:flex;width:max-content;animation:pmqScroll 55s linear infinite}
 .pmq:hover .pmq-track{animation-play-state:paused}
+/* 고정 높이·자동 너비 → 모든 로고 글씨 높이 균일 */
 .pmq-item{
-  flex:0 0 auto;width:194px;height:98px;margin-right:18px;
+  flex:0 0 auto;height:98px;margin-right:16px;
   background:#fff;border:1px solid rgba(24,52,45,.10);border-radius:14px;
   box-shadow:0 4px 14px rgba(24,52,45,.06);
-  display:flex;align-items:center;justify-content:center;padding:14px 18px;
+  display:flex;align-items:center;justify-content:center;padding:0 30px;
 }
-.pmq-item img{max-width:100%;max-height:100%;object-fit:contain;filter:contrast(1.05) saturate(1.05)}
+.pmq-item img{height:46px;width:auto;max-width:300px;object-fit:contain;filter:contrast(1.05) saturate(1.05)}
+.pmq-item.pmq-text{padding:0 34px}
 .pmq-item.pmq-text span{
-  font-family:'Noto Serif KR',serif;font-weight:900;font-size:18px;color:var(--pine);
-  letter-spacing:-.03em;text-align:center;word-break:keep-all;line-height:1.25;
+  font-family:'Noto Serif KR',serif;font-weight:900;font-size:22px;color:var(--pine);
+  letter-spacing:-.03em;text-align:center;word-break:keep-all;white-space:nowrap;line-height:1.2;
 }
 @keyframes pmqScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(max-width:640px){
   .pmq-track{animation-duration:40s}
-  .pmq-item{width:154px;height:82px;margin-right:12px;padding:10px 14px}
-  .pmq-item.pmq-text span{font-size:16px}
+  .pmq-item{height:80px;margin-right:12px;padding:0 22px}
+  .pmq-item img{height:38px;max-width:230px}
+  .pmq-item.pmq-text{padding:0 26px}
+  .pmq-item.pmq-text span{font-size:18px}
 }
 @media(prefers-reduced-motion:reduce){.pmq-track{animation:none}}
