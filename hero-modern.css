@@ -1212,11 +1212,7 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   color:#A87C2E;font-weight:800;font-style:italic;
 }
 
-/* 히어로 서브카피 핵심 강조 — 방점(글자 위 점) + 굵기 + 밝은 골드 (프리미엄 한글 강조) */
+/* 히어로 서브카피 핵심 강조 — 굵기 + 골드색만 (애플/토스식 깔끔한 강조) */
 .hero119-sub .sub-emph{
-  font-weight:700;color:#F2E6C6;
-  -webkit-text-emphasis:filled dot;text-emphasis:filled dot;
-  -webkit-text-emphasis-color:#E2C078;text-emphasis-color:#E2C078;
-  -webkit-text-emphasis-position:over;text-emphasis-position:over;
-  padding-top:.12em;
+  font-weight:700;color:#E7CE92;
 }
