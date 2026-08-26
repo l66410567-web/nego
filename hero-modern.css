@@ -1217,3 +1217,6 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .hero119-sub .sub-emph{
   font-weight:700;color:#E7CE92;
 }
+
+/* phead 본문 핵심 강조 — 딥잉크 배경 위 골드 볼드 */
+.phead p .phl{color:#E7CE92;font-weight:800}
