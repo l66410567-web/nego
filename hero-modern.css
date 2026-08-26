@@ -1119,11 +1119,11 @@ section + footer::before{
 /* 허브 자치구 칩 — 고정 높이·자동 너비(모든 로고 글씨 높이 균일), 플렉스 나열 */
 .dist .chips{display:flex !important;flex-wrap:wrap;gap:12px;grid-template-columns:none !important}
 .chip.chip-logo-only,.chip.chip-textlogo{
-  height:88px;padding:0 22px;background:#fff;border:1px solid rgba(24,52,45,.12);
+  height:92px;padding:0 24px;background:#fff;border:1px solid rgba(24,52,45,.12);
   display:flex;align-items:center;justify-content:center;
 }
 .chip.chip-textlogo{gap:9px;padding:0 24px}
-.chip-logo-only .chip-logo{height:40px;width:auto;max-width:240px;object-fit:contain;filter:contrast(1.05) saturate(1.05)}
+.chip-logo-only .chip-logo{height:46px;width:auto;max-width:300px;object-fit:contain;filter:contrast(1.05) saturate(1.05)}
 .chip-textlogo .tl-emblem{flex:none;display:inline-flex}
 .chip-textlogo .tl-emblem svg{width:34px;height:34px;display:block}
 .chip-textlogo .tl-name{
@@ -1131,13 +1131,13 @@ section + footer::before{
   color:var(--pine);line-height:1.2;word-break:keep-all;white-space:nowrap;
 }
 @media(min-width:701px){
-  .chip.chip-logo-only,.chip.chip-textlogo{height:96px}
-  .chip-logo-only .chip-logo{height:44px;max-width:290px}
+  .chip.chip-logo-only,.chip.chip-textlogo{height:98px}
+  .chip-logo-only .chip-logo{height:46px;max-width:300px}
   .chip-textlogo .tl-name{font-size:22px}
 }
 @media(max-width:640px){
-  .chip.chip-logo-only,.chip.chip-textlogo{height:78px;padding:0 16px}
-  .chip-logo-only .chip-logo{height:36px;max-width:200px}
+  .chip.chip-logo-only,.chip.chip-textlogo{height:80px;padding:0 18px}
+  .chip-logo-only .chip-logo{height:38px;max-width:230px}
   .chip-textlogo .tl-name{font-size:19px}
   .chip-textlogo .tl-emblem svg{width:30px;height:30px}
 }
