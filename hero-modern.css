@@ -122,8 +122,9 @@
   .hc-ico-save svg{color:#eafff4}
   .hc-save .hc-items{font-size:13px;color:#AED8C0;margin-top:0}
   .hc-savenum{
-    font-size:17px;font-weight:900;color:#B7E8CC;
-    font-family:'Noto Serif KR',serif;line-height:1.2;margin-top:1px;
+    font-size:22px;font-weight:900;color:#F1C96A;
+    font-family:'Noto Serif KR',serif;line-height:1.15;margin-top:2px;
+    letter-spacing:-.01em;text-shadow:0 1px 2px rgba(0,0,0,.38);
   }
 
   /* ---------- CTA ---------- */
