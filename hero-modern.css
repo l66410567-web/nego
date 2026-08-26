@@ -1198,15 +1198,38 @@ a.dist{display:block}
 a.pmq-item{text-decoration:none;transition:transform .18s, box-shadow .18s, border-color .18s}
 a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45,.16);border-color:var(--brass)}
 
-/* 상세 페이지 상담 CTA — 지원내역 궁금증 유발 후크 */
-.detail-cta{text-align:center;margin-top:30px}
-.detail-cta-hook{
-  font-family:'Noto Sans KR',sans-serif;font-size:16px;line-height:1.75;color:var(--gray);
-  margin:0 0 18px;word-break:keep-all;
+/* 상세 페이지 상담 CTA — 지원내역 궁금증 유발 카드 + 바로 전화 */
+.detail-cta{
+  text-align:center;margin-top:34px;padding:28px 24px;
+  background:linear-gradient(180deg,#FBF7EE 0%,#F3EAD6 100%);
+  border:1px solid rgba(200,164,106,.55);border-radius:18px;
+  box-shadow:0 10px 28px rgba(150,110,45,.13);
 }
-.detail-cta-hook b{color:var(--brass-dp);font-weight:800}
-.detail-cta-btn{padding:16px 42px;font-size:16.5px}
-@media(max-width:640px){.detail-cta-hook{font-size:15px}.detail-cta-btn{width:100%;padding:16px 24px}}
+.detail-cta-hook{margin:0 0 20px;word-break:keep-all}
+.detail-cta-hook .cta-q{
+  display:block;font-family:'Noto Serif KR',serif;font-size:22px;font-weight:900;
+  line-height:1.42;letter-spacing:-.01em;color:#2A1E0A;
+}
+.detail-cta-hook .cta-em{color:var(--brass-dp)}
+.detail-cta-hook .cta-sub{
+  display:block;margin-top:11px;font-family:'Noto Sans KR',sans-serif;
+  font-size:14.5px;line-height:1.6;color:#5A4A32;font-weight:500;
+}
+.detail-cta-hook .cta-sub b{color:#3A2E14;font-weight:800}
+.detail-cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.detail-cta-call{padding:16px 30px;font-size:16.5px}
+.detail-cta-ask{
+  padding:16px 26px;font-size:15.5px;background:#fff;
+  border:1.6px solid var(--pine,#1C4A3A);color:var(--pine,#1C4A3A);
+}
+.detail-cta .detail-back{margin-top:16px}
+@media(max-width:640px){
+  .detail-cta{padding:24px 16px;margin-top:28px}
+  .detail-cta-hook .cta-q{font-size:19px}
+  .detail-cta-hook .cta-sub{font-size:13.5px}
+  .detail-cta-btns{flex-direction:column}
+  .detail-cta-call,.detail-cta-ask{width:100%}
+}
 
 /* 신뢰 밴드 핵심 문구 강조 — 깔끔한 골드 컬러 + 굵기 (배경 없음) */
 .tb-statement .tb-hl{
