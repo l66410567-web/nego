@@ -1380,11 +1380,12 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hc-save .hc-items{font-size:14px}
 }
 
-/* 푸터 제휴 장례식장 로고 (2중 노출·신뢰) */
-.foot-logos{margin:28px 0 20px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12)}
-.foot-logos-lab{font-size:12.5px;font-weight:700;color:rgba(255,255,255,.55);letter-spacing:.03em;margin-bottom:13px}
-.foot-logos-grid{display:flex;flex-wrap:wrap;gap:9px}
-.foot-logos-grid a{display:flex;align-items:center;justify-content:center;height:42px;padding:0 12px;background:#fff;border-radius:9px;transition:transform .15s ease, box-shadow .15s ease}
-.foot-logos-grid a:hover{transform:translateY(-2px);box-shadow:0 6px 14px rgba(0,0,0,.32)}
-.foot-logos-grid img{height:23px;width:auto;max-width:118px;object-fit:contain;display:block}
-@media(max-width:640px){.foot-logos-grid a{height:37px;padding:0 9px}.foot-logos-grid img{height:19px;max-width:94px}}
+/* 푸터 제휴 장례식장 로고 — 카드 제거, 하나의 부드러운 패널에 자연스럽게 (mix-blend로 흰 배경 녹임) */
+.foot-logos{margin:30px 0 20px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12)}
+.foot-logos-lab{font-size:12.5px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:.03em;margin-bottom:15px}
+.foot-logos-grid{display:flex;flex-wrap:wrap;align-items:center;gap:15px 28px;
+  background:#FBF8F1;border-radius:16px;padding:20px 26px}
+.foot-logos-grid a{display:inline-flex;align-items:center;opacity:.88;transition:opacity .15s ease, transform .15s ease}
+.foot-logos-grid a:hover{opacity:1;transform:translateY(-2px)}
+.foot-logos-grid img{height:26px;width:auto;max-width:132px;object-fit:contain;display:block;mix-blend-mode:multiply}
+@media(max-width:640px){.foot-logos-grid{gap:14px 20px;padding:16px 18px}.foot-logos-grid img{height:22px;max-width:106px}}
