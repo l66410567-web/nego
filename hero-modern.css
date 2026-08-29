@@ -1350,3 +1350,15 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hero-sub,.hero-lead,.trend-lead,.trend-card p,.guide-card p,
   .bene-list2 li{font-size:15.5px;line-height:1.75}
 }
+
+/* 맨 위로 버튼 — 스크롤 내리면 나타남 (전 페이지, 겹침 방지: 좌측 하단 / 모바일은 콜바 위) */
+.to-top{position:fixed;left:18px;bottom:22px;z-index:84;height:50px;padding:0 16px;border-radius:999px;
+  background:rgba(28,74,58,.95);color:#fff;border:1px solid rgba(255,255,255,.3);
+  display:flex;align-items:center;gap:7px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;
+  font-size:14px;font-weight:700;box-shadow:0 8px 22px rgba(0,0,0,.3);
+  opacity:0;visibility:hidden;transform:translateY(10px);
+  transition:opacity .25s ease, transform .25s ease, visibility .25s}
+.to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.to-top:hover{background:rgba(28,74,58,1)}
+.to-top svg{width:22px;height:22px}
+@media(max-width:700px){.to-top{bottom:66px;left:14px;height:46px;padding:0 14px}.to-top .tt-lab{display:none}}

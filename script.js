@@ -75,3 +75,20 @@ document.querySelectorAll('.er-tab').forEach(function(tab){
     if (panel) panel.classList.add('on');
   });
 });
+
+// 맨 위로 버튼 (전 페이지 공통)
+(function(){
+  var btn = document.createElement('button');
+  btn.className = 'to-top';
+  btn.type = 'button';
+  btn.setAttribute('aria-label','맨 위로');
+  btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V6"/><path d="M6 12l6-6 6 6"/></svg><span class="tt-lab">맨 위로</span>';
+  btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+  document.body.appendChild(btn);
+  var toggle = function(){
+    if(window.pageYOffset > 500){ btn.classList.add('show'); }
+    else { btn.classList.remove('show'); }
+  };
+  window.addEventListener('scroll', toggle, {passive:true});
+  toggle();
+})();
