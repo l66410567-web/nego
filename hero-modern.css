@@ -1314,10 +1314,9 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .warn-tip{margin:14px 16px 16px}
 }
 
-/* 무빈소 히어로 — 최저가 캐치프레이즈 (신뢰 문구식 선언: 가운데 세리프 이탤릭) */
-.simple-catch{margin-top:26px;text-align:center}
-.sc-tag{display:inline-block;background:linear-gradient(180deg,#E7CC8A,#C8A46A);color:#2A1E0A;font-size:12.5px;font-weight:800;padding:5px 15px;border-radius:999px;letter-spacing:.02em;box-shadow:0 3px 8px rgba(150,110,45,.3)}
-.sc-line{margin:16px 0 9px;font-family:'Noto Serif KR',serif;font-style:italic;font-size:28px;font-weight:900;color:#F4E8C7;letter-spacing:-.01em;line-height:1.42}
-.sc-line b{color:#EBCB78;font-style:italic}
-.sc-sub{margin:0;font-size:14.5px;line-height:1.65;color:#C3D2BE}
-@media(max-width:640px){.sc-line{font-size:22px}.sc-sub{font-size:13px}}
+/* 무빈소 히어로 — 최저가 캐치프레이즈 (가운데 선언, 크게) */
+.simple-catch{margin-top:26px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.sc-tag{background:linear-gradient(180deg,#E7CC8A,#C8A46A);color:#2A1E0A;font-size:13px;font-weight:800;padding:6px 16px;border-radius:999px;letter-spacing:.02em;box-shadow:0 3px 8px rgba(150,110,45,.3)}
+.sc-line{margin:16px 0 0;font-family:'Noto Serif KR',serif;font-size:36px;font-weight:900;color:#F5EACB;letter-spacing:-.015em;line-height:1.32}
+.sc-line b{color:#EBCB78}
+@media(max-width:640px){.sc-tag{font-size:12px}.sc-line{font-size:27px;margin-top:14px}}
