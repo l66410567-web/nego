@@ -1318,3 +1318,35 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .phead .sc-line{margin:18px 0 0;font-family:'Noto Serif KR',serif;font-size:30px;font-weight:900;color:#F5EACB;letter-spacing:-.015em;line-height:1.32}
 .phead .sc-line b{color:#EBCB78}
 @media(max-width:640px){.phead .sc-line{font-size:22px;margin-top:14px}}
+
+/* ============================================================
+   고령 이용자 접근성 — 본문 가독성 하한선 (전 페이지 공통)
+   장례 특성상 고령자가 많아, 읽는 텍스트를 크고 또렷하게.
+   (제목·배지·로고 등 레이아웃 요소는 제외 / hero-modern가 마지막 로드라 소스순서로 승리)
+   ============================================================ */
+.phead p{font-size:17.5px;line-height:1.78}
+.card p,.bx li,.pkg li,.swap-card p,.pledge p,.svc-body p,
+.step p,.vstep-b p,.qa-a-text,.qa-q-text,.rv-quote,.review-cta p,
+.pm-big p,.pm p,.news-sub,.faq-a p,.faq-q,.faq-cat,
+.tbl th,.tbl td,.spec-tbl th,.spec-tbl td,
+.hero-sub,.hero-lead,.trend-lead,.trend-card p,.guide-card p,
+.bene-list2 li{
+  font-size:16.5px;
+  line-height:1.8;
+}
+/* 보조·각주 텍스트: 12~13.5 → 14 이상 */
+.bx-note,.alert-note,.figure-sub,.figure-num-label,.pkg-size,
+.rv-who,.src-note,.guide-src,.trend-note,.tc-src,.figure-basis,
+.pm h4,.pledge h3,.step h4,.crumb,.foot-disc,.memo,.fsub{
+  font-size:14px;
+  line-height:1.7;
+}
+@media(max-width:640px){
+  .phead p{font-size:16px;line-height:1.72}
+  .card p,.bx li,.pkg li,.swap-card p,.pledge p,.svc-body p,
+  .step p,.vstep-b p,.qa-a-text,.qa-q-text,.rv-quote,.review-cta p,
+  .pm-big p,.pm p,.news-sub,.faq-a p,.faq-q,.faq-cat,
+  .tbl th,.tbl td,.spec-tbl th,.spec-tbl td,
+  .hero-sub,.hero-lead,.trend-lead,.trend-card p,.guide-card p,
+  .bene-list2 li{font-size:15.5px;line-height:1.75}
+}
