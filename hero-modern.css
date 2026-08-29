@@ -1380,13 +1380,12 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hc-save .hc-items{font-size:14px}
 }
 
-/* 푸터 제휴 장례식장 로고 — 카드 제거, 하나의 부드러운 패널에 자연스럽게 (mix-blend로 흰 배경 녹임) */
-.foot-logos{margin:30px 0 20px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12)}
-.foot-logos-lab{font-size:12.5px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:.03em;margin-bottom:15px}
-.foot-logos-grid{display:flex;flex-wrap:wrap;align-items:center;gap:16px 30px}
-.foot-logos-grid a{display:inline-flex;align-items:center;opacity:.72;transition:opacity .18s ease, transform .18s ease}
+/* 푸터 위 제휴 장례식장 로고 띠 — 전체 폭 밝은 밴드에 원본 색 로고, 흰 배경은 multiply로 녹임(카드 없음) */
+.foot-logos{background:linear-gradient(180deg,#F0E9DA,#EAE1CE);padding:32px 0}
+.foot-logos-in{max-width:1180px;margin:0 auto;padding:0 24px}
+.foot-logos-lab{font-size:12.5px;font-weight:800;color:#9A8B6C;letter-spacing:.04em;text-align:center;margin-bottom:20px}
+.foot-logos-grid{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:20px 34px}
+.foot-logos-grid a{display:inline-flex;align-items:center;opacity:.92;transition:opacity .18s ease, transform .18s ease}
 .foot-logos-grid a:hover{opacity:1;transform:translateY(-2px)}
-/* 흰배경 컬러 로고 → 반전으로 흰 단색화 + screen 블렌드로 검은배경 제거 → 다크 푸터에 자연스럽게 녹임 */
-.foot-logos-grid img{height:27px;width:auto;max-width:135px;object-fit:contain;display:block;
-  filter:grayscale(1) invert(1) brightness(1.15) contrast(1.05);mix-blend-mode:screen}
-@media(max-width:640px){.foot-logos-grid{gap:14px 22px}.foot-logos-grid img{height:23px;max-width:110px}}
+.foot-logos-grid img{height:28px;width:auto;max-width:140px;object-fit:contain;display:block;mix-blend-mode:multiply}
+@media(max-width:640px){.foot-logos{padding:26px 0}.foot-logos-in{padding:0 18px}.foot-logos-grid{gap:16px 24px}.foot-logos-grid img{height:23px;max-width:112px}}

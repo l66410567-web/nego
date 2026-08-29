@@ -95,8 +95,8 @@ document.querySelectorAll('.er-tab').forEach(function(tab){
 
 // 푸터 제휴 장례식장 로고 (2중 노출·신뢰 / 클릭 시 상세 이동)
 (function(){
-  var top = document.querySelector('.foot .foot-top');
-  if(!top) return;
+  var foot = document.querySelector('footer.foot') || document.querySelector('.foot');
+  if(!foot) return;
   var halls = [
     ['1000000846','jpg','학동금호장례식장'],['1000000776','jpg','천지장례식장'],
     ['7000001770','jpg','브이아이피장례타운'],['7000001839','jpg','광주국빈장례문화원'],
@@ -110,10 +110,12 @@ document.querySelectorAll('.er-tab').forEach(function(tab){
   ];
   var wrap = document.createElement('div');
   wrap.className = 'foot-logos';
+  var inner = document.createElement('div');
+  inner.className = 'foot-logos-in';
   var lab = document.createElement('div');
   lab.className = 'foot-logos-lab';
   lab.textContent = '함께하는 제휴 장례식장';
-  wrap.appendChild(lab);
+  inner.appendChild(lab);
   var grid = document.createElement('div');
   grid.className = 'foot-logos-grid';
   halls.forEach(function(h){
@@ -127,6 +129,7 @@ document.querySelectorAll('.er-tab').forEach(function(tab){
     a.appendChild(img);
     grid.appendChild(a);
   });
-  wrap.appendChild(grid);
-  top.parentNode.insertBefore(wrap, top.nextSibling);
+  inner.appendChild(grid);
+  wrap.appendChild(inner);
+  foot.parentNode.insertBefore(wrap, foot);
 })();
