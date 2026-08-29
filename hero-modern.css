@@ -1362,3 +1362,9 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .to-top:hover{background:rgba(28,74,58,1)}
 .to-top svg{width:22px;height:22px}
 @media(max-width:700px){.to-top{bottom:66px;left:14px;height:46px;padding:0 14px}.to-top .tt-lab{display:none}}
+
+/* .bx 목록 — flex 해제, ✓를 왼쪽 행잉 마커로 (골드 강조가 문장 중간에서 깨지지 않게) */
+.bx ul{padding:0;margin:0;list-style:none}
+.bx li{display:block;position:relative;padding:9px 0 9px 29px;line-height:1.75;gap:0}
+.bx li .ck{position:absolute;left:0;top:10px;line-height:1}
+@media(max-width:640px){.bx li{padding-left:27px}}
