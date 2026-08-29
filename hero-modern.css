@@ -1272,3 +1272,15 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
     border:none;box-shadow:0 6px 16px rgba(150,110,45,.26);font-weight:800;
   }
 }
+
+/* 무빈소 — 부고 문자 예시 (메시지 카드 목업) */
+.obit-wrap{margin-top:22px}
+.obit-lead{text-align:center;font-size:15px;color:var(--gray);margin-bottom:16px}
+.obit-lead b{color:var(--brass-dp)}
+.obit-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.obit-msg{background:#fff;border:1px solid rgba(200,164,106,.5);border-radius:16px;overflow:hidden;box-shadow:0 6px 18px rgba(120,90,40,.08)}
+.obit-msg-h{background:linear-gradient(180deg,#F3EAD6,#EFE2C6);padding:10px 16px;font-size:12.5px;font-weight:800;color:#5A4A2C;border-bottom:1px solid rgba(200,164,106,.4)}
+.obit-msg-b{padding:17px 18px;font-size:14px;line-height:1.9;color:#2B2B2B}
+.obit-msg-b .ph{color:var(--brass-dp);font-weight:700}
+.obit-note{text-align:center;font-size:12.5px;color:#8a8071;margin-top:14px}
+@media(max-width:640px){.obit-grid{grid-template-columns:1fr}.obit-msg-b{font-size:13.5px}}
