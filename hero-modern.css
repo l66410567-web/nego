@@ -1368,3 +1368,14 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .bx li{display:block;position:relative;padding:9px 0 9px 29px;line-height:1.75;gap:0}
 .bx li .ck{position:absolute;left:0;top:10px;line-height:1}
 @media(max-width:640px){.bx li{padding-left:27px}}
+
+/* 홈 모바일 히어로 — 고령층 가독성 (첫 화면 텍스트 확대) */
+@media(max-width:900px){
+  .hero119-sub{font-size:16.5px;line-height:1.72}
+}
+@media(max-width:700px){
+  .hc-head{font-size:15px}
+  .hc-cat{font-size:15.5px;line-height:1.35}
+  .hc-items{font-size:14px;line-height:1.55}
+  .hc-save .hc-items{font-size:14px}
+}
