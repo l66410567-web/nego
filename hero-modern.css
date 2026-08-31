@@ -1397,15 +1397,15 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 
 /* 무빈소 광고 유입 CTA — 히어로 바로 아래 (딥그린 카드 + 골드 버튼) */
 .lead-cta-sec{padding:22px 0 0}
-.lead-cta{background:linear-gradient(135deg,#204b3b,#173a2c);border:1px solid rgba(226,192,120,.35);border-radius:20px;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap;box-shadow:0 14px 34px rgba(20,60,45,.22)}
+.lead-cta{background:#fff;border:1px solid rgba(200,164,106,.5);border-left:4px solid var(--brass,#C8A46A);border-radius:18px;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap;box-shadow:0 10px 26px rgba(120,90,40,.12)}
 .lead-cta-txt{flex:1 1 340px;min-width:0}
-.lead-cta-txt h2{margin:0 0 7px;font-family:'Noto Serif KR',serif;font-size:22px;font-weight:900;color:#F5EACB;line-height:1.36;letter-spacing:-.01em}
-.lead-cta-txt h2 b{color:#EBCB78}
-.lead-cta-txt p{margin:0;font-size:15.5px;color:#C6D4C0;line-height:1.65}
+.lead-cta-txt h2{margin:0 0 7px;font-family:'Noto Serif KR',serif;font-size:22px;font-weight:900;color:#2A2016;line-height:1.36;letter-spacing:-.01em}
+.lead-cta-txt h2 b{color:var(--brass-dp,#A87C2E)}
+.lead-cta-txt p{margin:0;font-size:15.5px;color:#5A4A32;line-height:1.65}
 .lead-cta-btns{display:flex;flex-direction:column;align-items:stretch;gap:9px;flex:none}
 .lead-cta-btn{padding:16px 40px;font-size:17.5px;white-space:nowrap}
-.lead-cta-tel{text-align:center;font-size:13.5px;color:#D8E4D2;text-decoration:none}
-.lead-cta-tel:hover{color:#fff;text-decoration:underline}
+.lead-cta-tel{text-align:center;font-size:13.5px;color:#8a7a5c;text-decoration:none}
+.lead-cta-tel:hover{color:#2A1E0A;text-decoration:underline}
 @media(max-width:640px){
   .lead-cta{flex-direction:column;align-items:stretch;text-align:center;gap:16px;padding:22px 20px}
   .lead-cta-txt{flex:none}
