@@ -1254,11 +1254,13 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 /* 장례식장 안내 알림 — 전 화면 공통: 크림 배경 위 흰 카드(골드 액센트), 다른 카테고리와 톤 통일 */
 .alert{background:transparent}
 .alert .alert-in{
-  align-items:center;gap:16px 20px;margin:6px 0 0;padding:20px 24px;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+  gap:14px 24px;margin:6px auto 0;padding:22px 26px;
   background:#fff;border:1px solid rgba(200,164,106,.5);
   border-left:4px solid var(--brass,#C8A46A);border-radius:16px;
   box-shadow:0 8px 22px rgba(120,90,40,.10);
 }
+.alert .alert-body{flex:1 1 520px}
 .alert .alert-ico{display:none}
 .alert .alert-title{color:#2A2016;font-size:19px;line-height:1.5;font-weight:800}
 .alert .alert-ul{color:#2A2016;text-shadow:none;font-weight:900}
