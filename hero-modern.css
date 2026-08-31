@@ -1389,3 +1389,20 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .foot-logos-grid a:hover{opacity:1;transform:translateY(-2px)}
 .foot-logos-grid img{height:28px;width:auto;max-width:140px;object-fit:contain;display:block;mix-blend-mode:multiply}
 @media(max-width:640px){.foot-logos{padding:26px 0}.foot-logos-in{padding:0 18px}.foot-logos-grid{gap:16px 24px}.foot-logos-grid img{height:23px;max-width:112px}}
+
+/* 무빈소 광고 유입 CTA — 히어로 바로 아래 (딥그린 카드 + 골드 버튼) */
+.lead-cta-sec{padding:22px 0 0}
+.lead-cta{background:linear-gradient(135deg,#204b3b,#173a2c);border:1px solid rgba(226,192,120,.35);border-radius:20px;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap;box-shadow:0 14px 34px rgba(20,60,45,.22)}
+.lead-cta-txt{flex:1 1 340px;min-width:0}
+.lead-cta-txt h2{margin:0 0 7px;font-family:'Noto Serif KR',serif;font-size:22px;font-weight:900;color:#F5EACB;line-height:1.36;letter-spacing:-.01em}
+.lead-cta-txt h2 b{color:#EBCB78}
+.lead-cta-txt p{margin:0;font-size:15.5px;color:#C6D4C0;line-height:1.65}
+.lead-cta-btns{display:flex;flex-direction:column;align-items:stretch;gap:9px;flex:none}
+.lead-cta-btn{padding:16px 40px;font-size:17.5px;white-space:nowrap}
+.lead-cta-tel{text-align:center;font-size:13.5px;color:#D8E4D2;text-decoration:none}
+.lead-cta-tel:hover{color:#fff;text-decoration:underline}
+@media(max-width:640px){
+  .lead-cta{flex-direction:column;align-items:stretch;text-align:center;padding:22px 20px}
+  .lead-cta-txt h2{font-size:19px}
+  .lead-cta-btn{width:100%}
+}
