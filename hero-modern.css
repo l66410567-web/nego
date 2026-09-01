@@ -53,7 +53,7 @@
     width:66%; height:70%;
     background:url('hero-chrys.jpg?v=2') no-repeat right top;
     background-size:contain;
-    opacity:.56;
+    opacity:.45;
     mix-blend-mode:screen;
     -webkit-mask-image:radial-gradient(125% 105% at 92% 8%, #000 24%, rgba(0,0,0,.4) 52%, transparent 80%);
             mask-image:radial-gradient(125% 105% at 92% 8%, #000 24%, rgba(0,0,0,.4) 52%, transparent 80%);
