@@ -1503,3 +1503,7 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .promo250-price b{font-size:48px}
   .promo250-btn{width:100%}
 }
+
+/* 무빈소250 배너 — 포함 항목 구절 강조(과하게) */
+.promo250-txt .p250-hl{color:#F4CE68;font-weight:800;text-shadow:0 1px 10px rgba(244,206,104,.35)}
+.promo250-txt .p250-hl b{color:#FFDF88;font-weight:900}
