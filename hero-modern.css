@@ -1522,4 +1522,5 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .prod-intro-lead .pi-x{color:#B23A2E;font-weight:800}
 .prod-intro-main{margin:0;font-family:'Noto Serif KR',serif;font-size:25px;font-weight:900;line-height:1.5;color:var(--pine,#1C4A3A);letter-spacing:-.01em}
 .prod-intro-main b{color:var(--brass-dp,#A87C2E)}
+.prod-intro-main .pi-red{color:#C0392B;font-weight:900}
 @media(max-width:640px){.prod-intro-lead{font-size:17px}.prod-intro-main{font-size:20px}}
