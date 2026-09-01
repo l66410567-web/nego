@@ -1529,7 +1529,7 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .figure-tag.figure-tag-price{background:linear-gradient(180deg,#E7CC8A,#C8A46A);color:#2A1E0A;border:none;font-weight:800;box-shadow:0 3px 8px rgba(150,110,45,.25);animation:none;width:auto;flex:none}
 
 /* 무빈소250 제공 서비스 아이콘 그리드 */
-.svc250-logo{display:block;height:46px;width:auto;margin:0 auto 16px}
+.svc250-logo{display:block;height:54px;width:auto;margin:2px auto 20px;mix-blend-mode:multiply}
 .svc250{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:8px}
 .svc250-card{background:#fff;border:1px solid rgba(200,164,106,.3);border-radius:14px;padding:18px 12px;text-align:center;box-shadow:0 6px 16px rgba(120,90,40,.07)}
 .svc250-ico{width:52px;height:52px;margin:0 auto 12px;border-radius:50%;background:linear-gradient(180deg,#2C5D47,#1E4534);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px rgba(30,69,52,.25)}
