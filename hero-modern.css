@@ -1507,3 +1507,11 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 /* 무빈소250 배너 — 포함 항목 구절 강조(과하게) */
 .promo250-txt .p250-hl{color:#F4CE68;font-weight:800;text-shadow:0 1px 10px rgba(244,206,104,.35)}
 .promo250-txt .p250-hl b{color:#FFDF88;font-weight:900}
+
+/* 무빈소 신뢰 신념 문구 (짧고 힘있게) */
+.creed-sec{padding-top:10px;padding-bottom:10px;text-align:center}
+.creed-line{margin:0;font-family:'Noto Serif KR',serif;font-size:28px;font-weight:900;line-height:1.4;letter-spacing:-.015em;color:var(--pine,#1C4A3A)}
+.creed-line b{color:var(--brass-dp,#A87C2E)}
+.creed-sub{margin:14px auto 0;font-size:16px;line-height:1.7;color:var(--gray);max-width:600px}
+.creed-sub b{color:#2A2016;font-weight:800}
+@media(max-width:640px){.creed-line{font-size:22px}.creed-sub{font-size:14.5px}}
