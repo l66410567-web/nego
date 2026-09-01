@@ -1558,3 +1558,14 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 
 /* 무빈소250 소개 — 밑줄 강조 */
 .prod-intro-main .pi-underline{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px;text-decoration-color:var(--brass,#C8A46A)}
+
+/* 무빈소250 — 추가비용 200% 책임보상 서약 */
+.vow{display:flex;align-items:center;justify-content:center;gap:12px;max-width:600px;margin:18px auto 0;padding:14px 18px;background:linear-gradient(180deg,#fff,#FBF7EE);border:1.5px solid var(--brass,#C8A46A);border-radius:14px;box-shadow:0 8px 20px rgba(150,110,45,.12)}
+.vow-ico{flex:none;width:40px;height:40px;border-radius:50%;background:linear-gradient(180deg,#2C5D47,#1E4534);color:#F5EACB;display:flex;align-items:center;justify-content:center}
+.vow-ico svg{width:22px;height:22px}
+.vow-txt{text-align:left}
+.vow-txt b{display:block;font-size:16px;font-weight:900;color:#B23A2E;letter-spacing:-.01em}
+.vow-txt span{display:block;margin-top:3px;font-size:13.5px;line-height:1.5;color:#5A4A32}
+.vow-txt span b{display:inline;font-size:inherit;color:#B23A2E}
+.prod-tags .tag-vow{background:#F6DAD3;color:#B23A2E;font-weight:800}
+@media(max-width:640px){.vow{gap:10px;padding:13px 14px}.vow-txt b{font-size:14.5px}.vow-txt span{font-size:12.5px}}
