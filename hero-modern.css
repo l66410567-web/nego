@@ -49,14 +49,14 @@
   /* 은은한 국화 배경 — 우상단에서 옅게 피어오르듯 */
   .hero119-veil::after{
     content:"";
-    position:absolute; top:-2%; right:-4%;
-    width:60%; height:60%;
-    background:url('hero-chrys.jpg?v=2') no-repeat right 28%;
-    background-size:cover;
-    opacity:.36;
+    position:absolute; top:0; right:-6%;
+    width:66%; height:70%;
+    background:url('hero-chrys.jpg?v=2') no-repeat right top;
+    background-size:contain;
+    opacity:.4;
     mix-blend-mode:screen;
-    -webkit-mask-image:radial-gradient(115% 100% at 100% 0%, #000 18%, rgba(0,0,0,.42) 46%, transparent 74%);
-            mask-image:radial-gradient(115% 100% at 100% 0%, #000 18%, rgba(0,0,0,.42) 46%, transparent 74%);
+    -webkit-mask-image:radial-gradient(125% 105% at 92% 8%, #000 24%, rgba(0,0,0,.4) 52%, transparent 80%);
+            mask-image:radial-gradient(125% 105% at 92% 8%, #000 24%, rgba(0,0,0,.4) 52%, transparent 80%);
     pointer-events:none;
   }
   .hero119-wrap{padding-top:26px;padding-bottom:30px}
