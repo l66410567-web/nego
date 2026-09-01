@@ -1458,3 +1458,19 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .mflow-step:last-child{grid-column:1 / -1}
 }
 @media(max-width:400px){.mflow{grid-template-columns:1fr}.mflow-step:last-child{grid-column:auto}}
+
+/* 무빈소250 — 일반 저가 vs 빛고을 비교표 */
+.cmp-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:14px}
+.cmp-tbl{width:100%;min-width:480px;border-collapse:separate;border-spacing:0;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 12px 30px rgba(120,90,40,.12)}
+.cmp-tbl th,.cmp-tbl td{padding:14px 15px;text-align:left;font-size:14.5px;line-height:1.45;border-bottom:1px solid rgba(24,52,45,.08);vertical-align:middle}
+.cmp-tbl thead th{background:#EFE6D4;font-weight:800;color:#5A4A32;font-size:13.5px}
+.cmp-tbl thead th.cmp-good-h{background:linear-gradient(180deg,#2C5D47,#1E4534);color:#F5EACB;font-size:15px;font-weight:900}
+.cmp-tbl tbody td:first-child{font-weight:800;color:#2A2016;width:24%;background:#FBF7EE}
+.cmp-tbl tbody td:nth-child(2){color:#8a6b5f}
+.cmp-tbl td.cmp-good{color:#173a2c;font-weight:700;background:#EAF4EC}
+.cmp-tbl .cx{color:#C0392B;font-weight:900;margin-right:5px}
+.cmp-tbl .cok{color:#2E7D46;font-weight:900;margin-right:5px}
+.cmp-tbl tr:last-child td{border-bottom:none}
+.cmp-note{margin:16px auto 0;font-size:13px;color:#7a6a4c;line-height:1.65;max-width:660px;text-align:center}
+.cmp-note b{color:#2A1E0A}
+@media(max-width:640px){.cmp-tbl th,.cmp-tbl td{padding:12px 12px;font-size:13.5px}.cmp-tbl thead th.cmp-good-h{font-size:14px}}
