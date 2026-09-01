@@ -1440,3 +1440,21 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .prod-signature{margin:14px 26px 4px;padding:13px 15px;background:linear-gradient(180deg,#FBF3E0,#F5E9CE);border:1px solid rgba(200,164,106,.5);border-radius:12px;font-size:14px;line-height:1.6;color:#4A3A1E;text-align:center}
 .prod-signature b{color:#8A5A12;font-weight:800}
 @media(max-width:640px){.prod-signature{margin:12px 18px 4px;font-size:13px}}
+
+/* 무빈소 진행 플로우 — 출동→안치 시각 단계 (직관적) */
+.mflow{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;position:relative;margin-top:8px}
+.mflow-step{text-align:center;position:relative;padding:0 4px}
+.mflow-step:not(:last-child)::after{content:'';position:absolute;top:33px;left:calc(50% + 40px);width:calc(100% - 80px);height:2px;background:repeating-linear-gradient(90deg,rgba(200,164,106,.6) 0 7px,transparent 7px 13px)}
+.mflow-ico{position:relative;width:66px;height:66px;margin:0 auto 14px;border-radius:50%;background:linear-gradient(180deg,#2C5D47,#1E4534);color:#F5EACB;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(30,69,52,.3);z-index:1}
+.mflow-ico svg{width:30px;height:30px}
+.mflow-n{position:absolute;top:-5px;right:-5px;width:25px;height:25px;border-radius:50%;background:linear-gradient(180deg,#E7CC8A,#C8A46A);color:#2A1E0A;font-size:12.5px;font-weight:800;display:flex;align-items:center;justify-content:center;border:2px solid #fff;box-shadow:0 2px 5px rgba(150,110,45,.3)}
+.mflow-step h3{margin:0 0 6px;font-size:16px;font-weight:800;color:#1E4534;letter-spacing:-.01em}
+.mflow-step p{margin:0;font-size:13.5px;line-height:1.55;color:#5a5a5a}
+.mflow-note{text-align:center;margin:26px auto 0;font-size:14px;color:#5A4A32;max-width:640px}
+.mflow-note b{color:var(--brass-dp,#A87C2E)}
+@media(max-width:760px){
+  .mflow{grid-template-columns:repeat(2,1fr);gap:26px 16px}
+  .mflow-step:not(:last-child)::after{display:none}
+  .mflow-step:last-child{grid-column:1 / -1}
+}
+@media(max-width:400px){.mflow{grid-template-columns:1fr}.mflow-step:last-child{grid-column:auto}}
