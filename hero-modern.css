@@ -1363,7 +1363,7 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   line-height:1.7;
 }
 @media(max-width:640px){
-  .phead{min-height:250px}
+  .phead{min-height:300px}
   .phead p{font-size:16px;line-height:1.72}
   .card p,.bx li,.pkg li,.swap-card p,.pledge p,.svc-body p,
   .step p,.vstep-b p,.qa-a-text,.qa-q-text,.rv-quote,.review-cta p,
