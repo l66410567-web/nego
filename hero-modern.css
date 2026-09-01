@@ -1515,3 +1515,11 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .creed-sub{margin:14px auto 0;font-size:16px;line-height:1.7;color:var(--gray);max-width:600px}
 .creed-sub b{color:#2A2016;font-weight:800}
 @media(max-width:640px){.creed-line{font-size:22px}.creed-sub{font-size:14.5px}}
+
+/* 무빈소250 상품 소개 — 핵심 문구 강조(총액 투명 공개) */
+.prod-intro{max-width:720px;margin:0 auto 26px;text-align:center}
+.prod-intro-lead{margin:0 0 8px;font-size:16px;color:#8a6b5f;font-weight:600}
+.prod-intro-lead .pi-x{color:#B23A2E;font-weight:800}
+.prod-intro-main{margin:0;font-family:'Noto Serif KR',serif;font-size:22px;font-weight:900;line-height:1.5;color:var(--pine,#1C4A3A);letter-spacing:-.01em}
+.prod-intro-main b{color:var(--brass-dp,#A87C2E)}
+@media(max-width:640px){.prod-intro-lead{font-size:14.5px}.prod-intro-main{font-size:18px}}
