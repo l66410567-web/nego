@@ -46,18 +46,17 @@
       radial-gradient(95% 56% at 50% -6%, rgba(200,164,106,.16), rgba(200,164,106,0) 55%),
       linear-gradient(180deg,#1F3B31 0%,#18342D 55%,#142C25 100%);
   }
-  /* 은은한 국화 배경 — 우하단에서 아주 옅게 피어오르듯 */
+  /* 은은한 국화 배경 — 우상단에서 옅게 피어오르듯 */
   .hero119-veil::after{
     content:"";
-    position:absolute; right:0; bottom:0;
-    width:86%; height:80%;
-    background:url('bg-hero.jpg') no-repeat;
-    background-position:right 32%;
+    position:absolute; top:-2%; right:-4%;
+    width:60%; height:60%;
+    background:url('hero-chrys.jpg') no-repeat right top;
     background-size:cover;
-    opacity:.16;
+    opacity:.34;
     mix-blend-mode:screen;
-    -webkit-mask-image:radial-gradient(130% 106% at 100% 100%, #000 14%, rgba(0,0,0,.5) 44%, transparent 74%);
-            mask-image:radial-gradient(130% 106% at 100% 100%, #000 14%, rgba(0,0,0,.5) 44%, transparent 74%);
+    -webkit-mask-image:radial-gradient(115% 100% at 100% 0%, #000 18%, rgba(0,0,0,.42) 46%, transparent 74%);
+            mask-image:radial-gradient(115% 100% at 100% 0%, #000 18%, rgba(0,0,0,.42) 46%, transparent 74%);
     pointer-events:none;
   }
   .hero119-wrap{padding-top:26px;padding-bottom:30px}
