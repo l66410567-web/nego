@@ -1524,3 +1524,6 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .prod-intro-main b{color:var(--brass-dp,#A87C2E)}
 .prod-intro-main .pi-red{color:#C0392B;font-weight:900}
 @media(max-width:640px){.prod-intro-lead{font-size:17px}.prod-intro-main{font-size:20px}}
+
+/* 홈 figure 무빈소 — 250 정찰가 골드 칩(인라인, 깜빡임·막대 없음) */
+.figure-tag.figure-tag-price{background:linear-gradient(180deg,#E7CC8A,#C8A46A);color:#2A1E0A;border:none;font-weight:800;box-shadow:0 3px 8px rgba(150,110,45,.25);animation:none;width:auto;flex:none}
