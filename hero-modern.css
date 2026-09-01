@@ -1484,8 +1484,11 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .cmp-tbl .cx{color:#C0392B;font-weight:900;margin-right:5px}
 .cmp-tbl .cok{color:#2E7D46;font-weight:900;margin-right:5px}
 .cmp-tbl tr:last-child td{border-bottom:none}
-.cmp-note{margin:16px auto 0;font-size:13px;color:#7a6a4c;line-height:1.65;max-width:660px;text-align:center}
-.cmp-note b{color:#2A1E0A}
+.cmp-note{margin:22px auto 0;padding:18px 22px;font-size:16px;color:#4a3a1c;line-height:1.85;max-width:740px;text-align:center;font-weight:500;background:linear-gradient(180deg,rgba(200,164,106,.13),rgba(200,164,106,.05));border:1.5px solid rgba(200,164,106,.55);border-radius:16px}
+.cmp-note b{color:#A87C2E;font-weight:800}
+.cmp-note .cn-warn{color:#C0392B;font-weight:800}
+.cmp-note .cn-sub{display:inline-block;margin-top:4px;font-size:13px;color:#8a7a5c;font-weight:400}
+@media(max-width:640px){.cmp-note{font-size:14.5px;padding:15px 16px;line-height:1.78;margin-top:18px}.cmp-note .cn-sub{font-size:12.5px}}
 @media(max-width:640px){.cmp-tbl th,.cmp-tbl td{padding:12px 12px;font-size:13.5px}.cmp-tbl thead th.cmp-good-h{font-size:14px}}
 
 /* 홈 — 빛고을 무빈소250 유도 배너 */
