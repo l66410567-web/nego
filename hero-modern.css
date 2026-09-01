@@ -1570,3 +1570,20 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .vow-txt span b{display:inline;font-size:inherit;color:#B23A2E}
 .prod-tags .tag-vow{background:#F6DAD3;color:#B23A2E;font-weight:800}
 @media(max-width:640px){.vow{gap:10px;padding:13px 14px}.vow-txt b{font-size:14.5px}.vow-txt span{font-size:12.5px}}
+
+/* ── 브랜드 스토리 (우리가 시작한 이유) — 애플/삼성형 에디토리얼 ── */
+.brandstory{background:var(--hanji,#F5EFE1);padding:104px 24px;text-align:center;overflow:hidden}
+.brandstory .wrap-narrow{max-width:820px;margin:0 auto}
+.bs-kicker{display:inline-block;font-family:'Noto Sans KR',sans-serif;font-size:12px;font-weight:800;letter-spacing:.32em;color:var(--brass-dp,#A87C2E);margin:0 0 26px;text-transform:uppercase}
+.bs-title{font-family:'Noto Serif KR',serif;font-size:39px;font-weight:800;line-height:1.36;letter-spacing:-.02em;color:var(--pine,#1C4A3A);margin:0 auto 26px;max-width:14em}
+.bs-title .bs-accent{color:var(--brass-dp,#A87C2E)}
+.bs-body{max-width:640px;margin:0 auto;font-family:'Noto Sans KR',sans-serif;font-size:18px;font-weight:400;line-height:2;color:#6E6558}
+.bs-sign{display:block;margin-top:30px;font-family:'Noto Serif KR',serif;font-size:16px;font-weight:700;letter-spacing:.01em;color:var(--pine,#1C4A3A)}
+@media(max-width:640px){
+  .brandstory{padding:66px 22px}
+  .bs-kicker{font-size:11px;letter-spacing:.28em;margin-bottom:20px}
+  .bs-title{font-size:25px;line-height:1.42;margin-bottom:20px}
+  .bs-body{font-size:16px;line-height:1.9}
+  .bs-body .bs-br{display:none}
+  .bs-sign{font-size:15px;margin-top:24px}
+}
