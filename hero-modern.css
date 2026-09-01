@@ -1343,6 +1343,9 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
    (제목·배지·로고 등 레이아웃 요소는 제외 / hero-modern가 마지막 로드라 소스순서로 승리)
    ============================================================ */
 .phead p{font-size:17.5px;line-height:1.78}
+/* 카테고리 헤더 박스 크기·여백 통일 — 모든 페이지 동일 높이(수직 중앙정렬) */
+.phead{min-height:340px;display:flex;align-items:center;padding-top:0;padding-bottom:0}
+.phead .phead-in{width:100%}
 .card p,.bx li,.pkg li,.swap-card p,.pledge p,.svc-body p,
 .step p,.vstep-b p,.qa-a-text,.qa-q-text,.rv-quote,.review-cta p,
 .pm-big p,.pm p,.news-sub,.faq-a p,.faq-q,.faq-cat,
@@ -1360,6 +1363,7 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   line-height:1.7;
 }
 @media(max-width:640px){
+  .phead{min-height:250px}
   .phead p{font-size:16px;line-height:1.72}
   .card p,.bx li,.pkg li,.swap-card p,.pledge p,.svc-body p,
   .step p,.vstep-b p,.qa-a-text,.qa-q-text,.rv-quote,.review-cta p,
