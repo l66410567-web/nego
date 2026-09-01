@@ -1547,3 +1547,11 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .svc250-photo{margin:-18px -12px 14px;line-height:0;background:#EEE6D5}
 .svc250-photo img{width:100%;height:118px;object-fit:cover;display:block}
 @media(max-width:560px){.svc250-photo img{height:100px}}
+
+/* 무빈소250 — '이 가격 진짜' 강조 클레임 */
+.svc250-claim{text-align:center;max-width:720px;margin:0 auto 24px}
+.svc250-claim-badge{display:inline-block;background:linear-gradient(180deg,#2C5D47,#1E4534);color:#F5EACB;font-size:13px;font-weight:800;padding:6px 16px;border-radius:999px;letter-spacing:.02em;box-shadow:0 4px 12px rgba(30,69,52,.28)}
+.svc250-claim p{margin:14px 0 0;font-family:'Noto Serif KR',serif;font-size:23px;font-weight:900;line-height:1.5;color:var(--pine,#1C4A3A);letter-spacing:-.01em}
+.svc250-claim p b{color:var(--brass-dp,#A87C2E)}
+.svc250-claim .cred{color:#C0392B;font-weight:900}
+@media(max-width:640px){.svc250-claim p{font-size:18px}}
