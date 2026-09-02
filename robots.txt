@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://l66410567-web.github.io/nego/sitemap.xml
+Sitemap: https://xn--119-hd8l686b5tiiiqgwa.com/sitemap.xml
