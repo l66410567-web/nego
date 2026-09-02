@@ -1488,11 +1488,18 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .cmp-tbl .cx{color:#C0392B;font-weight:900;margin-right:5px}
 .cmp-tbl .cok{color:#2E7D46;font-weight:900;margin-right:5px}
 .cmp-tbl tr:last-child td{border-bottom:none}
-.cmp-note{margin:22px auto 0;padding:18px 22px;font-size:16px;color:#4a3a1c;line-height:1.85;max-width:740px;text-align:center;font-weight:500;background:linear-gradient(180deg,rgba(200,164,106,.13),rgba(200,164,106,.05));border:1.5px solid rgba(200,164,106,.55);border-radius:16px}
-.cmp-note b{color:#A87C2E;font-weight:800}
-.cmp-note .cn-warn{color:#C0392B;font-weight:800}
-.cmp-note .cn-sub{display:inline-block;margin-top:4px;font-size:13px;color:#8a7a5c;font-weight:400}
-@media(max-width:640px){.cmp-note{font-size:14.5px;padding:15px 16px;line-height:1.78;margin-top:18px}.cmp-note .cn-sub{font-size:12.5px}}
+/* 비교 전 주의 알림 콜아웃 */
+.cmp-warn{max-width:760px;margin:26px auto 0;padding:24px 26px 20px;background:linear-gradient(180deg,#FBF6EA,#F6EEDB);border:1.5px solid rgba(200,164,106,.6);border-radius:18px;box-shadow:0 10px 26px rgba(120,90,40,.12);position:relative;overflow:hidden}
+.cmp-warn::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,#D46A5A,#C0392B)}
+.cmp-warn-head{display:flex;align-items:center;justify-content:center;gap:11px;margin-bottom:14px}
+.cmp-warn-ico{width:36px;height:36px;flex:none;border-radius:50%;background:linear-gradient(180deg,#D0503E,#C0392B);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(192,57,43,.35)}
+.cmp-warn-ico svg{width:21px;height:21px;stroke:#fff}
+.cmp-warn-head h4{margin:0;font-size:19px;font-weight:900;color:#1E4534;letter-spacing:-.02em}
+.cmp-warn-body{margin:0;text-align:center;font-size:17px;line-height:1.9;color:#41341a;font-weight:600}
+.cmp-warn-body .cn-warn{color:#C0392B;font-weight:900}
+.cmp-warn-body b{color:#A87C2E;font-weight:900}
+.cmp-warn-sub{margin:14px 0 0;padding-top:13px;border-top:1px dashed rgba(200,164,106,.55);text-align:center;font-size:13px;line-height:1.6;color:#8a7a5c;font-weight:400}
+@media(max-width:640px){.cmp-warn{padding:20px 16px 16px;margin-top:20px}.cmp-warn::before{width:5px}.cmp-warn-head{gap:9px;margin-bottom:12px}.cmp-warn-ico{width:32px;height:32px}.cmp-warn-ico svg{width:19px;height:19px}.cmp-warn-head h4{font-size:16px}.cmp-warn-body{font-size:15px;line-height:1.85}.cmp-warn-sub{font-size:12.5px}}
 @media(max-width:640px){.cmp-tbl th,.cmp-tbl td{padding:12px 12px;font-size:13.5px}.cmp-tbl thead th.cmp-good-h{font-size:14px}}
 
 /* 홈 — 빛고을 무빈소250 유도 배너 */
