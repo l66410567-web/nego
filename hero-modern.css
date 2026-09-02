@@ -423,35 +423,47 @@
 .callbar{gap:9px;padding:9px 10px calc(10px + env(safe-area-inset-bottom))}
 .callbar a{flex:1;height:auto;min-height:56px;border-radius:15px;gap:9px;
   font-weight:900;text-decoration:none;box-shadow:0 6px 16px rgba(0,0,0,.15)}
-.callbar .cb-tel{background:linear-gradient(180deg,#24463B 0%,#18342D 100%);color:#fff;box-shadow:0 6px 16px rgba(24,52,45,.32)}
+.callbar .cb-tel{flex:1.42;background:linear-gradient(180deg,#24463B 0%,#18342D 100%);color:#fff;box-shadow:0 6px 16px rgba(24,52,45,.32)}
 .callbar .cb-apply{background:linear-gradient(180deg,#FFE23D 0%,#F5C400 100%);color:#2A1E05;box-shadow:0 6px 16px rgba(232,183,0,.38)}
-.callbar a b{font-size:17.5px;font-weight:900;letter-spacing:-.01em}
-.cb-ico{width:32px;height:32px;flex:none;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.callbar a b{font-size:16px;font-weight:900;letter-spacing:-.02em;white-space:nowrap}
+.cb-ico{width:30px;height:30px;flex:none;border-radius:50%;display:flex;align-items:center;justify-content:center}
 .cb-tel .cb-ico{background:rgba(255,255,255,.16)}
 .cb-apply .cb-ico{background:rgba(255,255,255,.55)}
 .callbar .cb-ico svg{width:19px;height:19px}
 /* 걸리적거리던 플로팅 상담봇 버블 — 모바일에서는 숨김(상담은 하단바로 이동) */
 @media(max-width:700px){.bot-fab{display:none!important}}
 
-/* 강화 상담 모달 — 저입력 quick consult (상황·지역 선택 → 연락처) */
+/* 강화 상담 모달 — 상황 선택 → 긴급은 전화연결 / 계획은 신청폼 */
 .qform .qf-head{text-align:center}
 .qform .qf-badge{display:inline-block;background:linear-gradient(180deg,#2C5D47,#1E4534);color:#F5EACB;font-size:12px;font-weight:800;padding:5px 14px;border-radius:999px;letter-spacing:.02em}
 .qform .qf-head h3{margin:13px 0 6px;font-size:21px;font-weight:900;color:#1E4534;letter-spacing:-.01em}
 .qform .qf-head h3 b{color:#C0392B}
 .qform .fsub{margin:0;font-size:13.5px;color:#7a6a4c;line-height:1.6}
-.qform .qf-lab{display:block;margin:16px 0 8px;font-size:14px;font-weight:800;color:#1E4534}
-.qform .qf-chips{display:flex;gap:8px}
-.qform .qf-chip{flex:1;position:relative;cursor:pointer}
-.qform .qf-chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
-.qform .qf-chip span{display:flex;align-items:center;justify-content:center;text-align:center;min-height:46px;padding:8px 6px;border:1.5px solid rgba(200,164,106,.5);border-radius:12px;font-size:13px;font-weight:700;color:#5a4a2c;background:#fff;line-height:1.25;transition:.15s}
-.qform .qf-chip input:checked+span{border-color:#1E4534;background:linear-gradient(180deg,#2C5D47,#1E4534);color:#fff;box-shadow:0 4px 12px rgba(30,69,52,.25)}
+.qform .qf-opts{display:flex;flex-direction:column;gap:9px;margin:16px 0}
+.qform .qf-opt{position:relative;cursor:pointer;display:block}
+.qform .qf-opt input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.qform .qf-opt-in{display:flex;flex-direction:column;gap:2px;padding:13px 16px;border:1.5px solid rgba(200,164,106,.5);border-radius:13px;background:#fff;transition:.15s}
+.qform .qf-opt-in b{font-size:15.5px;font-weight:800;color:#333}
+.qform .qf-opt-in small{font-size:12px;color:#8a7a5c}
+.qform .qf-opt input:checked+.qf-opt-in{border-color:#1E4534;border-width:2px;padding:12.5px 15.5px;background:linear-gradient(180deg,#F2F7F1,#E9F1E7)}
+.qform .qf-opt input:checked+.qf-opt-in b{color:#1E4534}
+.qform .qf-opt input:checked+.qf-opt-in small{color:#2C5D47;font-weight:600}
+/* 긴급 → 전화연결 CTA */
+.qform .qf-urgent-msg{margin:0 0 13px;font-size:14px;line-height:1.65;color:#41341a;text-align:center}
+.qform .qf-urgent-msg b{color:#C0392B;font-weight:900}
+.qform .qf-call{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;padding:15px;border-radius:14px;background:linear-gradient(180deg,#2C5D47,#1E4534);color:#fff;text-decoration:none;box-shadow:0 8px 20px rgba(24,52,45,.35)}
+.qform .qf-call svg{width:26px;height:26px;flex:none}
+.qform .qf-call span{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+.qform .qf-call span b{font-size:21px;font-weight:900;letter-spacing:.02em;color:#F5D77A;margin-top:1px}
+/* 계획 → 신청폼 */
+.qform .qf-plan{display:none}
 .qform .qf-row{display:flex;gap:10px}
 .qform .qf-row>div{flex:1;min-width:0}
+.qform .qf-plan label:not(.agree){display:block;margin-bottom:6px}
 .qform .qf-submit{width:100%;margin-top:16px;background:linear-gradient(180deg,#FFE23D,#F5C400);color:#2A1E05;font-weight:900;font-size:17px;border:none;border-radius:12px;box-shadow:0 6px 16px rgba(232,183,0,.4)}
 .qform .qf-trust{margin:12px 0 0;text-align:center;font-size:13px;color:#6a5a3c}
 .qform .qf-trust a{color:#1E4534;font-weight:900;text-decoration:none}
 .qform .agree{font-size:12.5px;line-height:1.45;align-items:flex-start;margin-top:12px}
-.qform label:not(.qf-chip):not(.agree){margin-top:12px}
 /* 데스크톱 플로팅 전화 버튼도 딥그린으로 통일 */
 .fab-c{background:linear-gradient(180deg,#24463B,#18342D);color:#fff}
 

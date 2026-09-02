@@ -54,6 +54,26 @@ function closeModal(){
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
 })();
 
+// 상담 모달 — 상황 선택에 따라 전화연결(긴급)/신청폼(계획) 전환
+(function(){
+  function updQ(){
+    var box = document.getElementById('modal');
+    if(!box) return;
+    var sel = box.querySelector('input[name="qsit"]:checked');
+    var isPlan = sel && sel.value === 'plan';
+    var urgent = box.querySelector('.qf-urgent');
+    var plan = box.querySelector('.qf-plan');
+    if(urgent) urgent.style.display = isPlan ? 'none' : 'block';
+    if(plan) plan.style.display = isPlan ? 'block' : 'none';
+  }
+  document.addEventListener('change', function(e){
+    if(e.target && e.target.name === 'qsit') updQ();
+  });
+  document.addEventListener('DOMContentLoaded', updQ);
+  setTimeout(updQ, 0);
+  window.updQ = updQ;
+})();
+
 // 폼 제출 (시안 — 실제 오픈 시 네이버 폼/서버 연동)
 function handleSubmit(e){
   e.preventDefault();
