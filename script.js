@@ -59,9 +59,9 @@ function closeModal(){
 (function(){
   var TEL = '15339657', TELD = '1533-9657';
   var CATS = [
+    {id:'hall', label:'장례식장', desc:'빈소를 갖춘 장례', q:{t:'예상 조문 규모는요?', o:['30명 이하','30~100명','100명 이상']}},
     {id:'simple', label:'무빈소 장례', desc:'조문 없이 가족끼리 조용히', q:{t:'유골은 어떻게 모실 계획이세요?', o:['봉안당 안치','자연장·수목장','아직 미정']}},
     {id:'family', label:'가족장', desc:'작은 빈소·가까운 분만', q:{t:'예상 조문 규모는요?', o:['가족끼리','30명 이하','30~100명']}},
-    {id:'hall', label:'일반 장례식장', desc:'빈소를 갖춘 장례', q:{t:'예상 조문 규모는요?', o:['30명 이하','30~100명','100명 이상']}},
     {id:'burial', label:'수목장·봉안당', desc:'장지·안치 상담', q:{t:'어떻게 모실 계획이세요?', o:['개인단','부부단','아직 미정']}},
     {id:'relo', label:'묘 이장·평장', desc:'개장·이장·평장', q:{t:'현재 묘는 어떤 형태인가요?', o:['봉분(매장)','납골·봉안','아직 미정']}},
     {id:'pre', label:'사전 상담', desc:'미리 준비하고 싶어요', q:{t:'예상 시기는 어떻게 되세요?', o:['가까운 시일','1년 이내','여유 있게']}}
@@ -71,7 +71,10 @@ function closeModal(){
     {v:'soon',   t:'임종이 임박했어요', s:''},
     {v:'plan',   t:'미리 알아보고 있어요', s:''}
   ];
-  var st = {cat:null, urg:null, det:null, step:0};
+  var REG = ['광주','전남','기타 지역'];
+  var TIMES = ['지금 바로','오전','오후','저녁','아무때나'];
+  var STEPS = 6; // 선택 5단계 + 신청 1
+  var st = {cat:null, urg:null, det:null, reg:null, time:null, step:0};
 
   function box(){ return document.getElementById('qwiz'); }
   function catObj(){ for(var i=0;i<CATS.length;i++){ if(CATS[i].id===st.cat) return CATS[i]; } return CATS[0]; }
@@ -80,12 +83,15 @@ function closeModal(){
 
   function head(step){
     var dots='';
-    for(var i=0;i<4;i++){ dots += '<i class="'+(i<=step?'on':'')+'"></i>'; }
+    for(var i=0;i<STEPS;i++){ dots += '<i class="'+(i<=step?'on':'')+'"></i>'; }
     var b = step>0 ? '<button type="button" class="qw-back" data-act="back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>' : '<span class="qw-back-sp"></span>';
-    return '<div class="qw-top">'+b+'<span class="qw-badge">24시간 무료 상담</span><span class="qw-step">'+(step+1)+'/4</span></div><div class="qw-prog">'+dots+'</div>';
+    return '<div class="qw-top">'+b+'<span class="qw-badge">24시간 무료 상담</span><span class="qw-step">'+(step+1)+'/'+STEPS+'</span></div><div class="qw-prog">'+dots+'</div>';
   }
   function opt(act,val,title,sub,extra){
     return '<button type="button" class="qw-opt'+(extra||'')+'" data-act="'+act+'" data-val="'+val+'"><span class="qw-opt-tx"><b>'+title+'</b>'+(sub?'<small>'+sub+'</small>':'')+'</span>'+chev+'</button>';
+  }
+  function optC(act,val){
+    return '<button type="button" class="qw-chip" data-act="'+act+'" data-val="'+esc(val)+'">'+esc(val)+'</button>';
   }
   function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
 
@@ -105,6 +111,14 @@ function closeModal(){
       h += '<h3 class="qw-q">'+esc(c.q.t)+'</h3><div class="qw-opts">';
       for(i=0;i<c.q.o.length;i++){ h += opt('det', c.q.o[i], c.q.o[i], ''); }
       h += '</div>';
+    } else if(s===3){
+      h += '<h3 class="qw-q">어느 지역에서 모시나요?</h3><div class="qw-opts qw-grid">';
+      for(i=0;i<REG.length;i++){ h += optC('reg', REG[i]); }
+      h += '</div>';
+    } else if(s===4){
+      h += '<h3 class="qw-q">언제 상담이 편하세요?</h3><div class="qw-opts qw-grid">';
+      for(i=0;i<TIMES.length;i++){ h += optC('time', TIMES[i]); }
+      h += '</div>';
     } else {
       h += finalHtml();
     }
@@ -113,7 +127,10 @@ function closeModal(){
 
   function finalHtml(){
     var c = catObj(), u = urgObj();
-    var sum = '<div class="qw-sum">'+esc(c.label)+(u?' · '+esc(u.t):'')+(st.det?' · '+esc(st.det):'')+'</div>';
+    var parts = [c.label]; if(u) parts.push(u.t); if(st.det) parts.push(st.det); if(st.reg) parts.push(st.reg); if(st.time) parts.push(st.time);
+    var sum = '<div class="qw-sum">';
+    for(var k=0;k<parts.length;k++){ sum += '<span>'+esc(parts[k])+'</span>'; }
+    sum += '</div>';
     var urgentBlock = '';
     if(st.urg==='urgent' || st.urg==='soon'){
       urgentBlock = '<p class="qf-urgent-msg">긴급 상황은 <b>전화가 가장 빠릅니다.</b> 24시간 상담사가 바로 받습니다.</p>'+
@@ -153,11 +170,13 @@ function closeModal(){
     else if(act==='cat'){ st.cat=val; st.step=1; render(); }
     else if(act==='urg'){ st.urg=val; st.step=2; render(); }
     else if(act==='det'){ st.det=val; st.step=3; render(); }
+    else if(act==='reg'){ st.reg=val; st.step=4; render(); }
+    else if(act==='time'){ st.time=val; st.step=5; render(); }
     else if(act==='submit'){ submit(); }
   }
   document.addEventListener('click', onClick);
 
-  function start(){ st={cat:null,urg:null,det:null,step:0}; render(); }
+  function start(){ st={cat:null,urg:null,det:null,reg:null,time:null,step:0}; render(); }
   window.__qwizStart = start;
   document.addEventListener('DOMContentLoaded', function(){ if(box()) render(); });
   setTimeout(function(){ if(box()) render(); }, 0);

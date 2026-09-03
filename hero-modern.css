@@ -451,11 +451,16 @@
 .qwiz .qw-opt-tx b{font-size:15.5px;font-weight:800;color:#2a2a2a;letter-spacing:-.01em}
 .qwiz .qw-opt-tx small{font-size:12px;color:#8a7a5c}
 .qwiz .qw-chev{width:18px;height:18px;flex:none;color:#c3ac7d}
+/* 지역·시간 콤팩트 칩 */
+.qwiz .qw-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:9px}
+.qwiz .qw-chip{display:flex;align-items:center;justify-content:center;text-align:center;min-height:52px;padding:10px 8px;border:1.6px solid rgba(200,164,106,.5);border-radius:13px;background:#fff;cursor:pointer;font-size:15px;font-weight:800;color:#3a3a3a;letter-spacing:-.01em;transition:.14s}
+.qwiz .qw-chip:hover,.qwiz .qw-chip:active{border-color:#1E4534;background:linear-gradient(180deg,#F4F8F3,#ECF3EA);color:#1E4534}
 .qwiz .qw-opt.qw-red{border-color:rgba(192,57,43,.45)}
 .qwiz .qw-opt.qw-red .qw-opt-tx b{color:#C0392B}
 .qwiz .qw-urg-tag{display:inline-block;margin-top:3px;font-size:11px;font-weight:800;color:#fff;background:#C0392B;padding:2px 8px;border-radius:999px;width:fit-content}
 /* 마지막 단계 */
-.qwiz .qw-sum{margin:0 auto 14px;text-align:center;font-size:12.5px;font-weight:800;color:#2C5D47;background:rgba(200,164,106,.16);border:1px solid rgba(200,164,106,.45);border-radius:999px;padding:7px 14px}
+.qwiz .qw-sum{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:0 0 15px}
+.qwiz .qw-sum span{font-size:12px;font-weight:800;color:#2C5D47;background:rgba(200,164,106,.16);border:1px solid rgba(200,164,106,.45);border-radius:999px;padding:5px 11px;line-height:1.3}
 .qwiz .qf-urgent-msg{margin:0 0 12px;font-size:14px;line-height:1.6;color:#41341a;text-align:center}
 .qwiz .qf-urgent-msg b{color:#C0392B;font-weight:900}
 .qwiz .qf-call{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;padding:15px;border-radius:14px;background:linear-gradient(180deg,#2C5D47,#1E4534);color:#fff;text-decoration:none;box-shadow:0 8px 20px rgba(24,52,45,.35)}
