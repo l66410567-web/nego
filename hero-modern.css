@@ -1677,3 +1677,14 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .bs-cred{gap:6px 20px;margin-top:26px}
   .bs-cred span{font-size:13px}
 }
+
+/* 무빈소 장례란 개요 (SEO) */
+.about-lead{text-align:center;max-width:760px;margin:0 auto 24px;font-size:17px;line-height:1.9;color:#4a4a44;font-weight:500}
+.about-lead b{color:#1E4534;font-weight:800}
+.about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:860px;margin:0 auto}
+.about-card{background:#fff;border:1px solid rgba(200,164,106,.4);border-radius:14px;padding:22px 18px;text-align:center;box-shadow:0 6px 16px rgba(120,90,40,.06)}
+.about-card .about-k{display:inline-block;font-size:13px;font-weight:800;color:#F5EACB;background:linear-gradient(180deg,#2C5D47,#1E4534);padding:5px 14px;border-radius:999px;margin-bottom:11px}
+.about-card p{margin:0;font-size:14px;line-height:1.6;color:#5f5f57}
+.about-note{text-align:center;max-width:760px;margin:24px auto 0;font-size:13.5px;color:#8a7a5c;line-height:1.65}
+.about-note b{color:#A87C2E}
+@media(max-width:640px){.about-grid{grid-template-columns:1fr;gap:10px}.about-lead{font-size:15.5px;line-height:1.85}.about-card{padding:16px 16px}}
