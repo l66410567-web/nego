@@ -433,37 +433,44 @@
 /* 걸리적거리던 플로팅 상담봇 버블 — 모바일에서는 숨김(상담은 하단바로 이동) */
 @media(max-width:700px){.bot-fab{display:none!important}}
 
-/* 강화 상담 모달 — 상황 선택 → 긴급은 전화연결 / 계획은 신청폼 */
-.qform .qf-head{text-align:center}
-.qform .qf-badge{display:inline-block;background:linear-gradient(180deg,#2C5D47,#1E4534);color:#F5EACB;font-size:12px;font-weight:800;padding:5px 14px;border-radius:999px;letter-spacing:.02em}
-.qform .qf-head h3{margin:13px 0 6px;font-size:21px;font-weight:900;color:#1E4534;letter-spacing:-.01em}
-.qform .qf-head h3 b{color:#C0392B}
-.qform .fsub{margin:0;font-size:13.5px;color:#7a6a4c;line-height:1.6}
-.qform .qf-opts{display:flex;flex-direction:column;gap:9px;margin:16px 0}
-.qform .qf-opt{position:relative;cursor:pointer;display:block}
-.qform .qf-opt input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
-.qform .qf-opt-in{display:flex;flex-direction:column;gap:2px;padding:13px 16px;border:1.5px solid rgba(200,164,106,.5);border-radius:13px;background:#fff;transition:.15s}
-.qform .qf-opt-in b{font-size:15.5px;font-weight:800;color:#333}
-.qform .qf-opt-in small{font-size:12px;color:#8a7a5c}
-.qform .qf-opt input:checked+.qf-opt-in{border-color:#1E4534;border-width:2px;padding:12.5px 15.5px;background:linear-gradient(180deg,#F2F7F1,#E9F1E7)}
-.qform .qf-opt input:checked+.qf-opt-in b{color:#1E4534}
-.qform .qf-opt input:checked+.qf-opt-in small{color:#2C5D47;font-weight:600}
-/* 긴급 → 전화연결 CTA */
-.qform .qf-urgent-msg{margin:0 0 13px;font-size:14px;line-height:1.65;color:#41341a;text-align:center}
-.qform .qf-urgent-msg b{color:#C0392B;font-weight:900}
-.qform .qf-call{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;padding:15px;border-radius:14px;background:linear-gradient(180deg,#2C5D47,#1E4534);color:#fff;text-decoration:none;box-shadow:0 8px 20px rgba(24,52,45,.35)}
-.qform .qf-call svg{width:26px;height:26px;flex:none}
-.qform .qf-call span{display:flex;flex-direction:column;line-height:1.15;text-align:left}
-.qform .qf-call span b{font-size:21px;font-weight:900;letter-spacing:.02em;color:#F5D77A;margin-top:1px}
-/* 계획 → 신청폼 */
-.qform .qf-plan{display:none}
-.qform .qf-row{display:flex;gap:10px}
-.qform .qf-row>div{flex:1;min-width:0}
-.qform .qf-plan label:not(.agree){display:block;margin-bottom:6px}
-.qform .qf-submit{width:100%;margin-top:16px;background:linear-gradient(180deg,#FFE23D,#F5C400);color:#2A1E05;font-weight:900;font-size:17px;border:none;border-radius:12px;box-shadow:0 6px 16px rgba(232,183,0,.4)}
-.qform .qf-trust{margin:12px 0 0;text-align:center;font-size:13px;color:#6a5a3c}
-.qform .qf-trust a{color:#1E4534;font-weight:900;text-decoration:none}
-.qform .agree{font-size:12.5px;line-height:1.45;align-items:flex-start;margin-top:12px}
+/* 상담 신청 마법사 (모달) — 카테고리→시급도→핵심문의→신청 */
+.qwiz .qw-top{display:grid;grid-template-columns:30px 1fr 34px;align-items:center;margin-bottom:14px}
+.qwiz .qw-back,.qwiz .qw-back-sp{width:30px;height:30px}
+.qwiz .qw-back{border:none;background:#f1ece0;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#5a4a2c}
+.qwiz .qw-back svg{width:18px;height:18px}
+.qwiz .qw-badge{justify-self:center;background:linear-gradient(180deg,#2C5D47,#1E4534);color:#F5EACB;font-size:12px;font-weight:800;padding:6px 15px;border-radius:999px;letter-spacing:.02em}
+.qwiz .qw-step{justify-self:end;font-size:12px;font-weight:800;color:#9a8a6c}
+.qwiz .qw-prog{display:flex;gap:5px;margin-bottom:18px}
+.qwiz .qw-prog i{flex:1;height:5px;border-radius:3px;background:#eadfca;transition:.2s}
+.qwiz .qw-prog i.on{background:linear-gradient(90deg,#2C5D47,#1E4534)}
+.qwiz .qw-q{margin:0 0 14px;font-size:19.5px;font-weight:900;color:#1E4534;letter-spacing:-.02em;text-align:center;line-height:1.35}
+.qwiz .qw-opts{display:flex;flex-direction:column;gap:9px}
+.qwiz .qw-opt{display:flex;align-items:center;gap:10px;width:100%;text-align:left;padding:14px 15px;border:1.6px solid rgba(200,164,106,.5);border-radius:13px;background:#fff;cursor:pointer;transition:.14s}
+.qwiz .qw-opt:hover,.qwiz .qw-opt:active{border-color:#1E4534;background:linear-gradient(180deg,#F4F8F3,#ECF3EA)}
+.qwiz .qw-opt-tx{flex:1;display:flex;flex-direction:column;gap:2px;min-width:0}
+.qwiz .qw-opt-tx b{font-size:15.5px;font-weight:800;color:#2a2a2a;letter-spacing:-.01em}
+.qwiz .qw-opt-tx small{font-size:12px;color:#8a7a5c}
+.qwiz .qw-chev{width:18px;height:18px;flex:none;color:#c3ac7d}
+.qwiz .qw-opt.qw-red{border-color:rgba(192,57,43,.45)}
+.qwiz .qw-opt.qw-red .qw-opt-tx b{color:#C0392B}
+.qwiz .qw-urg-tag{display:inline-block;margin-top:3px;font-size:11px;font-weight:800;color:#fff;background:#C0392B;padding:2px 8px;border-radius:999px;width:fit-content}
+/* 마지막 단계 */
+.qwiz .qw-sum{margin:0 auto 14px;text-align:center;font-size:12.5px;font-weight:800;color:#2C5D47;background:rgba(200,164,106,.16);border:1px solid rgba(200,164,106,.45);border-radius:999px;padding:7px 14px}
+.qwiz .qf-urgent-msg{margin:0 0 12px;font-size:14px;line-height:1.6;color:#41341a;text-align:center}
+.qwiz .qf-urgent-msg b{color:#C0392B;font-weight:900}
+.qwiz .qf-call{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;padding:15px;border-radius:14px;background:linear-gradient(180deg,#2C5D47,#1E4534);color:#fff;text-decoration:none;box-shadow:0 8px 20px rgba(24,52,45,.35)}
+.qwiz .qf-call svg{width:26px;height:26px;flex:none}
+.qwiz .qf-call span{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+.qwiz .qf-call span b{font-size:21px;font-weight:900;letter-spacing:.02em;color:#F5D77A;margin-top:1px}
+.qwiz .qw-or{text-align:center;font-size:12px;color:#9a8a6c;margin:14px 0 10px;position:relative}
+.qwiz .qw-form{margin-top:2px}
+.qwiz .qf-row{display:flex;gap:10px}
+.qwiz .qf-row>div{flex:1;min-width:0}
+.qwiz .qw-form label:not(.agree){display:block;margin-bottom:6px;font-weight:700;font-size:14px;color:#3a3a3a}
+.qwiz .qf-submit{width:100%;margin-top:14px;background:linear-gradient(180deg,#FFE23D,#F5C400);color:#2A1E05;font-weight:900;font-size:17px;border:none;border-radius:12px;box-shadow:0 6px 16px rgba(232,183,0,.4);cursor:pointer}
+.qwiz .qf-trust{margin:11px 0 0;text-align:center;font-size:13px;color:#6a5a3c}
+.qwiz .qf-trust a{color:#1E4534;font-weight:900;text-decoration:none}
+.qwiz .agree{font-size:12.5px;line-height:1.45;align-items:flex-start;margin-top:12px}
 /* 데스크톱 플로팅 전화 버튼도 딥그린으로 통일 */
 .fab-c{background:linear-gradient(180deg,#24463B,#18342D);color:#fff}
 

@@ -40,6 +40,7 @@ function openModal(){
   if(!m) return;
   m.classList.add('on');
   document.body.style.overflow = 'hidden';
+  if(window.__qwizStart) window.__qwizStart();
 }
 function closeModal(){
   var m = document.getElementById('modal');
@@ -54,24 +55,112 @@ function closeModal(){
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
 })();
 
-// 상담 모달 — 상황 선택에 따라 전화연결(긴급)/신청폼(계획) 전환
+// 상담 신청 마법사 (모달) — 카테고리 → 시급도 → 핵심 문의 → 신청
 (function(){
-  function updQ(){
-    var box = document.getElementById('modal');
-    if(!box) return;
-    var sel = box.querySelector('input[name="qsit"]:checked');
-    var isPlan = sel && sel.value === 'plan';
-    var urgent = box.querySelector('.qf-urgent');
-    var plan = box.querySelector('.qf-plan');
-    if(urgent) urgent.style.display = isPlan ? 'none' : 'block';
-    if(plan) plan.style.display = isPlan ? 'block' : 'none';
+  var TEL = '15339657', TELD = '1533-9657';
+  var CATS = [
+    {id:'simple', label:'무빈소 장례', desc:'조문 없이 가족끼리 조용히', q:{t:'유골은 어떻게 모실 계획이세요?', o:['봉안당 안치','자연장·수목장','아직 미정']}},
+    {id:'family', label:'가족장', desc:'작은 빈소·가까운 분만', q:{t:'예상 조문 규모는요?', o:['가족끼리','30명 이하','30~100명']}},
+    {id:'hall', label:'일반 장례식장', desc:'빈소를 갖춘 장례', q:{t:'예상 조문 규모는요?', o:['30명 이하','30~100명','100명 이상']}},
+    {id:'burial', label:'수목장·봉안당', desc:'장지·안치 상담', q:{t:'어떻게 모실 계획이세요?', o:['개인단','부부단','아직 미정']}},
+    {id:'relo', label:'묘 이장·평장', desc:'개장·이장·평장', q:{t:'현재 묘는 어떤 형태인가요?', o:['봉분(매장)','납골·봉안','아직 미정']}},
+    {id:'pre', label:'사전 상담', desc:'미리 준비하고 싶어요', q:{t:'예상 시기는 어떻게 되세요?', o:['가까운 시일','1년 이내','여유 있게']}}
+  ];
+  var URG = [
+    {v:'urgent', t:'지금 임종하셨어요', s:'긴급'},
+    {v:'soon',   t:'임종이 임박했어요', s:''},
+    {v:'plan',   t:'미리 알아보고 있어요', s:''}
+  ];
+  var st = {cat:null, urg:null, det:null, step:0};
+
+  function box(){ return document.getElementById('qwiz'); }
+  function catObj(){ for(var i=0;i<CATS.length;i++){ if(CATS[i].id===st.cat) return CATS[i]; } return CATS[0]; }
+  function urgObj(){ for(var i=0;i<URG.length;i++){ if(URG[i].v===st.urg) return URG[i]; } return null; }
+  var chev = '<svg class="qw-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>';
+
+  function head(step){
+    var dots='';
+    for(var i=0;i<4;i++){ dots += '<i class="'+(i<=step?'on':'')+'"></i>'; }
+    var b = step>0 ? '<button type="button" class="qw-back" data-act="back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>' : '<span class="qw-back-sp"></span>';
+    return '<div class="qw-top">'+b+'<span class="qw-badge">24시간 무료 상담</span><span class="qw-step">'+(step+1)+'/4</span></div><div class="qw-prog">'+dots+'</div>';
   }
-  document.addEventListener('change', function(e){
-    if(e.target && e.target.name === 'qsit') updQ();
-  });
-  document.addEventListener('DOMContentLoaded', updQ);
-  setTimeout(updQ, 0);
-  window.updQ = updQ;
+  function opt(act,val,title,sub,extra){
+    return '<button type="button" class="qw-opt'+(extra||'')+'" data-act="'+act+'" data-val="'+val+'"><span class="qw-opt-tx"><b>'+title+'</b>'+(sub?'<small>'+sub+'</small>':'')+'</span>'+chev+'</button>';
+  }
+  function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+
+  function render(){
+    var q = box(); if(!q) return;
+    var s = st.step, h = head(s), i;
+    if(s===0){
+      h += '<h3 class="qw-q">어떤 상담이 필요하세요?</h3><div class="qw-opts">';
+      for(i=0;i<CATS.length;i++){ h += opt('cat', CATS[i].id, CATS[i].label, CATS[i].desc); }
+      h += '</div>';
+    } else if(s===1){
+      h += '<h3 class="qw-q">시급하신 상황인가요?</h3><div class="qw-opts">';
+      for(i=0;i<URG.length;i++){ h += opt('urg', URG[i].v, URG[i].t, URG[i].s?('<span class=\"qw-urg-tag\">'+URG[i].s+'</span>'):'', URG[i].v==='urgent'?' qw-red':''); }
+      h += '</div>';
+    } else if(s===2){
+      var c = catObj();
+      h += '<h3 class="qw-q">'+esc(c.q.t)+'</h3><div class="qw-opts">';
+      for(i=0;i<c.q.o.length;i++){ h += opt('det', c.q.o[i], c.q.o[i], ''); }
+      h += '</div>';
+    } else {
+      h += finalHtml();
+    }
+    q.innerHTML = h;
+  }
+
+  function finalHtml(){
+    var c = catObj(), u = urgObj();
+    var sum = '<div class="qw-sum">'+esc(c.label)+(u?' · '+esc(u.t):'')+(st.det?' · '+esc(st.det):'')+'</div>';
+    var urgentBlock = '';
+    if(st.urg==='urgent' || st.urg==='soon'){
+      urgentBlock = '<p class="qf-urgent-msg">긴급 상황은 <b>전화가 가장 빠릅니다.</b> 24시간 상담사가 바로 받습니다.</p>'+
+        '<a href="tel:'+TEL+'" class="btn qf-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg><span>지금 바로 전화 연결<b>'+TELD+'</b></span></a>'+
+        '<div class="qw-or">또는 번호를 남겨주시면 저희가 연락드립니다</div>';
+    } else {
+      urgentBlock = '<p class="qf-urgent-msg">번호만 남겨주시면 <b>상담사가 바로 연락</b>드립니다.</p>';
+    }
+    return '<h3 class="qw-q">거의 다 됐어요!</h3>'+sum+urgentBlock+
+      '<div class="qw-form">'+
+      '<div class="qf-row"><div><label>성함</label><input type="text" id="qwName" placeholder="예) 홍길동"></div><div><label>연락처</label><input type="tel" id="qwTel" placeholder="010-0000-0000"></div></div>'+
+      '<label class="agree"><input type="checkbox" id="qwAgree"> 상담을 위한 개인정보 수집·이용에 동의합니다</label>'+
+      '<button type="button" class="btn qf-submit" data-act="submit">무료 상담 신청하기</button>'+
+      '<p class="qf-trust">급하시면 지금 전화 <a href="tel:'+TEL+'">'+TELD+'</a></p>'+
+      '</div>';
+  }
+
+  function submit(){
+    var q = box(); if(!q) return;
+    var name = (q.querySelector('#qwName')||{}).value || '';
+    var tel = (q.querySelector('#qwTel')||{}).value || '';
+    var agree = (q.querySelector('#qwAgree')||{}).checked;
+    if(!name.trim()){ alert('성함을 입력해 주세요.'); return; }
+    if(!tel.trim()){ alert('연락처를 입력해 주세요.'); return; }
+    if(!agree){ alert('개인정보 수집·이용에 동의해 주세요.'); return; }
+    // 시안 — 실제 오픈 시 문자/메일/시트 연동
+    alert('상담 신청이 접수되었습니다.\n확인 후 빠르게 연락드리겠습니다.\n\n(시안 단계 — 실제 오픈 시 연동 예정)');
+    if(typeof closeModal==='function') closeModal();
+    start();
+  }
+
+  function onClick(e){
+    var btn = e.target.closest ? e.target.closest('[data-act]') : null;
+    if(!btn || !box() || !box().contains(btn)) return;
+    var act = btn.getAttribute('data-act'), val = btn.getAttribute('data-val');
+    if(act==='back'){ if(st.step>0) st.step--; render(); }
+    else if(act==='cat'){ st.cat=val; st.step=1; render(); }
+    else if(act==='urg'){ st.urg=val; st.step=2; render(); }
+    else if(act==='det'){ st.det=val; st.step=3; render(); }
+    else if(act==='submit'){ submit(); }
+  }
+  document.addEventListener('click', onClick);
+
+  function start(){ st={cat:null,urg:null,det:null,step:0}; render(); }
+  window.__qwizStart = start;
+  document.addEventListener('DOMContentLoaded', function(){ if(box()) render(); });
+  setTimeout(function(){ if(box()) render(); }, 0);
 })();
 
 // 폼 제출 (시안 — 실제 오픈 시 네이버 폼/서버 연동)
