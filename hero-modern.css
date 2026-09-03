@@ -1584,12 +1584,12 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .promo250-txt .p250-hl b{color:#FFDF88;font-weight:900}
 
 /* 무빈소 신뢰 신념 문구 (짧고 힘있게) */
-.creed-sec{padding-top:10px;padding-bottom:10px;text-align:center}
-.creed-line{margin:0;font-family:'Noto Serif KR',serif;font-size:28px;font-weight:900;line-height:1.4;letter-spacing:-.015em;color:var(--pine,#1C4A3A)}
-.creed-line b{color:var(--brass-dp,#A87C2E)}
-.creed-sub{margin:14px auto 0;font-size:16px;line-height:1.7;color:var(--gray);max-width:600px}
-.creed-sub b{color:#2A2016;font-weight:800}
-@media(max-width:640px){.creed-line{font-size:22px}.creed-sub{font-size:14.5px}}
+.creed-sec{padding-top:54px;padding-bottom:54px;text-align:center;background:linear-gradient(180deg,#1F3B31 0%,#18342D 60%,#142C25 100%)}
+.creed-line{margin:0;font-family:'Noto Serif KR',serif;font-size:28px;font-weight:900;line-height:1.4;letter-spacing:-.015em;color:#F3ECD9}
+.creed-line b{color:#E7CE92}
+.creed-sub{margin:15px auto 0;font-size:16px;line-height:1.75;color:#C3D2BE;max-width:620px}
+.creed-sub b{color:#F3ECD9;font-weight:800}
+@media(max-width:640px){.creed-sec{padding-top:42px;padding-bottom:42px}.creed-line{font-size:22px}.creed-sub{font-size:14.5px}}
 
 /* 무빈소250 상품 소개 — 핵심 문구 강조(총액 투명 공개) */
 .prod-intro{max-width:720px;margin:0 auto 26px;text-align:center}
