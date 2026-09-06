@@ -1644,16 +1644,25 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 /* 무빈소250 소개 — 밑줄 강조 */
 .prod-intro-main .pi-underline{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px;text-decoration-color:var(--brass,#C8A46A)}
 
-/* 무빈소250 — 추가비용 200% 책임보상 서약 */
-.vow{display:flex;align-items:center;justify-content:center;gap:12px;max-width:600px;margin:18px auto 0;padding:14px 18px;background:linear-gradient(180deg,#fff,#FBF7EE);border:1.5px solid var(--brass,#C8A46A);border-radius:14px;box-shadow:0 8px 20px rgba(150,110,45,.12)}
-.vow-ico{flex:none;width:40px;height:40px;border-radius:50%;background:linear-gradient(180deg,#2C5D47,#1E4534);color:#F5EACB;display:flex;align-items:center;justify-content:center}
-.vow-ico svg{width:22px;height:22px}
-.vow-txt{text-align:left}
-.vow-txt b{display:block;font-size:16px;font-weight:900;color:#B23A2E;letter-spacing:-.01em}
-.vow-txt span{display:block;margin-top:3px;font-size:13.5px;line-height:1.5;color:#5A4A32}
-.vow-txt span b{display:inline;font-size:inherit;color:#B23A2E}
+/* 무빈소250 — 추가비용 200% 책임보상 서약 (강조 확대) */
+.vow{display:flex;flex-direction:column;align-items:center;text-align:center;gap:9px;max-width:680px;margin:24px auto 0;padding:30px 28px 26px;background:linear-gradient(180deg,#fff,#FBF5E8);border:2px solid var(--brass,#C8A46A);border-radius:20px;box-shadow:0 14px 34px rgba(150,110,45,.18);position:relative;overflow:hidden}
+.vow::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:linear-gradient(90deg,#C8A46A,#B23A2E,#C8A46A)}
+.vow-ico{flex:none;width:60px;height:60px;border-radius:50%;background:linear-gradient(180deg,#2C5D47,#1E4534);color:#F5EACB;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px rgba(30,69,52,.32);margin-bottom:2px}
+.vow-ico svg{width:32px;height:32px}
+.vow-eyebrow{display:inline-block;font-size:12.5px;font-weight:800;color:#a3352a;background:rgba(178,58,46,.1);border:1px solid rgba(178,58,46,.3);padding:5px 13px;border-radius:999px;letter-spacing:.02em}
+.vow-title{font-size:26px;font-weight:900;color:#B23A2E;letter-spacing:-.02em;line-height:1.2}
+.vow-desc{font-size:16px;line-height:1.6;color:#463619;font-weight:500;max-width:540px}
+.vow-desc b{color:#B23A2E;font-weight:900}
+.vow-conf{margin-top:12px;padding-top:14px;border-top:1px dashed rgba(200,164,106,.6);font-size:15px;line-height:1.65;color:#1E4534;font-weight:700;max-width:540px}
+.vow-conf b{color:#A87C2E}
 .prod-tags .tag-vow{background:#F6DAD3;color:#B23A2E;font-weight:800}
-@media(max-width:640px){.vow{gap:10px;padding:13px 14px}.vow-txt b{font-size:14.5px}.vow-txt span{font-size:12.5px}}
+@media(max-width:640px){.vow{padding:24px 16px 22px;gap:8px}.vow-ico{width:52px;height:52px}.vow-ico svg{width:27px;height:27px}.vow-title{font-size:21px}.vow-desc{font-size:14px}.vow-conf{font-size:13px}}
+/* 히어로 200% 보상 칩 (다른 문구로 이중 노출) */
+.phead .hero-vow{display:inline-flex;align-items:center;gap:9px;margin-top:16px;padding:10px 18px;background:rgba(200,164,106,.14);border:1.5px solid rgba(200,164,106,.55);border-radius:999px;font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:800;color:#F3ECD9;letter-spacing:-.01em;line-height:1.3}
+.phead .hero-vow b{color:#EBCB78;font-weight:900}
+.phead .hero-vow-ico{width:27px;height:27px;flex:none;border-radius:50%;background:rgba(245,234,203,.16);display:flex;align-items:center;justify-content:center}
+.phead .hero-vow-ico svg{width:16px;height:16px;stroke:#EBCB78}
+@media(max-width:640px){.phead .hero-vow{font-size:13px;padding:9px 15px;margin-top:14px}.phead .hero-vow-ico{width:24px;height:24px}}
 
 /* ── 브랜드 스토리 (우리가 시작한 이유) — 애플/삼성형 에디토리얼 ── */
 .brandstory{background:var(--hanji,#F5EFE1);padding:72px 24px;text-align:center;overflow:hidden}
