@@ -1510,6 +1510,10 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .prod-signature p{margin:0}
 .prod-signature .ps-lead{font-family:"Noto Serif KR",serif;font-size:17px;line-height:1.85;letter-spacing:-.01em;color:#20372A;font-weight:700;word-break:keep-all}
 .prod-signature .ps-lead b{color:#9A6A12;font-weight:700}
+.prod-signature .ps-ul{text-decoration:underline;text-decoration-color:rgba(168,124,46,.6);text-decoration-thickness:1.5px;text-underline-offset:7px}
+.prod-signature .ps-q{color:#A87C2E;font-weight:700}
+.prod-signature .ps-q-o{margin-right:1px}
+.prod-signature .ps-q-c{margin-left:1px}
 .prod-signature .ps-body{margin-top:13px;font-family:"Noto Sans KR",sans-serif;font-size:13.5px;line-height:1.85;color:#5C4A2C;font-weight:500;word-break:keep-all}
 .prod-signature .ps-body b{color:#8A5A12;font-weight:700}
 .prod-signature .ps-vow{position:relative;margin-top:19px;padding-top:17px;font-family:"Noto Serif KR",serif;font-size:18px;line-height:1.7;letter-spacing:-.01em;color:#1E4534;font-weight:700;word-break:keep-all}
