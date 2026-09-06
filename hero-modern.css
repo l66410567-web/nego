@@ -1502,22 +1502,24 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 @media(max-width:640px){.prod-name{font-size:25px}.prod-price b{font-size:38px}.prod-price span{font-size:20px}.prod-list li{font-size:15px}}
 
 /* 무빈소250 — 차별점 강조 라인 */
-.prod-signature{position:relative;margin:18px 24px 6px;padding:26px 26px 22px;background:linear-gradient(180deg,#FCF6E8 0%,#F6ECD2 100%);border:1px solid rgba(200,164,106,.45);border-radius:14px;box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 6px 18px -12px rgba(120,90,30,.35);color:#463620;text-align:center;overflow:hidden}
-.prod-signature::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:64px;height:3px;border-radius:0 0 3px 3px;background:linear-gradient(90deg,#C8A46A,#A87C2E)}
-.prod-signature .ps-mark{display:flex;align-items:center;justify-content:center;width:42px;height:42px;margin:0 auto 12px;border-radius:50%;color:#A87C2E;background:radial-gradient(circle at 50% 40%,#FFF7E6,#F2E2BC);box-shadow:0 0 0 1px rgba(200,164,106,.5),0 4px 10px -6px rgba(120,90,30,.5)}
+.prod-signature{position:relative;margin:20px 22px 6px;padding:30px 28px 24px;background:linear-gradient(180deg,#FCF7EA 0%,#F4E8CC 100%);border:1px solid rgba(168,124,46,.4);border-radius:12px;box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 10px 26px -18px rgba(60,45,15,.5);color:#3A2C16;text-align:center;overflow:hidden}
+.prod-signature::after{content:"";position:absolute;inset:5px;border:1px solid rgba(168,124,46,.28);border-radius:8px;pointer-events:none}
+.prod-signature>*{position:relative;z-index:1}
+.prod-signature .ps-mark{display:block;width:50px;height:50px;margin:0 auto 16px;line-height:0;border-radius:50%;box-shadow:0 8px 18px -8px rgba(30,69,52,.55)}
+.prod-signature .ps-mark svg{display:block}
 .prod-signature p{margin:0}
-.prod-signature .ps-lead{font-family:"Noto Serif KR",serif;font-size:16px;line-height:1.9;letter-spacing:.01em;color:#3A2C16;font-weight:500}
-.prod-signature .ps-lead b{color:#7A4E12;font-weight:700}
-.prod-signature .ps-body{margin-top:11px;font-size:13.5px;line-height:1.85;color:#6B5836}
+.prod-signature .ps-lead{font-family:"Noto Serif KR",serif;font-size:17px;line-height:1.85;letter-spacing:-.01em;color:#20372A;font-weight:700;word-break:keep-all}
+.prod-signature .ps-lead b{color:#9A6A12;font-weight:700}
+.prod-signature .ps-body{margin-top:13px;font-family:"Noto Sans KR",sans-serif;font-size:13.5px;line-height:1.85;color:#5C4A2C;font-weight:500;word-break:keep-all}
 .prod-signature .ps-body b{color:#8A5A12;font-weight:700}
-.prod-signature .ps-vow{position:relative;margin-top:17px;padding-top:15px;font-family:"Noto Serif KR",serif;font-size:16.5px;line-height:1.75;letter-spacing:.005em;color:#2C5D47}
-.prod-signature .ps-vow::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:34px;height:1px;background:rgba(168,124,46,.55)}
-.prod-signature .ps-vow b{color:#1E4534;font-weight:700}
+.prod-signature .ps-vow{position:relative;margin-top:19px;padding-top:17px;font-family:"Noto Serif KR",serif;font-size:18px;line-height:1.7;letter-spacing:-.01em;color:#1E4534;font-weight:700;word-break:keep-all}
+.prod-signature .ps-vow::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:40px;height:2px;border-radius:2px;background:linear-gradient(90deg,#C8A46A,#A87C2E)}
+.prod-signature .ps-vow b{color:#16362A;font-weight:900}
 @media(max-width:640px){
-.prod-signature{margin:16px 16px 6px;padding:22px 18px 18px}
-.prod-signature .ps-lead{font-size:14.5px;line-height:1.85}
+.prod-signature{margin:16px 14px 6px;padding:24px 18px 20px}
+.prod-signature .ps-lead{font-size:15px;line-height:1.8}
 .prod-signature .ps-body{font-size:12.5px}
-.prod-signature .ps-vow{font-size:15px}
+.prod-signature .ps-vow{font-size:16px}
 .prod-signature .ps-brk{display:none}
 }
 
