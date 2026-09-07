@@ -1662,6 +1662,7 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .svc250-claim p b{color:var(--brass-dp,#A87C2E)}
 .svc250-claim .cred{color:#C0392B;font-weight:900}
 .svc250-claim p.vow-note{max-width:600px;margin:10px auto 0;font-family:'Noto Sans KR',sans-serif;font-size:11.5px;font-weight:500;line-height:1.55;color:#9a8b6c;letter-spacing:0}
+.svc250-claim p.vow-note b{color:#7a6b48;font-weight:700}
 @media(max-width:640px){.svc250-claim p{font-size:18px}.svc250-claim p.vow-note{font-size:11px;padding:0 6px}}
 
 /* 무빈소250 소개 — 밑줄 강조 */
