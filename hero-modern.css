@@ -1540,6 +1540,8 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .mflow-step p{margin:0;font-size:13.5px;line-height:1.55;color:#5a5a5a}
 .mflow-note{text-align:center;margin:26px auto 0;font-size:14px;color:#5A4A32;max-width:640px}
 .mflow-note b{color:var(--brass-dp,#A87C2E)}
+.mflow-disc{text-align:center;margin:8px auto 0;font-size:11.5px;line-height:1.5;color:#9a8b6c;max-width:600px}
+@media(max-width:640px){.mflow-disc{font-size:11px;padding:0 6px}}
 @media(max-width:760px){
   .mflow{grid-template-columns:repeat(2,1fr);gap:26px 16px}
   .mflow-step:not(:last-child)::after{display:none}
