@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;700;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="hero-modern.css?v=20260727-m183">
+<link rel="stylesheet" href="hero-modern.css?v=20260727-m190">
 </head>
 <body>
 <nav class="nav">
@@ -66,6 +66,11 @@
 <span class="eyebrow on-dark">광주 가족장 · 소규모 장례</span>
 <h1>작은 빈소에서,<br><span class="hl">가족과 가까운 분들만</span> 조용히</h1>
 <p>작은 빈소를 차리고 가족·가까운 친지가 모여 조용히 치르는 소규모 장례입니다. 큰 빈소와 많은 조문객의 부담은 줄이되, 고인을 모시는 예우와 절차는 그대로 갖춥니다.</p>
+<div class="fh-preg">
+<span class="fh-preg-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+<span class="fh-preg-tx"><b>미리 등록해두신 분</b>은 가족장 제휴 할인을 그대로 적용받습니다 — 가입비 0원 · 약정 없음</span>
+<button type="button" class="fh-preg-btn" onclick="openPreregister('family')">0원 사전등록하기</button>
+</div>
 </div>
 </header>
 
@@ -138,6 +143,24 @@
 <p>작은 빈소를 차리고 가족·가까운 친지가 소규모로 조문을 받습니다. 부담은 줄이되 최소한의 조문 자리는 마련합니다.</p>
 </article>
 </div>
+</div>
+</section>
+
+<!-- 가족장 핵심 가치 — 우리 가족만의 조용한 마지막 인사 -->
+<section class="sec fv-sec">
+<div class="wrap-narrow">
+<div class="sec-head">
+<span class="eyebrow">빛고을 가족장</span>
+<h2>우리 가족만의<br>조용한 마지막 인사</h2>
+<div class="hr-brass"></div>
+<p class="sub">큰 빈소와 많은 조문객의 부담은 줄이고, 가족과 고인에게 집중하는 장례</p>
+</div>
+<ul class="fv-grid">
+<li><b>작은 빈소</b><span>가까운 분들만 조용히</span></li>
+<li><b>부담은 줄이고</b><span>접객·음식 규모 축소</span></li>
+<li class="fv-gold"><b>회원 제휴 할인</b><span>사전등록만 해두셔도</span></li>
+</ul>
+<p class="fv-note"><span class="promise-hl">미리 등록해두신 분은 제휴 장례식장 지원과 할인을 그대로 적용받습니다.</span></p>
 </div>
 </section>
 
@@ -314,7 +337,7 @@
 <span class="pgstrip-sub">가입비 0원 · 월 납입금 0원 · 약정 없음 — <b>이름과 연락처만</b> 남겨두세요. 실제 이용 시 제휴 지원·할인 혜택을 받으실 수 있습니다.</span>
 </div>
 <div class="pgstrip-act">
-<button type="button" class="pgstrip-btn" onclick="openPreregister('family')">무료 사전등록하기<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+<button type="button" class="pgstrip-btn" onclick="openPreregister('family')">0원 사전등록하기<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
 <span class="pgstrip-micro">30초면 완료 · 등록 비용 0원</span>
 </div>
 </div>
@@ -417,13 +440,13 @@
 <option>기타 지역</option>
 </select>
 <label class="agree"><input type="checkbox" id="pgAgree" required> 개인정보 수집·이용에 동의합니다</label>
-<button type="submit" class="btn btn-brass">무료 사전등록하기</button>
+<button type="submit" class="btn btn-brass">0원 사전등록하기</button>
 <p class="preg-note">※ 무료 사전등록 후 실제 이용 고객에게 혜택이 제공됩니다.<br>※ 사전등록 자체에는 어떠한 비용도 발생하지 않습니다.</p>
 </form>
 </div>
 </div>
 </div>
-<script src="script.js?v=20260727-m95"></script>
+<script src="script.js?v=20260727-m100"></script>
 <script src="bot.js"></script>
 </body>
 </html>

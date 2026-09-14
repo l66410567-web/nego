@@ -349,6 +349,7 @@ var PG_BENEFITS = [
   ['제휴 장례식장 지원', '접객실·분향소 · 관·수의·리무진 · 상복·제단장식'],
   ['고급 진공유골함 업그레이드', '62만원 상당 · <b>무빈소250 이용 시</b> 제공'],
   ['수목장·봉안당 제휴 혜택', '봉안함·표지석·관리비 지원'],
+  ['묘 이장·평장 제휴 할인', '개장·파묘·이장 절차 지원'],
   ['24시간 전담 연결', '등록 정보가 있어 그날 바로 진행됩니다']
 ];
 var __pgMode = 'all';
@@ -375,7 +376,7 @@ function pgFormHtml(m){
     '<div class="pg-hp" aria-hidden="true"><label>회사명</label><input type="text" id="pgCompany" tabindex="-1" autocomplete="off"></div>'+
     '<label class="agree"><input type="checkbox" id="pgAgree" required> <span>개인정보 수집·이용에 동의합니다 <a href="privacy.html" target="_blank" rel="noopener">[내용 보기]</a></span></label>'+
     '<p class="preg-consent">수집항목: 성함·휴대전화번호·거주지역 &nbsp;|&nbsp; 목적: 사전등록 접수 및 장례 서비스 안내 &nbsp;|&nbsp; 보유기간: 등록일로부터 5년 또는 삭제 요청 시까지. 동의를 거부하실 수 있으나, 거부 시 사전등록이 불가합니다.</p>'+
-    '<button type="submit" class="btn btn-brass" id="pgSubmit">무료 사전등록하기</button>'+
+    '<button type="submit" class="btn btn-brass" id="pgSubmit">0원 사전등록하기</button>'+
     '<p class="preg-note">※ 사전등록은 상조 가입이 아니며, 어떠한 비용도 발생하지 않습니다.<br>※ 혜택은 광주·전남 제휴 시설 이용 시 적용되며 시설·조건에 따라 범위가 달라질 수 있습니다.</p>'+
     '</form>';
 }
