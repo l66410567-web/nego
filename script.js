@@ -273,7 +273,7 @@ document.querySelectorAll('.er-tab').forEach(function(tab){
   var nextBtn = slider.querySelector('.hs-next');
   var n = slides.length;
   var idx = 0;
-  var AUTOPLAY_MS = 6500;
+  var AUTOPLAY_MS = 9000;
   var timer = null;
 
   function syncHeight(){
