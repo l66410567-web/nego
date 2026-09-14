@@ -1946,62 +1946,67 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 
 /* ==========================================================
    SLIDE 3 — 무료 사전등록 (전 서비스 통합 · 광고 랜딩 전환 슬라이드)
-   의도적으로 슬라이드1(포레스트 그린)·슬라이드2(아이보리)와 다른 톤.
-   가장 짙은 다크(거의 블랙에 가까운 그린)로 가서, 0원 카드와 CTA의 골드가
-   최대 명도차로 튀어 보이게 함 — "0원 박스가 부각되지 않는다"의 근본 해결.
+   차분·신뢰·고급의 상담 서비스 톤. 아이보리·크림 베이스에 딥그린을 주 액센트로,
+   골드는 보조로만 사용(슬라이드2의 골드 주도·레드 가격 강조와 역할을 분리해
+   같은 아이보리 계열이어도 "다른 슬라이드"로 읽히게 함).
    ========================================================== */
 .hs3{position:relative;overflow:hidden;
   background:
-    radial-gradient(55% 60% at 84% 22%, rgba(200,164,106,.24), rgba(200,164,106,0) 62%),
-    linear-gradient(165deg,#16302A 0%,#0D2019 55%,#081310 100%)}
-.hs3-wrap{display:grid;grid-template-columns:minmax(0,1.14fr) minmax(0,.86fr);gap:44px;align-items:center}
+    radial-gradient(60% 55% at 12% 92%, rgba(30,69,52,.07), rgba(30,69,52,0) 60%),
+    radial-gradient(50% 50% at 90% 6%, rgba(200,164,106,.14), rgba(200,164,106,0) 60%),
+    linear-gradient(160deg,#FDFBF5 0%,#F8F4E9 55%,#F2EBD8 100%)}
+.hs3-wrap{display:grid;grid-template-columns:minmax(0,1.16fr) minmax(0,.84fr);gap:48px;align-items:center}
 .hs3-copy{max-width:none}
 .hs3-eyebrow{display:inline-flex;align-items:center;gap:7px;
-  color:#E9CE94;background:rgba(200,164,106,.16);border:1px solid rgba(200,164,106,.48)}
-.hs3-dot{width:7px;height:7px;border-radius:50%;background:#EFC964;flex:none;
+  color:#1E4534;background:rgba(47,102,80,.09);border:1px solid rgba(47,102,80,.24)}
+.hs3-dot{width:7px;height:7px;border-radius:50%;background:#2F6650;flex:none;
   animation:pgPulse 1.8s ease-out infinite}
-.hs3-title{color:#fff;text-shadow:0 2px 16px rgba(0,0,0,.35)}
-.hs3-desc{color:#C9D3CB}
-.hs3-desc b{color:#F0D9A6;font-weight:800}
+.hs3-title{color:#1B3F30}
+.hs3-desc{color:#4C4232}
+.hs3-desc b{color:#1E4534;font-weight:800}
 
-/* 0원 4종 — 다크 배경 위 화이트 카드로 최대 명도차·강한 입체감 */
-.hs3-zero{display:flex;gap:10px;margin:24px 0 0;padding:0;list-style:none;max-width:520px}
-.hs3-zero li{position:relative;overflow:hidden;flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;
-  padding:16px 6px 13px;border-radius:13px;
-  background:linear-gradient(180deg,#FFFFFF 0%,#FBF3E0 100%);
-  border:1px solid rgba(200,164,106,.4);
-  box-shadow:0 14px 30px -14px rgba(0,0,0,.65),0 0 0 1px rgba(200,164,106,.12),inset 0 1px 0 rgba(255,255,255,.95);
-  transition:transform .18s ease}
-.hs3-zero li:hover{transform:translateY(-3px)}
-.hs3-zero li::before{content:"";position:absolute;top:0;left:0;right:0;height:3.5px;
+/* 0원 패널 — 라벨 달린 카드로 묶어 "부담 없는 이유"를 한 덩어리로 각인 */
+.hs3-panel{position:relative;margin:24px 0 0;padding:22px 20px 18px;max-width:520px;
+  border-radius:16px;background:rgba(255,255,255,.6);
+  border:1px solid rgba(30,69,52,.16);
+  box-shadow:0 16px 34px -22px rgba(30,50,40,.35)}
+.hs3-panel-lab{position:absolute;top:-12px;left:20px;
+  font-size:12px;font-weight:800;letter-spacing:-.01em;color:#F5EFDC;
+  background:linear-gradient(180deg,#2F6650,#1E4534);
+  padding:5px 13px;border-radius:999px;box-shadow:0 6px 14px -6px rgba(30,69,52,.55)}
+.hs3-zero{display:flex;gap:10px;margin:6px 0 0;padding:0;list-style:none}
+.hs3-zero li{position:relative;overflow:hidden;flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;
+  padding:14px 6px 11px;border-radius:12px;
+  background:linear-gradient(180deg,#FFFFFF 0%,#FBF7EC 100%);
+  border:1px solid rgba(168,124,46,.28)}
+.hs3-zero li::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;
   background:linear-gradient(90deg,#2F6650,#4E9B78)}
 .hs3-zero li:nth-child(2)::before{background:linear-gradient(90deg,#3C7A5F,#6BB292)}
 .hs3-zero li:nth-child(3)::before{background:linear-gradient(90deg,#1E4534,#2F6650)}
-.hs3-zero li:nth-child(4)::before{background:linear-gradient(90deg,#A87C2E,#EFC964)}
-.hs3-zero li:nth-child(4){background:linear-gradient(180deg,#FFFDF6,#FAEFD0)}
-.hs3-zero i{font-style:normal;font-family:'Noto Serif KR',serif;font-size:24px;font-weight:900;
+.hs3-zero li:nth-child(4)::before{background:linear-gradient(90deg,#A87C2E,#D9B87A)}
+.hs3-zero i{font-style:normal;font-family:'Noto Serif KR',serif;font-size:22px;font-weight:900;
   color:#1E4534;line-height:1.1;letter-spacing:-.03em}
-.hs3-zero li:nth-child(4) i{font-size:20px;color:#8A5A12}
-.hs3-zero span{margin-top:1px;font-size:12px;font-weight:800;color:#5E6B60;letter-spacing:-.03em}
+.hs3-zero li:nth-child(4) i{font-size:18px;color:#8A5A12}
+.hs3-zero span{margin-top:1px;font-size:11.5px;font-weight:800;color:#5E6B60;letter-spacing:-.03em}
 
 .hs3-micro{display:inline-flex;align-items:center;gap:6px;margin:16px 0 0;
-  font-size:12.5px;font-weight:700;color:#93A69A;letter-spacing:-.01em}
+  font-size:12.5px;font-weight:700;color:#7E8C82;letter-spacing:-.01em}
 .hs3-micro::before{content:"";width:15px;height:15px;flex:none;border-radius:50%;
-  background:#EFC964 url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23142c22' stroke-width='3.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/10px 10px no-repeat}
+  background:#2F6650 url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/10px 10px no-repeat}
 
-/* 우측 비주얼 — 국화 사진 카드 (허전함 해소 + 브랜드 톤 유지) */
-.hs3-visual{display:flex;justify-content:center}
-.hs3-photo-card{position:relative;width:100%;max-width:360px;aspect-ratio:4/4.6;
-  border-radius:20px;overflow:hidden;border:1px solid rgba(200,164,106,.4);
-  box-shadow:0 30px 60px -24px rgba(0,0,0,.7)}
-.hs3-photo-card img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.92)}
-.hs3-photo-card::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(0deg,rgba(8,19,16,.85) 0%,rgba(8,19,16,0) 42%)}
-.hs3-photo-badge{position:absolute;left:16px;bottom:16px;z-index:1;display:inline-flex;align-items:baseline;gap:7px;
-  font-size:13px;font-weight:800;color:#fff;letter-spacing:-.01em;
-  background:rgba(8,19,16,.5);backdrop-filter:blur(4px);
-  border:1px solid rgba(200,164,106,.55);padding:8px 14px;border-radius:999px}
-.hs3-photo-badge i{font-style:normal;font-family:'Noto Serif KR',serif;font-size:19px;font-weight:900;color:#EFC964}
+/* 우측 비주얼 — 국화는 어디까지나 보조. 단, 아이보리 배경 위 흰 국화라
+   경계가 사라지지 않도록 뒤에 딥그린 톤 후광 + 굵은 링으로 명확히 구분 */
+.hs3-visual{position:relative;display:flex;flex-direction:column;align-items:center;padding-top:10px}
+.hs3-visual::before{content:"";position:absolute;top:-6%;left:50%;transform:translateX(-50%);
+  width:82%;aspect-ratio:1/1;border-radius:50%;
+  background:radial-gradient(closest-side, rgba(47,102,80,.16), rgba(47,102,80,.05) 68%, rgba(47,102,80,0) 100%)}
+.hs3-photo-card{position:relative;z-index:1;width:68%;max-width:230px;aspect-ratio:1/1;
+  border-radius:50%;overflow:hidden;border:3px solid #fff;
+  box-shadow:0 20px 40px -20px rgba(30,50,40,.45),0 0 0 1px rgba(47,102,80,.28),0 0 0 9px rgba(255,255,255,.7)}
+.hs3-photo-card img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.08) contrast(1.04)}
+.hs3-visual-cap{position:relative;z-index:1;margin:18px 0 0;max-width:220px;text-align:center;
+  font-family:'Noto Serif KR',serif;font-size:14px;font-weight:500;color:#5E6B60;
+  line-height:1.6;letter-spacing:-.01em}
 
 /* ==========================================================
    반응형 — 규격 스케일 (모든 슬라이드 동일 적용)
@@ -2011,17 +2016,16 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hs2-wrap{gap:34px}
   .hs2-urn-card{max-width:320px}
   .hs3-wrap{gap:34px}
-  .hs3-photo-card{max-width:300px}
+  .hs3-photo-card{max-width:200px}
 }
 @media(max-width:900px){
   .hero-slider{--hsH:620px;--hsPadX:26px;--hsTitle:34px;--hsDesc:15.5px;--hsBtnH:54px}
   .hs2-wrap{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:24px}
   .hs2-urn-card{max-width:240px;aspect-ratio:3/3.4}
   .hs2-offer-tx b{font-size:15.5px}
-  .hs3-wrap{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:24px}
-  .hs3-photo-card{max-width:220px;aspect-ratio:3/3.6}
-  .hs3-photo-badge{font-size:11.5px;padding:6px 11px;left:12px;bottom:12px}
-  .hs3-photo-badge i{font-size:16px}
+  .hs3-wrap{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:20px}
+  .hs3-photo-card{max-width:150px}
+  .hs3-visual-cap{font-size:12.5px;margin-top:12px}
 }
 @media(max-width:640px){
   .hero-slider{--hsH:600px;--hsPadX:20px;--hsTitle:29px;--hsDesc:15px;--hsBtnH:54px}
@@ -2074,14 +2078,16 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hz-lb{font-size:10.5px}
   .hs2-micro{margin-top:9px;font-size:11.5px}
 
-  /* 슬라이드3: 세로 1단 — 이미지는 숨기고 0원 카드에 힘을 싣는다 */
+  /* 슬라이드3: 세로 1단 — 이미지는 숨기고 0원 패널에 힘을 싣는다 */
   .hs3-wrap{grid-template-columns:1fr;gap:0}
   .hs3-visual{display:none}
-  .hs3-zero{margin-top:16px;gap:7px}
-  .hs3-zero li{padding:12px 4px 10px;border-radius:11px}
-  .hs3-zero i{font-size:19px}
-  .hs3-zero li:nth-child(4) i{font-size:16px}
-  .hs3-zero span{font-size:10.5px}
+  .hs3-panel{margin-top:18px;padding:18px 14px 14px;border-radius:14px}
+  .hs3-panel-lab{font-size:11px;padding:4px 11px;left:14px;top:-10px}
+  .hs3-zero{margin-top:4px;gap:6px}
+  .hs3-zero li{padding:11px 4px 9px;border-radius:10px}
+  .hs3-zero i{font-size:18px}
+  .hs3-zero li:nth-child(4) i{font-size:15px}
+  .hs3-zero span{font-size:10px}
   .hs3-micro{margin-top:12px;font-size:11.5px}
 }
 @media(max-width:380px){
@@ -2337,12 +2343,12 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   text-decoration:underline;text-decoration-skip-ink:none;
   text-underline-offset:4px;text-decoration-thickness:2px}
 
-/* 어두운 배경(슬라이드1·3) — 밝은 금색 텍스트 + 반투명 골드 밑줄 */
-.hslide-1 .promise-hl,.hs3 .promise-hl{
+/* 어두운 배경(슬라이드1) — 밝은 금색 텍스트 + 반투명 골드 밑줄 */
+.hslide-1 .promise-hl{
   color:#F3D9A0;text-decoration-color:rgba(200,164,106,.7)}
 
-/* 밝은 배경(슬라이드2) — 딥그린 텍스트 + 골드 밑줄 (가격 레드와 위계 분리) */
-.hs2 .promise-hl{color:#1B3F30;text-decoration-color:rgba(200,164,106,.85)}
+/* 밝은 배경(슬라이드2·3) — 딥그린 텍스트 + 골드 밑줄 (가격 레드와 위계 분리) */
+.hs2 .promise-hl,.hs3 .promise-hl{color:#1B3F30;text-decoration-color:rgba(200,164,106,.85)}
 
 @media(max-width:640px){
   .promise-hl{text-decoration-thickness:1.5px;text-underline-offset:3px}
