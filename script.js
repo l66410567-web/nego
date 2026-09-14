@@ -273,6 +273,7 @@ document.querySelectorAll('.er-tab').forEach(function(tab){
   var nextBtn = slider.querySelector('.hs-next');
   var n = slides.length;
   var idx = 0;
+  var dir = 1; // 자동재생 진행 방향(1=정방향, -1=역방향) — 1→2→3→2→1 핑퐁 순환용
   var AUTOPLAY_MS = 9000;
   var timer = null;
 
@@ -285,9 +286,11 @@ document.querySelectorAll('.er-tab').forEach(function(tab){
       dots[k].classList.toggle('on', on);
       dots[k].setAttribute('aria-selected', on ? 'true' : 'false');
     }
+    if(idx >= n-1) dir = -1;
+    else if(idx <= 0) dir = 1;
     if(user) restart();
   }
-  function next(){ go(idx+1); }
+  function next(){ go(idx+dir); }
   function prev(){ go(idx-1); }
   function restart(){
     if(timer) clearInterval(timer);
