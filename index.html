@@ -18,7 +18,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;700;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css?v=20260722-ui2">
 <link rel="stylesheet" href="hero119-v4.css?v=20260722-ui2">
-<link rel="stylesheet" href="hero-modern.css?v=20260727-m148">
+<link rel="stylesheet" href="hero-modern.css?v=20260727-m151">
 </head>
 <body>
 <nav class="nav">
@@ -63,6 +63,9 @@
 <a href="faq.html">자주 묻는 질문</a>
 </div>
 </nav>
+<div class="hero-slider" id="heroSlider">
+<div class="hs-track" id="hsTrack">
+<div class="hslide hslide-1" role="group" aria-roledescription="슬라이드" aria-label="1 / 3: 빛고을장례119">
 <div class="hero119-root">
 <section class="hero119" aria-labelledby="hero119-heading">
 <div class="hero119-bg" aria-hidden="true"></div>
@@ -132,6 +135,64 @@
 </div>
 </div>
 </section>
+</div>
+</div>
+<!-- SLIDE 2 — 무빈소250 무료 사전등록 (핵심 전환 슬라이드) -->
+<div class="hslide hslide-2" role="group" aria-roledescription="슬라이드" aria-label="2 / 3: 무빈소250 무료 사전등록">
+<section class="hs2" aria-labelledby="hs2-heading">
+<div class="hs2-wrap">
+<div class="hs2-copy">
+<span class="hs2-eyebrow">미리 준비하면 더 든든합니다</span>
+<h2 id="hs2-heading" class="hs2-title">무빈소 장례 <span class="hs2-price"><b>250</b>만원</span></h2>
+<p class="hs2-desc">가입비도, 월 납입금도 없이<br>지금 <b>무료 사전등록</b>하고<br>필요할 때 무빈소250을 이용하세요</p>
+<div class="hs2-benefit">
+<span class="hs2-benefit-tag">사전등록 고객 특별혜택</span>
+<p class="hs2-benefit-main"><b>기본 유골함 → 고급 진공유골함</b><br>무료 업그레이드</p>
+<p class="hs2-benefit-sub">62만원 상당의 예우를, 사전등록만으로</p>
+</div>
+<div class="hs2-free">
+<span><i>✓</i>가입비 0원</span><span><i>✓</i>월 납입금 0원</span><span><i>✓</i>예약금 0원</span>
+</div>
+<p class="hs2-note">※ 사전등록은 무료이며, 실제 무빈소250 이용 시에만 혜택이 제공됩니다.</p>
+<div class="hs2-cta">
+<button type="button" class="btn btn-brass hs2-btn-main" onclick="openPreregister()">무빈소250 무료 사전등록</button>
+<a href="simple.html" class="hs2-btn-sub">무빈소250 자세히 보기 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+</div>
+</div>
+<div class="hs2-visual" aria-hidden="true">
+<div class="hs2-urn-card">
+<img src="svc250/09.jpg?v=3" alt="" loading="lazy">
+<span class="hs2-urn-badge">사전등록 특별혜택</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- SLIDE 3 — 빛고을 가족장 -->
+<div class="hslide hslide-3" role="group" aria-roledescription="슬라이드" aria-label="3 / 3: 빛고을 가족장">
+<section class="hs3" aria-labelledby="hs3-heading">
+<div class="hs3-wrap">
+<div class="hs3-copy">
+<span class="hs3-eyebrow">빛고을 가족장</span>
+<h2 id="hs3-heading" class="hs3-title">우리 가족만의<br>조용한 마지막 인사</h2>
+<p class="hs3-desc">큰 빈소와 많은 조문객의 부담은 줄이고<br>가족과 고인에게 집중하는 장례</p>
+<p class="hs3-sub">가까운 가족과 친지를 중심으로<br>조용하고 품격 있게 모시는 새로운 장례 방식</p>
+<div class="hs3-cta">
+<a href="family.html" class="btn btn-brass">가족장 알아보기</a>
+<button type="button" class="hs3-btn-sub" onclick="openModal()">상담하기</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<button type="button" class="hs-arrow hs-prev" data-hs="prev" aria-label="이전 슬라이드"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+<button type="button" class="hs-arrow hs-next" data-hs="next" aria-label="다음 슬라이드"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+<div class="hs-dots" role="tablist" aria-label="슬라이드 선택">
+<button type="button" class="hs-dot" data-i="0" role="tab" aria-label="1번 슬라이드: 빛고을장례119"></button>
+<button type="button" class="hs-dot" data-i="1" role="tab" aria-label="2번 슬라이드: 무빈소250 무료 사전등록"></button>
+<button type="button" class="hs-dot" data-i="2" role="tab" aria-label="3번 슬라이드: 빛고을 가족장"></button>
+</div>
 </div>
 <!-- 지원을 알고 시작하면, 부담은 달라질 수 있습니다 -->
 <section class="sec figure" aria-labelledby="figure-heading">
@@ -919,6 +980,33 @@
 <div class="qwiz" id="qwiz"></div>
 </div>
 </div>
+<!-- 무빈소250 무료 사전등록 모달 -->
+<div class="modal" id="pregisterModal" role="dialog" aria-modal="true" aria-label="무빈소250 무료 사전등록">
+<div class="modal-box pregister-box">
+<button class="modal-x" onclick="closePreregister()" aria-label="닫기">✕</button>
+<div id="pregisterBody">
+<span class="preg-badge">가입비 0원 · 월 납입금 0원 · 예약금 0원</span>
+<h3 class="preg-title">무빈소250 무료 사전등록</h3>
+<p class="preg-sub">30초면 충분합니다. 실제 이용 시 <b>고급 진공유골함 업그레이드</b> 혜택을 받으실 수 있어요.</p>
+<form class="form" id="pregisterForm" style="padding:0" onsubmit="return submitPreregister(event)">
+<label>성함</label>
+<input type="text" id="pgName" placeholder="예) 홍길동" required>
+<label>휴대전화번호</label>
+<input type="tel" id="pgTel" placeholder="010-0000-0000" required>
+<label>거주지역</label>
+<select id="pgRegion" required>
+<option value="" disabled selected>선택해 주세요</option>
+<option>광주</option>
+<option>전남</option>
+<option>기타 지역</option>
+</select>
+<label class="agree"><input type="checkbox" id="pgAgree" required> 개인정보 수집·이용에 동의합니다</label>
+<button type="submit" class="btn btn-brass">무료 사전등록하기</button>
+<p class="preg-note">※ 무료 사전등록 후 실제 무빈소250 이용 고객에게 혜택이 제공됩니다.<br>※ 사전등록 자체에는 어떠한 비용도 발생하지 않습니다.</p>
+</form>
+</div>
+</div>
+</div>
 <!-- 후기 작성 모달 -->
 <div class="modal" id="reviewModal" role="dialog" aria-modal="true" aria-label="함께한 이야기 남기기">
 <div class="modal-box">
@@ -956,7 +1044,7 @@ function submitReview(e){
   return false;
 }
 </script>
-<script src="script.js?v=20260727-m81"></script>
+<script src="script.js?v=20260727-m83"></script>
 <script src="bot.js"></script>
 </body>
 </html>

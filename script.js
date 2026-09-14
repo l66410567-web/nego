@@ -261,3 +261,120 @@ document.querySelectorAll('.er-tab').forEach(function(tab){
   wrap.appendChild(inner);
   foot.parentNode.insertBefore(wrap, foot);
 })();
+
+/* ---------- 메인 히어로 슬라이더 (3슬라이드) ---------- */
+(function(){
+  var slider = document.getElementById('heroSlider');
+  var track = document.getElementById('hsTrack');
+  if(!slider || !track) return;
+  var slides = track.children;
+  var dots = slider.querySelectorAll('.hs-dot');
+  var prevBtn = slider.querySelector('.hs-prev');
+  var nextBtn = slider.querySelector('.hs-next');
+  var n = slides.length;
+  var idx = 0;
+  var AUTOPLAY_MS = 6500;
+  var timer = null;
+
+  function syncHeight(){
+    var h = slides[idx] ? slides[idx].offsetHeight : 0;
+    if(h) slider.style.height = h + 'px';
+  }
+  function go(i, user){
+    idx = (i + n) % n;
+    track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+    syncHeight();
+    for(var k=0;k<dots.length;k++){
+      var on = k===idx;
+      dots[k].classList.toggle('on', on);
+      dots[k].setAttribute('aria-selected', on ? 'true' : 'false');
+    }
+    if(user) restart();
+  }
+  window.addEventListener('resize', function(){ syncHeight(); });
+  function next(){ go(idx+1); }
+  function prev(){ go(idx-1); }
+  function restart(){
+    if(timer) clearInterval(timer);
+    timer = setInterval(next, AUTOPLAY_MS);
+  }
+  function stop(){
+    if(timer){ clearInterval(timer); timer = null; }
+  }
+
+  if(nextBtn) nextBtn.addEventListener('click', function(){ go(idx+1, true); });
+  if(prevBtn) prevBtn.addEventListener('click', function(){ go(idx-1, true); });
+  dots.forEach(function(d){
+    d.addEventListener('click', function(){ go(parseInt(d.getAttribute('data-i'),10), true); });
+  });
+
+  // PC: 마우스 호버 시 자동전환 일시정지
+  slider.addEventListener('mouseenter', stop);
+  slider.addEventListener('mouseleave', restart);
+
+  // 모바일: 좌우 스와이프
+  var touchX = null, touchY = null;
+  slider.addEventListener('touchstart', function(e){
+    var t = e.touches[0]; touchX = t.clientX; touchY = t.clientY; stop();
+  }, {passive:true});
+  slider.addEventListener('touchend', function(e){
+    if(touchX===null){ restart(); return; }
+    var t = e.changedTouches[0];
+    var dx = t.clientX - touchX, dy = t.clientY - touchY;
+    if(Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)){
+      if(dx < 0) go(idx+1); else go(idx-1);
+    }
+    touchX = null; touchY = null;
+    restart();
+  });
+
+  go(0);
+  restart();
+})();
+
+/* ---------- 무빈소250 무료 사전등록 모달 ---------- */
+function openPreregister(){
+  var m = document.getElementById('pregisterModal');
+  if(!m) return;
+  m.classList.add('on');
+  document.body.style.overflow = 'hidden';
+}
+function closePreregister(){
+  var m = document.getElementById('pregisterModal');
+  if(!m) return;
+  m.classList.remove('on');
+  document.body.style.overflow = '';
+}
+(function(){
+  var m = document.getElementById('pregisterModal');
+  if(!m) return;
+  m.addEventListener('click', function(e){ if(e.target.id === 'pregisterModal') closePreregister(); });
+})();
+function submitPreregister(e){
+  e.preventDefault();
+  var nameEl = document.getElementById('pgName');
+  var telEl = document.getElementById('pgTel');
+  var regionEl = document.getElementById('pgRegion');
+  var agreeEl = document.getElementById('pgAgree');
+  var name = nameEl ? nameEl.value.trim() : '';
+  var tel = telEl ? telEl.value.trim() : '';
+  var region = regionEl ? regionEl.value : '';
+  var agree = agreeEl ? agreeEl.checked : false;
+  if(!name){ alert('성함을 입력해 주세요.'); return false; }
+  if(!tel){ alert('휴대전화번호를 입력해 주세요.'); return false; }
+  if(!region){ alert('거주지역을 선택해 주세요.'); return false; }
+  if(!agree){ alert('개인정보 수집·이용에 동의해 주세요.'); return false; }
+  // 시안 단계 — 실제 오픈 시 문자(SMS) 발송 등 서버 연동 예정
+  var body = document.getElementById('pregisterBody');
+  if(body){
+    body.innerHTML =
+      '<div class="preg-done">' +
+      '<span class="preg-done-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>' +
+      '<h3>무빈소250 무료 사전등록이<br>완료되었습니다</h3>' +
+      '<p>가입비와 월 납입금은 없습니다.<br>장례가 필요하실 때 빛고을장례119로 연락해 주세요.</p>' +
+      '<p class="preg-extra">사전등록 고객은 실제 무빈소250 이용 시 <b class="preg-hl">고급 진공유골함 업그레이드</b> 혜택을 받을 수 있습니다.</p>' +
+      '<a href="tel:15339657" class="preg-tel"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg>1533-9657</a>' +
+      '</div>';
+  }
+  return false;
+}
