@@ -50,9 +50,9 @@
   position:absolute;inset:0;z-index:1;
   background:linear-gradient(96deg,
     rgba(18,33,27,.97) 0%,
-    rgba(18,33,27,.93) 42%,
-    rgba(18,33,27,.58) 66%,
-    rgba(18,33,27,.14) 100%);
+    rgba(18,33,27,.94) 42%,
+    rgba(18,33,27,.72) 66%,
+    rgba(18,33,27,.42) 100%);
 }
 .hero119-wrap{
   position:relative;z-index:2;width:100%;
@@ -128,8 +128,8 @@
   .hero119-bg{background-position:84% 20%}
   .hero119-veil{
     background:linear-gradient(100deg,
-      rgba(18,33,27,.96) 0%,rgba(18,33,27,.92) 50%,
-      rgba(18,33,27,.60) 74%,rgba(18,33,27,.28) 100%);
+      rgba(18,33,27,.96) 0%,rgba(18,33,27,.93) 50%,
+      rgba(18,33,27,.74) 74%,rgba(18,33,27,.50) 100%);
   }
 }
 
