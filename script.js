@@ -276,14 +276,10 @@ document.querySelectorAll('.er-tab').forEach(function(tab){
   var AUTOPLAY_MS = 9000;
   var timer = null;
 
-  function syncHeight(){
-    var h = slides[idx] ? slides[idx].offsetHeight : 0;
-    if(h) slider.style.height = h + 'px';
-  }
+  // 높이는 CSS 통일 규격(--hsH)이 담당 — JS 높이 조작 없음
   function go(i, user){
     idx = (i + n) % n;
     track.style.transform = 'translateX(-' + (idx * 100) + '%)';
-    syncHeight();
     for(var k=0;k<dots.length;k++){
       var on = k===idx;
       dots[k].classList.toggle('on', on);
@@ -291,7 +287,6 @@ document.querySelectorAll('.er-tab').forEach(function(tab){
     }
     if(user) restart();
   }
-  window.addEventListener('resize', function(){ syncHeight(); });
   function next(){ go(idx+1); }
   function prev(){ go(idx-1); }
   function restart(){
