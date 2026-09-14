@@ -30,6 +30,9 @@
 /* ---------- 신규 요소: 기본(데스크톱)에서는 숨김 ---------- */
 .hero119-helpcard{display:none}
 .hero119-trust{display:none}
+/* PC 슬라이드1 텍스트량 축소 — 하단 2단 혜택 목록은 아래 섹션(figure)·상세페이지에서
+   이미 다루므로 히어로에서는 제거하고 핵심 메시지(제목·서브카피·절감액·CTA)만 남김 */
+.hero119-benefits{display:none}
 
 /* ==========================================================
    모바일 전용 (max-width:640px) — 밝은 히어로
@@ -2318,6 +2321,13 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .pgm-benefits li.on{background:rgba(47,102,80,.06);border-radius:8px;
   margin:0 -6px;padding-left:6px;padding-right:6px}
 
+/* 사전등록 모달 제출 버튼 — 메인 슬라이드 CTA와 동일한 좌→우 빛 흐름 연출 */
+#pregisterBody .btn-brass{position:relative;overflow:hidden}
+#pregisterBody .btn-brass::after{content:"";position:absolute;top:0;left:-60%;width:38%;height:100%;
+  background:linear-gradient(100deg,rgba(255,255,255,0),rgba(255,255,255,.5),rgba(255,255,255,0));
+  transform:skewX(-18deg);animation:pgSheen 3.8s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){#pregisterBody .btn-brass::after{display:none}}
+
 .pg-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .preg-consent{margin:10px 0 0;padding:10px 11px;border-radius:8px;
   background:rgba(30,69,52,.05);border:1px solid rgba(30,69,52,.12);
@@ -2364,11 +2374,15 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .fh-preg-ico svg{width:14px;height:14px}
 .fh-preg-tx{flex:1;min-width:220px;font-size:13.5px;font-weight:500;color:#EAE3D2;line-height:1.55}
 .fh-preg-tx b{color:#F0D9A6;font-weight:800}
-.fh-preg-btn{flex:none;height:38px;padding:0 18px;border:none;border-radius:8px;cursor:pointer;
+.fh-preg-btn{position:relative;overflow:hidden;flex:none;height:38px;padding:0 18px;border:none;border-radius:8px;cursor:pointer;
   font-family:'Noto Sans KR',sans-serif;font-size:13.5px;font-weight:800;color:#2A1E0A;white-space:nowrap;
   background:linear-gradient(180deg,#E7CB92 0%,#CBA76C 52%,#B58C4C 100%);
   transition:transform .15s ease}
 .fh-preg-btn:hover{transform:translateY(-1px)}
+.fh-preg-btn::after{content:"";position:absolute;top:0;left:-60%;width:38%;height:100%;
+  background:linear-gradient(100deg,rgba(255,255,255,0),rgba(255,255,255,.5),rgba(255,255,255,0));
+  transform:skewX(-18deg);animation:pgSheen 3.8s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){.fh-preg-btn::after{display:none}}
 @media(max-width:640px){
   .fh-preg{margin-top:16px;padding:11px 13px;gap:9px}
   .fh-preg-tx{font-size:12.5px;min-width:0;flex-basis:100%}
