@@ -1823,7 +1823,7 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .hslide-1 .hero119-bene-extra{margin-top:12px;padding-top:12px}
 .hslide-1 .hero119-note{margin-top:10px}
 /* gap/margin만 조정 — display는 손대지 않음(모바일 display:contents 순서 재배치 규칙 보존) */
-@media(min-width:641px){.hslide-1 .hero119-cta{margin-top:0;gap:12px}}
+@media(min-width:641px){.hslide-1 .hero119-cta{margin-top:22px;gap:12px}}
 
 /* 주 CTA — 슬라이드2·3과 완전히 동일한 버튼(배경·그림자·반짝임)로 강제 통일
    (레거시 .hero119-root .hero119-btn 3D 그라데이션 규칙을 명시적으로 덮어씀) */
