@@ -1819,11 +1819,13 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .hslide-1 .hero119-copy{max-width:700px;animation:none;transform:none}
 .hslide-1 .hero119-title{color:#fff}
 .hslide-1 .hero119-sub{color:#CBD3CC;max-width:560px}
-.hslide-1 .hero119-benefits{margin-top:18px;padding-top:16px}
-.hslide-1 .hero119-bene-extra{margin-top:12px;padding-top:12px}
-.hslide-1 .hero119-note{margin-top:10px}
+.hero119-sub b{color:#F0D9A6;font-weight:800}
+/* 배지 — 슬라이드3(hs3-eyebrow)과 동일한 구성(점 인디케이터 + 필 배경) */
+.hero119-eyebrow{display:inline-flex;align-items:center;gap:7px}
+.hero119-dot{width:7px;height:7px;border-radius:50%;background:#EFC964;flex:none;
+  animation:pgPulse 1.8s ease-out infinite}
 /* gap/margin만 조정 — display는 손대지 않음(모바일 display:contents 순서 재배치 규칙 보존) */
-@media(min-width:641px){.hslide-1 .hero119-cta{margin-top:22px;gap:12px}}
+@media(min-width:641px){.hslide-1 .hero119-cta{margin-top:24px;gap:12px}}
 
 /* 주 CTA — 슬라이드2·3과 완전히 동일한 버튼(배경·그림자·반짝임)로 강제 통일
    (레거시 .hero119-root .hero119-btn 3D 그라데이션 규칙을 명시적으로 덮어씀) */
@@ -1850,24 +1852,30 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   backdrop-filter:blur(3px);font-weight:700}
 .hs1-btn2:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.75);color:#fff}
 
-/* 절감액 1줄 배지 — 슬라이드1의 핵심 후킹 */
-.hs1-save{display:inline-flex;align-items:center;gap:11px;margin-top:16px;
-  padding:11px 16px 11px 12px;border-radius:12px;
-  background:linear-gradient(135deg,rgba(60,150,105,.26),rgba(30,90,62,.18));
-  border:1px solid rgba(120,205,160,.4);
-  box-shadow:0 10px 26px -14px rgba(0,0,0,.6);backdrop-filter:blur(3px)}
-.hs1-save-ico{flex:0 0 32px;width:32px;height:32px;border-radius:9px;
-  display:flex;align-items:center;justify-content:center;color:#EAFFF4;
-  background:linear-gradient(150deg,#4E9B78,#2C5D47);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.35)}
-.hs1-save-ico svg{width:17px;height:17px}
-.hs1-save-tx{font-family:'Noto Sans KR',sans-serif;font-size:14.5px;font-weight:600;
-  color:#D3E4D8;letter-spacing:-.01em;white-space:nowrap}
-.hs1-save-tx b{font-family:'Noto Serif KR',serif;font-size:19px;font-weight:900;color:#F3CE76;
-  letter-spacing:-.02em;margin-left:2px}
-.hs1-save-tag{font-size:11px;font-weight:700;color:#A9C4B2;letter-spacing:-.01em;
-  padding:4px 9px;border-radius:999px;background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.16);white-space:nowrap}
+/* 정체성 패널 — 사진 배경 위에 뜨는 화이트 카드. 슬라이드3의 hs3-panel과
+   동일한 조형 언어(라벨 뱃지 + 화이트 카드)를 재사용해 배열감을 통일하되,
+   내용은 가격이 아닌 "왜 여기저기 알아볼 필요 없는지" 신뢰 포인트로 구성 */
+.hero119-panel{position:relative;margin:24px 0 0;padding:22px 20px 18px;max-width:480px;
+  border-radius:16px;background:rgba(255,253,248,.96);backdrop-filter:blur(6px);
+  border:1px solid rgba(200,164,106,.4);
+  box-shadow:0 24px 46px -24px rgba(0,0,0,.55)}
+.hero119-panel-lab{position:absolute;top:-12px;left:20px;
+  font-size:12px;font-weight:800;letter-spacing:-.01em;color:#F5EFDC;
+  background:linear-gradient(180deg,#2F6650,#1E4534);
+  padding:5px 13px;border-radius:999px;box-shadow:0 6px 14px -6px rgba(30,69,52,.55)}
+.hero119-scope{display:flex;gap:10px;margin:6px 0 0;padding:0;list-style:none}
+.hero119-scope li{position:relative;overflow:hidden;flex:1;display:flex;flex-direction:column;
+  align-items:center;gap:7px;text-align:center;
+  padding:15px 8px 13px;border-radius:12px;
+  background:linear-gradient(180deg,#FFFFFF 0%,#FBF7EC 100%);
+  border:1px solid rgba(168,124,46,.28)}
+.hero119-scope li::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,#2F6650,#4E9B78)}
+.hero119-scope li:nth-child(2)::before{background:linear-gradient(90deg,#3C7A5F,#6BB292)}
+.hero119-scope li:nth-child(3)::before{background:linear-gradient(90deg,#1E4534,#2F6650)}
+.hps-ico{width:24px;height:24px;color:#2F6650}
+.hps-ico svg{width:100%;height:100%}
+.hps-lb{font-size:12px;font-weight:800;color:#3E4A42;letter-spacing:-.02em;line-height:1.4}
 
 /* ==========================================================
    SLIDE 2 — 무빈소250 무료 사전등록 (핵심 전환 슬라이드)
@@ -2031,17 +2039,13 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hero119-wrap,.hs2-wrap,.hs3-wrap{padding-bottom:42px}
 
   /* 슬라이드1: 히어로 슬라이드 규격에 맞게 압축 (상세 정보는 하단 섹션에 유지) */
-  .hslide-1 .hero119-helpcard{display:none}
   .hslide-1 .hs1-btn2{display:none}
-  .hs1-save{order:4;display:flex;width:100%;margin-top:16px;gap:9px;
-    padding:10px 12px;border-radius:11px}
-  .hs1-save-ico{flex:0 0 28px;width:28px;height:28px;border-radius:8px}
-  .hs1-save-ico svg{width:15px;height:15px}
-  .hs1-save-tx{flex:1;min-width:0;font-size:12.5px;white-space:normal}
-  .hs1-save-tx b{font-size:17px;display:block;margin-left:0;line-height:1.2}
-  .hs1-save-tag{display:none}
-  .hslide-1 .hero119-trust{margin-top:14px;gap:6px;justify-content:flex-start}
-  .hslide-1 .hero119-trust span{font-size:11.5px;padding:7px 11px}
+  .hero119-panel{order:4;margin-top:18px;padding:18px 14px 14px;border-radius:14px}
+  .hero119-panel-lab{font-size:11px;padding:4px 11px;left:14px;top:-10px}
+  .hero119-scope{margin-top:4px;gap:6px}
+  .hero119-scope li{padding:11px 4px 9px;border-radius:10px}
+  .hps-ico{width:20px;height:20px}
+  .hps-lb{font-size:10.5px}
   .hslide-1 .hero119-btn{width:100%;margin-top:20px}
   .hslide-1 .hero119-sub{max-width:none}
 
