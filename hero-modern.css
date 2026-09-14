@@ -1788,9 +1788,11 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .hs-arrow svg{width:20px;height:20px}
 .hs-prev{left:20px}
 .hs-next{right:20px}
-@media(max-width:1100px){.hs-arrow{display:none}}
+/* 콘텐츠 폭(1200) + 화살표 영역(양쪽 70) 이상일 때만 노출 — 본문 침범 방지 */
+@media(max-width:1339px){.hs-arrow{display:none}}
 
-.hs-dots{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:5;
+/* 인디케이터: 본문(좌측 정렬)과 우하단 플로팅 버튼 사이 안전 구역에 배치 */
+.hs-dots{position:absolute;right:110px;bottom:26px;z-index:5;
   display:flex;gap:8px;padding:8px 13px;border-radius:999px;
   background:rgba(10,20,16,.3);backdrop-filter:blur(4px)}
 .hs-dot{width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;
@@ -1800,15 +1802,34 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 /* ==========================================================
    SLIDE 1 — 기존 메인 히어로 (규격만 정렬)
    ========================================================== */
-.hslide-1 .hero119-copy{max-width:700px}
+.hslide-1 .hero119-copy{max-width:700px;animation:none;transform:none}
 .hslide-1 .hero119-title{color:#fff}
 .hslide-1 .hero119-sub{color:#CBD3CC;max-width:560px}
-.hslide-1 .hero119-benefits{margin-top:26px;padding-top:22px}
-.hslide-1 .hero119-bene-extra{margin-top:14px;padding-top:14px}
-.hslide-1 .hero119-note{margin-top:14px}
+.hslide-1 .hero119-benefits{margin-top:18px;padding-top:16px}
+.hslide-1 .hero119-bene-extra{margin-top:12px;padding-top:12px}
+.hslide-1 .hero119-note{margin-top:10px}
 .hslide-1 .hero119-cta{margin-top:0}
-.hslide-1 .hero119-btn{height:var(--hsBtnH);padding:0 30px;margin-top:28px;
+.hslide-1 .hero119-btn{height:var(--hsBtnH);padding:0 30px;margin-top:22px;
   border-radius:9px;font-size:16.5px;font-weight:800}
+
+/* 절감액 1줄 배지 — 슬라이드1의 핵심 후킹 */
+.hs1-save{display:inline-flex;align-items:center;gap:11px;margin-top:16px;
+  padding:11px 16px 11px 12px;border-radius:12px;
+  background:linear-gradient(135deg,rgba(60,150,105,.26),rgba(30,90,62,.18));
+  border:1px solid rgba(120,205,160,.4);
+  box-shadow:0 10px 26px -14px rgba(0,0,0,.6);backdrop-filter:blur(3px)}
+.hs1-save-ico{flex:0 0 32px;width:32px;height:32px;border-radius:9px;
+  display:flex;align-items:center;justify-content:center;color:#EAFFF4;
+  background:linear-gradient(150deg,#4E9B78,#2C5D47);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.35)}
+.hs1-save-ico svg{width:17px;height:17px}
+.hs1-save-tx{font-family:'Noto Sans KR',sans-serif;font-size:14.5px;font-weight:600;
+  color:#D3E4D8;letter-spacing:-.01em;white-space:nowrap}
+.hs1-save-tx b{font-family:'Noto Serif KR',serif;font-size:19px;font-weight:900;color:#F3CE76;
+  letter-spacing:-.02em;margin-left:2px}
+.hs1-save-tag{font-size:11px;font-weight:700;color:#A9C4B2;letter-spacing:-.01em;
+  padding:4px 9px;border-radius:999px;background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.16);white-space:nowrap}
 
 /* ==========================================================
    SLIDE 2 — 무빈소250 무료 사전등록 (핵심 전환 슬라이드)
@@ -1839,10 +1860,11 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   background:linear-gradient(180deg,#2F6650,#1E4534);padding:4px 12px;border-radius:999px;
   box-shadow:0 4px 10px -4px rgba(30,69,52,.6)}
 .hs2-offer-in{display:flex;align-items:center;gap:13px;margin-top:6px}
-.hs2-offer-ico{flex:0 0 42px;width:42px;height:42px;border-radius:11px;
+.hs2-offer-ico{position:relative;flex:0 0 42px;width:42px;height:42px;border-radius:11px;overflow:hidden;
   display:flex;align-items:center;justify-content:center;color:#8A5A12;
   background:linear-gradient(160deg,#FBEFD3,#F0DEB4);border:1px solid rgba(168,124,46,.35)}
 .hs2-offer-ico svg{width:23px;height:23px}
+.hs2-offer-img{display:none;width:100%;height:100%;object-fit:cover}
 .hs2-offer-tx{margin:0;display:flex;flex-direction:column;min-width:0}
 .hs2-offer-tx b{font-size:17px;font-weight:800;color:#2A2013;letter-spacing:-.02em;line-height:1.35}
 .hs2-offer-tx small{margin-top:3px;font-size:12.5px;font-weight:600;color:#8E7A50}
@@ -1906,6 +1928,21 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   backdrop-filter:blur(3px);font-weight:700}
 .hs3-btn2:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.75);color:#fff}
 
+/* 가족장 가치 카드 3종 */
+.hs3-points{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;
+  margin:22px 0 0;padding:0;list-style:none;max-width:560px}
+.hs3-points li{display:flex;flex-direction:column;gap:3px;
+  padding:12px 13px;border-radius:11px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);
+  backdrop-filter:blur(4px)}
+.hs3-points b{font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:800;
+  color:#F0D9A6;letter-spacing:-.02em;line-height:1.3}
+.hs3-points span{font-size:12px;font-weight:500;color:#B8C4BA;letter-spacing:-.02em;line-height:1.4}
+.hs3-micro{display:inline-flex;align-items:center;gap:6px;margin:13px 0 0;
+  font-size:12.5px;font-weight:600;color:#A3B3A7;letter-spacing:-.01em}
+.hs3-micro::before{content:"";width:15px;height:15px;flex:none;border-radius:50%;
+  background:rgba(200,164,106,.85) url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23223%20' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/10px 10px no-repeat}
+
 /* ==========================================================
    반응형 — 규격 스케일 (모든 슬라이드 동일 적용)
    ========================================================== */
@@ -1923,7 +1960,7 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hs3-veil{background:linear-gradient(105deg,rgba(15,28,23,.96) 0%,rgba(15,28,23,.92) 46%,rgba(16,32,26,.6) 72%,rgba(20,38,31,.28) 100%)}
 }
 @media(max-width:640px){
-  .hero-slider{--hsH:600px;--hsPadX:20px;--hsTitle:26px;--hsDesc:14.5px;--hsBtnH:52px}
+  .hero-slider{--hsH:600px;--hsPadX:20px;--hsTitle:29px;--hsDesc:15px;--hsBtnH:54px}
   .hs-eyebrow,.hero119-eyebrow{font-size:11.5px;padding:6px 13px;margin-bottom:13px}
   .hs-title,.hero119-title{line-height:1.34}
   .hs-desc,.hero119-sub{margin-top:11px;line-height:1.6}
@@ -1931,11 +1968,20 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hs-btn{width:100%;font-size:16px}
   /* 보조 버튼은 주 CTA보다 확실히 낮은 위계로 */
   .hs-btn2{width:100%;height:44px;font-size:14px;font-weight:700;border-radius:8px}
-  .hs-dots{bottom:14px}
+  /* 모바일은 하단 중앙 + 본문과 겹치지 않게 여백 확보 */
+  .hs-dots{left:50%;right:auto;transform:translateX(-50%);bottom:14px}
+  .hero119-wrap,.hs2-wrap,.hs3-wrap{padding-bottom:42px}
 
   /* 슬라이드1: 히어로 슬라이드 규격에 맞게 압축 (상세 정보는 하단 섹션에 유지) */
   .hslide-1 .hero119-helpcard{display:none}
   .hslide-1 .hero119-link{display:none}
+  .hs1-save{order:4;display:flex;width:100%;margin-top:16px;gap:9px;
+    padding:10px 12px;border-radius:11px}
+  .hs1-save-ico{flex:0 0 28px;width:28px;height:28px;border-radius:8px}
+  .hs1-save-ico svg{width:15px;height:15px}
+  .hs1-save-tx{flex:1;min-width:0;font-size:12.5px;white-space:normal}
+  .hs1-save-tx b{font-size:17px;display:block;margin-left:0;line-height:1.2}
+  .hs1-save-tag{display:none}
   .hslide-1 .hero119-trust{margin-top:14px;gap:6px;justify-content:flex-start}
   .hslide-1 .hero119-trust span{font-size:11.5px;padding:7px 11px}
   .hslide-1 .hero119-btn{width:100%;margin-top:20px}
@@ -1947,10 +1993,13 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hs2-price{font-size:1.5em}
   .hs2-offer{margin-top:16px;padding:13px 14px 12px;border-radius:12px}
   .hs2-offer-flag{top:-10px;left:13px;font-size:10.5px;padding:3px 10px}
-  .hs2-offer-in{gap:11px;margin-top:5px}
-  .hs2-offer-ico{flex:0 0 36px;width:36px;height:36px;border-radius:9px}
-  .hs2-offer-ico svg{width:20px;height:20px}
-  .hs2-offer-tx b{font-size:14.5px;line-height:1.3}
+  .hs2-offer-in{gap:12px;margin-top:5px}
+  /* 모바일: 실제 유골함 사진을 혜택 카드에 노출 */
+  .hs2-offer-ico{flex:0 0 76px;width:76px;height:76px;border-radius:11px;
+    background:none;border:1px solid rgba(168,124,46,.4)}
+  .hs2-offer-svg{display:none}
+  .hs2-offer-img{display:block}
+  .hs2-offer-tx b{font-size:15px;line-height:1.32}
   .hs2-offer-tx small{font-size:11.5px}
   .hs2-zero{margin-top:12px;gap:6px}
   .hs2-zero li{padding:7px 4px}
@@ -1971,6 +2020,11 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
             mask-image:radial-gradient(125% 105% at 92% 8%,#000 24%,rgba(0,0,0,.4) 52%,transparent 80%);
     pointer-events:none}
   .hs3-sub{font-size:12.5px;margin-top:8px}
+  .hs3-points{grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:15px}
+  .hs3-points li{padding:9px 8px;border-radius:9px;gap:2px}
+  .hs3-points b{font-size:12px}
+  .hs3-points span{font-size:10.5px;line-height:1.35}
+  .hs3-micro{margin-top:11px;font-size:11.5px}
 }
 @media(max-width:380px){
   .hero-slider{--hsH:580px;--hsTitle:24px}
