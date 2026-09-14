@@ -1861,29 +1861,42 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
    금색은 브랜드 강조(배지·헤드라인·CTA)에만 남기고 지표는 웜화이트로
    통일해 위계를 분리한다.
    ========================================================== */
-.hero119-panel,.hs3-panel{
+.hero119-panel,.hs3-panel,.hs2-panel{
   margin:28px 0 0;padding:16px 22px 18px;max-width:520px;
   background:none;box-shadow:none;backdrop-filter:none;
   /* 채움 없는 골드 헤어라인 테두리 — 카드가 아니라 '구획'으로만 읽히게 */
   border:1px solid rgba(200,164,106,.34);border-radius:3px}
-.hero119-panel-lab,.hs3-panel-lab{
+.hero119-panel-lab,.hs3-panel-lab,.hs2-panel-lab{
   display:block;margin:0 0 15px;padding:0 0 13px;box-shadow:none;background:none;
   font-family:'Noto Sans KR',sans-serif;
   font-size:13.5px;font-weight:800;letter-spacing:.02em;color:#EBD3A0;
   border:none;border-bottom:1px solid rgba(200,164,106,.24)}
-.hero119-scope,.hs3-zero{
+.hero119-scope,.hs3-zero,.hs2-zero{
   display:flex;gap:0;margin:0;padding:0;list-style:none;border-top:none}
-.hero119-scope li,.hs3-zero li{
+.hero119-scope li,.hs3-zero li,.hs2-zero li{
   flex:1;min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:5px;
   text-align:left;padding:0 18px}
-.hero119-scope li:first-child,.hs3-zero li:first-child{padding-left:0}
-.hero119-scope li+li,.hs3-zero li+li{border-left:1px solid rgba(255,255,255,.13)}
-.hero119-scope i,.hs3-zero i{
+.hero119-scope li:first-child,.hs3-zero li:first-child,.hs2-zero li:first-child{padding-left:0}
+.hero119-scope li+li,.hs3-zero li+li,.hs2-zero li+li{border-left:1px solid rgba(255,255,255,.13)}
+.hero119-scope i,.hs3-zero i,.hs2-zero i{
   font-style:normal;font-family:'Noto Serif KR',serif;
   font-size:27px;font-weight:900;line-height:1.05;letter-spacing:-.03em;color:#F6F1E5}
-.hero119-scope span,.hs3-zero span{
+.hero119-scope span,.hs3-zero span,.hs2-zero span{
   font-family:'Noto Sans KR',sans-serif;
   font-size:12.5px;font-weight:600;letter-spacing:-.01em;line-height:1.4;color:#A6B3A8}
+
+/* 슬라이드2는 아이보리(밝은) 배경 — 같은 구조에 팔레트만 반전.
+   테두리·라벨은 브라운골드, 수치는 딥그린, 구분선은 그린 계열 저채도 */
+.hs2-panel{border-color:rgba(168,124,46,.45)}
+.hs2-panel-lab{color:#8A5A12;border-bottom-color:rgba(168,124,46,.3)}
+.hs2-zero li+li{border-left-color:rgba(30,69,52,.15)}
+.hs2-zero i{color:#1B3F30}
+.hs2-zero span{color:#5E6B60}
+/* 슬라이드2는 3개 슬라이드 중 콘텐츠가 가장 많아 세로 여유가 없다 —
+   블록 간격을 공통값보다 좁게 운용해 슬라이드 규격 안에 들어오게 함 */
+.hs2-panel{margin-top:18px}
+.hs2-offer{margin-top:18px}
+.hs2-cta{margin-top:20px}
 
 /* ==========================================================
    SLIDE 2 — 무빈소250 무료 사전등록 (핵심 전환 슬라이드)
@@ -1904,16 +1917,18 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .hs2-desc{color:#4C4232}
 .hs2-desc b{color:#1B3F30;font-weight:800}
 
-/* 사전등록 혜택 카드 */
-.hs2-offer{position:relative;margin-top:22px;padding:16px 18px 15px;border-radius:14px;
-  background:linear-gradient(180deg,#FFFFFF 0%,#FDF7E7 100%);
-  border:1.5px solid rgba(168,124,46,.42);
-  box-shadow:0 14px 30px -18px rgba(120,90,30,.55)}
-.hs2-offer-flag{position:absolute;top:-11px;left:16px;
-  font-size:11.5px;font-weight:800;letter-spacing:-.01em;color:#FFF6E2;
-  background:linear-gradient(180deg,#2F6650,#1E4534);padding:4px 12px;border-radius:999px;
-  box-shadow:0 4px 10px -4px rgba(30,69,52,.6)}
-.hs2-offer-in{display:flex;align-items:center;gap:13px;margin-top:6px}
+/* 사전등록 혜택 카드 — 지표 밴드와 동일한 언어(헤어라인 테두리 + 인라인 라벨).
+   실제 유골함 사진이 들어가는 블록이라 아주 옅은 필만 남겨 밴드와 구분 */
+.hs2-offer{position:relative;margin-top:24px;padding:15px 20px 16px;border-radius:3px;
+  background:rgba(255,255,255,.5);
+  border:1px solid rgba(168,124,46,.45);
+  box-shadow:none}
+.hs2-offer-flag{position:static;display:block;margin:0 0 13px;padding:0 0 12px;
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:13.5px;font-weight:800;letter-spacing:.02em;color:#8A5A12;
+  background:none;border-radius:0;box-shadow:none;
+  border-bottom:1px solid rgba(168,124,46,.3)}
+.hs2-offer-in{display:flex;align-items:center;gap:13px;margin-top:0}
 .hs2-offer-ico{position:relative;flex:0 0 42px;width:42px;height:42px;border-radius:11px;overflow:hidden;
   display:flex;align-items:center;justify-content:center;color:#8A5A12;
   background:linear-gradient(160deg,#FBEFD3,#F0DEB4);border:1px solid rgba(168,124,46,.35)}
@@ -1923,27 +1938,7 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .hs2-offer-tx b{font-size:17px;font-weight:800;color:#2A2013;letter-spacing:-.02em;line-height:1.35}
 .hs2-offer-tx small{margin-top:3px;font-size:12.5px;font-weight:600;color:#8E7A50}
 
-/* 0원 3종 — 카드별 개별 강조 */
-.hs2-zero{display:flex;gap:10px;margin:16px 0 0;padding:0;list-style:none}
-.hs2-zero li{position:relative;flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;
-  padding:14px 6px 11px;border-radius:13px;overflow:hidden;
-  background:linear-gradient(180deg,#FFFFFF 0%,#FCF7EA 100%);
-  border:1.5px solid rgba(168,124,46,.34);
-  box-shadow:0 10px 22px -14px rgba(120,90,30,.5),inset 0 1px 0 rgba(255,255,255,.9);
-  transition:transform .16s ease,box-shadow .16s ease}
-.hs2-zero li::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;
-  background:linear-gradient(90deg,#2F6650,#4E9B78)}
-.hs2-zero li:nth-child(2)::before{background:linear-gradient(90deg,#A87C2E,#D9B87A)}
-.hs2-zero li:nth-child(3)::before{background:linear-gradient(90deg,#1E4534,#2F6650)}
-.hs2-zero li:hover{transform:translateY(-3px);box-shadow:0 16px 28px -14px rgba(120,90,30,.6),inset 0 1px 0 rgba(255,255,255,.9)}
-.hz-ico{width:28px;height:28px;display:flex;align-items:center;justify-content:center;
-  border-radius:8px;color:#2F6650;background:rgba(47,102,80,.09);margin-bottom:3px}
-.hs2-zero li:nth-child(2) .hz-ico{color:#A87C2E;background:rgba(168,124,46,.12)}
-.hz-ico svg{width:17px;height:17px}
-.hs2-zero i{font-style:normal;font-family:'Noto Serif KR',serif;font-size:21px;font-weight:900;
-  color:#1E4534;line-height:1.05;letter-spacing:-.03em}
-.hs2-zero li:nth-child(2) i{color:#8A5A12}
-.hz-lb{font-size:12px;font-weight:800;color:#5E6B60;letter-spacing:-.03em}
+/* 0원 3종 — 스타일은 슬라이드1·3과 공유(핵심 지표 밴드 블록 + 아이보리 팔레트 반전 참조) */
 
 .hs2-btn2{color:#3A5348;background:transparent;border:1.5px solid rgba(27,63,48,.22);font-weight:700}
 .hs2-btn2:hover{background:rgba(27,63,48,.06);border-color:rgba(27,63,48,.4);color:#1B3F30}
@@ -2008,6 +2003,17 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hs2-wrap{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:24px}
   .hs2-urn-card{max-width:240px;aspect-ratio:3/3.4}
   .hs2-offer-tx b{font-size:15.5px}
+  /* 이 구간은 슬라이드 높이가 620px로 줄지만 레이아웃은 아직 2단 —
+     슬라이드2가 규격을 넘겨 잘리므로 블록·버튼을 한 단계 더 압축.
+     버튼 좌우 패딩을 줄여 두 버튼이 한 줄에 들어오게 한다(줄바꿈 시 +68px) */
+  .hs2-offer{margin-top:13px;padding:12px 16px 13px}
+  .hs2-offer-flag{margin-bottom:10px;padding-bottom:8px}
+  .hs2-panel{margin-top:13px;padding:13px 16px 14px}
+  .hs2-panel-lab{margin-bottom:10px;padding-bottom:9px}
+  .hs2-zero i{font-size:23px}
+  .hs2-cta{margin-top:15px}
+  .hs2-btn,.hs2-btn2{padding:0 18px;font-size:15.5px}
+  .hs2-micro{margin-top:8px}
   .hs3-bg{background-position:84% 20%}
   .hs3-veil{background:linear-gradient(100deg,
     rgba(18,33,27,.96) 0%,rgba(18,33,27,.93) 50%,
@@ -2032,35 +2038,35 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hslide-1 .hero119-btn{width:100%;margin-top:20px}
   .hslide-1 .hero119-sub{max-width:none}
 
-  /* 지표 밴드 — 모바일 축소 규격 (슬라이드1·3 공통) */
-  .hero119-panel,.hs3-panel{margin-top:20px;max-width:none;padding:13px 14px 15px}
-  .hero119-panel-lab,.hs3-panel-lab{font-size:12px;margin-bottom:12px;padding-bottom:10px}
-  .hero119-scope li,.hs3-zero li{padding:0 8px;gap:3px}
-  .hero119-scope i,.hs3-zero i{font-size:20px}
+  /* 지표 밴드 — 모바일 축소 규격 (슬라이드1·2·3 공통) */
+  .hero119-panel,.hs3-panel,.hs2-panel{margin-top:20px;max-width:none;padding:13px 14px 15px}
+  .hero119-panel-lab,.hs3-panel-lab,.hs2-panel-lab{font-size:12px;margin-bottom:12px;padding-bottom:10px}
+  .hero119-scope li,.hs3-zero li,.hs2-zero li{padding:0 8px;gap:3px}
+  .hero119-scope i,.hs3-zero i,.hs2-zero i{font-size:20px}
   .hs3-zero li:nth-child(4) i{font-size:17px}
-  .hero119-scope span,.hs3-zero span{font-size:11px}
+  .hero119-scope span,.hs3-zero span,.hs2-zero span{font-size:11px}
 
-  /* 슬라이드2: 세로 1단 — 가격·혜택·CTA가 첫 화면에 모두 보이도록 */
+  /* 슬라이드2: 세로 1단 — 가격·혜택·CTA가 첫 화면에 모두 보이도록.
+     3개 슬라이드 중 콘텐츠가 가장 많아 블록 간격을 한 단계 더 좁히고,
+     보조 버튼은 슬라이드1(.hs1-btn2)과 동일하게 모바일에서 숨긴다 */
   .hs2-wrap{grid-template-columns:1fr;gap:0}
   .hs2-visual{display:none}
   .hs2-price{font-size:1.5em}
-  .hs2-offer{margin-top:14px;padding:11px 13px 10px;border-radius:12px}
-  .hs2-offer-flag{top:-10px;left:13px;font-size:10.5px;padding:3px 10px}
-  .hs2-offer-in{gap:12px;margin-top:5px}
+  .hs2-btn2{display:none}
+  .hs2-offer{margin-top:11px;padding:10px 13px 11px}
+  .hs2-offer-flag{font-size:12px;margin-bottom:8px;padding-bottom:7px}
+  .hs2-offer-in{gap:12px}
+  .hs2-panel{margin-top:11px;padding:10px 13px 12px}
+  .hs2-panel-lab{margin-bottom:9px;padding-bottom:8px}
+  .hs2-zero i{font-size:18px}
+  .hs2-cta{margin-top:14px}
   /* 모바일: 실제 유골함 사진을 혜택 카드에 노출 */
-  .hs2-offer-ico{flex:0 0 76px;width:76px;height:76px;border-radius:11px;
+  .hs2-offer-ico{flex:0 0 50px;width:50px;height:50px;border-radius:3px;
     background:none;border:1px solid rgba(168,124,46,.4)}
   .hs2-offer-svg{display:none}
   .hs2-offer-img{display:block}
   .hs2-offer-tx b{font-size:15px;line-height:1.32}
   .hs2-offer-tx small{font-size:11.5px}
-  /* 모바일: 아이콘을 숫자 옆으로 붙여 세로 높이 절감 */
-  .hs2-zero{margin-top:11px;gap:6px}
-  .hs2-zero li{padding:9px 4px 8px;border-radius:10px;gap:0}
-  .hz-ico{width:19px;height:19px;border-radius:6px;margin-bottom:1px}
-  .hz-ico svg{width:12px;height:12px}
-  .hs2-zero i{font-size:17px}
-  .hz-lb{font-size:10.5px}
   .hs2-micro{margin-top:9px;font-size:11.5px}
 
   /* 슬라이드3 모바일: 슬라이드1과 동일 기법 — 사진 대신 딥그린+국화 악센트 */
