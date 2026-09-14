@@ -1764,15 +1764,26 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 
 /* ---------- 공통 CTA 규격 ---------- */
 .hs-cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:28px}
-.hs-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;
+.hs-btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:6px;
   height:var(--hsBtnH);padding:0 30px;border:none;border-radius:9px;
   font-family:'Noto Sans KR',sans-serif;font-size:16.5px;font-weight:800;letter-spacing:-.01em;
   color:#2A1E0A;cursor:pointer;text-decoration:none;
   background:linear-gradient(180deg,#E7CB92 0%,#CBA76C 52%,#B58C4C 100%);
   box-shadow:inset 0 1.5px 0 rgba(255,255,255,.65),0 10px 26px -8px rgba(150,110,45,.55);
-  transition:transform .15s ease,box-shadow .15s ease}
+  transition:transform .15s ease,box-shadow .15s ease;
+  animation:hsBtnPulse 2.8s ease-in-out infinite}
 .hs-btn svg{width:17px;height:17px;margin-right:-4px}
 .hs-btn:hover{transform:translateY(-2px);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.7),0 14px 30px -8px rgba(150,110,45,.6)}
+/* 주 CTA 반짝임 — 3슬라이드 공통 (은은한 시선 유도, 광고성 과함 없이) */
+.hs-btn::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;
+  background:linear-gradient(100deg,rgba(255,255,255,0),rgba(255,255,255,.55),rgba(255,255,255,0));
+  transform:skewX(-18deg);animation:hsBtnSheen 3.6s ease-in-out infinite}
+@keyframes hsBtnPulse{
+  0%,100%{box-shadow:inset 0 1.5px 0 rgba(255,255,255,.65),0 10px 26px -8px rgba(150,110,45,.55)}
+  50%{box-shadow:inset 0 1.5px 0 rgba(255,255,255,.7),0 14px 32px -6px rgba(150,110,45,.78)}}
+@keyframes hsBtnSheen{0%{left:-60%}55%,100%{left:130%}}
+@media(prefers-reduced-motion:reduce){
+  .hs-btn{animation:none}.hs-btn::after{display:none}}
 .hs-btn2{display:inline-flex;align-items:center;justify-content:center;
   height:var(--hsBtnH);padding:0 26px;border-radius:9px;
   font-family:'Noto Sans KR',sans-serif;font-size:16px;font-weight:700;letter-spacing:-.01em;
@@ -1808,9 +1819,33 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .hslide-1 .hero119-benefits{margin-top:18px;padding-top:16px}
 .hslide-1 .hero119-bene-extra{margin-top:12px;padding-top:12px}
 .hslide-1 .hero119-note{margin-top:10px}
-.hslide-1 .hero119-cta{margin-top:0}
-.hslide-1 .hero119-btn{height:var(--hsBtnH);padding:0 30px;margin-top:22px;
-  border-radius:9px;font-size:16.5px;font-weight:800}
+/* gap/margin만 조정 — display는 손대지 않음(모바일 display:contents 순서 재배치 규칙 보존) */
+@media(min-width:641px){.hslide-1 .hero119-cta{margin-top:0;gap:12px}}
+
+/* 주 CTA — 슬라이드2·3과 완전히 동일한 버튼(배경·그림자·반짝임)로 강제 통일
+   (레거시 .hero119-root .hero119-btn 3D 그라데이션 규칙을 명시적으로 덮어씀) */
+.hslide-1 .hero119-btn{
+  position:relative;overflow:hidden;
+  height:var(--hsBtnH);padding:0 30px;margin-top:0;
+  border-radius:9px;font-family:'Noto Sans KR',sans-serif;font-size:16.5px;font-weight:800;
+  letter-spacing:-.01em;color:#2A1E0A;
+  background:linear-gradient(180deg,#E7CB92 0%,#CBA76C 52%,#B58C4C 100%);
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.65),0 10px 26px -8px rgba(150,110,45,.55);
+  transition:transform .15s ease,box-shadow .15s ease;
+  animation:hsBtnPulse 2.8s ease-in-out infinite}
+.hslide-1 .hero119-btn svg{width:17px;height:17px;margin-right:-4px}
+.hslide-1 .hero119-btn:hover{transform:translateY(-2px);
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.7),0 14px 30px -8px rgba(150,110,45,.6)}
+.hslide-1 .hero119-btn::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;
+  background:linear-gradient(100deg,rgba(255,255,255,0),rgba(255,255,255,.55),rgba(255,255,255,0));
+  transform:skewX(-18deg);animation:hsBtnSheen 3.6s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){
+  .hslide-1 .hero119-btn{animation:none}.hslide-1 .hero119-btn::after{display:none}}
+
+/* 보조 CTA — 슬라이드3(hs3-btn2)과 동일한 다크 배경용 아웃라인 필 버튼 */
+.hs1-btn2{color:#EAF0EA;background:transparent;border:1.5px solid rgba(255,255,255,.4);
+  backdrop-filter:blur(3px);font-weight:700}
+.hs1-btn2:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.75);color:#fff}
 
 /* 절감액 1줄 배지 — 슬라이드1의 핵심 후킹 */
 .hs1-save{display:inline-flex;align-items:center;gap:11px;margin-top:16px;
@@ -1897,18 +1932,6 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   font-size:12.5px;font-weight:700;color:#7E8C82;letter-spacing:-.01em}
 .hs2-micro::before{content:"";width:15px;height:15px;flex:none;border-radius:50%;
   background:#2F6650 url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/10px 10px no-repeat}
-
-/* 주 CTA — 은은한 시선 유도 (광고성 과함 없이) */
-.hs2-btn{position:relative;overflow:hidden;animation:hs2Pulse 2.8s ease-in-out infinite}
-.hs2-btn::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;
-  background:linear-gradient(100deg,rgba(255,255,255,0),rgba(255,255,255,.55),rgba(255,255,255,0));
-  transform:skewX(-18deg);animation:hs2Sheen 3.6s ease-in-out infinite}
-@keyframes hs2Pulse{
-  0%,100%{box-shadow:inset 0 1.5px 0 rgba(255,255,255,.65),0 10px 26px -8px rgba(150,110,45,.55)}
-  50%{box-shadow:inset 0 1.5px 0 rgba(255,255,255,.65),0 12px 30px -6px rgba(176,52,42,.42)}}
-@keyframes hs2Sheen{0%{left:-60%}55%,100%{left:130%}}
-@media(prefers-reduced-motion:reduce){
-  .hs2-btn{animation:none}.hs2-btn::after{display:none}}
 
 /* 유골함 비주얼 */
 .hs2-visual{display:flex;justify-content:center;min-width:0}
@@ -1997,7 +2020,7 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 
   /* 슬라이드1: 히어로 슬라이드 규격에 맞게 압축 (상세 정보는 하단 섹션에 유지) */
   .hslide-1 .hero119-helpcard{display:none}
-  .hslide-1 .hero119-link{display:none}
+  .hslide-1 .hs1-btn2{display:none}
   .hs1-save{order:4;display:flex;width:100%;margin-top:16px;gap:9px;
     padding:10px 12px;border-radius:11px}
   .hs1-save-ico{flex:0 0 28px;width:28px;height:28px;border-radius:8px}
