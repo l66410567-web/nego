@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;700;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="hero-modern.css?v=20260727-m167">
+<link rel="stylesheet" href="hero-modern.css?v=20260727-m171">
 </head>
 <body>
 <nav class="nav">
@@ -185,6 +185,22 @@
 </div>
 </div>
 </section>
+<!-- 무료 사전등록 유도 스트립 -->
+<section class="pgstrip-sec">
+<div class="wrap">
+<div class="pgstrip">
+<div class="pgstrip-tx">
+<span class="pgstrip-tag"><i aria-hidden="true"></i>광주·전남 거주자 전용 · 무료 사전등록</span>
+<b class="pgstrip-ttl">미리 등록해두면, 그날은 전화 한 통이면 됩니다</b>
+<span class="pgstrip-sub">가입비 0원 · 월 납입금 0원 · 약정 없음 — <b>이름과 연락처만</b> 남겨두세요. 실제 이용 시 제휴 지원·할인 혜택을 받으실 수 있습니다.</span>
+</div>
+<div class="pgstrip-act">
+<button type="button" class="pgstrip-btn" onclick="openPreregister()">무료 사전등록하기<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+<span class="pgstrip-micro">30초면 완료 · 등록 비용 0원</span>
+</div>
+</div>
+</div>
+</section>
 <footer class="foot">
 <div class="wrap">
 <div class="foot-top">
@@ -247,6 +263,33 @@
 <div class="modal-box">
 <button class="modal-x" onclick="closeModal()" aria-label="닫기">✕</button>
 <div class="qwiz" id="qwiz"></div>
+</div>
+</div>
+<!-- 무빈소250 무료 사전등록 모달 -->
+<div class="modal" id="pregisterModal" role="dialog" aria-modal="true" aria-label="무료 사전등록">
+<div class="modal-box pregister-box">
+<button class="modal-x" onclick="closePreregister()" aria-label="닫기">✕</button>
+<div id="pregisterBody">
+<span class="preg-badge">가입비 0원 · 월 납입금 0원 · 예약금 0원</span>
+<h3 class="preg-title">빛고을장례119 무료 사전등록</h3>
+<p class="preg-sub">30초면 충분합니다. 실제 이용 시 <b>제휴 장례식장 지원·할인 혜택</b>을 받으실 수 있어요.</p>
+<form class="form" id="pregisterForm" style="padding:0" onsubmit="return submitPreregister(event)">
+<label>성함</label>
+<input type="text" id="pgName" placeholder="예) 홍길동" required>
+<label>휴대전화번호</label>
+<input type="tel" id="pgTel" placeholder="010-0000-0000" required>
+<label>거주지역</label>
+<select id="pgRegion" required>
+<option value="" disabled selected>선택해 주세요</option>
+<option>광주</option>
+<option>전남</option>
+<option>기타 지역</option>
+</select>
+<label class="agree"><input type="checkbox" id="pgAgree" required> 개인정보 수집·이용에 동의합니다</label>
+<button type="submit" class="btn btn-brass">무료 사전등록하기</button>
+<p class="preg-note">※ 무료 사전등록 후 실제 이용 고객에게 혜택이 제공됩니다.<br>※ 사전등록 자체에는 어떠한 비용도 발생하지 않습니다.</p>
+</form>
+</div>
 </div>
 </div>
 <script src="script.js?v=20260727-m90"></script>
