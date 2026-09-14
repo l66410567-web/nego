@@ -1825,7 +1825,8 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .hero119-dot{width:7px;height:7px;border-radius:50%;background:#EFC964;flex:none;
   animation:pgPulse 1.8s ease-out infinite}
 /* gap/margin만 조정 — display는 손대지 않음(모바일 display:contents 순서 재배치 규칙 보존) */
-@media(min-width:641px){.hslide-1 .hero119-cta{margin-top:24px;gap:12px}}
+/* 지표 밴드 → CTA 간격을 슬라이드3(.hs-cta)과 동일하게 맞춰 슬라이드 간 리듬 통일 */
+@media(min-width:641px){.hslide-1 .hero119-cta{margin-top:28px;gap:12px}}
 
 /* 주 CTA — 슬라이드2·3과 완전히 동일한 버튼(배경·그림자·반짝임)로 강제 통일
    (레거시 .hero119-root .hero119-btn 3D 그라데이션 규칙을 명시적으로 덮어씀) */
@@ -1852,25 +1853,36 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   backdrop-filter:blur(3px);font-weight:700}
 .hs1-btn2:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.75);color:#fff}
 
-/* 정체성 패널 — 슬라이드3의 hs3-panel과 동일한 절제된 조형 언어를 공유.
-   플로팅 배지·다색 상단바 대신 인라인 라벨 + 얇은 구분선으로 정돈해
-   "세련되고 집중되며 신뢰 있는" 느낌을 우선 */
-.hero119-panel{position:relative;margin:26px 0 0;padding:19px 22px;max-width:440px;
-  border-radius:14px;background:rgba(255,253,248,.97);
-  border:1px solid rgba(200,164,106,.26);
-  box-shadow:0 20px 40px -28px rgba(0,0,0,.5)}
-.hero119-panel-lab{display:flex;align-items:center;gap:8px;margin:0 0 14px;padding:0 0 12px;
-  font-size:11.5px;font-weight:800;letter-spacing:.03em;color:#2F6650;
-  border-bottom:1px solid rgba(47,102,80,.14)}
-.hero119-panel-lab::before{content:"";width:5px;height:5px;border-radius:50%;
-  background:#C8A46A;flex:none}
-.hero119-scope{display:flex;gap:0;margin:0;padding:0;list-style:none}
-.hero119-scope li{flex:1;display:flex;flex-direction:column;align-items:center;gap:9px;
-  text-align:center;padding:2px 6px}
-.hero119-scope li+li{border-left:1px solid rgba(47,102,80,.12)}
-.hps-ico{width:21px;height:21px;color:#2F6650}
-.hps-ico svg{width:100%;height:100%}
-.hps-lb{font-size:11.5px;font-weight:700;color:#3E4A42;letter-spacing:-.01em;line-height:1.42}
+/* ==========================================================
+   핵심 지표 밴드 — 슬라이드1·3 공통
+   어두운 히어로 위에 흰 카드를 띄우면 배경과 분리돼 배너처럼 보인다.
+   카드·아이콘·다색 강조를 모두 걷어내고, 라벨(넓은 자간) → 헤어라인 →
+   숫자 토큰 + 설명 구조로 배경과 하나로 읽히는 지표 밴드로 전환.
+   금색은 브랜드 강조(배지·헤드라인·CTA)에만 남기고 지표는 웜화이트로
+   통일해 위계를 분리한다.
+   ========================================================== */
+.hero119-panel,.hs3-panel{
+  margin:30px 0 0;padding:0;max-width:520px;
+  background:none;border:none;border-radius:0;box-shadow:none;backdrop-filter:none}
+.hero119-panel-lab,.hs3-panel-lab{
+  display:block;margin:0 0 13px;padding:0;border:none;box-shadow:none;background:none;
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:11.5px;font-weight:700;letter-spacing:.08em;
+  color:rgba(224,198,140,.88)}
+.hero119-scope,.hs3-zero{
+  display:flex;gap:0;margin:0;padding:17px 0 0;list-style:none;
+  border-top:1px solid rgba(255,255,255,.18)}
+.hero119-scope li,.hs3-zero li{
+  flex:1;min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:5px;
+  text-align:left;padding:0 18px}
+.hero119-scope li:first-child,.hs3-zero li:first-child{padding-left:0}
+.hero119-scope li+li,.hs3-zero li+li{border-left:1px solid rgba(255,255,255,.13)}
+.hero119-scope i,.hs3-zero i{
+  font-style:normal;font-family:'Noto Serif KR',serif;
+  font-size:27px;font-weight:900;line-height:1.05;letter-spacing:-.03em;color:#F6F1E5}
+.hero119-scope span,.hs3-zero span{
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:12.5px;font-weight:600;letter-spacing:-.01em;line-height:1.4;color:#A6B3A8}
 
 /* ==========================================================
    SLIDE 2 — 무빈소250 무료 사전등록 (핵심 전환 슬라이드)
@@ -1973,25 +1985,9 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .hs3-desc{color:#D6DED8;text-shadow:0 1px 10px rgba(0,0,0,.2)}
 .hs3-desc b{color:#F0D9A6;font-weight:800}
 
-/* 0원 패널 — 슬라이드1의 hero119-panel과 동일한 절제된 조형 언어 공유.
-   플로팅 배지·다색 상단바 대신 인라인 라벨 + 얇은 구분선으로 정돈 */
-.hs3-panel{position:relative;margin:26px 0 0;padding:19px 22px;max-width:440px;
-  border-radius:14px;background:rgba(255,253,248,.97);
-  border:1px solid rgba(200,164,106,.26);
-  box-shadow:0 20px 40px -28px rgba(0,0,0,.5)}
-.hs3-panel-lab{display:flex;align-items:center;gap:8px;margin:0 0 14px;padding:0 0 12px;
-  font-size:11.5px;font-weight:800;letter-spacing:.03em;color:#2F6650;
-  border-bottom:1px solid rgba(47,102,80,.14)}
-.hs3-panel-lab::before{content:"";width:5px;height:5px;border-radius:50%;
-  background:#C8A46A;flex:none}
-.hs3-zero{display:flex;gap:0;margin:0;padding:0;list-style:none}
-.hs3-zero li{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;
-  text-align:center;padding:2px 4px}
-.hs3-zero li+li{border-left:1px solid rgba(47,102,80,.12)}
-.hs3-zero i{font-style:normal;font-family:'Noto Serif KR',serif;font-size:21px;font-weight:900;
-  color:#1E4534;line-height:1.15;letter-spacing:-.03em}
-.hs3-zero li:nth-child(4) i{font-size:17px;color:#8A5A12}
-.hs3-zero span{margin-top:1px;font-size:11px;font-weight:700;color:#5E6B60;letter-spacing:-.02em}
+/* 0원 지표 밴드 — 스타일은 슬라이드1과 공유(핵심 지표 밴드 블록 참조).
+   "없음"은 한글 두 글자라 숫자 토큰보다 시각적으로 무거워 보여 광학 보정만 적용 */
+.hs3-zero li:nth-child(4) i{font-size:23px}
 
 .hs3-micro{display:inline-flex;align-items:center;gap:6px;margin:16px 0 0;
   font-size:12.5px;font-weight:700;color:#B9C4BB;letter-spacing:-.01em}
@@ -2031,12 +2027,18 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 
   /* 슬라이드1: 히어로 슬라이드 규격에 맞게 압축 (상세 정보는 하단 섹션에 유지) */
   .hslide-1 .hs1-btn2{display:none}
-  .hero119-panel{order:4;margin-top:18px;padding:15px 14px}
-  .hero119-panel-lab{font-size:10.5px;margin-bottom:11px;padding-bottom:10px}
-  .hps-ico{width:19px;height:19px}
-  .hps-lb{font-size:10px}
+  .hero119-panel{order:4}
   .hslide-1 .hero119-btn{width:100%;margin-top:20px}
   .hslide-1 .hero119-sub{max-width:none}
+
+  /* 지표 밴드 — 모바일 축소 규격 (슬라이드1·3 공통) */
+  .hero119-panel,.hs3-panel{margin-top:21px;max-width:none}
+  .hero119-panel-lab,.hs3-panel-lab{font-size:10.5px;letter-spacing:.06em;margin-bottom:10px}
+  .hero119-scope,.hs3-zero{padding-top:13px}
+  .hero119-scope li,.hs3-zero li{padding:0 11px;gap:3px}
+  .hero119-scope i,.hs3-zero i{font-size:20px}
+  .hs3-zero li:nth-child(4) i{font-size:17px}
+  .hero119-scope span,.hs3-zero span{font-size:11px}
 
   /* 슬라이드2: 세로 1단 — 가격·혜택·CTA가 첫 화면에 모두 보이도록 */
   .hs2-wrap{grid-template-columns:1fr;gap:0}
@@ -2073,11 +2075,6 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
     -webkit-mask-image:radial-gradient(125% 105% at 92% 8%,#000 24%,rgba(0,0,0,.4) 52%,transparent 80%);
             mask-image:radial-gradient(125% 105% at 92% 8%,#000 24%,rgba(0,0,0,.4) 52%,transparent 80%);
     pointer-events:none}
-  .hs3-panel{margin-top:18px;padding:15px 14px}
-  .hs3-panel-lab{font-size:10.5px;margin-bottom:11px;padding-bottom:10px}
-  .hs3-zero i{font-size:18px}
-  .hs3-zero li:nth-child(4) i{font-size:15px}
-  .hs3-zero span{font-size:10px}
   .hs3-micro{margin-top:12px;font-size:11.5px}
 }
 @media(max-width:380px){
