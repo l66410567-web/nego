@@ -2295,3 +2295,23 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .pgm-tx small,.pgm-tx small b{font-size:11px}
   .preg-consent{font-size:10px}
 }
+
+/* ==========================================================
+   무료 사전등록 핵심 약속 문구 — 슬라이드 공통 강조 언어
+   (텍스트 줄바꿈을 따라가는 네이티브 underline. 절대위치 바가 아님 —
+   모바일에서 문장이 2줄로 꺾여도 밑줄이 끊기지 않습니다)
+   ========================================================== */
+.promise-hl{font-weight:800;letter-spacing:-.01em;
+  text-decoration:underline;text-decoration-skip-ink:none;
+  text-underline-offset:4px;text-decoration-thickness:2px}
+
+/* 어두운 배경(슬라이드1·3) — 밝은 금색 텍스트 + 반투명 골드 밑줄 */
+.hslide-1 .promise-hl,.hs3 .promise-hl{
+  color:#F3D9A0;text-decoration-color:rgba(200,164,106,.7)}
+
+/* 밝은 배경(슬라이드2) — 딥그린 텍스트 + 골드 밑줄 (가격 레드와 위계 분리) */
+.hs2 .promise-hl{color:#1B3F30;text-decoration-color:rgba(200,164,106,.85)}
+
+@media(max-width:640px){
+  .promise-hl{text-decoration-thickness:1.5px;text-underline-offset:3px}
+}
