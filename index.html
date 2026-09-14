@@ -18,7 +18,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;700;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css?v=20260722-ui2">
 <link rel="stylesheet" href="hero119-v4.css?v=20260722-ui2">
-<link rel="stylesheet" href="hero-modern.css?v=20260727-m173">
+<link rel="stylesheet" href="hero-modern.css?v=20260727-m180">
 </head>
 <body>
 <nav class="nav">
@@ -103,7 +103,7 @@
 <span class="hs1-save-tag">실제 견적 사례</span>
 </div>
 <div class="hero119-cta">
-<button type="button" class="hero119-btn nego-blink-soft" onclick="openPreregister()">무료 사전등록하기</button>
+<button type="button" class="hero119-btn nego-blink-soft" onclick="openPreregister('all')">무료 사전등록하기</button>
 <a href="#prereg" class="hero119-link" aria-label="사전등록 혜택 보기">사전등록 혜택 보기 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
 <div class="hero119-trust" aria-label="신뢰 안내">
 <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>24시간 상담</span>
@@ -163,7 +163,7 @@
 <li><span class="hz-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><i>0원</i><b class="hz-lb">예약금</b></li>
 </ul>
 <div class="hs-cta hs2-cta">
-<button type="button" class="hs-btn hs2-btn" onclick="openPreregister()">무료 사전등록하기<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+<button type="button" class="hs-btn hs2-btn" onclick="openPreregister('simple')">무료 사전등록하기<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
 <a href="simple.html" class="hs-btn2 hs2-btn2">무빈소250 자세히 보기</a>
 </div>
 <p class="hs2-micro">30초면 등록 완료 · 등록 비용 0원 · 약정 없음</p>
@@ -194,7 +194,7 @@
 <li><b>회원 제휴 할인</b><span>사전등록만 해두셔도</span></li>
 </ul>
 <div class="hs-cta hs3-cta">
-<button type="button" class="hs-btn hs3-btn" onclick="openPreregister()">무료 사전등록하기<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+<button type="button" class="hs-btn hs3-btn" onclick="openPreregister('all')">무료 사전등록하기<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
 <a href="family.html" class="hs-btn2 hs3-btn2">가족장 알아보기</a>
 </div>
 <p class="hs3-micro">가입비 0원 · 월 납입금 0원 · 약정 없음 — 30초면 등록 완료</p>
@@ -382,7 +382,7 @@
 </div>
 
 <div class="pg-cta">
-<button type="button" class="pg-btn" onclick="openPreregister()">무료 사전등록하기<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+<button type="button" class="pg-btn" onclick="openPreregister('all')">무료 사전등록하기<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
 <p class="pg-cta-micro">30초면 완료 · 이름과 연락처만 · 등록 비용 0원</p>
 <p class="pg-cta-tel">지금 바로 상담이 필요하시면 <a href="tel:15339657">1533-9657</a> · 24시간 연결</p>
 </div>
@@ -1125,7 +1125,7 @@ function submitReview(e){
   return false;
 }
 </script>
-<script src="script.js?v=20260727-m90"></script>
+<script src="script.js?v=20260727-m95"></script>
 <script src="bot.js"></script>
 </body>
 </html>

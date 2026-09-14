@@ -327,10 +327,65 @@ document.querySelectorAll('.er-tab').forEach(function(tab){
   restart();
 })();
 
-/* ---------- 무빈소250 무료 사전등록 모달 ---------- */
-function openPreregister(){
+/* ==========================================================
+   무료 사전등록 — 컨텍스트별 모달 + 문자(SMS) 알림 연동
+   ========================================================== */
+
+/* 연동 설정 — Google Apps Script 웹앱 배포 후 아래 두 값만 채우면 활성화됩니다.
+   (비워두면 화면 동작은 그대로, 문자 발송만 건너뜁니다) */
+var PREREG_ENDPOINT = '';   // 예) https://script.google.com/macros/s/AKfycb..../exec
+var PREREG_TOKEN    = '';   // Apps Script에 설정한 FORM_TOKEN 과 동일한 값
+
+/* 등록 경로별 안내 문구 — 유골함 업그레이드는 '무빈소250 이용 시'에만 해당 */
+var PG_MODES = {
+  all:    {t:'빛고을장례119 무료 사전등록', s:'등록만 해두시면 <b>빛고을장례119가 제공하는 모든 지원과 제휴 혜택</b>을 이용하실 수 있습니다.', hi:-1},
+  simple: {t:'무빈소250 무료 사전등록',   s:'실제 무빈소250 이용 시 <b>고급 진공유골함 업그레이드</b>(62만원 상당)를 받으실 수 있습니다.', hi:1},
+  hall:   {t:'빛고을장례119 무료 사전등록', s:'등록만 해두시면 <b>제휴 장례식장 지원</b>을 비롯해 모든 혜택을 이용하실 수 있습니다.', hi:0},
+  family: {t:'빛고을장례119 무료 사전등록', s:'등록만 해두시면 <b>가족장 제휴 할인</b>을 비롯해 모든 지원과 혜택을 이용하실 수 있습니다.', hi:0},
+  burial: {t:'빛고을장례119 무료 사전등록', s:'등록만 해두시면 <b>수목장·봉안당 제휴 혜택</b>을 비롯해 모든 지원을 이용하실 수 있습니다.', hi:2},
+  relo:   {t:'빛고을장례119 무료 사전등록', s:'등록만 해두시면 <b>묘 이장·평장 제휴 혜택</b>을 비롯해 모든 지원을 이용하실 수 있습니다.', hi:3}
+};
+var PG_BENEFITS = [
+  ['제휴 장례식장 지원', '접객실·분향소 · 관·수의·리무진 · 상복·제단장식'],
+  ['고급 진공유골함 업그레이드', '62만원 상당 · <b>무빈소250 이용 시</b> 제공'],
+  ['수목장·봉안당 제휴 혜택', '봉안함·표지석·관리비 지원'],
+  ['24시간 전담 연결', '등록 정보가 있어 그날 바로 진행됩니다']
+];
+var __pgMode = 'all';
+
+function pgBenefitHtml(hi){
+  var h = '<ul class="pgm-benefits">';
+  for(var i=0;i<PG_BENEFITS.length;i++){
+    h += '<li'+(i===hi?' class="on"':'')+'><span class="pgm-chk" aria-hidden="true"></span>'+
+         '<span class="pgm-tx"><b>'+PG_BENEFITS[i][0]+'</b><small>'+PG_BENEFITS[i][1]+'</small></span></li>';
+  }
+  return h + '</ul>';
+}
+function pgFormHtml(m){
+  return '<span class="preg-badge">가입비 0원 · 월 납입금 0원 · 예약금 0원</span>'+
+    '<h3 class="preg-title">'+m.t+'</h3>'+
+    '<p class="preg-sub">'+m.s+'</p>'+
+    pgBenefitHtml(m.hi)+
+    '<form class="form" id="pregisterForm" style="padding:0" onsubmit="return submitPreregister(event)">'+
+    '<label>성함</label><input type="text" id="pgName" placeholder="예) 홍길동" required>'+
+    '<label>휴대전화번호</label><input type="tel" id="pgTel" placeholder="010-0000-0000" required>'+
+    '<label>거주지역</label>'+
+    '<select id="pgRegion" required><option value="" disabled selected>선택해 주세요</option>'+
+    '<option>광주</option><option>전남</option><option>기타 지역</option></select>'+
+    '<div class="pg-hp" aria-hidden="true"><label>회사명</label><input type="text" id="pgCompany" tabindex="-1" autocomplete="off"></div>'+
+    '<label class="agree"><input type="checkbox" id="pgAgree" required> <span>개인정보 수집·이용에 동의합니다 <a href="privacy.html" target="_blank" rel="noopener">[내용 보기]</a></span></label>'+
+    '<p class="preg-consent">수집항목: 성함·휴대전화번호·거주지역 &nbsp;|&nbsp; 목적: 사전등록 접수 및 장례 서비스 안내 &nbsp;|&nbsp; 보유기간: 등록일로부터 5년 또는 삭제 요청 시까지. 동의를 거부하실 수 있으나, 거부 시 사전등록이 불가합니다.</p>'+
+    '<button type="submit" class="btn btn-brass" id="pgSubmit">무료 사전등록하기</button>'+
+    '<p class="preg-note">※ 사전등록은 상조 가입이 아니며, 어떠한 비용도 발생하지 않습니다.<br>※ 혜택은 광주·전남 제휴 시설 이용 시 적용되며 시설·조건에 따라 범위가 달라질 수 있습니다.</p>'+
+    '</form>';
+}
+
+function openPreregister(mode){
   var m = document.getElementById('pregisterModal');
   if(!m) return;
+  __pgMode = (mode && PG_MODES[mode]) ? mode : 'all';
+  var body = document.getElementById('pregisterBody');
+  if(body) body.innerHTML = pgFormHtml(PG_MODES[__pgMode]);
   m.classList.add('on');
   document.body.style.overflow = 'hidden';
 }
@@ -344,32 +399,75 @@ function closePreregister(){
   var m = document.getElementById('pregisterModal');
   if(!m) return;
   m.addEventListener('click', function(e){ if(e.target.id === 'pregisterModal') closePreregister(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closePreregister(); });
 })();
+
+function pgDoneHtml(mode){
+  var extra = (mode==='simple')
+    ? '사전등록 고객은 실제 무빈소250 이용 시 <b class="preg-hl">고급 진공유골함 업그레이드</b> 혜택을 받으실 수 있습니다.'
+    : '사전등록 고객은 <b class="preg-hl">빛고을장례119가 제공하는 모든 지원과 제휴 혜택</b>을 이용하실 수 있습니다.';
+  return '<div class="preg-done">'+
+    '<span class="preg-done-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>'+
+    '<h3>무료 사전등록이<br>완료되었습니다</h3>'+
+    '<p>가입비와 월 납입금은 없습니다.<br>장례가 필요하실 때 빛고을장례119로 연락해 주세요.</p>'+
+    '<p class="preg-extra">'+extra+'</p>'+
+    '<a href="tel:15339657" class="preg-tel"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg>1533-9657</a>'+
+    '</div>';
+}
+
 function submitPreregister(e){
   e.preventDefault();
-  var nameEl = document.getElementById('pgName');
-  var telEl = document.getElementById('pgTel');
-  var regionEl = document.getElementById('pgRegion');
-  var agreeEl = document.getElementById('pgAgree');
-  var name = nameEl ? nameEl.value.trim() : '';
-  var tel = telEl ? telEl.value.trim() : '';
-  var region = regionEl ? regionEl.value : '';
-  var agree = agreeEl ? agreeEl.checked : false;
+  var g = function(id){ return document.getElementById(id); };
+  var name = (g('pgName')||{}).value || '';
+  var tel  = (g('pgTel')||{}).value || '';
+  var region = (g('pgRegion')||{}).value || '';
+  var agree = (g('pgAgree')||{}).checked;
+  var hp = (g('pgCompany')||{}).value || '';   // 허니팟(봇 차단)
+  name = name.trim(); tel = tel.trim();
+
   if(!name){ alert('성함을 입력해 주세요.'); return false; }
-  if(!tel){ alert('휴대전화번호를 입력해 주세요.'); return false; }
+  if(tel.replace(/[^0-9]/g,'').length < 10){ alert('휴대전화번호를 정확히 입력해 주세요.'); return false; }
   if(!region){ alert('거주지역을 선택해 주세요.'); return false; }
   if(!agree){ alert('개인정보 수집·이용에 동의해 주세요.'); return false; }
-  // 시안 단계 — 실제 오픈 시 문자(SMS) 발송 등 서버 연동 예정
-  var body = document.getElementById('pregisterBody');
-  if(body){
-    body.innerHTML =
-      '<div class="preg-done">' +
-      '<span class="preg-done-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>' +
-      '<h3>무빈소250 무료 사전등록이<br>완료되었습니다</h3>' +
-      '<p>가입비와 월 납입금은 없습니다.<br>장례가 필요하실 때 빛고을장례119로 연락해 주세요.</p>' +
-      '<p class="preg-extra">사전등록 고객은 실제 무빈소250 이용 시 <b class="preg-hl">고급 진공유골함 업그레이드</b> 혜택을 받을 수 있습니다.</p>' +
-      '<a href="tel:15339657" class="preg-tel"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg>1533-9657</a>' +
-      '</div>';
+
+  var btn = g('pgSubmit');
+  if(btn){ btn.disabled = true; btn.textContent = '등록 중...'; }
+
+  var payload = {
+    token: PREREG_TOKEN,
+    name: name,
+    tel: tel,
+    region: region,
+    source: __pgMode,
+    page: (location.pathname.split('/').pop() || 'index.html'),
+    company: hp
+  };
+
+  var done = function(){
+    var body = document.getElementById('pregisterBody');
+    if(body) body.innerHTML = pgDoneHtml(__pgMode);
+  };
+
+  if(!PREREG_ENDPOINT){
+    // 미연동 상태 — 화면만 완료 처리 (콘솔로 확인 가능)
+    if(window.console) console.warn('[사전등록] PREREG_ENDPOINT 미설정 — 문자 발송 건너뜀', payload);
+    done();
+    return false;
   }
+
+  fetch(PREREG_ENDPOINT, {
+    method: 'POST',
+    // 단순 요청으로 보내 CORS 사전요청(preflight)을 피함
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify(payload)
+  }).then(function(r){ return r.json(); })
+    .catch(function(){ return {ok:false}; })
+    .then(function(res){
+      if(!res || !res.ok){
+        if(window.console) console.warn('[사전등록] 전송 실패', res);
+      }
+      // 전송 실패해도 이용자에게는 접수 안내 (전화 CTA 제공)
+      done();
+    });
   return false;
 }
