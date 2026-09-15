@@ -2356,6 +2356,17 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 /* 밝은 배경(슬라이드2) — 딥그린 텍스트 + 골드 밑줄 (가격 레드와 위계 분리) */
 .hs2 .promise-hl{color:#1B3F30;text-decoration-color:rgba(200,164,106,.85)}
 
+/* 적색 강조 밑줄 — 문장 중 행동 유도 구절만 별도로 강조할 때 사용.
+   promise-hl과 밑줄 규격(두께·오프셋·줄바꿈 유지)은 동일, 색만 브랜드 적색 */
+.promise-hl-red{font-weight:800;letter-spacing:-.01em;
+  text-decoration:underline;text-decoration-skip-ink:none;
+  text-underline-offset:4px;text-decoration-thickness:2px;
+  color:var(--siren-lt,#E3695A);text-decoration-color:rgba(194,59,46,.75)}
+.hs2 .promise-hl-red{color:var(--siren,#C23B2E);text-decoration-color:rgba(194,59,46,.85)}
+@media(max-width:640px){
+  .promise-hl-red{text-decoration-thickness:1.5px;text-underline-offset:3px}
+}
+
 @media(max-width:640px){
   .promise-hl{text-decoration-thickness:1.5px;text-underline-offset:3px}
 }
