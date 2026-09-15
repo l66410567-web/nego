@@ -2357,15 +2357,22 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .hs2 .promise-hl{color:#1B3F30;text-decoration-color:rgba(200,164,106,.85)}
 
 /* 적색 강조 밑줄 — 문장 중 행동 유도 구절만 별도로 강조할 때 사용.
-   promise-hl과 밑줄 규격(두께·오프셋·줄바꿈 유지)은 동일, 색만 브랜드 적색 */
+   글자색까지 적색으로 겹치면 경고문처럼 부담스러워, 밑줄만 적색으로 남기고
+   글자색은 슬라이드 원래 톤(흰색 계열)으로 되돌림. 그 안에서도 핵심 키워드
+   (<b>)만 금색으로 한 단계 더 강조 */
 .promise-hl-red{font-weight:800;letter-spacing:-.01em;
   text-decoration:underline;text-decoration-skip-ink:none;
   text-underline-offset:4px;text-decoration-thickness:2px;
-  color:var(--siren-lt,#E3695A);text-decoration-color:rgba(194,59,46,.75)}
-.hs2 .promise-hl-red{color:var(--siren,#C23B2E);text-decoration-color:rgba(194,59,46,.85)}
-/* 슬라이드별 b{color:...} 규칙이 동일 특이성으로 뒤늦게 덮어써 금색/녹색이
-   섞여 보이던 문제 수정 — 강조 구간 안의 <b>는 항상 부모(적색)를 따름 */
-.promise-hl-red b{color:inherit}
+  text-decoration-color:rgba(194,59,46,.75)}
+
+/* 어두운 배경(슬라이드1·3) — 흰색 텍스트 + 금색 핵심 문구 */
+.hslide-1 .promise-hl-red,.hs3 .promise-hl-red{color:#FAF7F0}
+.hslide-1 .promise-hl-red b,.hs3 .promise-hl-red b{color:#F0D9A6}
+
+/* 밝은 배경(슬라이드2) — 원래 진한 텍스트 톤 유지 + 금색 핵심 문구 */
+.hs2 .promise-hl-red{color:#4C4232;text-decoration-color:rgba(194,59,46,.85)}
+.hs2 .promise-hl-red b{color:#A3814F}
+
 @media(max-width:640px){
   .promise-hl-red{text-decoration-thickness:1.5px;text-underline-offset:3px}
 }
