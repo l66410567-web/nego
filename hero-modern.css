@@ -2363,6 +2363,9 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   text-underline-offset:4px;text-decoration-thickness:2px;
   color:var(--siren-lt,#E3695A);text-decoration-color:rgba(194,59,46,.75)}
 .hs2 .promise-hl-red{color:var(--siren,#C23B2E);text-decoration-color:rgba(194,59,46,.85)}
+/* 슬라이드별 b{color:...} 규칙이 동일 특이성으로 뒤늦게 덮어써 금색/녹색이
+   섞여 보이던 문제 수정 — 강조 구간 안의 <b>는 항상 부모(적색)를 따름 */
+.promise-hl-red b{color:inherit}
 @media(max-width:640px){
   .promise-hl-red{text-decoration-thickness:1.5px;text-underline-offset:3px}
 }
