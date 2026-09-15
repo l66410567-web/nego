@@ -1945,7 +1945,7 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .hs2-offer-ico svg{width:23px;height:23px}
 .hs2-offer-img{display:none;width:100%;height:100%;object-fit:cover}
 .hs2-offer-tx{margin:0;display:flex;flex-direction:column;min-width:0}
-.hs2-offer-tx b{font-size:17px;font-weight:800;color:#2A2013;letter-spacing:-.02em;line-height:1.35}
+.hs2-offer-tx b{font-size:17px;font-weight:800;color:var(--siren,#C23B2E);letter-spacing:-.02em;line-height:1.35}
 .hs2-offer-tx small{margin-top:3px;font-size:12.5px;font-weight:600;color:#8E7A50}
 
 /* 0원 3종 — 스타일은 슬라이드1·3과 공유(핵심 지표 밴드 블록 + 아이보리 팔레트 반전 참조) */
@@ -1955,7 +1955,7 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .hs2-micro{display:inline-flex;align-items:center;gap:6px;margin:12px 0 0;
   font-size:12.5px;font-weight:700;color:#7E8C82;letter-spacing:-.01em}
 .hs2-micro::before{content:"";width:15px;height:15px;flex:none;border-radius:50%;
-  background:#2F6650 url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/10px 10px no-repeat}
+  background:var(--siren,#C23B2E) url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/10px 10px no-repeat}
 
 /* 유골함 비주얼 */
 .hs2-visual{display:flex;justify-content:center;min-width:0}
@@ -1998,14 +1998,14 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .hs3-micro{display:inline-flex;align-items:center;gap:6px;margin:16px 0 0;
   font-size:12.5px;font-weight:700;color:#B9C4BB;letter-spacing:-.01em}
 .hs3-micro::before{content:"";width:15px;height:15px;flex:none;border-radius:50%;
-  background:#EFC964 url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23142c22' stroke-width='3.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/10px 10px no-repeat}
+  background:var(--siren,#C23B2E) url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/10px 10px no-repeat}
 
 /* 슬라이드1 CTA 하단 안내 — "등록 후엔 무엇을 해야 하나"에 대한 답.
    슬라이드3(hs3-micro)과 동일한 팔레트(어두운 사진 배경 공통) */
 .hero119-micro{display:flex;align-items:flex-start;gap:6px;margin:16px 0 0;max-width:420px;
   font-size:12.5px;font-weight:700;color:#B9C4BB;letter-spacing:-.01em;line-height:1.5}
 .hero119-micro::before{content:"";width:15px;height:15px;flex:none;margin-top:1px;border-radius:50%;
-  background:#EFC964 url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23142c22' stroke-width='3.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/10px 10px no-repeat}
+  background:var(--siren,#C23B2E) url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/10px 10px no-repeat}
 
 /* ==========================================================
    반응형 — 규격 스케일 (모든 슬라이드 동일 적용)
