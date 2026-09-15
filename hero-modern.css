@@ -1825,6 +1825,7 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .hero119-eyebrow{display:inline-flex;align-items:center;gap:7px}
 .hero119-dot{width:7px;height:7px;border-radius:50%;background:#EFC964;flex:none;
   animation:pgPulse 1.8s ease-out infinite}
+@keyframes pgPulse{0%{box-shadow:0 0 0 0 rgba(239,201,100,.65)}70%{box-shadow:0 0 0 8px rgba(239,201,100,0)}100%{box-shadow:0 0 0 0 rgba(239,201,100,0)}}
 /* gap/margin만 조정 — display는 손대지 않음(모바일 display:contents 순서 재배치 규칙 보존) */
 /* 지표 밴드 → CTA 간격을 슬라이드3(.hs-cta)과 동일하게 맞춰 슬라이드 간 리듬 통일 */
 @media(min-width:641px){.hslide-1 .hero119-cta{margin-top:28px;gap:12px}}
@@ -2133,75 +2134,64 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   border-bottom:1px solid rgba(168,124,46,.24)}
 
 .pg-head{text-align:center;max-width:760px;margin:0 auto}
-.pg-eyebrow{display:inline-flex;align-items:center;gap:7px;
-  font-size:13px;font-weight:800;letter-spacing:-.01em;color:#F5EACB;
-  background:linear-gradient(180deg,#2F6650,#1E4534);
-  padding:8px 16px;border-radius:999px;
-  box-shadow:0 8px 18px -8px rgba(30,69,52,.6)}
-.pg-eyebrow i{width:7px;height:7px;border-radius:50%;background:#EFC964;
-  box-shadow:0 0 0 0 rgba(239,201,100,.7);animation:pgPulse 1.8s ease-out infinite}
-@keyframes pgPulse{0%{box-shadow:0 0 0 0 rgba(239,201,100,.65)}70%{box-shadow:0 0 0 8px rgba(239,201,100,0)}100%{box-shadow:0 0 0 0 rgba(239,201,100,0)}}
-.pg-title{margin:18px 0 0;font-family:'Noto Serif KR',serif;font-size:38px;font-weight:900;
+.pg-eyebrow{display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:800;letter-spacing:.01em;color:#8A5A12;
+  background:rgba(168,124,46,.10);border:1px solid rgba(168,124,46,.4);
+  padding:8px 18px 8px 15px;border-radius:999px}
+.pg-eyebrow i{width:6px;height:6px;border-radius:50%;flex:none;background:var(--siren,#C23B2E)}
+.pg-title{margin:20px 0 0;font-family:'Noto Serif KR',serif;font-size:38px;font-weight:900;
   line-height:1.34;letter-spacing:-.03em;color:#1B3F30}
 .pg-hl{position:relative;display:inline-block;color:#1B3F30}
 .pg-hl::after{content:"";position:absolute;left:-2px;right:-2px;bottom:.08em;height:.2em;
   background:linear-gradient(90deg,rgba(200,164,106,.8),rgba(200,164,106,.3));border-radius:3px;z-index:-1}
-.pg-lead{margin:16px 0 0;font-size:16.5px;line-height:1.78;color:#5A503C;font-weight:500}
+.pg-lead{margin:18px 0 0;font-size:16.5px;line-height:1.78;color:#5A503C;font-weight:500}
 .pg-lead b{color:#1B3F30;font-weight:800}
 
-/* 2단 카드 */
-.pg-grid{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:18px;
-  max-width:1000px;margin:36px auto 0;align-items:stretch}
-.pg-card{position:relative;padding:26px 24px 22px;border-radius:18px;
-  background:#fff;border:1.5px solid rgba(168,124,46,.3);
-  box-shadow:0 18px 40px -26px rgba(120,90,30,.5)}
-.pg-card-tag{position:absolute;top:-13px;left:22px;
-  font-size:12.5px;font-weight:800;letter-spacing:-.01em;color:#5E6B60;
-  background:#fff;border:1.5px solid rgba(94,107,96,.3);
-  padding:5px 14px;border-radius:999px}
-.pg-card-tag-gain{color:#FFF6E2;background:linear-gradient(180deg,#2F6650,#1E4534);
-  border-color:transparent;box-shadow:0 6px 14px -6px rgba(30,69,52,.6)}
+/* 2단 카드 — 히어로에서 확립한 헤어라인 테두리 + 인라인 라벨 언어로 통일.
+   플로팅 배지·글로시 그림자를 걷어내고 얇은 테두리와 하단 룰만 남긴다 */
+.pg-grid{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:20px;
+  max-width:1000px;margin:40px auto 0;align-items:stretch}
+.pg-card{position:relative;padding:28px 28px 26px;border-radius:4px;
+  background:rgba(255,255,255,.55);border:1px solid rgba(168,124,46,.38)}
+.pg-card-lab{display:flex;align-items:center;gap:8px;margin:0 0 18px;padding:0 0 14px;
+  font-size:13.5px;font-weight:800;letter-spacing:.01em;color:#8A5A12;
+  border-bottom:1px solid rgba(168,124,46,.26)}
+.pg-card-lab::before{content:"";width:5px;height:5px;border-radius:50%;flex:none;
+  background:var(--siren,#C23B2E)}
+.pg-card-lab-gain{color:#1E4534;border-bottom-color:rgba(47,102,80,.2)}
+.pg-card-lab-gain::before{background:#2F6650}
 
-/* 0원 4종 */
-.pg-zero{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 0;padding:0;list-style:none}
-.pg-zero li{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;gap:2px;
-  padding:16px 8px 13px;border-radius:13px;
-  background:linear-gradient(180deg,#FFFFFF,#F3F8F4);
-  border:1.5px solid rgba(47,102,80,.22);
-  box-shadow:0 10px 22px -16px rgba(30,69,52,.55),inset 0 1px 0 rgba(255,255,255,.9);
-  transition:transform .16s ease,box-shadow .16s ease}
-.pg-zero li::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;
-  background:linear-gradient(90deg,#2F6650,#4E9B78)}
-.pg-zero li:nth-child(2)::before{background:linear-gradient(90deg,#3C7A5F,#6BB292)}
-.pg-zero li:nth-child(3)::before{background:linear-gradient(90deg,#1E4534,#2F6650)}
-.pg-zero li:nth-child(4)::before{background:linear-gradient(90deg,#A87C2E,#D9B87A)}
-.pg-zero li:nth-child(4){background:linear-gradient(180deg,#FFFDF7,#FBF3E2);border-color:rgba(168,124,46,.32)}
-.pg-zero li:hover{transform:translateY(-3px);box-shadow:0 16px 28px -16px rgba(30,69,52,.6),inset 0 1px 0 rgba(255,255,255,.9)}
-.pg-zero i{font-style:normal;font-family:'Noto Serif KR',serif;font-size:25px;font-weight:900;
+/* 0원 4종 — 히어로 지표 밴드와 동일한 타이포그래피 언어(카드형 대신
+   헤어라인 십자 구분선). "없음"(약정)만 골드로 구분해 최대 차별점을 강조 */
+.pg-zero{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:0;padding:0;list-style:none;
+  border:1px solid rgba(47,102,80,.16);border-radius:3px}
+.pg-zero li{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:16px 18px}
+.pg-zero li:nth-child(odd){border-right:1px solid rgba(47,102,80,.16)}
+.pg-zero li:nth-child(-n+2){border-bottom:1px solid rgba(47,102,80,.16)}
+.pg-zero i{font-style:normal;font-family:'Noto Serif KR',serif;font-size:26px;font-weight:900;
   color:#1E4534;line-height:1.05;letter-spacing:-.03em}
 .pg-zero li:nth-child(4) i{font-size:22px;color:#8A5A12}
-.pg-zero span{font-size:12.5px;font-weight:800;color:#5E6B60;letter-spacing:-.03em}
-.pg-risk-note{margin:14px 0 0;font-size:12.5px;line-height:1.7;color:#7E8C82;letter-spacing:-.01em}
+.pg-zero span{font-size:12.5px;font-weight:700;color:#5E6B60;letter-spacing:-.02em}
+.pg-risk-note{margin:18px 0 0;font-size:12.5px;line-height:1.7;color:#7E8C82;letter-spacing:-.01em}
 .pg-risk-note b{color:#2F6650;font-weight:800}
 
-/* 혜택 목록 */
-.pg-benefits{margin:12px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
-.pg-benefits li{display:flex;align-items:flex-start;gap:13px;
-  padding:12px 14px;border-radius:13px;
-  background:linear-gradient(180deg,#FFFDF7,#FBF4E3);
-  border:1px solid rgba(168,124,46,.26)}
-.pg-b-ico{flex:0 0 40px;width:40px;height:40px;border-radius:11px;
-  display:flex;align-items:center;justify-content:center;color:#8A5A12;
-  background:linear-gradient(160deg,#F7E7C6,#EFDCB2);border:1px solid rgba(168,124,46,.3)}
-.pg-b-ico svg{width:21px;height:21px}
-.pg-b-tx{display:flex;flex-direction:column;min-width:0;padding-top:1px}
+/* 혜택 목록 — 아이콘 칩(템플릿 인상의 주원인) 대신 세리프 넘버링.
+   항목 배경·테두리 박스 대신 헤어라인 구분선만 사용해 목록이 한 덩어리로 읽히게 */
+.pg-benefits{margin:0;padding:0;list-style:none}
+.pg-benefits li{display:flex;align-items:flex-start;gap:16px;padding:14px 0}
+.pg-benefits li+li{border-top:1px solid rgba(168,124,46,.18)}
+.pg-benefits li:first-child{padding-top:0}
+.pg-benefits li:last-child{padding-bottom:0}
+.pg-b-num{flex:none;width:24px;padding-top:2px;
+  font-family:'Noto Serif KR',serif;font-size:15px;font-weight:800;color:#C8A46A;letter-spacing:-.01em}
+.pg-b-tx{display:flex;flex-direction:column;min-width:0}
 .pg-b-tx b{font-size:15.5px;font-weight:800;color:#2A2013;letter-spacing:-.025em;line-height:1.4}
 .pg-b-tx small{margin-top:3px;font-size:12.5px;font-weight:600;color:#8E7A50;line-height:1.5}
 
 /* 이런 분들이 등록합니다 */
-.pg-who{max-width:1000px;margin:26px auto 0;padding:18px 20px;border-radius:14px;
-  background:rgba(30,69,52,.055);border:1px dashed rgba(30,69,52,.26);text-align:center}
-.pg-who-lab{display:block;font-size:12.5px;font-weight:800;color:#2F6650;letter-spacing:-.01em;margin-bottom:11px}
+.pg-who{max-width:1000px;margin:28px auto 0;padding:18px 22px;border-radius:4px;
+  background:rgba(30,69,52,.04);border:1px solid rgba(30,69,52,.16);text-align:center}
+.pg-who-lab{display:block;font-size:12.5px;font-weight:800;color:#2F6650;letter-spacing:-.01em;margin-bottom:12px}
 .pg-who-list{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
 .pg-who-list span{font-size:13px;font-weight:700;color:#3E4A42;letter-spacing:-.02em;
   background:#fff;border:1px solid rgba(30,69,52,.18);padding:8px 14px;border-radius:999px}
@@ -2236,22 +2226,19 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 }
 @media(max-width:640px){
   .pg-head{text-align:left}
-  .pg-eyebrow{font-size:11.5px;padding:7px 13px}
+  .pg-eyebrow{font-size:11.5px;padding:7px 14px 7px 12px}
   .pg-title{font-size:24px;margin-top:15px;line-height:1.38}
   .pg-lead{font-size:14.5px;margin-top:13px;line-height:1.72}
   .pg-grid{margin-top:28px;gap:22px}
-  .pg-card{padding:22px 16px 18px;border-radius:15px}
-  .pg-card-tag{font-size:11.5px;padding:4px 12px;left:16px;top:-12px}
-  .pg-zero{gap:8px}
-  .pg-zero li{padding:11px 6px 9px;border-radius:11px}
-  .pg-zero i{font-size:20px}
-  .pg-zero li:nth-child(4) i{font-size:17px}
+  .pg-card{padding:20px 18px 20px;border-radius:3px}
+  .pg-card-lab{font-size:12px;margin-bottom:14px;padding-bottom:11px}
+  .pg-zero li{padding:12px 12px}
+  .pg-zero i{font-size:21px}
+  .pg-zero li:nth-child(4) i{font-size:18px}
   .pg-zero span{font-size:11.5px}
-  .pg-risk-note{font-size:11.5px;margin-top:12px}
-  .pg-benefits{gap:9px}
-  .pg-benefits li{padding:10px 11px;border-radius:11px;gap:11px}
-  .pg-b-ico{flex:0 0 34px;width:34px;height:34px;border-radius:9px}
-  .pg-b-ico svg{width:18px;height:18px}
+  .pg-risk-note{font-size:11.5px;margin-top:14px}
+  .pg-benefits li{padding:12px 0;gap:12px}
+  .pg-b-num{font-size:13.5px;width:20px}
   .pg-b-tx b{font-size:13.5px;line-height:1.38}
   .pg-b-tx small{font-size:11.5px}
   .pg-who{margin-top:22px;padding:15px 14px;text-align:left}
