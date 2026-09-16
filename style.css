@@ -193,7 +193,9 @@ button{cursor:pointer}
 /* ---------- 지원을 알고 시작하면, 부담은 달라질 수 있습니다 (figure) ---------- */
 .figure{padding:88px 0;background:var(--hanji)}
 .figure-wrap{max-width:1180px;text-align:center}
-.figure-title{margin:0;font-size:30px;font-weight:700;color:var(--pine);letter-spacing:-.02em}
+.figure-title{margin:0;font-size:30px;font-weight:700;color:var(--pine);letter-spacing:-.02em;
+  text-decoration:underline;text-decoration-skip-ink:none;
+  text-underline-offset:8px;text-decoration-thickness:3px;text-decoration-color:var(--brass)}
 .figure-sub{margin:10px 0 0;font-size:14.5px;color:var(--gray-lt)}
 
 .figure-frame{
@@ -264,7 +266,8 @@ button{cursor:pointer}
 @media(max-width:640px){
   .figure{padding:56px 0}
   .wrap.figure-wrap{padding:0 24px}
-  .figure-title{font-size:21px;line-height:1.4}
+  .figure-title{font-size:21px;line-height:1.4;
+    text-underline-offset:4px;text-decoration-thickness:2px}
   .figure-sub{font-size:13.5px}
   .figure-frame{padding:24px 18px;margin-top:28px;border-radius:16px}
   .figure-numbers{flex-direction:column;gap:16px}
