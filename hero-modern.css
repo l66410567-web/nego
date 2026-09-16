@@ -2374,12 +2374,9 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .hs2 .promise-hl-red b{color:#A3814F}
 
 /* 문장 내 특정 구절만 금색 텍스트로 — 밑줄 없이 색만으로 포인트를 줄 때 사용.
-   핵심 키워드(<b>)와 동일한 금색 톤(배경별 분기)을 공유.
-   글자 위에는 브랜드 레드 강조점(방점)을 찍어 한 번 더 시선을 붙잡음 */
-.hl-red{color:#F0D9A6;-webkit-text-emphasis-style:circle;text-emphasis-style:circle;
-  -webkit-text-emphasis-color:#E14B3A;text-emphasis-color:#E14B3A;
-  -webkit-text-emphasis-position:over;text-emphasis-position:over}
-.hs2 .hl-red{color:#A3814F;-webkit-text-emphasis-color:#C23B2E;text-emphasis-color:#C23B2E}
+   핵심 키워드(<b>)와 동일한 금색 톤(배경별 분기)을 공유 */
+.hl-red{color:#F0D9A6}
+.hs2 .hl-red{color:#A3814F}
 
 @media(max-width:640px){
   .promise-hl-red{text-decoration-thickness:1.5px;text-underline-offset:3px}
