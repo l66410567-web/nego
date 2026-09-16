@@ -2375,9 +2375,9 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 
 /* 문장 내 특정 구절만 금색 텍스트로 — 밑줄 없이 색만으로 포인트를 줄 때 사용.
    핵심 키워드(<b>)와 동일한 금색 톤(배경별 분기)을 공유.
-   은은한 레드 글로우로 부담 없이 살짝 떠 보이게 강조 */
-.hl-red{color:#F0D9A6;text-shadow:0 0 6px rgba(225,75,58,.65),0 0 14px rgba(225,75,58,.35)}
-.hs2 .hl-red{color:#A3814F;text-shadow:0 0 6px rgba(225,75,58,.65),0 0 14px rgba(225,75,58,.35)}
+   레드 글로우로 눈에 띄게 떠 보이도록 강조 */
+.hl-red{color:#F0D9A6;text-shadow:0 0 3px rgba(225,75,58,.95),0 0 10px rgba(225,75,58,.8),0 0 22px rgba(225,75,58,.55)}
+.hs2 .hl-red{color:#A3814F;text-shadow:0 0 3px rgba(225,75,58,.95),0 0 10px rgba(225,75,58,.8),0 0 22px rgba(225,75,58,.55)}
 
 @media(max-width:640px){
   .promise-hl-red{text-decoration-thickness:1.5px;text-underline-offset:3px}
