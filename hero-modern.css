@@ -1387,7 +1387,17 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 /* 무빈소 히어로 — 최저가 캐치프레이즈 (히어로 컬럼에 맞춘 왼쪽 정렬 강조 라인) */
 .phead .sc-line{margin:18px 0 0;font-family:'Noto Serif KR',serif;font-size:30px;font-weight:900;color:#F5EACB;letter-spacing:-.015em;line-height:1.32}
 .phead .sc-line b{color:#EBCB78}
-@media(max-width:640px){.phead .sc-line{font-size:22px;margin-top:14px}}
+
+/* hero-vow 문구 — 모바일 전용 버전(hv-tx-mobile)은 PC에서 숨기고,
+   모바일에서는 sc-line 인용구를 이 문구에 흡수시켜 대신 노출한다
+   (같은 메시지를 인용구+박스 두 번 반복해 보이는 걸 막기 위함) */
+.hero-vow .hv-tx-mobile{display:none}
+
+@media(max-width:640px){
+  .phead .sc-line{display:none}
+  .hero-vow .hv-tx-desktop{display:none}
+  .hero-vow .hv-tx-mobile{display:inline}
+}
 
 /* ============================================================
    고령 이용자 접근성 — 본문 가독성 하한선 (전 페이지 공통)
