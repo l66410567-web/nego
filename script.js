@@ -336,8 +336,8 @@ document.querySelectorAll('.er-tab').forEach(function(tab){
 
 /* 연동 설정 — Google Apps Script 웹앱 배포 후 아래 두 값만 채우면 활성화됩니다.
    (비워두면 화면 동작은 그대로, 문자 발송만 건너뜁니다) */
-var PREREG_ENDPOINT = '';   // 예) https://script.google.com/macros/s/AKfycb..../exec
-var PREREG_TOKEN    = '';   // Apps Script에 설정한 FORM_TOKEN 과 동일한 값
+var PREREG_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxsGlhaYzbo-xJZ-taGnjmD70ryQj68vgxbvfca12EPmiO3oq-G5ceL_JmPfiFr-MBWTQ/exec';
+var PREREG_TOKEN    = 'prumir1973!';   // Apps Script에 설정한 FORM_TOKEN 과 동일한 값
 
 /* 등록 경로별 안내 문구 — 유골함 업그레이드는 '무빈소250 이용 시'에만 해당 */
 var PG_MODES = {

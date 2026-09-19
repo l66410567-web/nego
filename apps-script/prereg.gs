@@ -3,16 +3,16 @@
  *   홈페이지 폼 → (이 스크립트) → ① 사장님 휴대폰으로 문자 알림  ② 구글 시트에 명단 저장
  *
  * ▣ 보안 설계
- *   - 알리고 API 키는 이 스크립트의 "스크립트 속성"에만 저장됩니다. 브라우저에는 절대 내려가지 않습니다.
+ *   - 솔라피 API Key/Secret은 이 스크립트의 "스크립트 속성"에만 저장됩니다. 브라우저에는 절대 내려가지 않습니다.
  *   - FORM_TOKEN 으로 1차 차단, 허니팟(company) 으로 봇 차단, 분당 전송량 제한으로 문자 폭탄을 막습니다.
  *
- * ▣ 설정해야 할 스크립트 속성 (확장 프로그램 > Apps Script > 프로젝트 설정 > 스크립트 속성)
- *   ALIGO_KEY      : 알리고 API Key
- *   ALIGO_USER_ID  : 알리고 아이디
- *   ALIGO_SENDER   : 사전 등록된 발신번호 (예: 1533-9657)
- *   NOTIFY_TO      : 알림 받을 사장님 휴대폰 (예: 010-0000-0000). 쉼표로 여러 명 가능
- *   FORM_TOKEN     : 홈페이지 script.js 의 PREREG_TOKEN 과 동일한 임의 문자열
- *   SHEET_ID       : (선택) 명단을 저장할 구글 시트 ID. 비워두면 저장하지 않고 문자만 발송
+ * ▣ 설정해야 할 스크립트 속성 (프로젝트 설정 > 스크립트 속성)
+ *   SOLAPI_API_KEY    : 솔라피 API Key
+ *   SOLAPI_API_SECRET : 솔라피 API Secret
+ *   SENDER            : 사전 등록된 발신번호 (예: 1533-9657)
+ *   NOTIFY_TO         : 알림 받을 사장님 휴대폰 (예: 010-0000-0000). 쉼표로 여러 명 가능
+ *   FORM_TOKEN        : 홈페이지 script.js 의 PREREG_TOKEN 과 동일한 임의 문자열
+ *   SHEET_ID          : (선택) 명단을 저장할 구글 시트 ID. 비워두면 저장하지 않고 문자만 발송
  */
 
 var P = PropertiesService.getScriptProperties();
@@ -93,12 +93,19 @@ function _saveRow(name, tel, region, source, page) {
   ]);
 }
 
+function _hex(bytes) {
+  return bytes.map(function (b) {
+    var v = (b < 0 ? b + 256 : b).toString(16);
+    return v.length === 1 ? '0' + v : v;
+  }).join('');
+}
+
 function _sendSms(name, tel, region, source) {
-  var key = P.getProperty('ALIGO_KEY');
-  var uid = P.getProperty('ALIGO_USER_ID');
-  var sender = P.getProperty('ALIGO_SENDER');
+  var apiKey = P.getProperty('SOLAPI_API_KEY');
+  var apiSecret = P.getProperty('SOLAPI_API_SECRET');
+  var sender = P.getProperty('SENDER');
   var to = P.getProperty('NOTIFY_TO');
-  if (!key || !uid || !sender || !to) return 'skip(설정 없음)';
+  if (!apiKey || !apiSecret || !sender || !to) return 'skip(설정 없음)';
 
   var msg = '[빛고을장례119] 무료 사전등록\n'
           + '성함: ' + name + '\n'
@@ -106,16 +113,22 @@ function _sendSms(name, tel, region, source) {
           + '지역: ' + (region || '-') + '\n'
           + '경로: ' + (SOURCE_LABEL[source] || source || '-');
 
-  var res = UrlFetchApp.fetch('https://apis.aligo.in/send/', {
+  var date = new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
+  var salt = Utilities.getUuid().replace(/-/g, '');
+  var signature = _hex(Utilities.computeHmacSha256Signature(date + salt, apiSecret));
+  var authHeader = 'HMAC-SHA256 apiKey=' + apiKey + ', date=' + date + ', salt=' + salt + ', signature=' + signature;
+
+  var fromNum = String(sender).replace(/[^0-9]/g, '');
+  var toList = String(to).split(',')
+    .map(function (s) { return s.trim().replace(/[^0-9]/g, ''); })
+    .filter(function (s) { return s; });
+  var messages = toList.map(function (t) { return { to: t, from: fromNum, text: msg }; });
+
+  var res = UrlFetchApp.fetch('https://api.solapi.com/messages/v4/send-many/detail', {
     method: 'post',
-    payload: {
-      key: key, user_id: uid,
-      sender: String(sender).replace(/[^0-9]/g, ''),
-      receiver: String(to).replace(/[^0-9,]/g, ''),
-      msg: msg,
-      title: '사전등록 접수',
-      msg_type: 'LMS'
-    },
+    contentType: 'application/json',
+    headers: { Authorization: authHeader },
+    payload: JSON.stringify({ messages: messages }),
     muteHttpExceptions: true
   });
   return res.getContentText();
