@@ -506,6 +506,7 @@ button{cursor:pointer}
 .rv-who b{color:var(--pine);font-weight:700}
 .review-cta{text-align:center;margin-top:34px}
 .review-cta-br{display:none}
+.br-m{display:none}
 .review-cta p{font-size:15px;color:var(--gray);margin-bottom:14px}
 @media(max-width:640px){
   .rv-card{flex:0 0 258px;padding:20px 17px;gap:9px}
@@ -829,6 +830,7 @@ button{cursor:pointer}
   .eyebrow{font-size:13px;padding:6px 16px;margin-bottom:14px}
 
   /* 서브페이지 헤더 */
+  .br-m{display:inline}
   .phead{padding:40px 0 38px}
   .phead h1{font-size:21px;line-height:1.4;margin-bottom:11px}
   .phead p{font-size:15px;line-height:1.75}
