@@ -1871,10 +1871,14 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 @media(prefers-reduced-motion:reduce){
   .hslide-1 .hero119-btn{animation:none}.hslide-1 .hero119-btn::after{display:none}}
 
-/* 보조 CTA — 슬라이드3(hs3-btn2)과 동일한 다크 배경용 아웃라인 필 버튼 */
-.hs1-btn2{color:#EAF0EA;background:transparent;border:1.5px solid rgba(255,255,255,.4);
-  backdrop-filter:blur(3px);font-weight:700}
-.hs1-btn2:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.75);color:#fff}
+/* 보조 CTA — 골드 테두리 + 아래쪽 그림자로 눌러볼 수 있는 버튼처럼 (다크 배경용) */
+.hs1-btn2{color:#F5EACB;background:rgba(255,255,255,.06);border:2px solid #C8A46A;
+  backdrop-filter:blur(3px);font-weight:700;
+  box-shadow:0 3px 0 #8A6A34,0 5px 12px rgba(0,0,0,.35);
+  transition:transform .12s ease,box-shadow .12s ease,background .15s ease}
+.hs1-btn2:hover{background:rgba(200,164,106,.16);border-color:#E0C088;color:#fff;
+  transform:translateY(-1px);box-shadow:0 4px 0 #8A6A34,0 8px 16px rgba(0,0,0,.4)}
+.hs1-btn2:active{transform:translateY(2px);box-shadow:0 1px 0 #8A6A34,0 2px 6px rgba(0,0,0,.3)}
 
 /* ==========================================================
    핵심 지표 밴드 — 슬라이드1·3 공통
