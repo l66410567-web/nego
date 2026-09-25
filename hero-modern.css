@@ -1971,8 +1971,16 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 
 /* 0원 3종 — 스타일은 슬라이드1·3과 공유(핵심 지표 밴드 블록 + 아이보리 팔레트 반전 참조) */
 
-.hs2-btn2{color:#1B3F30;background:rgba(27,63,48,.07);border:1.5px solid rgba(27,63,48,.42);font-weight:800}
-.hs2-btn2:hover{background:rgba(27,63,48,.13);border-color:rgba(27,63,48,.6);color:#12281F}
+.hs2-btn2{position:relative;z-index:0;color:#1B3F30;background:rgba(27,63,48,.07);border:1.5px solid transparent;font-weight:800}
+.hs2-btn2:hover{background:rgba(27,63,48,.13);color:#12281F}
+/* 테두리만 시계방향으로 도는 그라데이션 — 골드↔그린 브랜드 컬러 */
+.hs2-btn2::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;padding:1.5px;
+  background:conic-gradient(from 0deg,#C8A46A 0%,#1B3F30 50%,#C8A46A 100%);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  animation:hs2BorderSpin 3s linear infinite;pointer-events:none}
+@keyframes hs2BorderSpin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.hs2-btn2::before{animation:none}}
 .hs2-micro{display:inline-flex;align-items:center;gap:6px;margin:12px 0 0;
   font-size:12.5px;font-weight:700;color:#7E8C82;letter-spacing:-.01em}
 .hs2-micro::before{content:"";width:15px;height:15px;flex:none;border-radius:50%;
