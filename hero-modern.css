@@ -147,7 +147,8 @@
   .hero119-cta{display:contents}
   .hero119-btn{order:5;width:100%;padding:17px 24px;margin-top:18px;
     font-size:16.5px;border-radius:15px}
-  .hero119-micro{order:6}
+  .hs1-btn2{order:6;width:100%;margin-top:10px;height:44px}
+  .hero119-micro{order:7}
   .hero119-link{order:8;width:100%;justify-content:center;
     border-bottom:none;margin-top:12px;color:#C3D2BE;font-size:14.5px}
   .hero119-link svg{color:#E2C078}
@@ -1871,14 +1872,14 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 @media(prefers-reduced-motion:reduce){
   .hslide-1 .hero119-btn{animation:none}.hslide-1 .hero119-btn::after{display:none}}
 
-/* 보조 CTA — 골드 테두리 + 아래쪽 그림자로 눌러볼 수 있는 버튼처럼 (다크 배경용) */
-.hs1-btn2{color:#F5EACB;background:rgba(255,255,255,.06);border:2px solid #C8A46A;
+/* 보조 CTA — 골드 테두리 + 아래쪽 그림자로 눌러볼 수 있는 버튼처럼 (다크 배경용, 슬라이드1·3 공통) */
+.hs1-btn2,.hs3-btn2{color:#F5EACB;background:rgba(255,255,255,.06);border:2px solid #C8A46A;
   backdrop-filter:blur(3px);font-weight:700;
   box-shadow:0 3px 0 #8A6A34,0 5px 12px rgba(0,0,0,.35);
   transition:transform .12s ease,box-shadow .12s ease,background .15s ease}
-.hs1-btn2:hover{background:rgba(200,164,106,.16);border-color:#E0C088;color:#fff;
+.hs1-btn2:hover,.hs3-btn2:hover{background:rgba(200,164,106,.16);border-color:#E0C088;color:#fff;
   transform:translateY(-1px);box-shadow:0 4px 0 #8A6A34,0 8px 16px rgba(0,0,0,.4)}
-.hs1-btn2:active{transform:translateY(2px);box-shadow:0 1px 0 #8A6A34,0 2px 6px rgba(0,0,0,.3)}
+.hs1-btn2:active,.hs3-btn2:active{transform:translateY(2px);box-shadow:0 1px 0 #8A6A34,0 2px 6px rgba(0,0,0,.3)}
 
 /* ==========================================================
    핵심 지표 밴드 — 슬라이드1·3 공통
@@ -2080,7 +2081,6 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hero119-wrap,.hs2-wrap,.hs3-wrap{padding-bottom:42px}
 
   /* 슬라이드1: 히어로 슬라이드 규격에 맞게 압축 (상세 정보는 하단 섹션에 유지) */
-  .hslide-1 .hs1-btn2{display:none}
   .hero119-panel{order:4}
   .hslide-1 .hero119-btn{width:100%;margin-top:20px}
   .hslide-1 .hero119-sub{max-width:none}
