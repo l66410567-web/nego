@@ -1971,16 +1971,13 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 
 /* 0원 3종 — 스타일은 슬라이드1·3과 공유(핵심 지표 밴드 블록 + 아이보리 팔레트 반전 참조) */
 
-.hs2-btn2{position:relative;z-index:0;color:#1B3F30;background:rgba(27,63,48,.07);border:1.5px solid transparent;font-weight:800}
-.hs2-btn2:hover{background:rgba(27,63,48,.13);color:#12281F}
-/* 테두리만 시계방향으로 도는 그라데이션 — 골드↔그린 브랜드 컬러 */
-.hs2-btn2::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;padding:1.5px;
-  background:conic-gradient(from 0deg,#C8A46A 0%,#1B3F30 50%,#C8A46A 100%);
-  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
-  -webkit-mask-composite:xor;mask-composite:exclude;
-  animation:hs2BorderSpin 3s linear infinite;pointer-events:none}
-@keyframes hs2BorderSpin{to{transform:rotate(360deg)}}
-@media(prefers-reduced-motion:reduce){.hs2-btn2::before{animation:none}}
+/* 골드 테두리 + 아래쪽 그림자로 눌러볼 수 있는 실제 버튼처럼 보이게 */
+.hs2-btn2{color:#1B3F30;background:rgba(27,63,48,.05);border:2px solid #C8A46A;font-weight:800;
+  box-shadow:0 3px 0 #A8823F,0 5px 12px rgba(120,90,40,.18);
+  transition:transform .12s ease,box-shadow .12s ease,background .15s ease}
+.hs2-btn2:hover{background:rgba(200,164,106,.14);border-color:#B0884A;
+  transform:translateY(-1px);box-shadow:0 4px 0 #A8823F,0 8px 16px rgba(120,90,40,.22)}
+.hs2-btn2:active{transform:translateY(2px);box-shadow:0 1px 0 #A8823F,0 2px 6px rgba(120,90,40,.16)}
 .hs2-micro{display:inline-flex;align-items:center;gap:6px;margin:12px 0 0;
   font-size:12.5px;font-weight:700;color:#7E8C82;letter-spacing:-.01em}
 .hs2-micro::before{content:"";width:15px;height:15px;flex:none;border-radius:50%;
