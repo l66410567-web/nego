@@ -1971,8 +1971,8 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 
 /* 0원 3종 — 스타일은 슬라이드1·3과 공유(핵심 지표 밴드 블록 + 아이보리 팔레트 반전 참조) */
 
-.hs2-btn2{color:#3A5348;background:transparent;border:1.5px solid rgba(27,63,48,.22);font-weight:700}
-.hs2-btn2:hover{background:rgba(27,63,48,.06);border-color:rgba(27,63,48,.4);color:#1B3F30}
+.hs2-btn2{color:#1B3F30;background:rgba(27,63,48,.07);border:1.5px solid rgba(27,63,48,.42);font-weight:800}
+.hs2-btn2:hover{background:rgba(27,63,48,.13);border-color:rgba(27,63,48,.6);color:#12281F}
 .hs2-micro{display:inline-flex;align-items:center;gap:6px;margin:12px 0 0;
   font-size:12.5px;font-weight:700;color:#7E8C82;letter-spacing:-.01em}
 .hs2-micro::before{content:"";width:15px;height:15px;flex:none;border-radius:50%;
@@ -2088,19 +2088,20 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hero119-scope span,.hs3-zero span,.hs2-zero span{font-size:11px}
 
   /* 슬라이드2: 세로 1단 — 가격·혜택·CTA가 첫 화면에 모두 보이도록.
-     3개 슬라이드 중 콘텐츠가 가장 많아 블록 간격을 한 단계 더 좁히고,
-     보조 버튼은 슬라이드1(.hs1-btn2)과 동일하게 모바일에서 숨긴다 */
+     3개 슬라이드 중 콘텐츠가 가장 많아 블록 간격을 한 단계 더 좁힌다.
+     보조 버튼(무빈소250 자세히 보기)은 모바일에서도 노출 — 다른 블록
+     여백을 줄여 공간을 확보 */
   .hs2-wrap{grid-template-columns:1fr;gap:0}
   .hs2-visual{display:none}
   .hs2-price{font-size:1.5em}
-  .hs2-btn2{display:none}
-  .hs2-offer{margin-top:11px;padding:10px 13px 11px}
-  .hs2-offer-flag{font-size:12px;margin-bottom:8px;padding-bottom:7px}
+  .hs2-btn2{height:38px;font-size:13.5px}
+  .hs2-offer{margin-top:10px;padding:9px 13px 10px}
+  .hs2-offer-flag{font-size:12px;margin-bottom:7px;padding-bottom:6px}
   .hs2-offer-in{gap:12px}
-  .hs2-panel{margin-top:11px;padding:10px 13px 12px}
-  .hs2-panel-lab{margin-bottom:9px;padding-bottom:8px}
+  .hs2-panel{margin-top:10px;padding:9px 13px 11px}
+  .hs2-panel-lab{margin-bottom:8px;padding-bottom:7px}
   .hs2-zero i{font-size:18px}
-  .hs2-cta{margin-top:14px}
+  .hs2-cta{margin-top:10px;gap:6px}
   /* 모바일: 실제 유골함 사진을 혜택 카드에 노출 */
   .hs2-offer-ico{flex:0 0 50px;width:50px;height:50px;border-radius:3px;
     background:none;border:1px solid rgba(168,124,46,.4)}
@@ -2108,7 +2109,7 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hs2-offer-img{display:block}
   .hs2-offer-tx b{font-size:15px;line-height:1.32}
   .hs2-offer-tx small{font-size:11.5px}
-  .hs2-micro{margin-top:9px;font-size:11.5px}
+  .hs2-micro{margin-top:6px;font-size:11.5px}
 
   /* 슬라이드3 모바일: 슬라이드1과 동일 기법 — 사진 대신 딥그린+국화 악센트 */
   .hs3-bg{opacity:0}
