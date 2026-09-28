@@ -210,7 +210,7 @@ document.querySelectorAll('.er-tab').forEach(function(tab){
   btn.className = 'to-top';
   btn.type = 'button';
   btn.setAttribute('aria-label','맨 위로');
-  btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V6"/><path d="M6 12l6-6 6 6"/></svg><span class="tt-lab">맨 위로</span>';
+  btn.innerHTML = '<span class="tt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V6"/><path d="M6 12l6-6 6 6"/></svg></span><span class="tt-txt"><b class="tt-lab">맨 위로</b><small class="tt-sub">처음으로</small></span>';
   btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
   document.body.appendChild(btn);
   var toggle = function(){
