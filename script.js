@@ -478,3 +478,15 @@ function submitPreregister(e){
     });
   return false;
 }
+
+// 메인 압축 — .m-fold(접이식)는 모바일에서는 접고, PC(641px 이상)에서는 항상 펼친 상태로 둔다
+(function(){
+  var folds = document.querySelectorAll('details.m-fold');
+  if(!folds.length || !window.matchMedia) return;
+  var mq = window.matchMedia('(min-width:641px)');
+  var sync = function(){
+    folds.forEach(function(d){ if(mq.matches) d.setAttribute('open',''); else d.removeAttribute('open'); });
+  };
+  sync();
+  if(mq.addEventListener) mq.addEventListener('change', sync); else if(mq.addListener) mq.addListener(sync);
+})();

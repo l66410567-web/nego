@@ -2495,3 +2495,151 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .fv-grid span{font-size:12.5px}
   .fv-note{font-size:13.5px;padding:0 8px}
 }
+
+/* ==========================================================
+   메인 압축 (index.html 전용: body.home)
+   내용은 그대로 두고 보여주는 방식만 바꿔 화면 길이를 줄임
+   - 모바일: 서비스 카드 2열, 기사·약속·정보센터 가로 스와이프, 절차 2열, 일부 접이식
+   - PC: 여백·카드 높이 축소, 카드 밀도 상향
+   ========================================================== */
+.home .m-fold > summary{display:none}
+
+@media(max-width:640px){
+  .home .sec{padding-top:34px;padding-bottom:38px}
+  .home .sec-head{margin-bottom:18px}
+  .home .sec-head .hr-brass{display:none}
+
+  /* 접이식(상세 내용은 눌러서 펼침) */
+  .home .m-fold{margin-top:14px}
+  .home .m-fold>summary{display:flex;align-items:center;justify-content:space-between;list-style:none;cursor:pointer;
+    padding:13px 16px;border:1.5px solid rgba(168,124,46,.5);border-radius:12px;background:#fff;
+    color:#1B3F30;font-weight:800;font-size:14.5px;box-shadow:0 3px 0 rgba(168,124,46,.35)}
+  .home .m-fold>summary::-webkit-details-marker{display:none}
+  .home .m-fold>summary i{width:9px;height:9px;flex:none;border-right:2.5px solid #A87C2E;border-bottom:2.5px solid #A87C2E;
+    transform:rotate(45deg);margin-top:-3px;transition:transform .2s}
+  .home .m-fold[open]>summary i{transform:rotate(-135deg);margin-top:3px}
+  .home .m-fold[open]>summary{margin-bottom:12px}
+  .home .pg-who-lab{display:none}
+
+  /* 서비스 카테고리 — 2열 컴팩트 */
+  .home .svc-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .home .svc:last-child{grid-column:1/-1}
+  .home .svc-img{height:74px}
+  .home .svc-body{padding:11px 12px 13px}
+  .home .svc-body h3{font-size:14.5px;margin-bottom:4px}
+  .home .svc-body p{font-size:12px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .home .svc-go{display:none}
+
+  /* 가로 스와이프(언론 기사·약속·정보센터) */
+  .home .clips,.home .news-grid,.home .pm-hero{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:12px;
+    scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;margin:0 -18px;padding:4px 18px 12px;scrollbar-width:none}
+  .home .clips::-webkit-scrollbar,.home .news-grid::-webkit-scrollbar,.home .pm-hero::-webkit-scrollbar{display:none}
+  .home .clips>*,.home .news-grid>*,.home .pm-hero>*{flex:0 0 76%;max-width:76%;scroll-snap-align:start;margin:0}
+
+  /* 약속 하단 3개·절차 — 2열 */
+  .home .pm-grid{grid-template-columns:1fr;gap:10px}
+  .home .steps{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+}
+
+@media(max-width:640px){
+  /* 가격 비교: 세로 3단 → 한 줄 3칸 */
+  .home .figure-title{font-size:21px;line-height:1.4;margin-bottom:16px}
+  .home .figure-numbers{display:grid;grid-template-columns:1fr 18px 1fr 18px 1fr;align-items:center;gap:4px;padding:14px 10px}
+  .home .figure-num-item{padding:0;min-width:0;text-align:center}
+  .home .figure-num-label{font-size:11px;letter-spacing:-.03em}
+  .home .figure-num{font-size:17px;line-height:1.25;letter-spacing:-.04em;white-space:nowrap}
+  .home .figure-num-diff-item .figure-num{font-size:19px}
+  .home .figure-arrow{transform:none;width:18px;height:18px;margin:0}
+  .home .figure-arrow svg{width:16px;height:16px}
+  .home .figure-items{padding:12px 14px}
+  .home .figure-basis{font-size:11.5px;line-height:1.55}
+
+  /* 왜 빛고을장례119일까요 — 컴팩트 */
+  .home .why119{padding:18px 14px 14px}
+  .home .why119-list{gap:8px}
+  .home .why119-list li{padding:9px 12px;gap:10px}
+  .home .why119-ico{width:38px;height:38px}
+  .home .why119-t b{font-size:14.5px}
+  .home .why119-t span{font-size:12px}
+
+  /* 약속 — 하단 3개 컴팩트 */
+  .home .pm-sub .pm{padding:12px 14px;display:grid;grid-template-columns:28px 1fr;column-gap:10px;align-items:center}
+  .home .pm-sub .pm svg{grid-row:1/3;width:26px;height:26px;margin:0}
+  .home .pm-sub .pm h4{font-size:14.5px;margin:0}
+  .home .pm-sub .pm p{font-size:12px;margin:2px 0 0;line-height:1.45}
+  .home .pm-big{padding:18px 16px}
+
+  /* 사전등록 카드 — 여백 축소 */
+  .home .pg-card{padding:16px 14px}
+  .home .pg-benefits li{padding:9px 0}
+
+  /* 상담 신청 — 좌측 소개 문구 축소 */
+  .home .apply-l h2{font-size:21px;line-height:1.4}
+  .home .apply-l>p{display:none}
+  .home .apply-grid{gap:18px}
+}
+
+@media(max-width:640px){
+  .home .svc-grid .svc-cta{grid-column:1/-1;padding:18px 16px}
+  .home .svc-grid .svc-cta h3{font-size:18px;line-height:1.4}
+  .home .svc-grid .svc-cta p{font-size:12.5px;line-height:1.55}
+  .home .svc-grid .svc:nth-last-child(2):nth-child(odd){grid-column:1/-1}
+}
+
+@media(max-width:640px){
+  /* 절차 8단계: 2열 컴팩트 카드 (번호 + 제목/설명) */
+  .home .steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .home .steps .step{display:grid;grid-template-columns:30px minmax(0,1fr);grid-template-rows:auto auto;column-gap:8px;row-gap:1px;align-items:start;padding:10px 10px;border-radius:10px}
+  .home .steps .step::before,.home .steps .step::after{display:none}
+  .home .steps .step-n{grid-row:1/3;width:28px;height:28px;font-size:12px;margin:0}
+  .home .steps .step h4{font-size:13.5px;line-height:1.3;margin:0;word-break:keep-all}
+  .home .steps .step p{font-size:11.5px;line-height:1.4;margin:0;word-break:keep-all}
+  .home .steps .step .opt{font-size:10.5px}
+  .home .flow .sec-head{margin-bottom:14px}
+  .home .flow .sec-head .sub{font-size:13px;line-height:1.5}
+  .home .sec-head p.sub{font-size:13px}
+}
+
+/* ===== 메인 압축 — PC (≥641px) ===== */
+@media(min-width:641px){
+  .home .sec{padding-top:54px;padding-bottom:58px}
+  .home .sec-head{margin-bottom:26px}
+  .home .sec-head .hr-brass{display:none}
+  .home .sec-head h2{margin-bottom:8px}
+  .home .figure{padding-top:60px}
+  .home .figure-groups{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .home .figure-group-wide{grid-column:auto}
+  .home .figure-group{padding:16px 16px}
+  .home .figure-tags{gap:6px}
+  .home .svc-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+  .home .svc-img{height:124px}
+  .home .svc p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .home .svc-cta{grid-column:auto;padding:22px 20px}
+  .home .svc-cta h3{font-size:19px;line-height:1.4}
+  .home .svc-cta p{font-size:13.5px;line-height:1.55}
+  .home .pg-head{margin-bottom:22px}
+  .home .trustband{padding-top:48px;padding-bottom:48px}
+  .home .brandstory{padding-top:54px;padding-bottom:54px}
+  .home .steps{gap:20px 18px}
+}
+@media(min-width:641px){
+  .home .svc-cta{display:flex;flex-direction:column;justify-content:center;gap:8px}
+  .home .svc-cta p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin:0}
+  .home .svc-cta h3{margin:0}
+  .home .svc-cta .cta-tel{margin-top:4px}
+}
+@media(min-width:641px){
+  /* 상담 CTA: 전체 폭 배너 (행 4칸 → 카드 3 + 넓은 FAQ) */
+  .home .svc-grid .svc-cta{grid-column:1/-1;display:grid;grid-template-columns:1.5fr 1fr;grid-template-areas:"lab tel" "h3 tel" "p row";column-gap:28px;row-gap:6px;align-items:center;padding:22px 28px}
+  .home .svc-cta .cta-lab{grid-area:lab;justify-self:start}
+  .home .svc-cta h3{grid-area:h3}
+  .home .svc-cta p{grid-area:p}
+  .home .svc-cta .cta-tel{grid-area:tel;margin:0}
+  .home .svc-cta .cta-row{grid-area:row}
+  .home .svc-grid .svc:nth-last-child(2):nth-child(odd){grid-column:auto}
+  .home .svc-grid .svc:nth-last-child(2){grid-column:span 2}
+  .home .svc-grid .svc:nth-last-child(2) .svc-img{height:124px}
+}
+@media(min-width:641px){
+  .home .svc-grid .svc:nth-last-child(2):nth-child(odd){grid-column:span 2}
+}

@@ -18,9 +18,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;700;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css?v=20260927-m1">
 <link rel="stylesheet" href="hero119-v4.css?v=20260722-ui2">
-<link rel="stylesheet" href="hero-modern.css?v=20261014-m2">
+<link rel="stylesheet" href="hero-modern.css?v=20261015-m11">
 </head>
-<body>
+<body class="home">
 <nav class="nav">
 <div class="nav-in">
 <a href="index.html" class="logo" aria-label="빛고을장례119 홈">
@@ -225,6 +225,7 @@
 
 <p class="figure-scope-note"><svg class="note-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 10.5v5.5"/><path d="M12 7.6h.01"/></svg>위 금액은 <b>장례식장 항목</b> 기준이며, 수목장·봉안당 지원은 <b>별도로</b> 추가 제공됩니다.</p>
 
+<details class="m-fold" id="figFold"><summary>지원 항목 자세히 보기<i aria-hidden="true"></i></summary>
 <div class="figure-groups">
 <div class="figure-group">
 <span class="figure-group-title">장례식장 지원</span>
@@ -265,6 +266,7 @@
 </div>
 </div>
 
+</details>
 <p class="figure-note"><svg class="note-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 10.5v5.5"/><path d="M12 7.6h.01"/></svg>시설과 조문객 규모에 따라 지원 범위가 달라질 수 있습니다.</p>
 
 <a href="hall.html#pkgs" class="btn btn-pine figure-cta nego-blink-soft">내 지원 금액 확인하기</a>
@@ -336,6 +338,7 @@
 </div>
 </div>
 
+<details class="m-fold m-fold-sm"><summary>이런 분들이 미리 등록하십니다<i aria-hidden="true"></i></summary>
 <div class="pg-who">
 <span class="pg-who-lab">이런 분들이 미리 등록하십니다</span>
 <div class="pg-who-list">
@@ -346,6 +349,7 @@
 </div>
 </div>
 
+</details>
 <div class="pg-cta">
 <button type="button" class="pg-btn" onclick="openPreregister('all')">0원 사전등록하기<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
 <p class="pg-cta-micro">30초면 완료 · 이름과 연락처만 · 등록 비용 0원</p>
@@ -1096,7 +1100,7 @@ function submitReview(e){
   return false;
 }
 </script>
-<script src="script.js?v=20261014-m1"></script>
+<script src="script.js?v=20261015-m2"></script>
 <script src="bot.js"></script>
 </body>
 </html>
