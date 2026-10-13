@@ -235,8 +235,8 @@ document.querySelectorAll('.er-tab').forEach(function(tab){
     ['7000000584','jpg','광주수완장례식장'],['7000001025','jpg','스카이장례식장'],
     ['1000000453','jpg','송정장례식장'],['1000000484','jpg','신가병원장례식장'],
     ['7000001807','jpg','빛장례식장'],
-    ['partner-daewonsa','png','대원사 꽃길숲 수목장','burial.html'],
-    ['partner-yeosu','png','여수바다정원 추모관','burial.html'],
+    ['partner-daewonsa-w','png','대원사 꽃길숲 수목장','burial.html'],
+    ['partner-yeosu-w','png','여수바다정원 추모관','burial.html'],
     ['partner-daedeok','png','대덕스카이캐슬 추모관','burial.html']
   ];
   var wrap = document.createElement('div');

@@ -1486,10 +1486,10 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .foot-logos-grid a{display:inline-flex;align-items:center;opacity:.92;transition:opacity .18s ease, transform .18s ease}
 .foot-logos-grid a:hover{opacity:1;transform:translateY(-2px)}
 .foot-logos-grid img{height:28px;width:auto;max-width:140px;object-fit:contain;display:block;mix-blend-mode:multiply}
-.foot-logos-grid img[src*="partner-daewonsa"]{height:46px;max-width:170px}
-.foot-logos-grid img[src*="partner-yeosu"]{height:38px;max-width:150px}
+.foot-logos-grid img[src*="partner-daewonsa"]{height:52px;max-width:190px}
+.foot-logos-grid img[src*="partner-yeosu"]{height:30px;max-width:230px}
 .foot-logos-grid img[src*="partner-daedeok"]{height:32px;max-width:160px}
-@media(max-width:640px){.foot-logos{padding:26px 0}.foot-logos-in{padding:0 18px}.foot-logos-grid{gap:16px 24px}.foot-logos-grid img{height:23px;max-width:112px}.foot-logos-grid img[src*="partner-daewonsa"]{height:38px;max-width:130px}.foot-logos-grid img[src*="partner-yeosu"]{height:31px;max-width:120px}.foot-logos-grid img[src*="partner-daedeok"]{height:27px;max-width:130px}}
+@media(max-width:640px){.foot-logos{padding:26px 0}.foot-logos-in{padding:0 18px}.foot-logos-grid{gap:16px 24px}.foot-logos-grid img{height:23px;max-width:112px}.foot-logos-grid img[src*="partner-daewonsa"]{height:44px;max-width:150px}.foot-logos-grid img[src*="partner-yeosu"]{height:25px;max-width:190px}.foot-logos-grid img[src*="partner-daedeok"]{height:27px;max-width:130px}}
 
 /* 무빈소 광고 유입 CTA — 히어로 바로 아래 (딥그린 카드 + 골드 버튼) */
 .lead-cta-sec{padding:22px 0 0}
