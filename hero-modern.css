@@ -1245,6 +1245,10 @@ a.dist{display:block}
   display:flex;align-items:center;justify-content:center;padding:0 30px;
 }
 .pmq-item img{height:46px;width:auto;max-width:300px;object-fit:contain;filter:contrast(1.05) saturate(1.05)}
+/* 수목장·추모관 로고(어두운 배경·낮은 가로세로비)는 같은 높이면 훨씬 작아 보여 크게 키움 — 특히 대원사 꽃길숲 수목장 */
+.pmq-item img[src*="partner-daewonsa"]{height:80px;max-width:340px}
+.pmq-item img[src*="partner-yeosu"]{height:64px;max-width:300px}
+.pmq-item img[src*="partner-daedeok"]{height:54px;max-width:300px}
 .pmq-item.pmq-text{padding:0 34px}
 .pmq-item.pmq-text span{
   font-family:'Noto Serif KR',serif;font-weight:900;font-size:22px;color:var(--pine);
@@ -1255,6 +1259,9 @@ a.dist{display:block}
   .pmq-track{animation-duration:40s}
   .pmq-item{height:80px;margin-right:12px;padding:0 22px}
   .pmq-item img{height:38px;max-width:230px}
+  .pmq-item img[src*="partner-daewonsa"]{height:62px;max-width:260px}
+  .pmq-item img[src*="partner-yeosu"]{height:52px;max-width:240px}
+  .pmq-item img[src*="partner-daedeok"]{height:44px;max-width:240px}
   .pmq-item.pmq-text{padding:0 26px}
   .pmq-item.pmq-text span{font-size:18px}
 }
@@ -1479,7 +1486,10 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .foot-logos-grid a{display:inline-flex;align-items:center;opacity:.92;transition:opacity .18s ease, transform .18s ease}
 .foot-logos-grid a:hover{opacity:1;transform:translateY(-2px)}
 .foot-logos-grid img{height:28px;width:auto;max-width:140px;object-fit:contain;display:block;mix-blend-mode:multiply}
-@media(max-width:640px){.foot-logos{padding:26px 0}.foot-logos-in{padding:0 18px}.foot-logos-grid{gap:16px 24px}.foot-logos-grid img{height:23px;max-width:112px}}
+.foot-logos-grid img[src*="partner-daewonsa"]{height:46px;max-width:170px}
+.foot-logos-grid img[src*="partner-yeosu"]{height:38px;max-width:150px}
+.foot-logos-grid img[src*="partner-daedeok"]{height:32px;max-width:160px}
+@media(max-width:640px){.foot-logos{padding:26px 0}.foot-logos-in{padding:0 18px}.foot-logos-grid{gap:16px 24px}.foot-logos-grid img{height:23px;max-width:112px}.foot-logos-grid img[src*="partner-daewonsa"]{height:38px;max-width:130px}.foot-logos-grid img[src*="partner-yeosu"]{height:31px;max-width:120px}.foot-logos-grid img[src*="partner-daedeok"]{height:27px;max-width:130px}}
 
 /* 무빈소 광고 유입 CTA — 히어로 바로 아래 (딥그린 카드 + 골드 버튼) */
 .lead-cta-sec{padding:22px 0 0}
