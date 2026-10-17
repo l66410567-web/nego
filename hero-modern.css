@@ -2645,3 +2645,37 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .hs2-urn-note{font-size:13px;font-weight:600;color:#4A3B1C;margin-top:12px}
 .hs2-urn-note::before{content:"";}
 @media(max-width:900px){.hs2-urn-note{font-size:11.5px}}
+
+/* 광주 무빈소 장례식장 — 가능 시설 안내(무빈소250 페이지) */
+.sbn-sec{background:linear-gradient(180deg,#FBF7EC 0%,#F6EFDC 100%)}
+.sbn-lead{margin:0 auto 22px;max-width:640px;text-align:center;font-size:16.5px;line-height:1.75;color:#3a3a3a}
+.sbn-lead b{color:#1B3F30;background:linear-gradient(transparent 62%,rgba(200,164,106,.38) 0)}
+.sbn-steps{list-style:none;margin:0 0 20px;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;counter-reset:none}
+.sbn-steps li{position:relative;display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid rgba(200,164,106,.4);border-radius:14px;padding:18px 16px;box-shadow:0 6px 16px rgba(120,90,40,.08)}
+.sbn-steps li.on{background:linear-gradient(180deg,#FFFDF5,#FBF3DF);border-color:#B58C4C;box-shadow:0 10px 24px rgba(200,155,74,.24)}
+.sbn-n{flex:0 0 30px;height:30px;border-radius:50%;background:#1B3F30;color:#F0D89A;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+.sbn-steps li.on .sbn-n{background:linear-gradient(180deg,#E7CB92,#B58C4C);color:#2A1E0A}
+.sbn-steps h3{margin:0 0 6px;font-size:16px;line-height:1.4;color:#1B3F30;letter-spacing:-.02em}
+.sbn-steps li.on h3{color:#9A3328}
+.sbn-steps p{margin:0;font-size:13.5px;line-height:1.6;color:#5a5a5a}
+.sbn-steps p b{color:#1B3F30}
+.sbn-area{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;margin:0 0 20px;font-size:13.5px;font-weight:700;color:#6B5B3C}
+.sbn-area a{padding:6px 14px;border-radius:999px;background:#fff;border:1px solid rgba(168,124,46,.5);color:#3A2C16;text-decoration:none}
+.sbn-cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;margin-bottom:14px}
+.sbn-tel{font-weight:800;font-size:18px;color:#1B3F30;text-decoration:none}
+.sbn-foot{margin:0 auto;max-width:640px;text-align:center;font-size:12px;line-height:1.6;color:#7a7a7a}
+@media(max-width:760px){
+  .sbn-lead{font-size:14.5px;line-height:1.7;margin-bottom:16px}
+  .sbn-steps{grid-template-columns:1fr;gap:9px;margin-bottom:16px}
+  .sbn-steps li{padding:13px 13px}
+  .sbn-steps h3{font-size:14.5px;margin-bottom:3px}
+  .sbn-steps p{font-size:12.5px;line-height:1.5}
+  .sbn-area{font-size:12.5px;gap:6px}
+  .sbn-area a{padding:5px 11px}
+}
+@media(max-width:760px){
+  .sbn-sec{padding-top:34px;padding-bottom:30px}
+  .sbn-sec .sec-head{margin-bottom:12px}
+  .sbn-sec .sec-head .hr-brass{display:none}
+  .sbn-cta{margin-bottom:10px}
+}
