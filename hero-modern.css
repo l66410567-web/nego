@@ -2681,3 +2681,9 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 }
 /* 광고 랜딩(#subinso-hall) 앵커 이동 시 상단 고정 메뉴에 가리지 않게 */
 #subinso-hall{scroll-margin-top:64px}
+/* 무빈소250 — 경쟁력 칩(링크 아님) */
+.sbn-area em{font-style:normal;font-weight:800;color:#1B3F30;margin-right:2px}
+.sbn-area span{padding:6px 14px;border-radius:999px;background:#fff;border:1px solid rgba(168,124,46,.5);color:#3A2C16}
+.no-hall-links .foot-logos-grid span{display:flex;align-items:center;justify-content:center}
+@media(max-width:760px){.sbn-area em{flex:0 0 100%;text-align:center}.sbn-area span{padding:5px 11px}}
+.foot-logos-grid span{display:inline-flex;align-items:center;opacity:.92}

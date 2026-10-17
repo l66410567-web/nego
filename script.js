@@ -250,8 +250,9 @@ document.querySelectorAll('.er-tab').forEach(function(tab){
   var grid = document.createElement('div');
   grid.className = 'foot-logos-grid';
   halls.forEach(function(h){
-    var a = document.createElement('a');
-    a.href = h[3] || ('hall-detail-' + h[0] + '.html');
+    var plain = document.body.classList.contains('no-hall-links');   // 광고 랜딩용: 다른 페이지로 가는 링크 없이 로고만 표시
+    var a = document.createElement(plain ? 'span' : 'a');
+    if(!plain) a.href = h[3] || ('hall-detail-' + h[0] + '.html');
     a.setAttribute('aria-label', h[2]);
     var img = document.createElement('img');
     img.src = 'logos/' + h[0] + '.' + h[1];
