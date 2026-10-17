@@ -2532,7 +2532,7 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 
   /* 가로 스와이프(언론 기사·약속·정보센터) */
   .home .clips,.home .news-grid,.home .pm-hero{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:12px;
-    scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;margin:0 -18px;padding:4px 18px 12px;scrollbar-width:none}
+    scroll-snap-type:x mandatory;scroll-padding:0 18px;-webkit-overflow-scrolling:touch;margin:0 -18px;padding:4px 18px 12px;scrollbar-width:none}
   .home .clips::-webkit-scrollbar,.home .news-grid::-webkit-scrollbar,.home .pm-hero::-webkit-scrollbar{display:none}
   .home .clips>*,.home .news-grid>*,.home .pm-hero>*{flex:0 0 76%;max-width:76%;scroll-snap-align:start;margin:0}
 
