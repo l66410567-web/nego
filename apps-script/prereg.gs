@@ -35,13 +35,14 @@ function doPost(e) {
     var region = String(data.region || '').trim().slice(0, 20);
     var source = String(data.source || '').trim().slice(0, 20);
     var page   = String(data.page   || '').trim().slice(0, 40);
+    var memo   = String(data.memo   || '').trim().slice(0, 60);   // 상담신청: 선택 내용 요약
     if (!name || telRaw.length < 10) return _json({ ok: false, error: 'invalid' });
 
     // 4) 속도 제한 — 1분에 10건 초과 시 차단
     if (!_rateOk()) return _json({ ok: false, error: 'rate' });
 
-    var row = _saveRow(name, telRaw, region, source, page);
-    var sms = _sendSms(name, telRaw, region, source);
+    var row = _saveRow(name, telRaw, region, source, page, memo);
+    var sms = _sendSms(name, telRaw, region, source, memo);
     _markSms(row, sms);
 
     return _json({ ok: true, sms: sms });
@@ -79,19 +80,22 @@ function _fmtTel(t) {
 
 var SOURCE_LABEL = {
   all: '전체(홈)', simple: '무빈소250', hall: '장례식장',
-  family: '가족장', burial: '수목장·봉안당', relo: '묘 이장·평장'
+  family: '가족장', burial: '수목장·봉안당', relo: '묘 이장·평장',
+  consult: '상담신청'
 };
 
-function _saveRow(name, tel, region, source, page) {
+function _saveRow(name, tel, region, source, page, memo) {
   var sheetId = P.getProperty('SHEET_ID');
   if (!sheetId) return null;
   var sh = SpreadsheetApp.openById(sheetId).getSheets()[0];
   if (sh.getLastRow() === 0) {
-    sh.appendRow(['접수일시', '성함', '연락처', '거주지역', '유입경로', '페이지', '문자결과']);
+    sh.appendRow(['접수일시', '성함', '연락처', '거주지역', '유입경로', '페이지', '문자결과', '메모']);
+  } else if (!sh.getRange(1, 8).getValue()) {
+    sh.getRange(1, 8).setValue('메모');
   }
   sh.appendRow([
     Utilities.formatDate(new Date(), 'Asia/Seoul', 'yyyy-MM-dd HH:mm:ss'),
-    name, _fmtTel(tel), region, (SOURCE_LABEL[source] || source), page
+    name, _fmtTel(tel), region, (SOURCE_LABEL[source] || source), page, '', memo || ''
   ]);
   return { sh: sh, r: sh.getLastRow() };
 }
@@ -134,7 +138,16 @@ function _fitName(build, name) {
   return build(nm);
 }
 
-function _sendSms(name, tel, region, source) {
+/** 사장님 알림 문구 — 90바이트를 넘으면 메모 → 이름 순으로 줄여 단문 유지 */
+function _fitOwner(kind, name, tel, region, memo) {
+  var nm = name, mm = memo;
+  var build = function () { return '[빛고을119] ' + kind + '\n' + nm + ' ' + tel + '\n' + region + '/' + mm; };
+  while (mm.length > 1 && _bytes(build()) > 90) mm = mm.slice(0, -1);
+  while (nm.length > 1 && _bytes(build()) > 90) nm = nm.slice(0, -1);
+  return build();
+}
+
+function _sendSms(name, tel, region, source, memo) {
   var apiKey = P.getProperty('SOLAPI_API_KEY');
   var apiSecret = P.getProperty('SOLAPI_API_SECRET');
   var sender = P.getProperty('SENDER');
@@ -142,15 +155,17 @@ function _sendSms(name, tel, region, source) {
   if (!apiKey || !apiSecret || !sender || !to) return 'skip(설정 없음)';
 
   var src = SOURCE_LABEL[source] || source || '-';
+  var isConsult = (source === 'consult');
 
-  // 사장님 알림 — 90바이트 이내(단문 18원)
-  var ownerMsg = _fitName(function (n) {
-    return '[빛고을119] 사전등록\n' + n + ' ' + _fmtTel(tel) + '\n' + (region || '-') + '/' + src;
-  }, name);
+  // 사장님 알림 — 90바이트 이내(단문 18원). 상담신청은 선택 내용(memo)을 줄여서 함께 표시
+  var ownerMsg = _fitOwner(isConsult ? '상담신청' : '사전등록', name, _fmtTel(tel), region || '-',
+                           isConsult ? (memo || src) : src);
 
   // 고객 접수확인 — 고객에게 가는 거래성 안내 (광고성 문구 없음)
   var custMsg = _fitName(function (n) {
-    return '[빛고을장례119] ' + n + '님 무료 사전등록이 접수되었습니다. 24시간 상담 1533-9657';
+    return isConsult
+      ? '[빛고을장례119] ' + n + '님 상담 신청이 접수되었습니다. 곧 연락드리겠습니다. 1533-9657'
+      : '[빛고을장례119] ' + n + '님 무료 사전등록이 접수되었습니다. 24시간 상담 1533-9657';
   }, name);
 
   var fromNum = String(sender).replace(/[^0-9]/g, '');

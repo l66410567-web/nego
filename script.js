@@ -156,10 +156,23 @@ function closeModal(){
     if(!name.trim()){ alert('성함을 입력해 주세요.'); return; }
     if(!tel.trim()){ alert('연락처를 입력해 주세요.'); return; }
     if(!agree){ alert('개인정보 수집·이용에 동의해 주세요.'); return; }
-    // 시안 — 실제 오픈 시 문자/메일/시트 연동
-    alert('상담 신청이 접수되었습니다.\n확인 후 빠르게 연락드리겠습니다.\n\n(시안 단계 — 실제 오픈 시 연동 예정)');
-    if(typeof closeModal==='function') closeModal();
-    start();
+    if(tel.replace(/[^0-9]/g,'').length < 10){ alert('연락처를 정확히 입력해 주세요.'); return; }
+    var c = catObj(), u = urgObj();
+    var UR = {urgent:'긴급', soon:'임박', plan:'계획'};
+    var memo = [c.label, u ? UR[u.v] : '', st.det, st.time].filter(Boolean).join('/');
+    var btn = q.querySelector('[data-act="submit"]');
+    if(btn){ btn.disabled = true; btn.textContent = '접수 중...'; }
+    // 사전등록과 같은 접수 서버로 보내 사장님 휴대폰에 문자 알림
+    sendLead({name:name.trim(), tel:tel.trim(), region:st.reg||'', source:'consult', memo:memo}, function(res){
+      if(res && res.ok){
+        alert('상담 신청이 접수되었습니다.\n확인 후 빠르게 연락드리겠습니다.');
+        if(typeof closeModal==='function') closeModal();
+        start();
+      } else {
+        alert('접수가 지연되고 있습니다.\n급하시면 1533-9657로 전화 주세요.');
+        if(btn){ btn.disabled = false; btn.textContent = '무료 상담 신청하기'; }
+      }
+    });
   }
 
   function onClick(e){
@@ -182,12 +195,48 @@ function closeModal(){
   setTimeout(function(){ if(box()) render(); }, 0);
 })();
 
-// 폼 제출 (시안 — 실제 오픈 시 네이버 폼/서버 연동)
+/* 상담·사전등록 접수 전송 — Apps Script(사장님 문자 알림 + 시트 저장). 사전등록과 같은 엔드포인트 사용 */
+function sendLead(p, cb){
+  var payload = {
+    token: PREREG_TOKEN, name: p.name, tel: p.tel, region: p.region || '',
+    source: p.source || 'consult', memo: p.memo || '',
+    page: (location.pathname.split('/').pop() || 'index.html'), company: ''
+  };
+  if(!PREREG_ENDPOINT){ if(window.console) console.warn('[상담] PREREG_ENDPOINT 미설정', payload); cb({ok:true}); return; }
+  fetch(PREREG_ENDPOINT, {
+    method: 'POST',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify(payload)
+  }).then(function(r){ return r.json(); })
+    .catch(function(){ return {ok:false}; })
+    .then(function(res){
+      if(!res || !res.ok){ if(window.console) console.warn('[상담] 전송 실패', res); }
+      cb(res);
+    });
+}
+
+// 상담 예약 폼 제출 — 사장님 문자 알림
 function handleSubmit(e){
   e.preventDefault();
-  alert('상담 신청이 접수되었습니다.\n확인 후 빠르게 연락드리겠습니다.\n\n(시안 단계 — 실제 오픈 시 연동 예정)');
-  closeModal();
-  e.target.reset();
+  var f = e.target;
+  if(f.id === 'pregisterForm' || f.id === 'reviewForm') return;   // 각자 전용 핸들러 사용
+  var nameEl = f.querySelector('input[type="text"]'), telEl = f.querySelector('input[type="tel"]');
+  var selEl = f.querySelector('select');
+  var name = nameEl ? nameEl.value.trim() : '', tel = telEl ? telEl.value.trim() : '';
+  if(!name || tel.replace(/[^0-9]/g,'').length < 10){ alert('성함과 연락처를 정확히 입력해 주세요.'); return; }
+  var memo = selEl ? ('상담시간 ' + selEl.options[selEl.selectedIndex].text.replace(/\s*\(.*\)/,'')) : '';
+  var btn = f.querySelector('button[type="submit"]'), label = btn ? btn.textContent : '';
+  if(btn){ btn.disabled = true; btn.textContent = '접수 중...'; }
+  sendLead({name:name, tel:tel, source:'consult', memo:memo}, function(res){
+    if(btn){ btn.disabled = false; btn.textContent = label; }
+    if(res && res.ok){
+      alert('상담 신청이 접수되었습니다.\n확인 후 빠르게 연락드리겠습니다.');
+      if(typeof closeModal==='function') closeModal();
+      f.reset();
+    } else {
+      alert('접수가 지연되고 있습니다.\n급하시면 1533-9657로 전화 주세요.');
+    }
+  });
 }
 document.querySelectorAll('form.form, #modalForm').forEach(function(f){
   f.addEventListener('submit', handleSubmit);
