@@ -2015,7 +2015,7 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   background:var(--siren,#C23B2E) url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/10px 10px no-repeat}
 
 /* 유골함 비주얼 */
-.hs2-visual{display:flex;justify-content:center;min-width:0}
+.hs2-visual{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0}
 .hs2-urn-card{position:relative;width:100%;max-width:380px;aspect-ratio:4/3.4;
   border-radius:20px;overflow:hidden;border:1px solid rgba(200,164,106,.45);
   box-shadow:0 28px 56px -24px rgba(60,45,15,.5)}
@@ -2542,15 +2542,8 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 }
 
 @media(max-width:640px){
-  /* 가격 비교: 세로 3단 → 한 줄 3칸 */
+  /* 가격 비교: 원래의 세로 3단(일반가→지원후→차이) 유지 — 한 줄 압축은 숫자가 겹쳐 제외 */
   .home .figure-title{font-size:21px;line-height:1.4;margin-bottom:16px}
-  .home .figure-numbers{display:grid;grid-template-columns:1fr 18px 1fr 18px 1fr;align-items:center;gap:4px;padding:14px 10px}
-  .home .figure-num-item{padding:0;min-width:0;text-align:center}
-  .home .figure-num-label{font-size:11px;letter-spacing:-.03em}
-  .home .figure-num{font-size:17px;line-height:1.25;letter-spacing:-.04em;white-space:nowrap}
-  .home .figure-num-diff-item .figure-num{font-size:19px}
-  .home .figure-arrow{transform:none;width:18px;height:18px;margin:0}
-  .home .figure-arrow svg{width:16px;height:16px}
   .home .figure-items{padding:12px 14px}
   .home .figure-basis{font-size:11.5px;line-height:1.55}
 
@@ -2645,7 +2638,6 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 }
 
 /* 유골함 이미지 — 참고용 안내 */
-.hs2-visual{display:flex;flex-direction:column;align-items:center}
 .hs2-urn-note{margin:10px 0 0;max-width:380px;font-size:11.5px;line-height:1.5;color:#6B5B3C;text-align:center;letter-spacing:-.02em}
 .svc250-card .svc250-imgnote{margin-top:6px;font-size:10.5px;line-height:1.4;color:#8a8a8a}
 @media(max-width:1200px){.hs2-urn-note{max-width:320px}}
