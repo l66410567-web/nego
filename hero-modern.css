@@ -2693,3 +2693,15 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .hs2-desc .hs2-incl{display:inline-block;color:#fff;font-weight:900;letter-spacing:-.01em;
   background:linear-gradient(180deg,#2F6B50 0%,#1B3F30 100%);padding:2px 10px 3px;border-radius:7px;
   box-shadow:0 3px 8px -3px rgba(27,63,48,.55);margin-right:2px}
+
+/* 약속 구역(빛고을장례119란? 페이지) — 모바일 컴팩트 */
+@media(max-width:640px){
+  .promise .pm-big{padding:18px 16px}
+  .promise .pm-big-ico{width:52px;height:52px;margin-bottom:10px}
+  .promise .pm-big h3{font-size:19px}
+  .promise .pm-big p{font-size:13.5px;line-height:1.55}
+  .promise .pm-sub .pm{padding:12px 14px;display:grid;grid-template-columns:28px 1fr;column-gap:10px;align-items:center}
+  .promise .pm-sub .pm svg{grid-row:1/3;width:26px;height:26px;margin:0}
+  .promise .pm-sub .pm h4{font-size:14.5px;margin:0}
+  .promise .pm-sub .pm p{font-size:12px;margin:2px 0 0;line-height:1.45}
+}
