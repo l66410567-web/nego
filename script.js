@@ -165,7 +165,7 @@ function closeModal(){
     // 사전등록과 같은 접수 서버로 보내 사장님 휴대폰에 문자 알림
     sendLead({name:name.trim(), tel:tel.trim(), region:st.reg||'', source:'consult', memo:memo}, function(res){
       if(res && res.ok){
-        alert('상담 신청이 접수되었습니다.\n확인 후 빠르게 연락드리겠습니다.');
+        alert('상담 신청이 접수되었습니다.\n담당 의전지도사가 추후 연락드립니다. 감사합니다.');
         if(typeof closeModal==='function') closeModal();
         start();
       } else {
@@ -230,7 +230,7 @@ function handleSubmit(e){
   sendLead({name:name, tel:tel, source:'consult', memo:memo}, function(res){
     if(btn){ btn.disabled = false; btn.textContent = label; }
     if(res && res.ok){
-      alert('상담 신청이 접수되었습니다.\n확인 후 빠르게 연락드리겠습니다.');
+      alert('상담 신청이 접수되었습니다.\n담당 의전지도사가 추후 연락드립니다. 감사합니다.');
       if(typeof closeModal==='function') closeModal();
       f.reset();
     } else {
@@ -460,14 +460,12 @@ function closePreregister(){
 })();
 
 function pgDoneHtml(mode){
-  var extra = (mode==='simple')
-    ? '사전등록 고객은 실제 무빈소250 이용 시 <b class="preg-hl">고급 진공유골함 업그레이드</b> 혜택을 받으실 수 있습니다.'
-    : '사전등록 고객은 <b class="preg-hl">빛고을장례119가 제공하는 모든 지원과 제휴 혜택</b>을 이용하실 수 있습니다.';
+  // 고객 접수확인 문자(Apps Script)와 같은 취지의 안내 — 담당 의전지도사가 추후 연락
   return '<div class="preg-done">'+
     '<span class="preg-done-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>'+
-    '<h3>무료 사전등록이<br>완료되었습니다</h3>'+
-    '<p>가입비와 월 납입금은 없습니다.<br>장례가 필요하실 때 빛고을장례119로 연락해 주세요.</p>'+
-    '<p class="preg-extra">'+extra+'</p>'+
+    '<h3>빛고을장례119<br>사전등록이 접수되었습니다</h3>'+
+    '<p>가입비·월 납입금 없이 등록이 끝났습니다.<br>사전상담 일정은 담당 의전지도사가<br>추후 연락드려 안내합니다.</p>'+
+    '<p class="preg-extra">등록하신 정보는 상담 목적으로만 사용됩니다. 감사합니다</p>'+
     '<a href="tel:15339657" class="preg-tel"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg>1533-9657</a>'+
     '</div>';
 }

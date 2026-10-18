@@ -161,12 +161,11 @@ function _sendSms(name, tel, region, source, memo) {
   var ownerMsg = _fitOwner(isConsult ? '상담신청' : '사전등록', name, _fmtTel(tel), region || '-',
                            isConsult ? (memo || src) : src);
 
-  // 고객 접수확인 — 고객에게 가는 거래성 안내 (광고성 문구 없음)
-  var custMsg = _fitName(function (n) {
-    return isConsult
-      ? '[빛고을장례119] ' + n + '님 상담 신청이 접수되었습니다. 곧 연락드리겠습니다. 1533-9657'
-      : '[빛고을장례119] ' + n + '님 무료 사전등록이 접수되었습니다. 24시간 상담 1533-9657';
-  }, name);
+  // 고객 접수확인 — 고객에게 가는 거래성 안내 (광고성 문구 없음).
+  // 90바이트 이하 단문(18원) 고정 문구 — 이름 등을 넣으면 장문(45원)으로 바뀌므로 넣지 말 것
+  var custMsg = isConsult
+    ? '[빛고을장례119] 상담신청이 접수되었습니다. 담당 의전지도사가 추후 연락드립니다. 감사합니다'
+    : '[빛고을장례119] 사전등록이 접수되었습니다. 담당 의전지도사가 추후 연락드립니다. 감사합니다';
 
   var fromNum = String(sender).replace(/[^0-9]/g, '');
   var toList = String(to).split(',')
