@@ -2718,3 +2718,5 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hs2-row2{flex:0 1 auto}
   .hs2-row2 .hs2-reg{flex:0 0 auto;padding:0 20px}
 }
+.sbn-lead{word-break:keep-all;text-wrap:balance}
+.sbn-l2{display:block;margin-top:2px;word-break:keep-all;text-wrap:balance}
