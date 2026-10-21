@@ -2720,3 +2720,11 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 }
 .sbn-lead{word-break:keep-all;text-wrap:balance}
 .sbn-l2{display:block;margin-top:2px;word-break:keep-all;text-wrap:balance}
+
+/* 슬라이드1: 무빈소250 대표상품 강조 패널 */
+.hero119-panel.hero119-prod{border-color:rgba(231,203,146,.55);
+  background:linear-gradient(135deg,rgba(231,203,146,.14) 0%,rgba(255,255,255,.05) 62%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 10px 28px -14px rgba(0,0,0,.6)}
+.hero119-prod .hero119-panel-lab{color:#F0D89A;font-weight:800;letter-spacing:-.01em}
+.hero119-prod .hero119-scope li:first-child i{color:#F0D89A}
+.hero119-prod .hero119-scope li:first-child span{color:#E9DCC0;font-weight:700}
