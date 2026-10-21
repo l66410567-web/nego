@@ -2728,3 +2728,41 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .hero119-prod .hero119-panel-lab{color:#F0D89A;font-weight:800;letter-spacing:-.01em}
 .hero119-prod .hero119-scope li:first-child i{color:#F0D89A}
 .hero119-prod .hero119-scope li:first-child span{color:#E9DCC0;font-weight:700}
+
+/* ===== 무빈소250 — 구별 전용 장례식장 구역 (간결·고급형) ===== */
+.sbx{background:#FAF6EC;padding:68px 0 58px}
+.sbx-head{text-align:center;margin-bottom:34px}
+.sbx-eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:13px;font-weight:700;letter-spacing:.1em;color:#9B7A3C}
+.sbx-eyebrow::before,.sbx-eyebrow::after{content:"";width:26px;height:1px;background:#C8A46A}
+.sbx-head h2{margin:14px 0 12px;font-family:'Noto Serif KR',serif;font-size:clamp(24px,3.1vw,32px);line-height:1.45;font-weight:700;color:#1B3F30;letter-spacing:-.02em;word-break:keep-all}
+.sbx-head h2 em{font-style:normal;box-shadow:inset 0 -.38em 0 rgba(200,164,106,.38)}
+.sbx-head p{margin:0;font-size:16px;line-height:1.6;color:#5F5E54;word-break:keep-all}
+.sbx-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr 1.2fr;background:#fff;border-radius:18px;overflow:hidden;
+  box-shadow:0 1px 2px rgba(27,63,48,.06),0 18px 40px -22px rgba(27,63,48,.35)}
+.sbx-steps li{padding:28px 26px 30px}
+.sbx-steps li+li{border-left:1px solid #EFE8D6}
+.sbx-no{display:block;font-family:'Noto Serif KR',serif;font-size:13px;font-weight:700;letter-spacing:.14em;color:#B58C4C}
+.sbx-steps h3{margin:10px 0 8px;font-size:19px;font-weight:800;letter-spacing:-.025em;color:#1B3F30;line-height:1.35}
+.sbx-steps p{margin:0;font-size:14.5px;line-height:1.65;color:#66655B;word-break:keep-all}
+.sbx-main{background:linear-gradient(155deg,#244E3D 0%,#173629 100%)}
+.sbx-main .sbx-no{color:#E7CB92}
+.sbx-main h3{color:#F3E7C8}
+.sbx-main strong{display:block;margin:0 0 8px;font-family:'Noto Serif KR',serif;font-size:36px;line-height:1.1;font-weight:700;color:#F0D89A;letter-spacing:-.03em}
+.sbx-main p{color:rgba(255,255,255,.86)}
+.sbx-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:18px;margin:30px 0 14px}
+.sbx-tel{font-size:18px;font-weight:800;color:#1B3F30;text-decoration:none;letter-spacing:-.01em}
+.sbx-foot{margin:0;text-align:center;font-size:12.5px;color:#8C8A7E}
+@media(max-width:760px){
+  .sbx{padding:40px 0 36px}
+  .sbx-head{margin-bottom:22px}
+  .sbx-head h2{font-size:23px}
+  .sbx-head p{font-size:14.5px}
+  .sbx-steps{grid-template-columns:1fr;border-radius:14px}
+  .sbx-steps li{padding:16px 18px 17px}
+  .sbx-steps li+li{border-left:0;border-top:1px solid #EFE8D6}
+  .sbx-steps h3{font-size:16.5px;margin:6px 0 4px}
+  .sbx-steps p{font-size:13.5px;line-height:1.55}
+  .sbx-main{padding:18px 18px 20px}
+  .sbx-main strong{font-size:30px;margin-bottom:6px}
+  .sbx-cta{margin:22px 0 10px;gap:14px}
+}
