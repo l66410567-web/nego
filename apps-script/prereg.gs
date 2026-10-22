@@ -19,15 +19,19 @@
 var P = PropertiesService.getScriptProperties();
 
 function doPost(e) {
+  var data = {};
   try {
-    var data = JSON.parse(e.postData.contents || '{}');
+    // fetch 는 본문(JSON)으로, 폼 폴백(CORS 우회)은 payload 파라미터로 들어온다
+    var raw = (e.parameter && e.parameter.payload) ? e.parameter.payload
+            : ((e.postData && e.postData.contents) || '{}');
+    data = JSON.parse(raw);
 
     // 1) 허니팟 — 봇이 채우는 숨김 필드. 값이 있으면 조용히 무시
-    if (data.company) return _json({ ok: true });
+    if (data.company) { _log('bot', data); return _json({ ok: true }); }
 
     // 2) 토큰 검증
     var token = P.getProperty('FORM_TOKEN');
-    if (token && data.token !== token) return _json({ ok: false, error: 'unauthorized' });
+    if (token && data.token !== token) { _log('unauthorized', data); return _json({ ok: false, error: 'unauthorized' }); }
 
     // 3) 입력 정제·검증
     var name   = String(data.name   || '').trim().slice(0, 20);
@@ -36,19 +40,50 @@ function doPost(e) {
     var source = String(data.source || '').trim().slice(0, 20);
     var page   = String(data.page   || '').trim().slice(0, 40);
     var memo   = String(data.memo   || '').trim().slice(0, 60);   // 상담신청: 선택 내용 요약
-    if (!name || telRaw.length < 10) return _json({ ok: false, error: 'invalid' });
+    if (!name || telRaw.length < 10) { _log('invalid', data); return _json({ ok: false, error: 'invalid' }); }
 
     // 4) 속도 제한 — 1분에 10건 초과 시 차단
-    if (!_rateOk()) return _json({ ok: false, error: 'rate' });
+    if (!_rateOk()) { _log('rate', data); return _json({ ok: false, error: 'rate' }); }
+
+    // 5) 중복 방지 — 전송 폴백 때문에 같은 접수가 두 번 들어와도 한 번만 처리 (3분)
+    if (_isDup(telRaw, source)) { _log('dup', data); return _json({ ok: true, dup: true }); }
 
     var row = _saveRow(name, telRaw, region, source, page, memo);
     var sms = _sendSms(name, telRaw, region, source, memo);
     _markSms(row, sms);
+    _log('ok', data);
 
     return _json({ ok: true, sms: sms });
   } catch (err) {
+    _log('error', data, String(err));
     return _json({ ok: false, error: String(err) });
   }
+}
+
+/** 같은 번호·같은 경로의 접수가 3분 안에 또 오면 중복으로 본다 */
+function _isDup(tel, source) {
+  var cache = CacheService.getScriptCache();
+  var k = 'dup_' + tel + '_' + source;
+  if (cache.get(k)) return true;
+  cache.put(k, '1', 180);
+  return false;
+}
+
+/** 모든 접수 시도를 '접수로그' 시트에 남긴다(성공·거절·오류 모두) — 접수가 안 됐다는 문의가 오면 여기서 원인을 본다 */
+function _log(status, data, note) {
+  try {
+    var sheetId = P.getProperty('SHEET_ID');
+    if (!sheetId) return;
+    var ss = SpreadsheetApp.openById(sheetId);
+    var sh = ss.getSheetByName('접수로그') || ss.insertSheet('접수로그', ss.getNumSheets());
+    if (sh.getLastRow() === 0) sh.appendRow(['시각', '결과', '유입경로', '페이지', '연락처 끝4자리', '비고']);
+    var d = data || {};
+    sh.appendRow([
+      Utilities.formatDate(new Date(), 'Asia/Seoul', 'yyyy-MM-dd HH:mm:ss'),
+      status, String(d.source || ''), String(d.page || ''),
+      String(d.tel || '').replace(/[^0-9]/g, '').slice(-4), note || ''
+    ]);
+  } catch (err) { /* 로그 실패가 접수를 막으면 안 됨 */ }
 }
 
 /** 브라우저에서 주소를 눌러봤을 때 안내 */

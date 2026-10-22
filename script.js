@@ -203,16 +203,48 @@ function sendLead(p, cb){
     page: (location.pathname.split('/').pop() || 'index.html'), company: ''
   };
   if(!PREREG_ENDPOINT){ if(window.console) console.warn('[상담] PREREG_ENDPOINT 미설정', payload); cb({ok:true}); return; }
-  fetch(PREREG_ENDPOINT, {
-    method: 'POST',
-    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-    body: JSON.stringify(payload)
-  }).then(function(r){ return r.json(); })
-    .catch(function(){ return {ok:false}; })
-    .then(function(res){
-      if(!res || !res.ok){ if(window.console) console.warn('[상담] 전송 실패', res); }
-      cb(res);
-    });
+  postLead(payload, cb);
+}
+
+/* 접수 전송: ① fetch(응답 확인) → 실패·시간초과·응답 해석 불가 시 ② 숨은 폼 전송(CORS·브라우저 제한과 무관)으로 재전송.
+   같은 접수가 두 번 가도 서버가 3분 내 중복은 한 번만 처리한다. 서버가 명시적으로 거절한 경우(ok:false)만 실패로 본다. */
+function postLead(payload, cb){
+  var body = JSON.stringify(payload), finished = false, fellBack = false, timer = null;
+  function finish(res){ if(finished) return; finished = true; if(timer) clearTimeout(timer); cb(res); }
+  function viaForm(){
+    try{
+      var n = 'lf' + Date.now(), fr = document.createElement('iframe');
+      fr.name = n; fr.style.display = 'none';
+      var f = document.createElement('form');
+      f.method = 'POST'; f.action = PREREG_ENDPOINT; f.target = n; f.style.display = 'none';
+      var i = document.createElement('input');
+      i.type = 'hidden'; i.name = 'payload'; i.value = body;
+      f.appendChild(i); document.body.appendChild(fr); document.body.appendChild(f); f.submit();
+      setTimeout(function(){ try{ document.body.removeChild(f); document.body.removeChild(fr); }catch(e){} }, 30000);
+      return true;
+    }catch(e){ return false; }
+  }
+  function fallback(why){
+    if(fellBack || finished) return; fellBack = true;
+    if(timer){ clearTimeout(timer); timer = null; }
+    if(window.console) console.warn('[접수] fetch 실패 → 폼 전송으로 재시도:', why);
+    var ok = viaForm();
+    setTimeout(function(){ finish({ ok: ok, via: 'form' }); }, 1500);   // 폼 전송이 나갈 시간을 준다
+  }
+  timer = setTimeout(function(){ fallback('timeout'); }, 12000);
+  try{
+    fetch(PREREG_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },   // 단순 요청 → CORS 사전요청 없음
+      body: body,
+      keepalive: true
+    }).then(function(r){ return r.json(); })
+      .then(function(res){
+        if(fellBack) return;   // 이미 폼으로 재전송 중이면 그 결과를 따른다
+        if(!(res && res.ok) && window.console) console.warn('[접수] 서버 거절', res);
+        finish(res || {ok:false});
+      }, function(err){ fallback(String(err)); });
+  }catch(err){ fallback(String(err)); }
 }
 
 // 상담 예약 폼 제출 — 사장님 문자 알림
@@ -510,20 +542,12 @@ function submitPreregister(e){
     return false;
   }
 
-  fetch(PREREG_ENDPOINT, {
-    method: 'POST',
-    // 단순 요청으로 보내 CORS 사전요청(preflight)을 피함
-    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-    body: JSON.stringify(payload)
-  }).then(function(r){ return r.json(); })
-    .catch(function(){ return {ok:false}; })
-    .then(function(res){
-      if(!res || !res.ok){
-        if(window.console) console.warn('[사전등록] 전송 실패', res);
-      }
-      // 전송 실패해도 이용자에게는 접수 안내 (전화 CTA 제공)
-      done();
-    });
+  postLead(payload, function(res){
+    if(res && res.ok){ done(); return; }
+    // 접수가 확인되지 않았는데 '완료'로 보이면 고객이 등록된 줄 안다 — 실패를 알리고 전화를 안내
+    if(btn){ btn.disabled = false; btn.textContent = '0원 사전등록하기'; }
+    alert('접수가 지연되고 있습니다.\n잠시 후 다시 시도하시거나, 급하시면 1533-9657로 전화 주세요.');
+  });
   return false;
 }
 
