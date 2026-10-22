@@ -2802,3 +2802,7 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .h119p-badge{font-size:11px;padding:4px 8px 4px 6px;gap:4px}
   .h119p-badge svg{width:13px;height:13px}
 }
+
+/* 슬라이드1 부제 첫 줄 — '장례식장부터 장례에 필요한 서비스' 강조 */
+.hero119-sub .h119-lead{color:#fff;font-weight:800;font-size:1.06em;letter-spacing:-.02em;
+  background:linear-gradient(transparent 62%,rgba(200,164,106,.5) 62%);padding:0 2px}
