@@ -2766,3 +2766,39 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .sbx-main strong{font-size:30px;margin-bottom:6px}
   .sbx-cta{margin:22px 0 10px;gap:14px}
 }
+
+/* ===== 슬라이드1 무빈소250 집중형 패널 ===== */
+.hero119-panel.hero119-prod{padding:16px 20px 20px;border-color:rgba(231,203,146,.6);
+  background:linear-gradient(135deg,rgba(231,203,146,.18) 0%,rgba(255,255,255,.04) 70%)}
+.h119p-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 12px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.14)}
+.h119p-lab{font-size:14px;font-weight:800;color:#F0D89A;letter-spacing:-.01em}
+.h119p-badge{display:inline-flex;align-items:center;gap:5px;padding:5px 11px 5px 8px;border-radius:999px;white-space:nowrap;
+  font-size:12.5px;font-weight:800;letter-spacing:-.01em;color:#2A1E0A;
+  background:linear-gradient(180deg,#EBD29B 0%,#CBA76C 100%);box-shadow:0 3px 10px -4px rgba(0,0,0,.5)}
+.h119p-badge svg{width:15px;height:15px;flex:none}
+.h119p-body{display:flex;align-items:center;gap:22px}
+.h119p-price strong{display:block;font-family:'Noto Serif KR',serif;font-size:46px;line-height:1;font-weight:700;color:#F0D89A;letter-spacing:-.03em}
+.h119p-price em{font-style:normal;font-size:.48em;margin-left:3px;letter-spacing:0}
+.h119p-price span{display:block;margin-top:8px;font-size:13px;font-weight:700;color:#E9DCC0}
+.h119p-pts{list-style:none;margin:0;padding:2px 0 2px 22px;border-left:1px solid rgba(255,255,255,.18);display:flex;flex-direction:column;gap:11px}
+.h119p-pts li{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:800;color:#fff;letter-spacing:-.025em;white-space:nowrap}
+.h119p-pts li::before{content:"";flex:none;width:22px;height:22px;border-radius:50%;
+  background:#E7CB92 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232A1E0A' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/13px no-repeat}
+@media(max-width:640px){
+  .hero119-panel.hero119-prod{padding:13px 14px 16px}
+  .h119p-top{margin-bottom:12px;padding-bottom:10px}
+  .h119p-lab{font-size:12.5px}
+  .h119p-badge{font-size:11.5px;padding:4px 9px 4px 7px}
+  .h119p-body{gap:14px}
+  .h119p-price strong{font-size:38px}
+  .h119p-price span{font-size:12px;margin-top:6px}
+  .h119p-pts{padding-left:14px;gap:9px}
+  .h119p-pts li{font-size:16px;gap:8px}
+  .h119p-pts li::before{width:19px;height:19px;background-size:11px}
+}
+@media(max-width:640px){
+  .h119p-top{flex-wrap:nowrap;gap:6px}
+  .h119p-lab{font-size:12px;white-space:nowrap}
+  .h119p-badge{font-size:11px;padding:4px 8px 4px 6px;gap:4px}
+  .h119p-badge svg{width:13px;height:13px}
+}
