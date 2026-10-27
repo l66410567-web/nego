@@ -3124,3 +3124,7 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hslide-1 .h119p-more{display:none}
   .hslide-1 .h119p-badge{font-size:13px}
 }
+@media(min-width:901px){
+  .hslide-1 .h119-pillars{gap:12px;margin-top:22px}
+  .hslide-1 .hero119-cta{margin-top:26px}
+}
