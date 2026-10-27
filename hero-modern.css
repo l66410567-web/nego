@@ -3483,3 +3483,47 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hslide-3 .hs3-micro{margin-top:14px}
   .hs3-steps-m li{padding:13px 6px 12px}
 }
+
+/* ===== 모바일 슬라이드 1 정리 — 아이보리·골드 카드(PC와 통일) + 총액 비교 메시지, 긴 설명 삭제 ===== */
+@media(max-width:640px){
+  .hslide-1 .hero119-panel.hero119-prod{padding:13px 15px 14px;border-radius:16px;background:linear-gradient(165deg,#FFFDF7 0%,#F8EFDC 100%);
+    border:1.5px solid #D9B87A;box-shadow:0 18px 36px -22px rgba(0,0,0,.7),0 0 0 4px rgba(231,203,146,.14);backdrop-filter:none}
+  .hslide-1 .h119p-top{border-bottom:1px solid rgba(168,124,46,.35);margin-bottom:10px;padding-bottom:10px}
+  .hslide-1 .h119p-lab{display:inline-flex;align-items:center;gap:6px;color:#7A4E0F;font-size:12.5px}
+  .hslide-1 .h119p-ico{display:block;flex:none;width:20px;height:20px}
+  .hslide-1 .h119p-price strong{color:#1B3F30;font-size:38px}
+  .hslide-1 .h119p-price span{color:#6B5A3A}
+  .hslide-1 .h119p-pts{border-left-color:rgba(168,124,46,.4)}
+  .hslide-1 .h119p-pts li{color:#1B3F30}
+  .hslide-1 .h119p-pts li::before{background-color:#C9A15E}
+  .hslide-1 .h119p-why{display:block;margin-top:11px;padding:9px 12px 10px;text-align:center;border-radius:10px;background:#fff;border:1.5px solid #1F4A38;
+    box-shadow:inset 0 0 0 3px #fff,inset 0 0 0 4px rgba(201,161,94,.7)}
+  .hslide-1 .h119p-why .hw-t{display:block;font-family:'Noto Serif KR',serif;font-size:14px;font-weight:700;letter-spacing:-.05em;color:#1B3F30;line-height:1.35}
+  .hslide-1 .h119p-why .hw-t mark{background:none;color:#B3322A;font-weight:800}
+  .hslide-1 .h119p-why p{margin:5px 0 0;padding-top:5px;border-top:1px solid rgba(201,161,94,.45);font-size:12.5px;font-weight:600;line-height:1.6;letter-spacing:-.04em;color:#4A3A1C;
+    text-decoration:underline;text-decoration-color:#C23B2E;text-decoration-thickness:1.5px;text-underline-offset:4px}
+  .hslide-1 .h119p-why p strong{color:#1B3F30;font-weight:800}
+  .hslide-1 .h119p-why p em{font-style:normal;font-weight:800;color:#B3322A}
+  .hslide-1 .h119p-gift{margin-top:11px;padding:0;background:none;border:none;box-shadow:none;animation:none}
+  .hslide-1 .h119p-gal img{border-color:#C9A15E}
+  .hslide-1 .h119p-gift-tx{margin-top:7px}
+  .hslide-1 .h119p-gift-tx b{color:#8A5A12;font-size:14px}
+  .hslide-1 .h119p-gift-tx small{display:none}
+}
+@media(max-width:640px){
+  .hslide-1 .hero119-wrap{padding-bottom:26px!important}
+  .hslide-1 .hero119-btn{margin-top:14px}
+  .hslide-1 .h119p-why{margin-top:9px;padding:7px 12px 8px}
+  .hslide-1 .h119p-why p{margin-top:4px;padding-top:4px;line-height:1.55}
+  .hslide-1 .h119p-gift{margin-top:9px}
+  .hslide-1 .h119p-gift-tx{margin-top:5px}
+  .hslide-1 .hero119-micro{margin-top:9px}
+  .hslide-1 .h119p-top{margin-bottom:9px;padding-bottom:9px}
+}
+@media(max-width:380px){
+  .hslide-1 .h119p-top{gap:4px}
+  .hslide-1 .h119p-lab{font-size:11px;gap:4px;letter-spacing:-.04em}
+  .hslide-1 .h119p-ico{width:16px;height:16px}
+  .hslide-1 .h119p-badge{font-size:10.5px;padding:4px 7px 4px 5px;gap:3px;letter-spacing:-.04em}
+  .hslide-1 .h119p-badge svg{width:11px;height:11px}
+}
