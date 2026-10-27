@@ -3364,3 +3364,7 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hslide-2 .hs2-prem-line{text-decoration:underline;text-decoration-color:#E2554A;text-decoration-thickness:2px;text-underline-offset:6px;text-decoration-skip-ink:none;line-height:1.85}
   .hslide-2 .hs2-prem-line b{text-decoration:none}
 }
+.hs2-prem-eyebrow{display:inline-flex;align-items:center;justify-content:center;gap:8px;align-self:center}
+.hs2-prem-ico{flex:none;width:30px;height:30px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.45))}
+@media(min-width:641px) and (max-width:900px){.hs2-prem-ico{width:22px;height:22px}}
+@media(min-width:1101px){.hslide-1 .hero119-panel.hero119-prod{min-height:683px}}
