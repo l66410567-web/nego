@@ -3373,3 +3373,9 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hs2-prem-title mark{background:none;color:#F0D89A;font-weight:800}
 }
 @media(min-width:1101px){.hslide-1 .hero119-panel.hero119-prod{min-height:681px}}
+/* 모바일 — 0원 구역에서 '사전등록 → 지원' 행동유도 */
+@media(max-width:900px){
+  .hs2-panel-lab{align-items:flex-start;font-size:14px;line-height:1.4;letter-spacing:-.03em;color:#4A3A1C}
+  .hs2-panel-lab b{color:#B3322A;font-weight:800}
+  .hs2-panel-lab::before{margin-top:6px;flex:none}
+}
