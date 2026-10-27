@@ -3222,3 +3222,17 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .h119p-why .hw-t{font-size:20px}
 }
 @media(min-width:901px) and (max-width:1100px){.h119p-why p{font-size:13.5px}.h119p-why .hw-t{font-size:17px}}
+
+/* '총액 비교' 메시지 — 아이보리 위 골드 이중선 인증 패널(차분·품격) */
+@media(min-width:901px){
+  .hslide-1 .h119p-why{margin-top:20px;padding:20px 22px 20px;text-align:center;border-radius:12px;
+    background:#fff;border:1px solid #C9A15E;
+    box-shadow:inset 0 0 0 4px #fff,inset 0 0 0 5px rgba(201,161,94,.5),0 14px 26px -20px rgba(90,60,10,.55)}
+  .h119p-why::before{content:"";display:block;width:9px;height:9px;margin:0 auto 11px;transform:rotate(45deg);background:#C9A15E;
+    box-shadow:-22px 0 0 -3px #C9A15E,22px 0 0 -3px #C9A15E}
+  .h119p-why .hw-t{font-family:'Noto Serif KR',serif;font-size:21px;font-weight:700;letter-spacing:-.045em;color:#1B3F30;line-height:1.35}
+  .h119p-why p{margin:10px 0 0;padding-top:11px;border-top:1px solid rgba(201,161,94,.45);font-size:16px;font-weight:600;line-height:1.7;letter-spacing:-.03em;color:#4A3A1C}
+  .h119p-why p strong{color:#1B3F30;font-weight:800;white-space:normal}
+  .h119p-why p em{font-style:normal;font-weight:800;color:#B3322A}
+}
+@media(min-width:901px) and (max-width:1100px){.h119p-why .hw-t{font-size:17.5px}.h119p-why p{font-size:14px}.hslide-1 .h119p-why{padding:16px 14px}}
