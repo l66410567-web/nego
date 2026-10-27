@@ -2987,3 +2987,53 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .sbx-gift-tx{display:block;margin-top:9px}
 .sbx-gift-tx b{display:block}
 @media(max-width:760px){.sbx-gal{gap:3px}.sbx-gal img{border-radius:5px}}
+
+/* ===== 슬라이드 2 — 예우 카드(PC) / 3종 구성(모바일) ===== */
+.hs2-offer-in .hs2-gal{display:none}
+.hs2-trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.hs2-trio figure{margin:0;min-width:0}
+.hs2-trio img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:12px;background:#fff}
+.hs2-trio figcaption{margin-top:7px;font-size:12.5px;font-weight:700;line-height:1.35;letter-spacing:-.02em;word-break:keep-all;text-align:center}
+
+/* PC 카드 */
+.hs2-prem{width:100%;max-width:430px;padding:24px 24px 22px;border-radius:20px;text-align:center;color:#fff;
+  background:linear-gradient(160deg,#2A5642 0%,#16352A 100%);border:1.5px solid rgba(231,203,146,.75);
+  box-shadow:0 30px 60px -28px rgba(20,40,30,.75),inset 0 1px 0 rgba(255,255,255,.14)}
+.hs2-prem-eyebrow{display:inline-block;font-size:12.5px;font-weight:800;letter-spacing:.14em;color:#E7CB92}
+.hs2-prem-title{margin:10px 0 18px;font-family:'Noto Serif KR',serif;font-size:25px;line-height:1.42;font-weight:700;letter-spacing:-.03em;color:#fff}
+.hs2-prem .hs2-trio img{border:1.5px solid rgba(231,203,146,.85);box-shadow:0 8px 18px -8px rgba(0,0,0,.6)}
+.hs2-prem .hs2-trio figcaption{color:#F3E7C8}
+.hs2-prem-line{margin:18px 0 0;font-size:15px;color:rgba(255,255,255,.88);letter-spacing:-.02em}
+.hs2-prem-line b{color:#F0D89A;font-size:18px;font-weight:900}
+.hs2-prem-call{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:16px;height:54px;border-radius:10px;text-decoration:none;
+  color:#2A1E0A;font-weight:800;font-size:17px;background:linear-gradient(180deg,#EBD29B 0%,#CBA76C 55%,#B58C4C 100%);
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.65),0 12px 26px -10px rgba(0,0,0,.6);animation:hsBtnPulse 2.8s ease-in-out infinite}
+.hs2-prem-call svg{width:19px;height:19px}
+.hs2-prem-call b{font-weight:900;letter-spacing:.01em}
+.hs2-urn-note{max-width:430px}
+
+/* 모바일 3종(왼쪽 제공 혜택 박스 안) */
+.hs2-trio-m{display:none}
+@media(max-width:640px){
+  .hs2-trio-m{display:grid;gap:8px;margin-bottom:11px}
+  .hs2-trio-m img{border-radius:10px;border:1.5px solid rgba(168,124,46,.6);box-shadow:0 5px 12px -6px rgba(60,45,15,.5)}
+  .hs2-trio-m figcaption{margin-top:5px;font-size:11.5px;color:#5A4A2A}
+  .hs2-offer-flag{font-size:12.5px}
+  .hs2-offer-tx b{font-size:15.5px}
+}
+/* 태블릿: 오른쪽 열이 좁아지므로 카드 축소 */
+@media(min-width:641px) and (max-width:900px){
+  .hs2-prem{padding:16px 14px 14px;border-radius:16px}
+  .hs2-prem-eyebrow{font-size:10.5px;letter-spacing:.08em}
+  .hs2-prem-title{font-size:16px;margin:6px 0 12px}
+  .hs2-trio{gap:6px}.hs2-trio figcaption{font-size:10px;margin-top:5px}
+  .hs2-prem-line{font-size:12px;margin-top:12px}.hs2-prem-line b{font-size:14px}
+  .hs2-prem-call{height:42px;font-size:13px;margin-top:12px}
+}
+/* PC에서는 왼쪽 박스의 3종 숨김(오른쪽 카드가 대신함) */
+@media(min-width:641px){.hs2-trio-m{display:none}}
+@media(max-width:640px){
+  .hs2-row2 .hs2-reg{flex:1 1 46%}
+  .hs2-row2 .hs2-tel{flex:1 1 54%;height:48px;font-size:14.5px;font-weight:900;border-width:2px}
+  .hs2-row2 .hs2-reg{height:48px}
+}
