@@ -3179,3 +3179,46 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hslide-1 .h119-pillars b{font-size:22px;font-weight:700;letter-spacing:-.035em}
 }
 @media(min-width:901px) and (max-width:1100px){.hslide-1 .h119-pillars b{font-size:19px}.hslide-1 .h119-pillars{gap:15px}}
+
+/* ===== PC 슬라이드1 오른쪽 카드 — 아이보리·골드 프리미엄 + '총액 비교' 핵심 메시지 ===== */
+.h119p-why{display:none}
+@media(min-width:901px){
+  .hslide-1 .hero119-panel.hero119-prod{padding:26px 30px 24px;border-radius:20px;
+    background:linear-gradient(165deg,#FFFDF7 0%,#F8EFDC 100%);
+    border:1.5px solid #D9B87A;
+    box-shadow:0 40px 80px -34px rgba(0,0,0,.75),0 0 0 6px rgba(231,203,146,.16),inset 0 1px 0 #fff;backdrop-filter:none}
+  .hslide-1 .h119p-top{border-bottom:1px solid rgba(168,124,46,.35);padding-bottom:14px;margin-bottom:16px}
+  .hslide-1 .h119p-lab{color:#7A4E0F;font-weight:800;font-size:15px}
+  .hslide-1 .h119p-price strong{color:#1B3F30;font-size:60px}
+  .hslide-1 .h119p-price span{color:#6B5A3A;font-size:14.5px}
+  .hslide-1 .h119p-pts{border-left-color:rgba(168,124,46,.4)}
+  .hslide-1 .h119p-pts li{color:#1B3F30;font-size:21px}
+  .hslide-1 .h119p-pts li::before{background-color:#C9A15E}
+
+  .hslide-1 .h119p-why{display:block;margin-top:18px;padding:16px 18px 17px;border-radius:12px;
+    background:linear-gradient(135deg,#1F4A38 0%,#163528 100%);border:1px solid rgba(231,203,146,.7);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 14px 28px -18px rgba(20,40,30,.8)}
+  .h119p-why .hw-t{display:block;font-family:'Noto Serif KR',serif;font-size:19px;font-weight:700;letter-spacing:-.04em;line-height:1.35;color:#F0D89A}
+  .h119p-why p{margin:8px 0 0;font-size:14.5px;font-weight:500;line-height:1.65;letter-spacing:-.025em;color:rgba(255,255,255,.9)}
+  .h119p-why p strong{font-weight:800;color:#fff}
+
+  .hslide-1 .h119p-gift{margin-top:18px;padding:0;background:none;border:none;box-shadow:none;animation:none;border-radius:0}
+  .hslide-1 .h119p-pro{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .hslide-1 .h119p-pro .hp-col img:nth-of-type(2){display:none}
+  .hslide-1 .h119p-pro img{aspect-ratio:4/3;border:2px solid #fff;box-shadow:0 0 0 1px #C9A15E,0 8px 16px -8px rgba(60,40,10,.55)}
+  .hslide-1 .h119p-pro em{color:#4A3A1C;font-size:13.5px}
+  .hslide-1 .h119p-gift-tx{margin-top:12px}
+  .hslide-1 .h119p-gift-tx b{color:#8A5A12;font-size:18px}
+  .hslide-1 .h119p-gift-tx small{display:none}
+}
+@media(min-width:901px) and (max-width:1100px){
+  .hslide-1 .hero119-panel.hero119-prod{padding:20px 20px 18px}
+  .h119p-why .hw-t{font-size:16.5px}.h119p-why p{font-size:13px}
+  .hslide-1 .h119p-pts li{font-size:18px}.hslide-1 .h119p-price strong{font-size:50px}
+}
+@media(min-width:901px){
+  .h119p-why p{font-size:15.5px;line-height:1.7}
+  .h119p-why p strong{white-space:nowrap}
+  .h119p-why .hw-t{font-size:20px}
+}
+@media(min-width:901px) and (max-width:1100px){.h119p-why p{font-size:13.5px}.h119p-why .hw-t{font-size:17px}}
