@@ -3250,3 +3250,13 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hslide-1 .h119p-gift{margin-top:12px}
 }
 @media(min-width:901px) and (max-width:1100px){.hslide-1 .h119p-note{font-size:12.5px}}
+.h119p-ico{display:none}
+@media(min-width:901px){
+  /* 총액 비교 패널 — 짙은 그린 테두리로 시선 집중, 장식 아이콘 제거 */
+  .h119p-why::before{display:none}
+  .hslide-1 .h119p-why{padding:19px 22px 20px;border:2px solid #1F4A38;
+    box-shadow:inset 0 0 0 4px #fff,inset 0 0 0 5px rgba(201,161,94,.75),0 16px 30px -18px rgba(20,50,35,.65)}
+  /* 대표상품 라벨 앞 메달 아이콘 */
+  .hslide-1 .h119p-lab{display:inline-flex;align-items:center;gap:8px}
+  .hslide-1 .h119p-ico{display:block;flex:none;width:26px;height:26px;filter:drop-shadow(0 2px 2px rgba(90,60,10,.35))}
+}
