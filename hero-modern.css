@@ -3453,3 +3453,33 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hslide-3 .hs3-wrap{grid-template-columns:minmax(0,1fr) 480px;column-gap:44px}
   .hslide-3 .hs3-card{min-height:600px}
 }
+
+/* ===== 모바일 슬라이드 3 정리 — 위 정렬(슬라이드 2와 동일), 3단계 안내 추가, 0원 구역 압축 ===== */
+.hs3-steps-m{display:none}
+@media(max-width:900px){
+  .hs3-steps-m{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;list-style:none;margin:16px 0 0;padding:0}
+  .hs3-steps-m li{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:2px;padding:10px 6px 10px;border-radius:12px;
+    background:rgba(255,255,255,.07);border:1px solid rgba(231,203,146,.5)}
+  .hs3-steps-m i{display:grid;place-items:center;width:26px;height:26px;margin-bottom:3px;border-radius:50%;font-style:normal;font-family:'Noto Serif KR',serif;font-size:14px;font-weight:700;color:#2A1E0A;
+    background:linear-gradient(180deg,#EBD29B,#C49E5E)}
+  .hs3-steps-m b{font-size:14px;font-weight:800;color:#fff;letter-spacing:-.04em;line-height:1.3;word-break:keep-all}
+  .hs3-steps-m small{font-size:11.5px;font-weight:600;color:#D6CDB4;letter-spacing:-.04em;line-height:1.35;word-break:keep-all}
+  .hs3-steps-m li+li::before{content:"›";position:absolute;left:-8px;top:50%;transform:translateY(-50%);font-size:16px;color:#E7CB92;line-height:1}
+}
+@media(max-width:640px){
+  .hslide>section.hs3{align-items:flex-start}
+  .hslide-3 .hs3-wrap{padding-top:16px}
+  .hslide-3 .hs3-panel{margin-top:14px;padding:11px 14px 12px}
+  .hslide-3 .hs3-panel-lab{margin-bottom:8px;padding-bottom:8px}
+  .hslide-3 .hs3-zero i{font-size:20px}
+  .hslide-3 .hs3-zero span{font-size:11.5px}
+  .hslide-3 .hs3-cta{margin-top:14px}
+}
+@media(max-width:640px){
+  .hslide-3 .hs3-wrap{padding-top:22px}
+  .hslide-3 .hs3-steps-m{margin-top:22px}
+  .hslide-3 .hs3-panel{margin-top:20px}
+  .hslide-3 .hs3-cta{margin-top:22px}
+  .hslide-3 .hs3-micro{margin-top:14px}
+  .hs3-steps-m li{padding:13px 6px 12px}
+}
