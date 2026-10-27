@@ -3567,3 +3567,25 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hslide-1 .hero119-panel.hero119-prod{min-height:600px}
   .hslide-2 .hs2-prem,.hslide-3 .hs3-card{min-height:600px}
 }
+
+/* 모바일 슬라이드1 — 사진 8장을 2줄(4×2)로 왼쪽에, 설명 문구는 오른쪽에 */
+@media(max-width:900px){
+  .hslide-1 .h119p-gift{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:12px;align-items:center}
+  .hslide-1 .h119p-gal{grid-template-columns:repeat(4,42px);gap:5px}
+  .hslide-1 .h119p-gift-tx{margin-top:0}
+  .hslide-1 .h119p-gift-tx b{font-size:13.5px;line-height:1.45;letter-spacing:-.04em}
+  .hslide-1 .h119p-gift-tx b br{display:none}
+  .hslide-1 .h119p-gift-tx b::after{content:" ›";font-weight:400}
+}
+@media(max-width:380px){
+  .hslide-1 .h119p-gal{grid-template-columns:repeat(4,37px);gap:4px}
+  .hslide-1 .h119p-gift{column-gap:9px}
+  .hslide-1 .h119p-gift-tx b{font-size:12.5px}
+}
+@media(max-width:640px){
+  .hslide-1 .h119p-gal{grid-template-columns:repeat(4,40px);gap:4px}
+  .hslide-1 .h119p-gift{margin-top:8px}
+  .hslide-1 .hero119-micro{margin-top:4px}
+  .hslide-1 .h119p-gift-tx b{line-height:1.4}
+}
+@media(max-width:380px){.hslide-1 .h119p-gal{grid-template-columns:repeat(4,36px)}}
