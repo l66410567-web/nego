@@ -2961,3 +2961,29 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .hslide{display:flex;flex-direction:column}
 .hslide>.hero119-root,.hslide>section{flex:1 1 auto;min-height:0;height:auto}
 .hslide>section.hs2,.hslide>section.hs3{display:flex;align-items:center}
+
+/* ===== 무빈소250 영역: 유골함 8종 갤러리 (슬라이드2 · 상품카드 · 3단계 카드) ===== */
+/* 슬라이드 2 제공 혜택 박스 */
+.hs2-offer-in{display:block}
+.hs2-gal{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:5px;margin-bottom:11px}
+.hs2-gal img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:7px;border:1px solid rgba(168,124,46,.55);box-shadow:0 3px 8px -3px rgba(60,45,15,.45);background:#fff}
+.hs2-offer-tx b{font-size:17px}
+.hs2-offer-tx small{line-height:1.45}
+@media(max-width:640px){.hs2-gal{gap:3px;margin-bottom:9px}.hs2-gal img{border-radius:5px}.hs2-offer-tx b{font-size:15.5px}.hs2-offer-tx small{font-size:11.5px}}
+
+/* 무빈소250 상품 카드 */
+.prod-gal{margin:16px 0 6px;padding:12px 12px 13px;border-radius:12px;background:linear-gradient(180deg,#FFFBF0,#F8F0DA);border:1px solid rgba(200,164,106,.6)}
+.pg8{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:6px}
+.pg8 img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:8px;border:1px solid rgba(168,124,46,.55);box-shadow:0 3px 8px -3px rgba(60,45,15,.4);background:#fff}
+.prod-gal-tx{margin:11px 0 0;display:flex;flex-direction:column;gap:3px;text-align:center}
+.prod-gal-tx b{font-size:17px;font-weight:900;color:#9A3328;letter-spacing:-.02em}
+.prod-gal-tx span{font-size:13px;line-height:1.5;color:#6a5a3a;font-weight:600}
+@media(max-width:640px){.prod-gal{padding:10px 9px 11px}.pg8{gap:3px}.pg8 img{border-radius:5px}.prod-gal-tx b{font-size:15px}.prod-gal-tx span{font-size:12px}}
+
+/* 3단계 카드(진한 초록) */
+.sbx-gift{display:block}
+.sbx-gal{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:4px}
+.sbx-gal img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:6px;border:1px solid rgba(240,216,154,.75);background:#fff}
+.sbx-gift-tx{display:block;margin-top:9px}
+.sbx-gift-tx b{display:block}
+@media(max-width:760px){.sbx-gal{gap:3px}.sbx-gal img{border-radius:5px}}
