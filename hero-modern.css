@@ -2926,3 +2926,38 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .svc250>.svc250-card:nth-last-child(2) h3{margin:0 0 4px}
 }
 @media(max-width:560px){.svc250>.svc250-cta{grid-column:1/-1}}
+
+/* ===== 슬라이더: 고정 높이 → 최소 높이 + 내용만큼 늘어남 (폰 폭이 달라도 맨 위 문구가 잘리지 않게) ===== */
+.hero-slider{height:auto;min-height:var(--hsH)}
+.hs-track{height:auto}
+.hslide{height:auto}
+.hslide>.hero119-root,.hslide>section{height:auto}
+.hero119,.hs2,.hs3{height:100%;min-height:0}
+.hero119-root{display:flex;flex-direction:column;height:100%}
+.hero119-root>.hero119{flex:1 1 auto}
+
+/* ===== 첫 화면 박스: 유골함 이미지 8종 가로 갤러리 ===== */
+.h119p-gift{display:block;margin-top:14px;padding:11px 12px 12px}
+.h119p-gift::after{content:none}
+.h119p-gal{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:5px}
+.h119p-gal img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:7px;border:1px solid rgba(240,216,154,.7);box-shadow:0 3px 8px -3px rgba(0,0,0,.6);background:#fff}
+.h119p-gift-tx{margin-top:10px;display:flex;flex-direction:column;gap:3px}
+.h119p-gift-tx b{font-size:16.5px;letter-spacing:-.03em}
+.h119p-gift-tx b::after{content:" ›";font-weight:400;opacity:.9}
+.h119p-gift-tx small{font-size:12.5px;line-height:1.45}
+@media(max-width:640px){
+  .h119p-gift{margin-top:12px;padding:9px 9px 10px}
+  .h119p-gal{gap:3px}
+  .h119p-gal img{border-radius:5px}
+  .h119p-gift-tx{margin-top:8px}
+  .h119p-gift-tx b{font-size:15px}
+  .h119p-gift-tx small{font-size:11.5px}
+}
+@media(max-width:640px){.hero119-wrap{padding-top:16px!important}}
+/* 폰 폭에 비례한 히어로 제목 크기 — 어떤 폭에서도 큰 제목이 2줄을 넘지 않게 */
+@media(max-width:640px){.hero-slider{--hsTitle:clamp(22px,calc((100vw - 40px) / 13.8),29px)}}
+@media(min-width:641px){.hero119-wrap{padding-top:26px!important;padding-bottom:34px!important}}
+/* 슬라이드가 슬라이더 전체 높이를 항상 채우도록 */
+.hslide{display:flex;flex-direction:column}
+.hslide>.hero119-root,.hslide>section{flex:1 1 auto;min-height:0;height:auto}
+.hslide>section.hs2,.hslide>section.hs3{display:flex;align-items:center}
