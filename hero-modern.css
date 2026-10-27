@@ -3037,3 +3037,21 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hs2-row2 .hs2-tel{flex:1 1 54%;height:48px;font-size:14.5px;font-weight:900;border-width:2px}
   .hs2-row2 .hs2-reg{height:48px}
 }
+
+/* 슬라이드 2 — 제품 3종 × 2가지 디자인(세로 2장씩) */
+.hs2-trio figure{display:grid;gap:7px;align-content:start}
+.hs2-trio figure img{border-radius:11px}
+.hs2-trio figcaption{margin-top:1px}
+.hs2-prem .hs2-trio{gap:12px}
+@media(max-width:640px){
+  .hs2-trio-m{gap:7px}
+  .hs2-trio-m figure{gap:6px}
+  .hs2-trio-m figcaption{font-size:11px;letter-spacing:-.04em}
+}
+@media(min-width:641px) and (max-width:900px){.hs2-trio figure{gap:5px}}
+@media(max-width:640px){
+  .hs2-trio-m figure img{aspect-ratio:4/3;border-radius:9px}
+  .hs2-trio-m{margin-bottom:9px}
+  .hs2-offer-tx small{display:none}
+}
+@media(min-width:641px){.hs2-prem .hs2-trio figure img{aspect-ratio:5/4}}
