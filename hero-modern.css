@@ -3545,3 +3545,25 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
     border:2px solid #C8A46A;box-shadow:none;animation:none}
   .hslide-2 .hs2-btn::after{display:none}
 }
+.h119p-gift-tx b mark{background:none;color:#B3322A;font-weight:900}
+@media(min-width:901px){.hslide-1 .h119p-gift-tx b{line-height:1.45}}
+@media(max-width:640px){.hslide-1 .h119p-gift-tx b{font-size:13.5px;line-height:1.4}}
+@media(max-width:640px){
+  .hslide-1 .hero119-wrap{padding-bottom:20px!important}
+  .hslide-1 .hero119-micro{margin-top:6px}
+  .hslide-1 .hero119-btn{margin-top:12px}
+  .hslide-1 .hero119-panel.hero119-prod{padding-top:12px;padding-bottom:12px}
+  .hslide-1 .h119p-gift-tx{margin-top:4px}
+}
+@media(min-width:1101px){
+  .hslide-1 .hero119-panel.hero119-prod{padding-top:20px;padding-bottom:18px}
+  .hslide-1 .h119p-why{margin-top:14px;padding:13px 18px 14px}
+  .hslide-1 .h119p-note{margin-top:11px}
+  .hslide-1 .h119p-gift{margin-top:10px}
+  .hslide-1 .h119p-gift-tx{margin-top:8px}
+  .hslide-2 .hs2-prem,.hslide-3 .hs3-card{min-height:622px}
+}
+@media(min-width:1101px){
+  .hslide-1 .hero119-panel.hero119-prod{min-height:600px}
+  .hslide-2 .hs2-prem,.hslide-3 .hs3-card{min-height:600px}
+}
