@@ -3589,3 +3589,7 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hslide-1 .h119p-gift-tx b{line-height:1.4}
 }
 @media(max-width:380px){.hslide-1 .h119p-gal{grid-template-columns:repeat(4,36px)}}
+@media(max-width:900px){
+  .hs2-panel-lab>span{text-decoration:underline;text-decoration-color:#C23B2E;text-decoration-thickness:2px;text-underline-offset:5px;text-decoration-skip-ink:none;line-height:1.7}
+}
+@media(max-width:900px){.hs2-panel-lab>span{line-height:1.45;text-underline-offset:4px}}
