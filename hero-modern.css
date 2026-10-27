@@ -3275,92 +3275,48 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hslide-1 .hero119-panel.hero119-prod{grid-row:1 / 6;align-self:stretch}
 }
 
-/* ===== 슬라이드 2 (PC) — 슬라이드 1과 같은 배경·격자·카드 언어로 통일 ===== */
-.hs2-pillars,.hs2-prem-badge,.hs2-prem-ico{display:none}
-.hs2-prem .hs2-urn-note{color:rgba(255,255,255,.72);margin-top:12px;font-size:12px}
+/* ===== 슬라이드 2 (PC) — 기존 디자인 유지 + 슬라이드 1과 같은 격자(왼쪽 상·하단을 오른쪽 카드에 맞춤) ===== */
+
+.hs2-prem .hs2-urn-note{color:rgba(255,255,255,.75);margin-top:12px;font-size:12.5px}
+
 @media(min-width:901px){
-  /* 배경: 슬라이드 1과 동일(딥그린 + 꽃 사진 + 베일) */
-  .hslide-2 .hs2{background:#18342D}
-  .hslide-2 .hs2::before{content:"";position:absolute;inset:0;z-index:0;background:url('bg-hero.jpg') 87% center/cover no-repeat}
-  .hslide-2 .hs2::after{content:"";position:absolute;inset:0;z-index:1;
-    background:linear-gradient(96deg,rgba(18,33,27,.97) 0%,rgba(18,33,27,.94) 42%,rgba(18,33,27,.72) 66%,rgba(18,33,27,.42) 100%)}
-  .hslide-2 .hs2-wrap{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) 480px;column-gap:44px;
-    grid-template-rows:auto auto auto 1fr auto;align-content:center;align-items:start;padding-top:26px;padding-bottom:34px}
+  .hslide-2 .hs2-wrap{display:grid;grid-template-columns:minmax(0,1fr) 480px;column-gap:44px;
+    grid-template-rows:auto auto auto auto auto 1fr auto;align-content:center;align-items:start;padding-top:26px;padding-bottom:34px}
   .hslide-2 .hs2-copy{display:contents}
   .hslide-2 .hs2-copy>*{grid-column:1;min-width:0}
-  .hslide-2 .hs2-offer,.hslide-2 .hs2-panel,.hslide-2 .hs2-micro{display:none}
-
-  .hslide-2 .hs2-eyebrow{grid-row:1;justify-self:start;display:inline-flex;align-items:center;gap:7px;margin-bottom:22px;
-    color:#E0C68C;background:rgba(200,164,106,.14);border:1px solid rgba(200,164,106,.45);font-size:13px}
-  .hslide-2 .hs2-eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:#EFC964;flex:none}
-  .hslide-2 .hs2-title{grid-row:2;color:#fff;font-size:41px;line-height:1.25;white-space:nowrap}
-  .hslide-2 .hs2-price{color:#E2C078;font-size:1.12em;letter-spacing:-.04em}
-  .hslide-2 .hs2-fix{color:#E2C078}
-  .hslide-2 .hs2-fix::after{background:rgba(226,192,120,.35)}
-  .hslide-2 .hs2-desc{grid-row:3;margin-top:20px;font-size:20px;line-height:1.7;color:#CBD3CC;max-width:none}
-  .hslide-2 .hs2-desc .hs2-incl{color:#2A1E0A;background:linear-gradient(180deg,#EBD29B,#C49E5E);box-shadow:0 3px 10px -4px rgba(0,0,0,.6)}
-  .hslide-2 .hs2-desc .promise-hl-red{color:#fff;text-decoration-color:rgba(226,192,120,.85)}
-  .hslide-2 .hs2-desc .promise-hl-red b{color:#F0D9A6}
-
-  .hslide-2 .hs2-pillars{grid-row:4;align-self:center;display:grid;gap:20px;list-style:none;margin:0;padding:18px 0}
-  .hs2-pillars li{display:flex;align-items:center;gap:17px}
-  .hs2-pillars i{flex:none;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;
-    background:linear-gradient(180deg,#EBD29B,#C49E5E);color:#2A1E0A;box-shadow:0 4px 12px -4px rgba(0,0,0,.5)}
-  .hs2-pillars i svg{width:19px;height:19px}
-  .hs2-pillars span{font-size:22px;font-weight:700;color:#fff;letter-spacing:-.035em;line-height:1.35}
-  .hs2-pillars mark{background:none;color:#F0D9A6;font-weight:800}
-
-  .hslide-2 .hs2-cta{grid-row:5;align-self:end;margin-top:0;display:flex;flex-wrap:nowrap;align-items:center;gap:14px}
-  .hslide-2 .hs2-row2{display:contents}
-  .hslide-2 .hs2-reg{order:1;height:62px;font-size:18px;padding:0 28px;white-space:nowrap;flex:0 0 auto;width:auto;margin:0}
-  .hslide-2 .hs2-tel{order:2;height:62px;font-size:17px;padding:0 20px;white-space:nowrap;flex:0 0 auto;width:auto;
-    color:#fff;background:rgba(240,216,154,.12);border:2px solid #E7CB92;font-weight:800}
-  .hslide-2 .hs2-btn{order:3;height:auto;padding:0;margin-left:4px;background:none;box-shadow:none;border:none;animation:none;
-    color:#E7CB92;font-size:16px;font-weight:700;text-decoration:underline;text-underline-offset:5px;white-space:nowrap;width:auto}
-  .hslide-2 .hs2-btn::after{display:none}
-
-  /* 오른쪽 카드 — 슬라이드 1과 같은 아이보리·골드 */
-  .hslide-2 .hs2-visual{grid-column:2;grid-row:1 / 6;align-self:stretch;display:flex;flex-direction:column;justify-content:stretch;min-width:0}
-  .hslide-2 .hs2-prem{flex:1;max-width:none;width:100%;display:flex;flex-direction:column;padding:26px 30px 24px;border-radius:20px;
-    background:linear-gradient(165deg,#FFFDF7 0%,#F8EFDC 100%);border:1.5px solid #D9B87A;color:#1B3F30;
-    box-shadow:0 40px 80px -34px rgba(0,0,0,.75),0 0 0 6px rgba(231,203,146,.16),inset 0 1px 0 #fff}
-  .hs2-prem-top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-bottom:14px;margin-bottom:18px;border-bottom:1px solid rgba(168,124,46,.35)}
-  .hslide-2 .hs2-prem-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:800;letter-spacing:-.01em;color:#7A4E0F}
-  .hslide-2 .hs2-prem-ico{display:block;flex:none;width:26px;height:26px;filter:drop-shadow(0 2px 2px rgba(90,60,10,.35))}
-  .hslide-2 .hs2-prem-badge{display:inline-flex;align-items:center;padding:6px 13px;border-radius:999px;font-size:13px;font-weight:800;color:#fff;white-space:nowrap;
-    background:linear-gradient(180deg,#E2554A 0%,#B8352B 100%);box-shadow:0 4px 10px -3px rgba(184,53,43,.6)}
-  .hslide-2 .hs2-prem-title{margin:0 0 18px;font-size:25px;line-height:1.4;color:#1B3F30;text-align:center}
-  .hslide-2 .hs2-prem .hs2-trio{gap:12px}
-  .hslide-2 .hs2-prem .hs2-trio img{border:2px solid #fff;box-shadow:0 0 0 1px #C9A15E,0 8px 16px -8px rgba(60,40,10,.55);aspect-ratio:4/3}
-  .hslide-2 .hs2-prem .hs2-trio figcaption{color:#4A3A1C;font-size:13.5px;font-weight:800}
-  .hslide-2 .hs2-prem-line{margin:auto 0 0;padding-top:16px;text-align:center;font-size:15px;color:#4A3A1C}
-  .hslide-2 .hs2-prem-line b{color:#B3322A;font-size:19px}
-  .hslide-2 .hs2-prem-call{margin-top:14px;height:54px}
-  .hslide-2 .hs2-prem .hs2-urn-note{margin-top:12px;font-size:12.5px;color:#6B5B3C;max-width:none}
+  .hslide-2 .hs2-eyebrow{grid-row:1;justify-self:start}
+  .hslide-2 .hs2-title{grid-row:2}
+  .hslide-2 .hs2-desc{grid-row:3}
+  .hslide-2 .hs2-offer{grid-row:4}
+  .hslide-2 .hs2-panel{grid-row:5}
+  .hslide-2 .hs2-cta{grid-row:7;align-self:end}
+  .hslide-2 .hs2-micro{grid-row:7;display:none}
+  .hslide-2 .hs2-visual{grid-column:2;grid-row:1 / 8;align-self:stretch;display:flex;flex-direction:column;justify-content:stretch;min-width:0}
+  .hslide-2 .hs2-prem{flex:1;max-width:none;width:100%;display:flex;flex-direction:column}
+  .hslide-2 .hs2-prem-line{margin-top:auto;padding-top:16px}
 }
 @media(min-width:901px) and (max-width:1100px){
   .hslide-2 .hs2-wrap{grid-template-columns:minmax(0,1fr) 440px;column-gap:36px}
-  .hslide-2 .hs2-title{font-size:clamp(34px,3.6vw,38px)}
-  .hs2-pillars span{font-size:19px}.hs2-pillars{gap:15px}
-  .hslide-2 .hs2-reg{padding:0 20px;font-size:16px}.hslide-2 .hs2-tel{font-size:15px;padding:0 14px}
-  .hslide-2 .hs2-prem{padding:20px 20px 18px}.hslide-2 .hs2-prem-title{font-size:21px}
+}
+@media(min-width:901px){.hslide-2 .hs2-wrap{row-gap:0}}
+/* 슬라이드 2 왼쪽 박스를 슬라이드 1 카드 높이에 가깝게 압축(디자인·색은 그대로) */
+@media(min-width:1101px){
+  .hslide-2 .hs2-offer{margin-top:18px;padding:18px 26px 19px}
+  .hslide-2 .hs2-offer-flag{font-size:19px;margin-bottom:12px;padding-bottom:12px}
+  .hslide-2 .hs2-offer-tx b{font-size:26px}
+  .hslide-2 .hs2-offer-tx small{font-size:16px;margin-top:7px}
+  .hslide-2 .hs2-panel{margin-top:12px;padding:15px 26px 16px}
+  .hslide-2 .hs2-panel-lab{font-size:18px;margin-bottom:11px;padding-bottom:11px}
+  .hslide-2 .hs2-zero i{font-size:38px}
+  .hslide-2 .hs2-zero span{font-size:16px;margin-top:4px}
+}
+/* 슬라이드 1 카드 높이를 슬라이드 2와 맞춤(전환 시 카드가 같은 자리) */
+@media(min-width:1101px){
+  .hslide-1 .hero119-panel.hero119-prod{min-height:662px;display:flex;flex-direction:column;justify-content:space-between}
 }
 @media(min-width:901px){
-  .hslide-2 .hs2-desc{font-size:19px;line-height:1.6}
-  .hslide-2 .hs2-desc .hs2-incl{display:table;margin:0 0 9px}
-  .hslide-2 .hs2-pillars{gap:16px;padding:14px 0}
+  .hslide-2 .hs2-prem{justify-content:space-between}
+  .hslide-2 .hs2-prem-title,.hslide-2 .hs2-prem-line,.hslide-2 .hs2-prem-call,.hslide-2 .hs2-urn-note{margin-top:0;margin-bottom:0}
+  .hslide-2 .hs2-prem-line{padding-top:0}
+  .hslide-2 .hs2-prem .hs2-trio figure img{aspect-ratio:1/1}
 }
-@media(min-width:901px){
-  .hslide-2 .hs2-title br{display:none}
-  .hslide-2 .hs2-price{margin-left:.28em}
-  .hslide-2 .hs2-eyebrow{margin-bottom:20px}
-  .hslide-2 .hs2-desc{margin-top:16px}
-  .hslide-2 .hs2-pillars{padding:10px 0}
-}
-@media(min-width:901px) and (max-width:1100px){.hslide-2 .hs2-title{font-size:clamp(28px,3vw,32px)}}
-/* 슬라이드 1·2 카드 높이 통일(전환 시 카드가 같은 자리에 머물도록) */
-@media(min-width:901px){
-  .hslide-1 .hero119-panel.hero119-prod{min-height:650px;display:flex;flex-direction:column;justify-content:space-between}
-  .hslide-2 .hs2-prem{min-height:650px}
-}
-@media(min-width:901px){.hslide-2 .hs2-prem .hs2-trio img{aspect-ratio:6/5}}
