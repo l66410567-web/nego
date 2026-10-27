@@ -3163,3 +3163,11 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hslide-1 .h119-pillars b{font-size:21px}.hslide-1 .h119-pillars small{font-size:15.5px}
   .hslide-1 .h119-pillars{gap:15px}
 }
+@media(min-width:901px){
+  .hslide-1 .h119-pillars{gap:24px;margin-top:30px}
+  .hslide-1 .h119-pillars b{font-size:28px}
+  .hslide-1 .h119-pillars i{width:42px;height:42px}
+}
+@media(min-width:901px) and (max-width:1100px){.hslide-1 .h119-pillars b{font-size:23px}.hslide-1 .h119-pillars{gap:18px}}
+@media(min-width:1101px){.hslide-1 .h119-pillars b{font-size:26px;letter-spacing:-.045em;white-space:nowrap}}
+@media(min-width:1101px){.hslide-1 .h119-pillars b{font-size:clamp(20px,2vw,26px)}}
