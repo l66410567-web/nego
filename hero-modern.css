@@ -3679,3 +3679,73 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .prereg-sec .pg-risk .pg-zero li{justify-content:center}
 }
 @media(min-width:641px){.trend-grid .trend-card:last-child:nth-child(odd){grid-column:1/-1}}
+
+/* ===== 무빈소 전용 장례식장 구역(.sbx) 디자인 개선 — 구 선택 칩(호기심), 단계 카드·화살표, 신뢰 요약 ===== */
+.sbx{background:linear-gradient(180deg,#FBF7EC 0%,#F5EEDB 100%);padding:76px 0 64px}
+.sbx-head{margin-bottom:34px}
+.sbx-head h2{font-size:clamp(26px,3.4vw,36px)}
+.sbx-head p{font-size:17px;color:#4F4C40}
+.sbx-dist{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 14px;margin-top:22px}
+.sbx-dist-lab{font-family:'Noto Serif KR',serif;font-size:16px;font-weight:700;color:#1B3F30;letter-spacing:-.03em}
+.sbx-chips{display:inline-flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.sbx-chip{cursor:pointer;font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:800;color:#1B3F30;letter-spacing:-.02em;padding:10px 18px;border-radius:999px;
+  background:#fff;border:1.5px solid #C9A15E;box-shadow:0 6px 14px -10px rgba(90,60,10,.6);transition:transform .15s,background .15s,color .15s}
+.sbx-chip:hover{transform:translateY(-2px);background:linear-gradient(180deg,#EBD29B,#C49E5E);color:#2A1E0A}
+
+.sbx-steps{gap:22px;background:none;overflow:visible;box-shadow:none;border-radius:0;grid-template-columns:1fr 1fr 1.15fr;align-items:stretch}
+.sbx-steps li{position:relative;display:flex;flex-direction:column;padding:28px 26px 24px;border-radius:18px;background:#fff;border:1.5px solid rgba(201,161,94,.6);
+  box-shadow:0 22px 40px -28px rgba(60,45,15,.45)}
+.sbx-steps li+li{border-left:1.5px solid rgba(201,161,94,.6)}
+.sbx-ic{display:grid;place-items:center;width:52px;height:52px;margin-bottom:14px;border-radius:50%;color:#2A1E0A;
+  background:linear-gradient(180deg,#EBD29B,#C49E5E);box-shadow:0 8px 16px -8px rgba(90,60,10,.6)}
+.sbx-ic svg{width:26px;height:26px}
+.sbx-no{font-size:12.5px;letter-spacing:.16em}
+.sbx-steps h3{margin:8px 0 10px;font-family:'Noto Serif KR',serif;font-size:22px;font-weight:700;letter-spacing:-.04em;color:#1B3F30}
+.sbx-steps p{font-size:16px;line-height:1.7;color:#4F4C40;font-weight:500}
+.sbx-ok{display:flex;align-items:flex-start;gap:8px;margin-top:auto;padding-top:16px;font-size:14.5px;font-weight:800;line-height:1.45;color:#1B3F30;letter-spacing:-.03em}
+.sbx-ok svg{flex:none;width:20px;height:20px;padding:3px;border-radius:50%;color:#2A1E0A;background:linear-gradient(180deg,#EBD29B,#C49E5E);margin-top:1px}
+/* 단계 사이 화살표 */
+.sbx-steps li:not(:last-child)::after{content:"›";position:absolute;right:-22px;top:50%;transform:translate(50%,-50%);z-index:2;display:grid;place-items:center;width:34px;height:34px;
+  border-radius:50%;font-size:22px;line-height:1;padding-bottom:3px;color:#2A1E0A;background:linear-gradient(180deg,#EBD29B,#C49E5E);border:3px solid #F8F2E2;box-shadow:0 6px 12px -6px rgba(90,60,10,.6)}
+/* 3번 카드: 가장 중요한 혜택 */
+.sbx-steps li.sbx-main{background:linear-gradient(155deg,#26543F 0%,#15342A 100%);border:1.5px solid rgba(231,203,146,.85);box-shadow:0 30px 50px -30px rgba(20,40,30,.8),0 0 0 5px rgba(201,161,94,.18)}
+.sbx-main .sbx-ic{background:linear-gradient(180deg,#F3DFA8,#D2AC64)}
+.sbx-main .sbx-no{color:#E7CB92}
+.sbx-steps li.sbx-main h3{color:#fff}
+.sbx-main strong{font-size:42px;margin-bottom:8px}
+.sbx-main p{font-size:15.5px;color:rgba(255,255,255,.9)}
+.sbx-gift{margin-top:auto;padding-top:16px}
+.sbx-gift-tx b{font-size:15.5px;line-height:1.5;color:#fff;letter-spacing:-.03em}
+.sbx-gift-tx b mark{background:none;color:#F0D89A;font-weight:900;text-decoration:underline;text-decoration-color:#E2554A;text-decoration-thickness:2px;text-underline-offset:4px}
+.sbx-gift-tx small{font-size:12.5px;color:rgba(255,255,255,.8)}
+
+/* 신뢰 요약 */
+.sbx-trust{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 14px;margin:30px 0 0;padding:0}
+.sbx-trust li{display:inline-flex;align-items:center;gap:8px;padding:11px 18px 11px 14px;border-radius:999px;font-size:15px;font-weight:800;color:#1B3F30;letter-spacing:-.03em;
+  background:rgba(27,63,48,.06);border:1.5px solid rgba(27,63,48,.18)}
+.sbx-trust svg{width:20px;height:20px;padding:3px;border-radius:50%;color:#fff;background:#1F4A38}
+.sbx-cta{margin-top:28px}
+.sbx-cta .btn-brass{font-size:18px;padding:16px 34px}
+.sbx-tel{font-size:22px;font-family:'Noto Serif KR',serif;font-weight:900;color:#B3322A}
+.sbx-foot{font-size:13.5px;color:#6F6B5C}
+
+@media(max-width:900px){
+  .sbx-steps{grid-template-columns:1fr;gap:26px}
+  .sbx-steps li:not(:last-child)::after{right:auto;left:50%;top:auto;bottom:-27px;transform:translate(-50%,50%) rotate(90deg)}
+}
+@media(max-width:640px){
+  .sbx{padding:52px 0 46px}
+  .sbx-head p{font-size:15px}
+  .sbx-dist-lab{flex:1 1 100%;text-align:center;font-size:15px}
+  .sbx-chip{font-size:14px;padding:9px 15px}
+  .sbx-steps li{padding:22px 18px 20px}
+  .sbx-steps h3{font-size:19px}
+  .sbx-steps p{font-size:14.5px}
+  .sbx-ok{font-size:13.5px}
+  .sbx-main strong{font-size:36px}
+  .sbx-trust li{font-size:13.5px;padding:9px 14px 9px 11px}
+  .sbx-tel{font-size:19px}
+}
+.sbx .wrap-narrow{max-width:1120px}
+.sbx-head{max-width:760px;margin-left:auto;margin-right:auto}
+.sbx-steps p br{display:block}
