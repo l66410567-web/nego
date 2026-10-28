@@ -3593,3 +3593,88 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hs2-panel-lab>span{text-decoration:underline;text-decoration-color:#C23B2E;text-decoration-thickness:2px;text-underline-offset:5px;text-decoration-skip-ink:none;line-height:1.7}
 }
 @media(max-width:900px){.hs2-panel-lab>span{line-height:1.45;text-underline-offset:4px}}
+
+/* ===== 무료 사전등록 섹션(#prereg) 디자인 개선 — 대비 있는 2단 카드(딥그린 '손해 없음' → 아이보리 '혜택'), 큰 글씨 ===== */
+.prereg-sec .pg-grid{max-width:1060px;gap:30px;position:relative}
+.prereg-sec .pg-card{border-radius:18px}
+
+/* 왼쪽: 손해 볼 일이 없습니다 — 딥그린 카드 */
+.prereg-sec .pg-risk{padding:32px 30px 28px;color:#fff;background:linear-gradient(160deg,#25593F 0%,#15342A 100%);
+  border:1.5px solid rgba(231,203,146,.8);box-shadow:0 34px 60px -36px rgba(20,40,30,.75),inset 0 1px 0 rgba(255,255,255,.12)}
+.prereg-sec .pg-risk .pg-card-lab{font-family:'Noto Serif KR',serif;font-size:19px;font-weight:700;letter-spacing:-.03em;color:#F0D89A;
+  margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid rgba(231,203,146,.35)}
+.prereg-sec .pg-risk .pg-card-lab::before{width:7px;height:7px;background:#F0D89A}
+.prereg-sec .pg-risk .pg-zero{border:none;border-radius:0;gap:12px}
+.prereg-sec .pg-risk .pg-zero li{gap:3px;padding:16px 18px;border:1px solid rgba(231,203,146,.5);border-radius:12px;background:rgba(255,255,255,.07)}
+.prereg-sec .pg-risk .pg-zero i{font-size:40px;line-height:1.1;color:#F0D89A;letter-spacing:-.04em}
+.prereg-sec .pg-risk .pg-zero li:nth-child(4) i{font-size:34px;color:#F0D89A}
+.prereg-sec .pg-risk .pg-zero span{font-size:15.5px;font-weight:700;color:#EDE5CF;letter-spacing:-.03em}
+.prereg-sec .pg-risk .pg-risk-note{margin-top:22px;font-size:14.5px;line-height:1.8;color:rgba(255,255,255,.88);letter-spacing:-.025em}
+.prereg-sec .pg-risk .pg-risk-note b{color:#F0D89A;font-weight:800;text-decoration:underline;text-decoration-color:#E2554A;text-decoration-thickness:2px;text-underline-offset:5px}
+
+/* 오른쪽: 등록해두시면 — 아이보리 카드, 혜택 행을 또렷하게 */
+.prereg-sec .pg-gain{padding:32px 30px 26px;background:linear-gradient(165deg,#FFFFFF 0%,#FBF4E3 100%);border:1.5px solid #D9B87A;
+  box-shadow:0 34px 60px -38px rgba(90,60,10,.5),inset 0 1px 0 #fff}
+.prereg-sec .pg-card-lab-gain{font-family:'Noto Serif KR',serif;font-size:19px;font-weight:700;letter-spacing:-.03em;color:#1B3F30;
+  margin-bottom:12px;padding-bottom:16px;border-bottom:1px solid rgba(168,124,46,.38)}
+.prereg-sec .pg-card-lab-gain::before{width:7px;height:7px;background:#C9A15E}
+.prereg-sec .pg-benefits li{align-items:center;gap:16px;padding:15px 10px}
+.prereg-sec .pg-benefits li+li{border-top:1px dashed rgba(168,124,46,.4)}
+.prereg-sec .pg-benefits li:first-child{padding-top:15px}
+.prereg-sec .pg-benefits li:last-child{padding-bottom:15px}
+.prereg-sec .pg-b-num{display:grid;place-items:center;width:36px;height:36px;padding:0;border-radius:50%;font-family:'Noto Serif KR',serif;font-size:14px;font-weight:700;color:#2A1E0A;
+  background:linear-gradient(180deg,#EBD29B,#C49E5E);box-shadow:0 4px 10px -4px rgba(90,60,10,.5)}
+.prereg-sec .pg-b-tx b{font-size:18.5px;font-weight:800;color:#1B3F30;letter-spacing:-.04em;line-height:1.35}
+.prereg-sec .pg-b-tx small{margin-top:4px;font-size:14px;font-weight:600;color:#6B5A3A;letter-spacing:-.03em;line-height:1.5}
+/* 02번(고급 진공유골함 업그레이드) — 가장 큰 혜택이라 강조 */
+.prereg-sec .pg-benefits li:nth-child(2){margin:2px -6px;padding:15px 16px;border:1.5px solid #E2C27A;border-radius:14px;
+  background:linear-gradient(90deg,#FFF3D2 0%,#FFFAEB 100%)}
+.prereg-sec .pg-benefits li:nth-child(2)+li{border-top:none}
+.prereg-sec .pg-benefits li:nth-child(2) .pg-b-tx b::after{content:"특별 혜택";display:inline-block;vertical-align:middle;margin-left:8px;padding:3px 9px;border-radius:999px;
+  font-size:11.5px;font-weight:800;letter-spacing:0;color:#fff;background:linear-gradient(180deg,#E2554A,#B8352B)}
+.prereg-sec .pg-benefits li:nth-child(2) .pg-b-tx small{color:#8A4A12;font-weight:700}
+
+/* 두 카드를 잇는 화살표(PC) */
+@media(min-width:901px){
+  .prereg-sec .pg-grid::after{content:"›";position:absolute;left:calc(46% + 0px);top:50%;transform:translate(-50%,-50%);z-index:3;
+    display:grid;place-items:center;width:46px;height:46px;border-radius:50%;font-size:30px;line-height:1;padding-bottom:4px;color:#2A1E0A;
+    background:linear-gradient(180deg,#EBD29B,#C49E5E);border:3px solid #FCF8EE;box-shadow:0 10px 22px -8px rgba(90,60,10,.6)}
+}
+
+/* 이런 분들이 미리 등록하십니다 */
+.prereg-sec .pg-who{max-width:1060px;margin-top:30px;padding:22px 26px;border-radius:16px;background:rgba(30,69,52,.06);border:1.5px solid rgba(30,69,52,.2)}
+.prereg-sec .pg-who-lab{font-family:'Noto Serif KR',serif;font-size:17px;font-weight:700;letter-spacing:-.03em;color:#1B3F30;margin-bottom:14px}
+.prereg-sec .pg-who-list{gap:10px}
+.prereg-sec .pg-who-list span{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:700;color:#2E3A32;letter-spacing:-.03em;padding:11px 18px 11px 14px;
+  border:1.5px solid rgba(201,161,94,.7);box-shadow:0 6px 14px -10px rgba(90,60,10,.5)}
+.prereg-sec .pg-who-list span::before{content:"✓";display:grid;place-items:center;flex:none;width:20px;height:20px;border-radius:50%;font-size:12px;font-weight:900;color:#2A1E0A;
+  background:linear-gradient(180deg,#EBD29B,#C49E5E)}
+
+@media(max-width:900px){
+  .prereg-sec .pg-grid{gap:18px}
+  .prereg-sec .pg-risk,.prereg-sec .pg-gain{padding:26px 22px 22px}
+}
+@media(max-width:640px){
+  .prereg-sec .pg-risk,.prereg-sec .pg-gain{padding:22px 16px 18px;border-radius:14px}
+  .prereg-sec .pg-risk .pg-card-lab,.prereg-sec .pg-card-lab-gain{font-size:16px;margin-bottom:14px;padding-bottom:12px}
+  .prereg-sec .pg-risk .pg-zero{gap:9px}
+  .prereg-sec .pg-risk .pg-zero li{padding:12px 13px;border-radius:10px}
+  .prereg-sec .pg-risk .pg-zero i{font-size:30px}
+  .prereg-sec .pg-risk .pg-zero li:nth-child(4) i{font-size:26px}
+  .prereg-sec .pg-risk .pg-zero span{font-size:13px}
+  .prereg-sec .pg-risk .pg-risk-note{font-size:13px;margin-top:16px}
+  .prereg-sec .pg-benefits li{gap:12px;padding:12px 4px}
+  .prereg-sec .pg-benefits li:first-child{padding-top:12px}.prereg-sec .pg-benefits li:last-child{padding-bottom:12px}
+  .prereg-sec .pg-b-num{width:30px;height:30px;font-size:12px}
+  .prereg-sec .pg-b-tx b{font-size:15.5px}
+  .prereg-sec .pg-b-tx small{font-size:12.5px}
+  .prereg-sec .pg-benefits li:nth-child(2){margin:2px -4px;padding:12px 10px}
+  .prereg-sec .pg-benefits li:nth-child(2) .pg-b-tx b::after{display:block;width:max-content;margin:4px 0 0;font-size:10.5px;padding:2px 8px}
+  .prereg-sec .pg-who{padding:16px 14px}
+  .prereg-sec .pg-who-list span{font-size:13.5px;padding:9px 14px 9px 11px}
+}
+@media(min-width:901px){
+  .prereg-sec .pg-risk{display:flex;flex-direction:column}
+  .prereg-sec .pg-risk .pg-zero{flex:1;grid-auto-rows:1fr}
+  .prereg-sec .pg-risk .pg-zero li{justify-content:center}
+}
