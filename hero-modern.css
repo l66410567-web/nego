@@ -3678,3 +3678,4 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .prereg-sec .pg-risk .pg-zero{flex:1;grid-auto-rows:1fr}
   .prereg-sec .pg-risk .pg-zero li{justify-content:center}
 }
+@media(min-width:641px){.trend-grid .trend-card:last-child:nth-child(odd){grid-column:1/-1}}
