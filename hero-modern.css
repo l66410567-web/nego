@@ -3895,3 +3895,6 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .bur-pcard-photo{position:relative}
 .bur-pcard-photo img{object-position:42% 50%}
 .bur-reftag{position:absolute;right:12px;bottom:12px;padding:4px 10px;border-radius:999px;font-size:11.5px;font-weight:700;letter-spacing:-.01em;color:#fff;background:rgba(10,25,18,.62)}
+.bur-pil-site{border-color:#C9A15E;background:linear-gradient(165deg,#FFFFFF 0%,#FAEFD2 100%)}
+.bur-pil-site .bur-pil-no{background:linear-gradient(180deg,#E2554A,#B8352B)}
+.bur-pil-site li b{color:#9A3328}
