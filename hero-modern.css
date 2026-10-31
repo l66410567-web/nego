@@ -3906,3 +3906,19 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hslide-1 .hero119-panel.hero119-prod{min-height:616px}
   .hslide-2 .hs2-prem,.hslide-3 .hs3-card{min-height:616px}
 }
+.hs2-prem-head{text-align:center}
+.hs2-prem-sub{display:none}
+@media(min-width:901px){
+  .hslide-2 .hs2-prem-head{margin-bottom:2px}
+  .hslide-2 .hs2-prem-head .hs2-prem-title{margin-bottom:8px}
+  .hslide-2 .hs2-prem-sub{display:block;margin:0;font-size:13.5px;font-weight:600;letter-spacing:-.03em;color:rgba(240,216,154,.85)}
+}
+@media(min-width:901px){
+  .hslide-2 .hs2-trio-six figure img{aspect-ratio:3/2}
+  .hslide-2 .hs2-prem{padding-top:18px;padding-bottom:16px}
+}
+@media(min-width:901px){.hslide-2 .hs2-prem .hs2-trio-six figure img{aspect-ratio:3/2}}
+@media(min-width:1101px){
+  .hslide-1 .hero119-panel.hero119-prod{min-height:622px}
+  .hslide-2 .hs2-prem,.hslide-3 .hs3-card{min-height:622px}
+}
