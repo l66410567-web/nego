@@ -4036,3 +4036,8 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hslide>section.hero119,.hslide>section.hs2,.hslide>section.hs3,.hslide>.hero119-root>.hero119{align-items:flex-start}
 }
 @media(max-width:640px){.hslide-2 .hs2-wrap{padding-top:20px}}
+/* 모바일 슬라이드1: 하단 상품 카드(250만원) 숨김 — 핵심 내용은 슬라이드2 하단 박스에 요약되어 있음 */
+@media(max-width:640px){
+  .hslide-1 .hero119-panel.hero119-prod{display:none}
+  .hslide-1 .hero119-wrap{padding-bottom:30px!important}
+}
