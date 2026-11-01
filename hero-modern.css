@@ -3967,3 +3967,66 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hero-slider{min-height:0;transition:height .35s ease}
 }
 @media(max-width:640px){.hslide-1 .h119-pillars li:nth-child(4){display:none}}
+
+/* ===== 모바일 슬라이드 개선 — 슬라이드1: 위쪽 여유 + 하단 상품 카드 부각 / 슬라이드2: 하단 박스에 카드 핵심 요약 ===== */
+.hs2-sum-m{display:none}
+@media(max-width:640px){
+  /* 슬라이드 2 하단 박스: 상품 카드 핵심만 압축 */
+  .hslide-2 .hs2-why{display:none}
+  .hslide-2 .hs2-sum-m{display:grid;gap:8px;list-style:none;margin:0 0 10px;padding:0 0 10px;border-bottom:1px solid rgba(168,124,46,.3)}
+  .hs2-sum-m li{display:flex;align-items:flex-start;gap:8px}
+  .hs2-sum-m li i{flex:none;display:grid;place-items:center;width:18px;height:18px;margin-top:1px;border-radius:50%;background:linear-gradient(180deg,#E3C27F,#B98F4B);color:#2A1E0A}
+  .hs2-sum-m li i svg{width:11px;height:11px}
+  .hs2-sum-m li span{font-size:13px;font-weight:600;line-height:1.5;color:#3F3523;letter-spacing:-.04em}
+  .hs2-sum-m li b{font-weight:900;color:#1B3F30}
+
+  /* 슬라이드 1: 위쪽 내용에 여유 */
+  .hslide-1 .hero119-wrap{padding-top:22px!important}
+  .hslide-1 .hero119-eyebrow{margin-bottom:20px}
+  .hslide-1 .hero119-sub{margin-top:18px;line-height:1.75}
+  .hslide-1 .h119-pillars{gap:11px;margin-top:22px}
+  .hslide-1 .h119-pillars li{gap:11px}
+  .hslide-1 .h119-pillars i{width:22px;height:22px}
+  .hslide-1 .h119-pillars b{font-size:14.5px}
+  .hslide-1 .hero119-btn{margin-top:24px}
+  .hslide-1 .hs1-btn2{margin-top:12px}
+  .hslide-1 .hero119-micro{margin-top:16px;line-height:1.6}
+
+  /* 슬라이드 1: 하단 상품 카드 — 더 크고 여유 있게, 아래에서 부각 */
+  .hslide-1 .hero119-panel{margin-top:34px!important}
+  .hslide-1 .hero119-panel.hero119-prod{padding:20px 18px 20px;border-radius:20px;
+    box-shadow:0 26px 50px -24px rgba(0,0,0,.8),0 0 0 5px rgba(231,203,146,.2),inset 0 1px 0 #fff}
+  .hslide-1 .h119p-top{margin-bottom:14px;padding-bottom:14px}
+  .hslide-1 .h119p-lab{font-size:13.5px}
+  .hslide-1 .h119p-ico{width:24px;height:24px}
+  .hslide-1 .h119p-price strong{font-size:48px}
+  .hslide-1 .h119p-price span{font-size:13px;margin-top:8px}
+  .hslide-1 .h119p-body{gap:16px}
+  .hslide-1 .h119p-pts{gap:13px;padding-left:16px}
+  .hslide-1 .h119p-pts li{font-size:17px}
+  .hslide-1 .h119p-why{margin-top:18px;padding:14px 14px 15px;border-radius:12px}
+  .hslide-1 .h119p-why .hw-t{font-size:15.5px}
+  .hslide-1 .h119p-why p{margin-top:8px;padding-top:8px;font-size:14px;line-height:1.7}
+  .hslide-1 .h119p-note{margin-top:14px;font-size:12.5px}
+  .hslide-1 .h119p-gift{margin-top:14px;column-gap:14px}
+  .hslide-1 .h119p-gal{grid-template-columns:repeat(4,44px);gap:6px}
+  .hslide-1 .h119p-gift-tx b{font-size:14.5px;line-height:1.5}
+}
+@media(max-width:380px){
+  .hslide-1 .h119p-gal{grid-template-columns:repeat(4,38px);gap:5px}
+  .hslide-1 .h119p-price strong{font-size:42px}
+  .hslide-1 .h119p-pts li{font-size:15.5px}
+  .hslide-1 .h119p-gift-tx b{font-size:13.5px}
+}
+@media(max-width:640px){
+  .hslide-1 .h119p-lab{font-size:12.5px;gap:5px}
+  .hslide-1 .h119p-ico{width:22px;height:22px}
+  .hslide-1 .h119p-badge{font-size:11.5px;padding:5px 9px 5px 7px}
+}
+@media(max-width:640px){
+  .hslide-1 .h119p-top{flex-wrap:nowrap;gap:6px}
+  .hslide-1 .h119p-lab{font-size:12px;gap:4px;letter-spacing:-.05em;white-space:nowrap}
+  .hslide-1 .h119p-ico{width:20px;height:20px}
+  .hslide-1 .h119p-badge{font-size:10.5px;padding:4px 8px;gap:0;letter-spacing:-.05em;flex:none}
+  .hslide-1 .h119p-badge svg{display:none}
+}
