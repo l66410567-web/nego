@@ -3922,3 +3922,47 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hslide-1 .hero119-panel.hero119-prod{min-height:622px}
   .hslide-2 .hs2-prem,.hslide-3 .hs3-card{min-height:622px}
 }
+
+/* ===== 모바일 — PC와 같은 메시지로 맞춤(슬라이드1 핵심 4줄·안식처 문구 / 슬라이드2 6칸 구성·사전등록 이유) ===== */
+.hs2-six-m{display:none}
+@media(max-width:640px){
+  /* 슬라이드 1: 핵심 4줄 */
+  .hslide-1 .h119-pillars{display:grid;gap:7px;list-style:none;margin:14px 0 0;padding:0;order:4}
+  .hslide-1 .h119-pillars li{display:flex;align-items:center;gap:9px}
+  .hslide-1 .h119-pillars i{flex:none;display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:linear-gradient(180deg,#EBD29B,#C49E5E);color:#2A1E0A}
+  .hslide-1 .h119-pillars i svg{width:12px;height:12px}
+  .hslide-1 .h119-pillars b{font-size:14px;font-weight:700;color:#fff;letter-spacing:-.04em;line-height:1.35}
+  .hslide-1 .h119p-note{display:block;margin:8px 0 0;text-align:center;font-family:'Noto Serif KR',serif;font-size:11.5px;font-weight:600;letter-spacing:-.05em;color:#6B4A12}
+
+  /* 슬라이드 2: 6칸(출동·관·영정/입관·리무진·유골함·봉안함) */
+  .hslide-2 .hs2-trio-m{display:none}
+  .hs2-six-m{display:block}
+  .hs2-six-t{margin:0 0 9px;text-align:center;font-family:'Noto Serif KR',serif;font-size:14.5px;font-weight:700;letter-spacing:-.05em;line-height:1.45;color:#1B3F30}
+  .hs2-six-t mark{background:none;color:#B3322A;font-weight:900}
+  .hs2-six-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px 6px}
+  .hs2-six-g figure{margin:0;display:grid;gap:4px;min-width:0}
+  .hs2-six-g img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:8px;border:1.5px solid rgba(168,124,46,.6);box-shadow:0 4px 10px -6px rgba(60,45,15,.5)}
+  .hs2-six-g figcaption{text-align:center;font-size:10.5px;font-weight:800;line-height:1.3;letter-spacing:-.05em;color:#5A4A2A;word-break:keep-all}
+
+  /* 슬라이드 2: 사전등록 이유 2줄(PC와 동일) */
+  .hslide-2 .hs2-why{display:block;margin:0 0 8px;padding:0 0 8px;border-bottom:1px solid rgba(168,124,46,.3)}
+  .hslide-2 .hs2-why-t{display:none}
+  .hslide-2 .hs2-why ul{list-style:none;margin:0;padding:0;display:grid;gap:5px}
+  .hslide-2 .hs2-why li{display:flex;align-items:center;gap:7px}
+  .hslide-2 .hs2-why li i{flex:none;display:grid;place-items:center;width:17px;height:17px;border-radius:50%;background:linear-gradient(180deg,#E3C27F,#B98F4B);color:#2A1E0A}
+  .hslide-2 .hs2-why li i svg{width:10px;height:10px}
+  .hslide-2 .hs2-why li span{font-size:12.5px;font-weight:600;color:#3F3523;letter-spacing:-.04em;line-height:1.4}
+  .hslide-2 .hs2-why li mark{background:none;color:#1B3F30;font-weight:800}
+}
+/* 모바일 슬라이드1 — PC와 같은 순서(왼쪽 메시지·버튼 → 오른쪽 상품 카드): 버튼이 카드보다 먼저 보이게 */
+@media(max-width:640px){
+  .hslide-1 .hero119-panel{order:9;margin-top:16px}
+  .hslide-1 .hero119-btn{order:5;margin-top:14px}
+  .hslide-1 .hs1-btn2{order:6}
+  .hslide-1 .hero119-micro{order:7;margin-top:8px}
+  .hslide-1 .h119-pillars{gap:5px;margin-top:12px}
+  .hslide-1 .h119-pillars b{font-size:13.5px}
+}
+@media(max-width:640px){
+  .hero-slider{min-height:0;transition:height .35s ease}
+}

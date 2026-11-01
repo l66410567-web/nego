@@ -362,10 +362,16 @@ document.querySelectorAll('.er-tab').forEach(function(tab){
   var AUTOPLAY_MS = 9000;
   var timer = null;
 
-  // 높이는 CSS 통일 규격(--hsH)이 담당 — JS 높이 조작 없음
+  // 높이: PC·태블릿은 CSS 통일 규격(--hsH). 모바일(≤640px)만 현재 슬라이드 내용 높이에 맞춰 조정(슬라이드마다 길이가 달라 빈 공간이 생기지 않게)
+  function fit(){
+    if(window.innerWidth > 640){ slider.style.height = ''; return; }
+    var w = slides[idx].querySelector('.hero119-wrap,.hs2-wrap,.hs3-wrap');
+    if(w) slider.style.height = Math.ceil(w.getBoundingClientRect().height) + 'px';
+  }
   function go(i, user){
     idx = (i + n) % n;
     track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+    fit();
     for(var k=0;k<dots.length;k++){
       var on = k===idx;
       dots[k].classList.toggle('on', on);
@@ -411,6 +417,15 @@ document.querySelectorAll('.er-tab').forEach(function(tab){
     restart();
   });
 
+  window.addEventListener('resize', fit);
+  window.addEventListener('load', function(){ fit(); setTimeout(fit, 400); });
+  if(window.ResizeObserver){
+    var ro = new ResizeObserver(function(){ fit(); });
+    for(var q=0;q<slides.length;q++){
+      var wq = slides[q].querySelector('.hero119-wrap,.hs2-wrap,.hs3-wrap');
+      if(wq) ro.observe(wq);
+    }
+  }
   go(0);
   restart();
 })();
