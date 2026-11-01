@@ -4035,3 +4035,4 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .hero-slider{transition:none}
   .hslide>section.hero119,.hslide>section.hs2,.hslide>section.hs3,.hslide>.hero119-root>.hero119{align-items:flex-start}
 }
+@media(max-width:640px){.hslide-2 .hs2-wrap{padding-top:20px}}
