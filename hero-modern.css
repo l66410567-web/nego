@@ -4204,3 +4204,18 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .gap250-btn,.gap250-tel{flex:1 1 100%;height:56px}
   .gap250-tel b{font-size:20px}
 }
+
+/* 핵심 구역 배경 다듬기 — 히어로와 매끄럽게 이어지는 그라데이션, 한지 격자 질감, 카드 뒤 은은한 금빛, 아이보리로 이어지는 곡선 */
+.gap250{padding-bottom:104px;
+  background:
+    radial-gradient(70% 36% at 50% 60%,rgba(231,203,146,.17),rgba(231,203,146,0) 72%),
+    radial-gradient(46% 28% at 8% 7%,rgba(201,161,94,.22),rgba(201,161,94,0) 70%),
+    radial-gradient(40% 26% at 96% 92%,rgba(201,161,94,.14),rgba(201,161,94,0) 70%),
+    linear-gradient(180deg,#1E2B24 0%,#203F32 13%,#1F4A38 42%,#173B2D 78%,#12302A 100%);
+  box-shadow:inset 0 1px 0 rgba(231,203,146,.45)}
+.gap250::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.55;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M24 0 48 24 24 48 0 24Z' fill='none' stroke='%23E7CB92' stroke-opacity='.11' stroke-width='1'/%3E%3C/svg%3E");
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 28%,#000 72%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 28%,#000 72%,transparent 100%)}
+.gap250::after{content:"";position:absolute;left:-6%;right:-6%;bottom:-1px;height:64px;background:#F6F2E8;border-radius:50% 50% 0 0/100% 100% 0 0;box-shadow:0 -3px 0 rgba(231,203,146,.6)}
+.gap250-in{position:relative;z-index:1}
+@media(max-width:640px){.gap250{padding-bottom:78px}.gap250::after{height:44px}}
