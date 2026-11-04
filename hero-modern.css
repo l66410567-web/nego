@@ -4106,3 +4106,101 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .sbx-mini{grid-template-columns:1fr;gap:10px}
   .sbx-mini li:not(:last-child)::after{right:auto;left:50%;top:auto;bottom:-14px;transform:translate(-50%,50%) rotate(90deg)}
 }
+
+/* ===== 무빈소250 핵심 — '저가 유인 vs 처음부터 같은 금액' 시각 비교 + 인장(보상제) ===== */
+.gap250{position:relative;overflow:hidden;padding:72px 0 64px;color:#fff;
+  background:radial-gradient(60% 50% at 12% 0%,rgba(201,161,94,.22),rgba(201,161,94,0) 65%),radial-gradient(50% 45% at 100% 100%,rgba(201,161,94,.14),rgba(201,161,94,0) 60%),linear-gradient(170deg,#1D4A38 0%,#15342A 55%,#102A21 100%)}
+.gap250-in{max-width:1080px;text-align:center}
+.gap250-eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:13px;font-weight:800;letter-spacing:.12em;color:#E7CB92}
+.gap250-eyebrow::before,.gap250-eyebrow::after{content:"";width:28px;height:1px;background:rgba(231,203,146,.7)}
+.gap250 h2{margin:16px 0 0;font-family:'Noto Serif KR',serif;font-size:clamp(26px,3.6vw,42px);font-weight:900;line-height:1.38;letter-spacing:-.05em;color:#fff;word-break:keep-all}
+.gap250 h2 em{font-style:normal;color:#F0D89A;text-decoration:underline;text-decoration-color:#E2554A;text-decoration-thickness:3px;text-underline-offset:8px}
+.gap250-sub{max-width:720px;margin:18px auto 0;font-size:clamp(15.5px,1.7vw,18px);line-height:1.8;color:rgba(255,255,255,.88);letter-spacing:-.025em;word-break:keep-all}
+.gap250-sub b{color:#F0D89A;font-weight:800}
+
+/* 비교 */
+.gap250-vs{display:grid;grid-template-columns:1fr 1.12fr;gap:26px;margin-top:40px;align-items:stretch;text-align:left}
+.gap250-bad,.gap250-good{position:relative;display:flex;flex-direction:column;padding:24px 24px 22px;border-radius:20px}
+.gap250-bad{background:rgba(255,255,255,.05);border:1.5px dashed rgba(255,255,255,.35)}
+.gap250-good{background:linear-gradient(165deg,#FFFDF7 0%,#F8EFDC 100%);border:2px solid #E7CB92;color:#1B3F30;box-shadow:0 34px 60px -30px rgba(0,0,0,.8),0 0 0 6px rgba(231,203,146,.18)}
+.gap250-tag{align-self:flex-start;display:inline-flex;padding:7px 14px;border-radius:999px;font-size:13.5px;font-weight:800;letter-spacing:-.02em;color:#fff;background:#1F4A38}
+.gap250-tag-bad{color:rgba(255,255,255,.85);background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3)}
+.gap250-cap{margin:16px 0 0;font-size:16px;font-weight:600;color:rgba(255,255,255,.82);letter-spacing:-.03em}
+.gap250-cap b{color:#FF9A8F;font-weight:900;text-decoration:underline;text-decoration-color:rgba(255,154,143,.7);text-decoration-thickness:2px;text-underline-offset:5px}
+.gap250-cap small{display:block;margin-top:5px;font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55)}
+
+/* 왼쪽: 계단처럼 커지는 청구 */
+.gap250-stairs{display:flex;align-items:flex-end;gap:8px;height:240px;margin-top:20px}
+.gap250-stairs .st{position:relative;flex:1;display:flex;align-items:flex-end;justify-content:center;border-radius:8px 8px 0 0;background:linear-gradient(180deg,#9A8F7D,#6E6556)}
+.gap250-stairs .st i{position:absolute;left:0;right:0;bottom:-30px;text-align:center;font-style:normal;font-size:12px;font-weight:700;color:rgba(255,255,255,.72);letter-spacing:-.04em;white-space:nowrap}
+.gap250-stairs .st1{height:36%}
+.gap250-stairs .st2{height:52%;background:linear-gradient(180deg,#C2776D,#8E4A43)}
+.gap250-stairs .st3{height:68%;background:linear-gradient(180deg,#D26A5F,#9C443C)}
+.gap250-stairs .st4{height:84%;background:linear-gradient(180deg,#E0584B,#A93A31)}
+.gap250-stairs .st5{height:100%;background:linear-gradient(180deg,#EE4A3C,#B5291F)}
+.gap250-bad .gap250-cap{margin-top:46px}
+
+/* 오른쪽: 한 덩어리로 담긴 250만원 */
+.gap250-stack{display:grid;grid-template-rows:auto repeat(4,1fr);gap:7px;margin-top:20px;min-height:240px}
+.gs{display:flex;align-items:center;padding:0 16px;border-radius:10px;background:#fff;border:1.5px solid rgba(201,161,94,.6)}
+.gs span{display:inline-flex;align-items:center;gap:9px;font-size:15.5px;font-weight:800;color:#1B3F30;letter-spacing:-.035em}
+.gs span svg{flex:none;width:20px;height:20px;padding:3.5px;border-radius:50%;color:#2A1E0A;background:linear-gradient(180deg,#EBD29B,#C49E5E)}
+.gs em{font-style:normal;margin-left:2px;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:900;color:#fff;background:linear-gradient(180deg,#E2554A,#B8352B)}
+.gs-top{flex-direction:column;align-items:flex-start;justify-content:center;gap:2px;padding:12px 18px;background:linear-gradient(135deg,#25593F,#15342A);border-color:#15342A}
+.gs-top b{font-family:'Noto Serif KR',serif;font-size:40px;font-weight:900;line-height:1.1;letter-spacing:-.04em;color:#F0D89A}
+.gs-top span{font-size:14.5px;font-weight:700;color:rgba(255,255,255,.88)}
+.gs-urn{background:linear-gradient(90deg,#FFF3D2,#FFFAEB);border-color:#E2C27A}
+.gap250-cap-good{margin-top:16px;color:#1B3F30}
+.gap250-cap-good b{color:#B3322A;font-size:19px;text-decoration-color:#E2554A}
+.gap250-cap-good small{color:#7A6A44;font-size:13px}
+
+/* 핵심 4키워드 — 상자 없이 한 줄로 */
+.gap250-keys{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);margin:42px 0 0;padding:0;border-top:1px solid rgba(231,203,146,.35);border-bottom:1px solid rgba(231,203,146,.35);text-align:center}
+.gap250-keys li{padding:22px 10px 20px;display:flex;flex-direction:column;gap:6px}
+.gap250-keys li+li{border-left:1px solid rgba(231,203,146,.3)}
+.gap250-keys b{font-family:'Noto Serif KR',serif;font-size:clamp(17px,1.8vw,22px);font-weight:700;letter-spacing:-.04em;color:#F0D89A}
+.gap250-keys li:last-child b{color:#FF9A8F}
+.gap250-keys span{font-size:14px;font-weight:500;color:rgba(255,255,255,.78);letter-spacing:-.03em}
+
+/* 인장 + 한 줄 약속 */
+.gap250-vow{display:flex;align-items:center;justify-content:center;gap:30px;margin-top:38px;text-align:left}
+.gap250-seal{flex:none;width:132px;height:132px;filter:drop-shadow(0 14px 22px rgba(0,0,0,.55));animation:gapSeal 9s ease-in-out infinite}
+@keyframes gapSeal{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(4deg)}}
+.gap250-vow-tx p{margin:0;font-family:'Noto Serif KR',serif;font-size:clamp(20px,2.6vw,28px);font-weight:700;line-height:1.5;letter-spacing:-.045em;color:#fff;word-break:keep-all}
+.gap250-vow-tx p b{color:#F0D89A;font-weight:900;text-decoration:underline;text-decoration-color:#E2554A;text-decoration-thickness:2px;text-underline-offset:6px}
+.gap250-cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:20px}
+.gap250-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:58px;padding:0 32px;border:none;border-radius:13px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;font-size:18px;font-weight:900;letter-spacing:-.02em;color:#2A1E0A;
+  background:linear-gradient(180deg,#EBD29B 0%,#CBA76C 55%,#B58C4C 100%);box-shadow:inset 0 1.5px 0 rgba(255,255,255,.65),0 14px 28px -12px rgba(0,0,0,.7);animation:hsBtnPulse 2.8s ease-in-out infinite}
+.gap250-btn svg{width:18px;height:18px}
+.gap250-tel{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;height:58px;padding:0 26px;border-radius:13px;text-decoration:none;border:2px solid #E7CB92;background:rgba(240,216,154,.1)}
+.gap250-tel span{font-size:12.5px;font-weight:700;color:#E7CB92}
+.gap250-tel b{font-family:'Noto Serif KR',serif;font-size:21px;font-weight:900;color:#fff}
+@media(prefers-reduced-motion:reduce){.gap250-seal{animation:none}}
+
+@media(max-width:900px){
+  .gap250-vs{grid-template-columns:1fr;gap:22px}
+  .gap250-keys{grid-template-columns:repeat(2,1fr)}
+  .gap250-keys li:nth-child(3){border-left:none}
+  .gap250-keys li:nth-child(n+3){border-top:1px solid rgba(231,203,146,.3)}
+}
+@media(max-width:640px){
+  .gap250{padding:50px 0 46px}
+  .gap250-vs{margin-top:30px}
+  .gap250-bad,.gap250-good{padding:20px 16px 18px;border-radius:16px}
+  .gap250-stairs{height:176px;gap:6px}
+  .gap250-stairs .st i{font-size:10.5px;bottom:-26px}
+  .gap250-bad .gap250-cap{margin-top:40px}
+  .gap250-stack{min-height:0}
+  .gs{min-height:46px}
+  .gs span{font-size:14px}
+  .gs-top b{font-size:34px}
+  .gap250-keys{margin-top:32px}
+  .gap250-keys li{padding:18px 8px 16px}
+  .gap250-keys b{font-size:16.5px}
+  .gap250-keys span{font-size:12.5px}
+  .gap250-vow{flex-direction:column;text-align:center;gap:16px;margin-top:30px}
+  .gap250-seal{width:112px;height:112px}
+  .gap250-cta{justify-content:center}
+  .gap250-btn,.gap250-tel{flex:1 1 100%;height:56px}
+  .gap250-tel b{font-size:20px}
+}
