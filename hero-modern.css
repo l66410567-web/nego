@@ -4242,3 +4242,6 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .gap250-kic svg{width:24px;height:24px}
 .gs-urn span{flex-wrap:wrap;row-gap:4px;line-height:1.35}
 @media(max-width:640px){.gap250-kic{width:42px;height:42px}.gap250-kic svg{width:21px;height:21px}.gs-urn span{font-size:13.5px}.hero-lead2{font-size:14.5px}}
+
+/* 메뉴 문구가 길어져도 한 줄 유지 */
+.gnb-more-btn,.gnb-more{white-space:nowrap}
