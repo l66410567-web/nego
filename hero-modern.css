@@ -4250,3 +4250,10 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 @media(max-width:640px){
   .no-hall-links .phead{min-height:calc(100vh - 74px - 66px);min-height:calc(100svh - 74px - 66px);padding-top:18px;padding-bottom:26px}
 }
+
+/* 무빈소250 히어로 부제 — 줄 앞 작은 아이콘 */
+.hl2-row{display:flex;align-items:flex-start;gap:9px}
+.hl2-row+.hl2-row{margin-top:3px}
+.hl2-ic{flex:none;display:grid;place-items:center;width:22px;height:22px;margin-top:.32em;border-radius:50%;color:#2A1E0A;background:linear-gradient(180deg,#EBD29B,#C49E5E)}
+.hl2-ic svg{width:13px;height:13px}
+@media(max-width:640px){.hl2-row{gap:7px}.hl2-ic{width:19px;height:19px;margin-top:.3em}.hl2-ic svg{width:11px;height:11px}}
