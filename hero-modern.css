@@ -4257,3 +4257,50 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .hl2-ic{flex:none;display:grid;place-items:center;width:22px;height:22px;margin-top:.32em;border-radius:50%;color:#2A1E0A;background:linear-gradient(180deg,#EBD29B,#C49E5E)}
 .hl2-ic svg{width:13px;height:13px}
 @media(max-width:640px){.hl2-row{gap:7px}.hl2-ic{width:19px;height:19px;margin-top:.3em}.hl2-ic svg{width:11px;height:11px}}
+
+/* 무빈소250 대표 상품 카드 + 가격 약속 + 200% 보상 — PC에서 좌우 폭 확대(위·아래 구역 폭에 맞춤) */
+@media(min-width:901px){
+  #prod250 .wrap-narrow{max-width:1000px}
+  .prod-intro{max-width:880px}
+  .prod-intro-lead{font-size:24px}
+  .prod-intro-main{font-size:29px}
+  .prod-card{max-width:880px;border-radius:24px}
+  .prod-head{padding:34px 40px 30px}
+  .prod-badge{font-size:14px;padding:6px 18px}
+  .prod-name{font-size:36px}
+  .prod-sub{font-size:16px}
+  .prod-price{padding:32px 0 6px}
+  .prod-price b{font-size:58px}
+  .prod-price span{font-size:28px}
+  .prod-price-note{font-size:14px;margin:0 44px 24px}
+  .prod-gal{margin:20px 36px 8px;padding:16px 16px 17px}
+  .pg8{gap:10px}
+  .prod-gal-tx b{font-size:20px}
+  .prod-gal-tx span{font-size:14.5px}
+  .prod-list{padding:0 44px 10px}
+  .prod-list li{font-size:17.5px;padding:15px 0 15px 34px}
+  .prod-list li .ck{top:16px}
+  .prod-cond{font-size:14px}
+  .prod-signature{margin:24px 36px 8px;padding:36px 44px 30px}
+  .prod-signature .ps-lead{font-size:19.5px}
+  .prod-signature .ps-body{font-size:15px}
+  .prod-signature .ps-vow{font-size:21px}
+  .prod-tags{padding:20px 40px 4px;gap:10px}
+  .prod-tags span{font-size:13.5px;padding:6px 16px}
+  .prod-btn{width:calc(100% - 88px);margin:22px 44px 32px;padding:20px;font-size:19.5px}
+  .prod-foot{max-width:880px;font-size:13.5px}
+  .svc250-claim{max-width:880px}
+  .svc250-claim-badge{font-size:14.5px;padding:7px 20px}
+  .svc250-claim p{font-size:29px}
+  .svc250-claim p.vow-note{max-width:760px;font-size:13px}
+  .vow{max-width:880px;padding:38px 44px 32px;gap:11px}
+  .vow-ico{width:68px;height:68px}
+  .vow-ico svg{width:36px;height:36px}
+  .vow-eyebrow{font-size:14px}
+  .vow-title{font-size:32px}
+  .vow-desc{font-size:19px;max-width:700px}
+  .vow-conf{font-size:17px;max-width:700px}
+}
+@media(min-width:641px) and (max-width:900px){
+  .prod-card,.prod-intro,.svc250-claim,.vow{max-width:min(720px,100%)}
+}
