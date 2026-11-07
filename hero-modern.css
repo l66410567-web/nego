@@ -4238,3 +4238,7 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .hero-lead2{line-height:1.8}
 .hero-lead2 .phl{font-weight:900}
 @media(max-width:640px){.hero-lead2{font-size:15px;letter-spacing:-.04em}}
+.gap250-kic{display:grid;place-items:center;width:48px;height:48px;margin:0 auto 6px;border-radius:50%;font-style:normal;color:#2A1E0A;background:linear-gradient(180deg,#F3DFA8,#D2AC64);box-shadow:0 8px 16px -8px rgba(0,0,0,.6)}
+.gap250-kic svg{width:24px;height:24px}
+.gs-urn span{flex-wrap:wrap;row-gap:4px;line-height:1.35}
+@media(max-width:640px){.gap250-kic{width:42px;height:42px}.gap250-kic svg{width:21px;height:21px}.gs-urn span{font-size:13.5px}.hero-lead2{font-size:14.5px}}
