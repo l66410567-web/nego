@@ -4245,3 +4245,8 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 
 /* 메뉴 문구가 길어져도 한 줄 유지 */
 .gnb-more-btn,.gnb-more{white-space:nowrap}
+
+/* 무빈소250 모바일: 첫 화면(히어로)이 화면을 채워 아래 초록 구역 윗부분이 비쳐 보이지 않게 */
+@media(max-width:640px){
+  .no-hall-links .phead{min-height:calc(100vh - 74px - 66px);min-height:calc(100svh - 74px - 66px);padding-top:18px;padding-bottom:26px}
+}
