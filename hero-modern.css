@@ -4388,3 +4388,8 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .faq-more-btn:hover{background:#FBF5E8}
 .faq-more-btn:focus-visible{outline:3px solid rgba(200,164,106,.55);outline-offset:2px}
 @media(max-width:640px){.faq-more-btn{width:100%;justify-content:center;font-size:15px}}
+
+/* 푸터 브랜드명 앞 로고 심볼 */
+.foot-brand{display:flex;align-items:center;gap:10px}
+.foot-brand-ico{display:block;flex:none;height:30px;width:auto}
+@media(max-width:640px){.foot-brand-ico{height:27px}}
