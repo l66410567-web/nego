@@ -4375,3 +4375,7 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .jm-list b{font-size:16px}
   .jm-list span{font-size:13.5px}
 }
+
+/* 온라인 조문관 — 무빈소250 곳곳에 짧게 반영 */
+.gap250-stack{grid-template-rows:auto repeat(5,1fr);min-height:296px}
+@media(min-width:901px){.gap250-stairs{height:288px}}
