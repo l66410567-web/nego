@@ -4324,3 +4324,5 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .gs-urn .gu-tx{display:block;line-height:1.5}
 .gs-urn>span>svg{margin-top:.1em}
 .gs-urn .gu-tx em{display:inline-block;margin-left:6px;vertical-align:1px}
+.gs-urn>span{flex-wrap:nowrap}
+.gs-urn .gu-tx{flex:1 1 auto;min-width:0}
