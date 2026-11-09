@@ -4393,3 +4393,66 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .foot-brand{display:flex;align-items:center;gap:10px}
 .foot-brand-ico{display:block;flex:none;height:30px;width:auto}
 @media(max-width:640px){.foot-brand-ico{height:27px}}
+
+/* ===== 안식처(함) 프리미엄 패널 — 짙은 솔잎 녹색 + 금박 선 ===== */
+.prod-heirloom{position:relative;margin:24px 22px 8px;padding:40px 26px 32px;border-radius:16px;overflow:hidden;color:#F6EFDD;text-align:center;
+  background:
+    radial-gradient(90% 55% at 50% 0%,rgba(216,184,119,.16),rgba(216,184,119,0) 70%),
+    repeating-linear-gradient(45deg,rgba(255,255,255,.018) 0 2px,rgba(255,255,255,0) 2px 14px),
+    linear-gradient(165deg,#21503D 0%,#16352A 52%,#0F271F 100%);
+  box-shadow:0 0 0 1px rgba(216,184,119,.55),0 0 0 6px #0F271F,0 0 0 7px rgba(216,184,119,.35),0 30px 50px -26px rgba(15,39,31,.9)}
+.prod-heirloom::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,transparent,#E3C98F 30%,#E3C98F 70%,transparent)}
+.prod-heirloom>*{position:relative;z-index:1}
+.prod-heirloom p,.prod-heirloom h4{margin:0}
+.hl-mark{display:block;width:58px;height:58px;margin:0 auto 18px;border-radius:50%;line-height:0;box-shadow:0 0 0 2px rgba(216,184,119,.6),0 0 0 8px rgba(216,184,119,.14),0 10px 26px rgba(0,0,0,.45)}
+.hl-mark svg{display:block;width:100%;height:100%}
+.hl-mark svg circle:first-child{fill:#0F271F}
+.hl-eyebrow{font-family:'Noto Sans KR',sans-serif;font-size:13px;font-weight:700;letter-spacing:.16em;color:#E3C98F}
+.hl-title{margin-top:12px;font-family:'Noto Serif KR',serif;font-size:25px;line-height:1.5;font-weight:700;letter-spacing:-.02em;color:#FFFAEE;word-break:keep-all}
+.hl-title em{font-style:normal;color:#F0D89A;background:linear-gradient(transparent 70%,rgba(226,85,74,.55) 70%)}
+.hl-sub{margin-top:14px;font-size:15.5px;line-height:1.7;font-weight:500;color:#D9D1BA;word-break:keep-all}
+.hl-rule{margin:24px 0 20px;display:flex;align-items:center;justify-content:center;gap:12px}
+.hl-rule i{display:block;width:70px;height:1px;background:linear-gradient(90deg,transparent,rgba(216,184,119,.8))}
+.hl-rule i:last-child{background:linear-gradient(270deg,transparent,rgba(216,184,119,.8))}
+.hl-rule u{display:block;width:7px;height:7px;border:1.5px solid #E3C98F;transform:rotate(45deg)}
+.hl-lead{font-family:'Noto Serif KR',serif;font-size:18px;font-weight:600;line-height:1.6;color:#F6EFDD}
+.hl-lead b{color:#F0D89A;font-weight:700}
+.hl-grid{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:12px;text-align:left}
+.hl-tile{display:flex;gap:16px;align-items:flex-start;padding:18px 18px 18px 16px;border-radius:12px;background:rgba(255,255,255,.055);border:1px solid rgba(216,184,119,.34)}
+.hl-tile-feat{background:linear-gradient(160deg,rgba(216,184,119,.2),rgba(216,184,119,.07));border-color:rgba(227,201,143,.75);box-shadow:0 14px 28px -20px rgba(0,0,0,.8)}
+.hl-ico{flex:none;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;color:#E3C98F;border:1px solid rgba(216,184,119,.6);background:rgba(10,24,19,.55)}
+.hl-ico svg{width:28px;height:28px}
+.hl-tx{display:flex;flex-direction:column;gap:4px;min-width:0}
+.hl-tx small{font-size:13px;font-weight:700;letter-spacing:.08em;color:#E3C98F}
+.hl-tx b{font-family:'Noto Serif KR',serif;font-size:18.5px;line-height:1.45;font-weight:700;color:#FFFAEE;word-break:keep-all}
+.hl-tx b span{font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:500;color:#D9D1BA;margin:0 2px}
+.hl-tx>span{font-size:14.5px;line-height:1.65;color:#D9D1BA;word-break:keep-all}
+.hl-chip{align-self:flex-start;margin-top:6px;padding:3px 12px;border-radius:999px;font-style:normal;font-size:13px;font-weight:800;color:#2A1E0A;background:linear-gradient(180deg,#F3DFA8,#D2AC64)}
+.hl-chip-g{background:linear-gradient(180deg,#F8E9BE,#E0BD74)}
+.hl-br2{display:none}
+.hl-vow{margin-top:40px;padding-top:26px;position:relative;font-family:'Noto Serif KR',serif;font-size:19px;line-height:1.7;font-weight:600;color:#F6EFDD;word-break:keep-all}
+.hl-vow::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:44px;height:2px;background:linear-gradient(90deg,#C8A46A,#F0D89A,#C8A46A)}
+.hl-vow b{color:#F0D89A;font-weight:800}
+.hl-q{color:#E3C98F;font-weight:700}
+@media(max-width:640px){
+  .prod-heirloom{margin:18px 12px 6px;padding:32px 16px 26px;border-radius:14px}
+  .hl-title{font-size:22px}
+  .hl-sub{font-size:14.5px}
+  .hl-lead{font-size:16.5px}
+  .hl-tile{padding:15px 14px;gap:13px}
+  .hl-ico{width:46px;height:46px}.hl-ico svg{width:25px;height:25px}
+  .hl-tx b{font-size:17px}
+  .hl-tx>span{font-size:13.5px}
+  .hl-vow{font-size:17px}
+  .hl-br2{display:inline}
+}
+@media(min-width:901px){
+  .prod-heirloom{margin:28px 36px 10px;padding:52px 44px 42px}
+  .hl-title{font-size:32px}
+  .hl-sub{font-size:17px}
+  .hl-lead{font-size:20px}
+  .hl-grid{grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+  .hl-tile{flex-direction:column;align-items:flex-start;padding:22px 20px;gap:14px}
+  .hl-br2{display:inline}
+  .hl-vow{font-size:22px;margin-top:46px}
+}
