@@ -4495,3 +4495,53 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
   .pgx-phones img{width:114%;max-width:none;margin:-8px -7% -16px}
   .pgx-4{margin-bottom:0}
 }
+
+/* ===== 대표 상품 카드: 250만원에 담긴 것 — 통일된 4구성 카드 ===== */
+.cfg{margin:20px 22px 8px}
+.cfg-head{text-align:center;margin-bottom:18px}
+.cfg-eyebrow{display:block;font-size:13px;font-weight:800;letter-spacing:.12em;color:#8A6A2E}
+.cfg-title{margin:6px 0 0;font-family:'Noto Serif KR',serif;font-size:21px;line-height:1.45;font-weight:900;letter-spacing:-.03em;color:#1E4534;word-break:keep-all}
+.cfg-grid{display:grid;gap:14px}
+.cfg-card{background:#fff;border:1px solid rgba(200,164,106,.6);border-radius:14px;padding:18px 16px 16px;box-shadow:0 12px 24px -20px rgba(80,60,20,.55)}
+.cfg-ch{display:flex;gap:13px;align-items:center}
+.cfg-ic{flex:none;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;color:#2A1E0A;background:linear-gradient(180deg,#EBD29B,#C49E5E);box-shadow:0 6px 12px -6px rgba(90,60,10,.6)}
+.cfg-ic svg{width:25px;height:25px}
+.cfg-ch small{display:block;font-size:12.5px;font-weight:800;letter-spacing:.14em;color:#A87C2E}
+.cfg-ch h4{margin:1px 0 0;font-family:'Noto Serif KR',serif;font-size:19px;line-height:1.3;font-weight:900;letter-spacing:-.03em;color:#1E4534}
+.cfg-ch p{margin:3px 0 0;font-size:13.5px;line-height:1.5;color:#6a5a3a;word-break:keep-all}
+.cfg-m{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:6px;height:206px;padding:8px;border-radius:10px;background:linear-gradient(180deg,#FFFBF0,#F8F0DA);border:1px solid rgba(200,164,106,.45)}
+.cfg-m img{display:block;width:100%;height:100%;object-fit:cover;border-radius:7px;border:1px solid rgba(168,124,46,.4);background:#fff}
+.cfg-m-ph{display:flex;align-items:center;justify-content:center;padding:6px}
+.cfg-m-ph img{width:auto;height:100%;max-width:100%;object-fit:contain;border:0;border-radius:0;background:transparent;filter:drop-shadow(0 6px 10px rgba(40,30,10,.3))}
+.cfg-ul{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:9px}
+.cfg-ul li{display:flex;gap:9px;align-items:flex-start;font-size:15px;line-height:1.6;color:#2b2b2b;word-break:keep-all}
+.cfg-ul .ck{flex:none;margin-top:1px;color:#A87C2E;font-weight:900}
+.cfg-ul b{color:#1E4534;font-weight:800}
+.cfg-ul i{font-style:normal;font-size:13px;font-weight:600;color:#8a7a5c}
+.cfg-chip{display:inline-block;margin:0 2px;padding:1px 9px;border-radius:999px;font-style:normal;font-size:12.5px;font-weight:800;color:#2A1E0A;background:linear-gradient(180deg,#F3DFA8,#D2AC64);vertical-align:1px}
+.cfg-vow{margin:22px 0 0;text-align:center;font-family:'Noto Serif KR',serif;font-size:17px;line-height:1.7;font-weight:700;color:#1E4534;word-break:keep-all}
+.cfg-vow b{color:#16362A;font-weight:900}
+.cfg-vow span{color:#A87C2E}
+@media(max-width:640px){
+  .cfg{margin:16px 12px 6px}
+  .cfg-title{font-size:19px}
+  .cfg-card{padding:16px 14px 14px}
+  .cfg-m{height:188px}
+  .cfg-ul li{font-size:14.5px}
+  .cfg-vow{font-size:15.5px}
+}
+@media(min-width:720px){
+  .cfg-grid{grid-template-columns:1fr 1fr;align-items:stretch}
+}
+@media(min-width:901px){
+  .cfg{margin:26px 36px 10px}
+  .cfg-title{font-size:26px}
+  .cfg-grid{gap:16px}
+  .cfg-card{padding:22px 20px 20px}
+  .cfg-m{height:216px}
+  .cfg-ul li{font-size:15.5px}
+  .cfg-vow{font-size:21px;margin-top:28px}
+}
+/* 구성 카드 사진 칸: 이미지 고유 크기가 칸을 밀어내지 않게 고정 */
+.cfg-m{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));overflow:hidden}
+.cfg-m img{min-width:0;min-height:0;max-width:100%}
