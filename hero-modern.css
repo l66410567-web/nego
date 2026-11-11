@@ -4639,3 +4639,4 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .cfg-m-3 figcaption .cfg-mj{display:block;margin-bottom:1px;font-size:10.5px;line-height:1.2;font-weight:800;letter-spacing:0;color:#A87C2E}
 .urnx-mk{display:inline-flex;align-self:flex-start;align-items:center;gap:6px;margin-top:14px;padding:6px 12px;border-radius:999px;background:linear-gradient(180deg,#F3DFA8,#D2AC64);color:#2A1E0A;font-size:12px;font-weight:800;letter-spacing:-.01em}
 .urnx-mk svg{width:14px;height:14px;flex:none}
+.cfg-ch h4 .opt.opt-free{margin-left:5px;padding:1px 7px;border-radius:999px;background:linear-gradient(180deg,#F3DFA8,#D9B66F);color:#4A3406;font-size:10.5px;font-weight:800;line-height:1.5;vertical-align:1px}
