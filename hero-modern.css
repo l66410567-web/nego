@@ -4554,3 +4554,18 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 @media(max-width:640px){.cfg-m-3{min-height:0;gap:6px;padding:10px 6px 8px}.cfg-m-3 figcaption{font-size:12.5px}}
 .cfg-ch h4 .opt{font-style:normal;font-family:'Noto Sans KR',sans-serif;font-size:12px;font-weight:600;letter-spacing:0;color:#7A7766;margin-left:6px;display:inline-block}
 .jm-badge .opt{font-style:normal;font-size:11px;font-weight:600;letter-spacing:0;color:#D9CFAE;margin-left:5px;white-space:nowrap}
+
+/* 진공 유골함 캡션 보조 */
+.cfg-m-3 figcaption .cfg-sub{display:block;margin-top:2px;font-size:10px;line-height:1.2;font-weight:600;letter-spacing:0;color:#8A866F}
+/* 안치 방식별 제공 구성 */
+.stay{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin:0 0 24px}
+@media(min-width:820px){.stay{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}}
+.stay-c{display:flex;flex-direction:column;min-width:0;background:#fff;border:1px solid #E0D5B8;border-radius:16px;overflow:hidden;box-shadow:0 6px 18px rgba(30,69,52,.07)}
+.stay-m{display:grid;grid-template-columns:minmax(0,1fr);gap:2px;height:190px;background:#EFE7D0;overflow:hidden}
+.stay-m.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.stay-m img{width:100%;height:100%;min-height:0;object-fit:cover;display:block}
+.stay-b{padding:16px 18px 20px;display:flex;flex-direction:column;gap:6px}
+.stay-tag{align-self:flex-start;padding:4px 11px;border-radius:999px;background:linear-gradient(180deg,#2C5D47,#1E4534);color:#F5EACB;font-size:12px;font-weight:800;letter-spacing:-.01em}
+.stay-b h3{margin:4px 0 0;font-family:'Noto Serif KR',serif;font-size:18px;line-height:1.4;font-weight:900;letter-spacing:-.03em;color:#1E4534}
+.stay-b h3 small{font-family:'Noto Sans KR',sans-serif;font-size:11px;font-weight:600;letter-spacing:0;color:#8A866F}
+.stay-b p{margin:0;font-size:14.5px;line-height:1.75;color:#4A4A40;word-break:keep-all}
