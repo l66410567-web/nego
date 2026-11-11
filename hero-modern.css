@@ -4328,7 +4328,7 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .gs-urn .gu-tx{flex:1 1 auto;min-width:0}
 
 /* ===== 온라인 조문관 소개 구역 ===== */
-.jm-sec{background:linear-gradient(180deg,#F8F4EA 0%,#F2EBDB 100%);padding:76px 0 70px}
+.jm-sec{background:linear-gradient(180deg,#EEF3F6 0%,#DFE9EF 100%);border-bottom:1px solid #C7D6DF;padding:76px 0 70px}
 .jm-grid{display:grid;grid-template-columns:minmax(260px,330px) 1fr;gap:56px;align-items:center;max-width:980px;margin:0 auto}
 .jm-vis{display:flex;justify-content:center}
 .jm-phone{width:286px;border-radius:38px;padding:9px;background:linear-gradient(160deg,#2A2A28,#121211);box-shadow:0 38px 60px -30px rgba(40,30,10,.55),0 0 0 1px rgba(0,0,0,.25);transform:rotate(-1.5deg)}
