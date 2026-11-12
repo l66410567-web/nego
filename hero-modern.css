@@ -4640,3 +4640,39 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .urnx-mk{display:inline-flex;align-self:flex-start;align-items:center;gap:6px;margin-top:14px;padding:6px 12px;border-radius:999px;background:linear-gradient(180deg,#F3DFA8,#D2AC64);color:#2A1E0A;font-size:12px;font-weight:800;letter-spacing:-.01em}
 .urnx-mk svg{width:14px;height:14px;flex:none}
 .cfg-ch h4 .opt.opt-free{margin-left:5px;padding:1px 7px;border-radius:999px;background:linear-gradient(180deg,#F3DFA8,#D9B66F);color:#4A3406;font-size:10.5px;font-weight:800;line-height:1.5;vertical-align:1px}
+
+/* ───── 사전등록 전환 구역 (2곳) ───── */
+.prc{padding:0}
+.prc-a{padding:8px 0 64px}
+.prc-card{position:relative;overflow:hidden;text-align:center;padding:46px 28px 38px;border-radius:22px;background:radial-gradient(120% 90% at 50% 0%,#24503F 0%,#173B2E 55%,#0F2A21 100%);border:1px solid #D8B877;box-shadow:0 24px 50px -22px rgba(15,42,33,.7)}
+.prc-card::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,transparent,#E3C98F,transparent)}
+.prc-eye{display:inline-block;padding:6px 16px;border:1px solid rgba(216,184,119,.7);border-radius:999px;color:#E8CF92;font-size:13px;font-weight:800;letter-spacing:.08em}
+.prc-card h3{margin:18px 0 0;font-family:'Noto Serif KR',serif;font-size:32px;line-height:1.45;font-weight:900;letter-spacing:-.02em;color:#fff}
+.prc-card h3 em{font-style:normal;color:#EBCB78;background:linear-gradient(transparent 72%,rgba(226,85,74,.5) 72%)}
+.prc-sub{margin:16px auto 0;max-width:520px;font-size:15.5px;line-height:1.85;color:#E4DCC3;word-break:keep-all}
+.prc-pts{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 10px}
+.prc-pts li{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border:1px solid rgba(216,184,119,.5);border-radius:999px;background:rgba(0,0,0,.18);font-size:13.5px;font-weight:700;color:#F1E7C9}
+.prc-pts svg{width:15px;height:15px;color:#EBCB78;flex:none}
+.prc-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;margin-top:28px;min-height:60px;padding:0 38px;border:0;border-radius:14px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;font-size:19px;font-weight:900;letter-spacing:-.02em;color:#2A1E0A;background:linear-gradient(180deg,#FBE9B2,#E3BD6C);box-shadow:0 12px 26px -10px rgba(0,0,0,.65),inset 0 1px 0 rgba(255,255,255,.6);transition:transform .15s ease,box-shadow .15s ease}
+.prc-btn:hover{transform:translateY(-2px);box-shadow:0 16px 30px -10px rgba(0,0,0,.7),inset 0 1px 0 rgba(255,255,255,.6)}
+.prc-btn svg{width:20px;height:20px}
+.prc-tel{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:18px;font-size:14.5px;font-weight:600;color:#D9D1BA;text-decoration:none}
+.prc-tel svg{width:17px;height:17px;color:#E3C98F}
+.prc-tel b{color:#EBCB78;font-family:'Noto Serif KR',serif;font-size:17px;font-weight:900;letter-spacing:.01em}
+.prc-b{padding:6px 0 54px}
+.prc-strip{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:22px 26px 22px 28px;border-radius:16px;background:linear-gradient(180deg,#FFFDF6,#F6EFDB);border:1px solid #D8B877;border-left:6px solid #1E4534;box-shadow:0 14px 30px -20px rgba(30,69,52,.5)}
+.prc-strip-tx{display:flex;flex-direction:column;gap:4px;min-width:0}
+.prc-strip-tx b{font-family:'Noto Serif KR',serif;font-size:19px;line-height:1.45;font-weight:900;letter-spacing:-.02em;color:#1E4534;word-break:keep-all}
+.prc-strip-tx span{font-size:14px;line-height:1.6;color:#5A5A4C;word-break:keep-all}
+.prc-btn-s{flex:none;margin-top:0;min-height:52px;padding:0 24px;font-size:16.5px;color:#F5EACB;background:linear-gradient(180deg,#2C5D47,#1E4534);box-shadow:0 10px 22px -10px rgba(30,69,52,.8)}
+.prc-btn-s:hover{box-shadow:0 14px 26px -10px rgba(30,69,52,.9)}
+@media(max-width:640px){
+.prc-a{padding:4px 0 48px}
+.prc-card{padding:36px 20px 30px;border-radius:18px}
+.prc-card h3{font-size:25px}
+.prc-sub{font-size:14.5px}
+.prc-btn{width:100%;min-height:58px;padding:0 20px;font-size:18px}
+.prc-strip{flex-direction:column;align-items:stretch;gap:16px;padding:20px 18px 20px 20px}
+.prc-strip-tx b{font-size:17.5px}
+.prc-btn-s{width:100%}
+}
