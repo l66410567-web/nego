@@ -4705,3 +4705,15 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .cf-solve b{font-size:18px}
 .cf-solve p{font-size:13.5px}
 }
+
+/* 사전등록 혜택 안내 한 줄 */
+.perk{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px 12px;margin:16px auto 6px;padding:10px 14px;max-width:560px;border:1px solid rgba(168,124,46,.5);border-radius:14px;background:linear-gradient(180deg,#FFFBEF,#F6EBCB)}
+.perk-ico{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,#2C5D47,#1E4534);color:#F5EACB}
+.perk-ico svg{width:16px;height:16px}
+.perk-tx{font-size:14px;line-height:1.55;font-weight:600;color:#4A3A12;word-break:keep-all;text-align:left}
+.perk-tx b{font-weight:800;color:#1E4534}
+.perk-btn{flex:none;padding:6px 14px;border:0;border-radius:999px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;font-size:13px;font-weight:900;color:#2A1E0A;background:linear-gradient(180deg,#F8E4A8,#DDB566);box-shadow:0 6px 14px -8px rgba(60,40,0,.6)}
+.perk-btn:hover{filter:brightness(1.05)}
+.perk-prod{margin-top:14px}
+.perk-hall{margin:22px auto 4px}
+@media(max-width:640px){.perk{margin-left:14px;margin-right:14px;padding:10px 12px;gap:8px 10px}.perk-tx{font-size:13.5px}}
