@@ -4680,23 +4680,28 @@ a.pmq-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(24,52,45
 .prc-strip-tx b{font-size:17.5px}
 .prc-btn-s{width:100%}
 }
-
 /* 무빈소 걱정 → 온라인 조문관이 해결 */
-.creed-fix{margin:26px auto 0;display:flex;flex-direction:column;align-items:center;gap:12px}
-.cf-lab{font-size:12.5px;font-weight:700;letter-spacing:.08em;color:#9FB5A3}
-.cf-worry{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 10px}
-.cf-worry li{display:inline-flex;align-items:center;padding:7px 15px;border-radius:999px;border:1px dashed rgba(195,210,190,.5);background:rgba(0,0,0,.14);font-size:13.5px;font-weight:600;color:#B9C8B7;text-decoration:line-through;text-decoration-color:rgba(231,206,146,.7);text-decoration-thickness:1.5px}
+.creed-fix{margin:30px auto 0;max-width:820px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.cf-lab{font-size:12.5px;font-weight:700;letter-spacing:.1em;color:#9FB5A3}
+.cf-worry{list-style:none;margin:0;padding:0;width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;text-align:left}
+.cf-worry li{position:relative;display:flex;flex-direction:column;gap:7px;padding:14px 16px 16px;border-radius:14px 14px 14px 4px;border:1px solid rgba(195,210,190,.3);background:rgba(255,255,255,.06)}
+.cf-worry li:first-child{border-color:rgba(216,184,119,.6);background:rgba(216,184,119,.1)}
+.cf-who{font-size:11.5px;font-weight:800;letter-spacing:.06em;color:#E7CE92}
+.cf-worry q{quotes:"“" "”";font-family:'Noto Serif KR',serif;font-size:15px;line-height:1.6;font-weight:700;letter-spacing:-.02em;color:#EEF3EA;word-break:keep-all}
 .cf-arrow{display:block;line-height:0;color:#E7CE92}
-.cf-arrow svg{width:20px;height:20px}
-.cf-solve{display:inline-flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px 12px;padding:12px 22px;border-radius:14px;border:1px solid rgba(216,184,119,.75);background:linear-gradient(135deg,rgba(216,184,119,.24),rgba(216,184,119,.08))}
-.cf-ok{display:inline-flex;align-items:center;gap:5px;padding:4px 12px 4px 9px;border-radius:999px;background:linear-gradient(180deg,#F3DFA8,#D2AC64);color:#2A1E0A;font-size:13px;font-weight:900}
+.cf-arrow svg{width:22px;height:22px}
+.cf-solve{width:100%;display:flex;flex-direction:column;align-items:center;gap:9px;padding:18px 22px 20px;border-radius:16px;border:1px solid rgba(216,184,119,.8);background:linear-gradient(135deg,rgba(216,184,119,.26),rgba(216,184,119,.08));box-shadow:0 16px 30px -20px rgba(0,0,0,.7)}
+.cf-ok{display:inline-flex;align-items:center;gap:5px;padding:4px 13px 4px 10px;border-radius:999px;background:linear-gradient(180deg,#F3DFA8,#D2AC64);color:#2A1E0A;font-size:13px;font-weight:900}
 .cf-ok svg{width:14px;height:14px}
-.cf-solve b{font-family:'Noto Serif KR',serif;font-size:18px;font-weight:900;letter-spacing:-.02em;color:#fff}
-.cf-solve small{font-size:12px;font-weight:600;color:#C3D2BE}
-@media(max-width:640px){
-.creed-fix{margin-top:22px;gap:10px}
-.cf-worry li{font-size:12.5px;padding:6px 12px}
-.cf-solve{padding:11px 16px}
-.cf-solve b{font-size:16px}
-}
+.cf-solve b{font-family:'Noto Serif KR',serif;font-size:21px;line-height:1.4;font-weight:900;letter-spacing:-.02em;color:#fff}
 .cf-solve b small{font-family:'Noto Sans KR',sans-serif;font-size:12px;font-weight:600;letter-spacing:0;color:#C3D2BE;white-space:nowrap}
+.cf-solve p{margin:0;font-size:14.5px;line-height:1.7;color:#E4DCC3;word-break:keep-all}
+@media(max-width:760px){
+.creed-fix{margin-top:24px;gap:12px}
+.cf-worry{grid-template-columns:minmax(0,1fr);gap:9px}
+.cf-worry li{padding:12px 14px 13px}
+.cf-worry q{font-size:14.5px}
+.cf-solve{padding:16px 16px 18px}
+.cf-solve b{font-size:18px}
+.cf-solve p{font-size:13.5px}
+}
