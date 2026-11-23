@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>온라인 추모관 | 빛고을장례119</title>
+<meta name="description" content="빛고을장례119 온라인 추모관 — 멀리서도 헌화하고 추모의 글을 남길 수 있는 추모 공간입니다.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="빛고을장례119">
+<meta property="og:title" content="故 ○○○ 님 온라인 추모관 | 빛고을장례119">
+<meta property="og:description" content="삼가 고인의 명복을 빕니다. 멀리서도 헌화하고 마음을 남기실 수 있습니다.">
+<meta property="og:image" content="https://xn--119-hd8l686b5tiiiqgwa.com/memorial-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1A1C1E; --ink2:#2E3135; --mute:#4A4E54; --mute2:#5E6268;
+  --paper:#F7F4EE; --paper2:#EFEBE3; --line:#DCD5C8; --line2:#CFC6B5;
+  --night:#16181A; --night2:#0F1112; --brass:#7A5A32; --brass-lt:#C9B48A; --frame:#8A7A58;
+  --serif:'Noto Serif KR',serif; --sans:'Noto Sans KR',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:#2A2D30;color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{max-width:480px;margin:0 auto;background:var(--paper);min-height:100vh}
+a{color:var(--brass)}
+button,input,textarea{font-family:inherit}
+:focus-visible{outline:2px solid var(--brass-lt);outline-offset:2px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.sample{background:#3A2E1C;color:#F1E6CF;font-size:12px;text-align:center;padding:8px 16px;line-height:1.5}
+
+/* hero */
+.hero{background:var(--night);color:#EDE8DE;padding:0 0 44px;display:flex;flex-direction:column;align-items:center}
+.topbar{width:100%;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #26292C}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{width:34px;height:33px;display:block}
+.brand b{display:block;font-family:var(--serif);font-size:15px;font-weight:600;letter-spacing:.06em;color:#F4EFE6}
+.brand small{display:block;font-size:9px;letter-spacing:.28em;color:#9A8F78}
+.icon-btn{width:44px;height:44px;border-radius:22px;border:1px solid #3A3D40;background:transparent;color:#EDE8DE;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.vline{width:1px;height:40px;background:#6E6248;margin-top:12px}
+.kicker-lt{margin-top:20px;font-size:12px;letter-spacing:.32em;color:var(--brass-lt)}
+.frame{margin-top:34px;padding:6px;border:1px solid var(--frame)}
+.mat{position:relative;overflow:hidden;padding:16px;background:#EDE8DE;border:1px solid #B9A77F}
+.portrait{width:192px;height:248px;background:#2A2D30;box-shadow:inset 0 0 0 1px #B9A77F;display:flex;align-items:center;justify-content:center;color:#9A958C;font-size:12px;letter-spacing:.1em;object-fit:cover}
+.ribbon{position:absolute;top:16px;width:110px;height:15px;background:#0E0F10}
+.ribbon.l{left:-30px;transform:rotate(-45deg)} .ribbon.r{right:-30px;transform:rotate(45deg)}
+.altar{margin-top:18px;display:flex;align-items:flex-end;gap:4px}
+.altar-line{width:250px;height:1px;background:#4A4436;margin-top:6px}
+.hero h1{margin:34px 0 0;font-family:var(--serif);font-size:34px;font-weight:600;letter-spacing:.12em;color:#F4EFE6}
+.hero .dates{margin-top:12px;font-size:13px;font-weight:300;letter-spacing:.14em;color:#BDB6A8}
+.hero .age{margin-top:6px;font-size:13px;font-weight:300;letter-spacing:.14em;color:#BDB6A8}
+.hero .quote{margin:34px 32px 0;font-family:var(--serif);font-size:15px;line-height:1.9;text-align:center;color:#DDD6C8}
+.toc{margin-top:40px;width:100%;padding:0 20px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid #2E3134;border-bottom:1px solid #2E3134}
+.toc a{min-height:52px;display:flex;align-items:center;justify-content:center;font-size:13px;color:#DDD6C8;text-decoration:none}
+
+/* common */
+.kicker{font-size:11px;letter-spacing:.3em;color:var(--brass)}
+.h2{margin:0;font-family:var(--serif);font-size:22px;font-weight:600}
+.head{display:flex;flex-direction:column;gap:8px}
+.serif{font-family:var(--serif)}
+.note{font-size:12px;line-height:1.7;color:var(--mute2)}
+.btn-dark{width:100%;min-height:54px;border:0;background:var(--ink);color:#F4EFE6;font-size:15px;letter-spacing:.2em;cursor:pointer}
+.btn-line{min-height:52px;border:1px solid var(--ink);background:transparent;color:var(--ink);font-size:14px;letter-spacing:.16em;cursor:pointer}
+.field-label{font-size:12px;color:var(--mute)}
+.field-line{height:50px;padding:0 2px;border:0;border-bottom:1px solid #BFB6A4;background:transparent;font-size:16px;color:var(--ink);width:100%}
+.field-box{height:120px;padding:14px;border:1px solid #D6CEBF;background:#FBF9F5;font-family:var(--serif);font-size:16px;line-height:1.8;color:var(--ink);resize:none;width:100%}
+
+.greet{padding:56px 32px 48px;display:flex;flex-direction:column;gap:22px}
+.greet p{margin:0;font-family:var(--serif);font-size:15px;line-height:2;color:var(--ink2)}
+.greet .sign{align-self:flex-end;font-family:var(--serif);font-size:14px;color:var(--mute)}
+
+/* gallery */
+.gallery{padding:56px 0 64px;background:var(--paper2)}
+.g-intro{padding:0 32px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+.g-intro h2{margin:0;font-family:var(--serif);font-size:26px;font-weight:600;line-height:1.5}
+.g-intro p{margin:4px 0 0;font-size:13px;line-height:1.8;color:var(--mute)}
+.chapter{margin:56px 32px 0;display:flex;flex-direction:column;gap:16px}
+.ch-title{font-family:var(--serif);font-size:13px;letter-spacing:.2em;color:var(--brass)}
+.ph{background:#DAD3C6;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--mute2);width:100%;object-fit:cover}
+.ph img,.portrait img{width:100%;height:100%;object-fit:cover;display:block}
+.loading{opacity:.35;transition:opacity .4s}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.label{display:flex;flex-direction:column;gap:6px}
+.label .no{font-size:11px;letter-spacing:.16em;color:var(--mute2)}
+.label .cap{font-family:var(--serif);font-size:15px;line-height:1.8}
+.label .fam{font-size:13px;line-height:1.8;color:var(--mute)}
+.dark-wall{margin-top:56px;padding:44px 0 40px;background:#1E2124;color:#EDE8DE;display:flex;flex-direction:column;gap:16px}
+.dark-wall .ch-title{padding:0 32px;color:var(--brass-lt)}
+.dark-wall .ph{background:#34383C;color:#A9A397}
+.dark-wall .label .no{color:#A9A397}
+.pad{padding:0 32px}
+.last{margin:60px 32px 0;display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center}
+.polaroid{padding:18px 18px 54px;background:#fff;box-shadow:0 6px 18px rgba(26,28,30,.10);transform:rotate(-1.2deg)}
+.last p{margin:0;font-family:var(--serif);font-size:18px;line-height:1.9}
+
+/* flower */
+.flower{padding:60px 32px;display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center}
+.roll{width:100%;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:10px;min-height:118px}
+.roll .dim{font-size:13px;color:#6F7378;transition:opacity .4s}
+.roll .cur{font-family:var(--serif);font-size:16px;color:var(--ink);transition:opacity .4s}
+.roll.fade span{opacity:0}
+.give-form{width:100%;display:flex;flex-direction:column;gap:10px;text-align:left}
+.done{width:100%;min-height:54px;border:1px solid var(--ink);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px}
+
+/* live */
+.live{padding:12px 32px 0;display:flex;flex-direction:column;gap:18px}
+.live .screen{height:200px;background:var(--night);color:#BDB6A8;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;font-size:13px;letter-spacing:.08em;text-decoration:none}
+
+/* letters */
+.letters{padding:56px 32px 48px;display:flex;flex-direction:column;gap:22px}
+.letters .top{display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+.letters .pos{font-size:12px;letter-spacing:.08em;color:var(--mute2)}
+.card{min-height:230px;padding:34px 26px 26px;background:#fff;border-top:1px solid var(--line2);display:flex;flex-direction:column;justify-content:space-between;gap:22px;transition:opacity .35s}
+.card.fade{opacity:0}
+.card .mark{font-family:var(--serif);font-size:34px;line-height:.6;color:var(--line2)}
+.card p{margin:0;font-family:var(--serif);font-size:16px;line-height:1.95;color:var(--ink2)}
+.card .meta{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.card .when{font-size:12px;color:var(--mute2)}
+.card .who{font-family:var(--serif);font-size:14px;color:var(--ink)}
+.ctrl{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.sq{width:44px;height:44px;border:1px solid var(--line2);background:transparent;color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.dots{display:flex;align-items:center;gap:8px}
+.dots span{width:10px;height:2px;background:var(--line2);transition:all .3s}
+.dots span.on{width:22px;background:var(--ink)}
+.linkbtn{min-height:44px;border:0;background:transparent;color:var(--brass);font-size:13px;letter-spacing:.06em;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.all{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.all div{padding:18px 2px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+.all p{margin:0;font-family:var(--serif);font-size:14px;line-height:1.85;color:var(--ink2)}
+.all span{align-self:flex-end;font-size:12px;color:var(--mute)}
+.write{margin-top:18px;display:flex;flex-direction:column;gap:10px}
+.chip{margin-top:4px;align-self:flex-start;min-height:44px;padding:0 18px;border:1px solid var(--line2);background:#FBF9F5;color:var(--ink);font-family:var(--serif);font-size:14px;cursor:pointer}
+.check{margin-top:4px;display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.5;color:var(--mute);cursor:pointer}
+.check input{width:20px;height:20px;margin:0;flex-shrink:0;accent-color:var(--ink)}
+.msg{font-size:13px;color:var(--brass);min-height:20px}
+
+/* schedule */
+.schedule{background:#fff;padding:52px 32px;display:flex;flex-direction:column;gap:22px}
+.schedule dl{margin:0}
+.schedule dl div{display:flex;gap:18px;padding:16px 0;border-top:1px solid #E3DED4}
+.schedule dl div:last-child{border-bottom:1px solid #E3DED4}
+.schedule dt{width:44px;flex-shrink:0;font-size:13px;color:var(--brass)}
+.schedule dd{margin:0;font-size:14px;display:flex;flex-direction:column;gap:4px}
+.schedule dd small{font-size:12px;color:var(--mute2)}
+.map{height:56px;border:1px solid var(--line2);background:transparent;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--ink);text-decoration:none}
+
+.director{padding:52px 32px 28px;display:flex;flex-direction:column;gap:18px}
+.director .row{display:flex;gap:18px;align-items:center}
+.director .pic{width:72px;height:72px;flex-shrink:0;border-radius:36px;background:#E3DED4;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--mute2)}
+.director b{display:block;font-family:var(--serif);font-size:18px;font-weight:600}
+.director span{font-size:13px;line-height:1.6;color:var(--mute)}
+
+.heart{padding:0 32px 64px;display:flex;flex-direction:column;gap:14px}
+.heart-toggle{min-height:54px;padding:0 4px;border:0;border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);background:transparent;color:var(--ink);font-size:14px;display:flex;align-items:center;justify-content:space-between;cursor:pointer}
+.heart-toggle span:last-child{font-size:13px;color:var(--mute2)}
+.acct{padding:18px;background:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.acct small{display:block;font-size:12px;color:var(--mute2);margin-bottom:4px}
+.acct b{font-weight:400;font-size:15px}
+.acct button{min-width:64px;min-height:44px;border:1px solid var(--ink);background:transparent;color:var(--ink);font-size:13px;cursor:pointer}
+
+/* closing */
+.closing{background:var(--night2);color:#EDE8DE;padding:88px 32px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.closing .condole{margin:28px 0 0;font-family:var(--serif);font-size:22px;font-weight:500;letter-spacing:.1em;color:#F4EFE6}
+.closing .wish{margin-top:14px;font-size:13px;letter-spacing:.04em;color:#BDB6A8}
+.orn{margin:48px 0;display:flex;align-items:center;gap:14px}
+.orn i{display:block;width:64px;height:1px;background:#4A4436}
+.orn em{display:block;width:6px;height:6px;border:1px solid var(--frame);transform:rotate(45deg)}
+.closing .catch{margin:0;font-family:var(--serif);font-size:18px;font-weight:500;line-height:1.85;letter-spacing:.02em;color:var(--brass-lt)}
+footer{background:var(--paper);color:var(--mute);padding:64px 32px;display:flex;flex-direction:column;align-items:center;text-align:center}
+footer img{width:190px;height:auto;display:block}
+footer .pledge{margin-top:22px;font-family:var(--serif);font-size:15px;letter-spacing:.08em;color:var(--brass)}
+footer .bar{margin:26px 0 18px;width:40px;height:1px;background:var(--line2)}
+footer .tel{min-height:44px;display:inline-flex;align-items:center;gap:10px;font-size:15px;letter-spacing:.08em;color:var(--ink);text-decoration:none}
+footer .tel small{font-size:12px;letter-spacing:.1em;color:var(--mute2)}
+footer .fine{margin-top:10px;font-size:11px;line-height:1.7;color:var(--mute2)}
+
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#F4EFE6;font-size:13px;padding:12px 18px;opacity:0;pointer-events:none;transition:opacity .3s;max-width:90vw}
+.toast.on{opacity:1}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="sample" id="sampleBar" role="note">이 화면은 빛고을장례119 온라인 추모관 <b>예시</b>입니다. [ ] 안의 내용과 예시 글은 실제 장례 정보로 바뀝니다.</div>
+
+  <section class="hero">
+    <div class="topbar">
+      <a class="brand" href="index.html" aria-label="빛고을장례119 홈">
+        <img src="logo-symbol.png" alt="">
+        <span><b>빛고을장례119</b><small>MEMORIAL HALL</small></span>
+      </a>
+      <button class="icon-btn" id="shareBtn" type="button" aria-label="추모관 링크 공유">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M12 3v12M7.5 7.5L12 3l4.5 4.5"/></svg>
+      </button>
+    </div>
+
+    <div class="vline" aria-hidden="true"></div>
+    <span class="kicker-lt">삼가 고인의 명복을 빕니다</span>
+
+    <div class="frame">
+      <div class="mat">
+        <div class="portrait" id="portrait" role="img" aria-label="영정 사진 자리">영정 사진</div>
+        <div class="ribbon l" aria-hidden="true"></div>
+        <div class="ribbon r" aria-hidden="true"></div>
+      </div>
+    </div>
+    <div class="altar" id="altar" aria-hidden="true"></div>
+    <div class="altar-line" aria-hidden="true"></div>
+
+    <h1 id="mName">故 ○○○</h1>
+    <span class="dates" id="mDates">[1942. 03. 15] — [2026. 11. 06]</span>
+    <span class="age" id="mAge">향년 [84]세</span>
+    <p class="quote" id="mQuote">「 [고인께서 생전에 자주 하시던 말씀,<br>또는 가족이 기억하는 한 문장] 」</p>
+
+    <nav class="toc" aria-label="추모관 목차">
+      <a href="#gallery" id="tocGallery">사진전</a>
+      <a href="#flower">헌화</a>
+      <a href="#letters">추모의 글</a>
+      <a href="#schedule">장례 일정</a>
+    </nav>
+  </section>
+
+  <section class="greet">
+    <span class="kicker">상주 인사</span>
+    <p id="mGreet">[상주가 직접 쓰는 인사말] 저희 아버님께서 가족의 곁에서 평안히 영면에 드셨습니다. 고인의 뜻을 따라 빈소를 차리지 않고 가족이 조용히 모시고자 합니다. 직접 찾아뵙고 인사드리지 못하는 점 너그러이 헤아려 주시기 바랍니다. 이곳에 남겨주시는 마음은 저희 가족이 오래도록 간직하겠습니다.</p>
+    <span class="sign" id="mSign">상주 [성함] 외 유가족 일동 올림</span>
+  </section>
+
+  <section class="gallery" id="gallery">
+    <div class="g-intro">
+      <span class="kicker">추억 사진전</span>
+      <h2>그분의 시간을<br>천천히 걷습니다</h2>
+      <p>사진 한 장마다 가족이 남긴 이야기를<br>함께 걸어 두었습니다.</p>
+    </div>
+
+    <div class="chapter" id="ch1">
+      <span class="ch-title">Ⅰ · 젊은 날</span>
+      <div class="ph" data-slot="1" style="height:400px">사진</div>
+      <div class="label"><span class="no">No. 01 · [1960년대]</span><span class="cap" id="capYoung">[스무 살 무렵, 고향 마을 앞에서]</span></div>
+    </div>
+
+    <div class="chapter" id="ch2">
+      <span class="ch-title">Ⅱ · 가족과 함께</span>
+      <div class="grid2"><div class="ph" data-slot="2" style="height:210px">사진</div><div class="ph" data-slot="3" style="height:210px">사진</div></div>
+      <div class="ph" data-slot="4" style="height:220px">사진</div>
+      <div class="label">
+        <span class="no">No. 02 – 04 · [1970 – 90년대]</span>
+        <span class="cap" id="capFamily">[첫째 손을 잡고 오른 무등산, 그 여름]</span>
+        <span class="fam" id="famNote">— 가족의 한마디: [그날 아버지는 업어주시느라 정상까지 못 가셨다]</span>
+      </div>
+    </div>
+
+    <div class="dark-wall" id="ch3">
+      <span class="ch-title">Ⅲ · 웃음</span>
+      <div class="ph" data-slot="5" style="height:300px">가장 크게 웃으시던 사진</div>
+      <div class="pad grid3"><div class="ph" data-slot="6" style="height:104px"></div><div class="ph" data-slot="7" style="height:104px"></div><div class="ph" data-slot="8" style="height:104px"></div></div>
+      <div class="pad label"><span class="no">No. 05 – 08</span><span class="cap" id="capSmile">[손주들 앞에서는 늘 이렇게 웃으셨습니다]</span></div>
+    </div>
+
+    <div class="last" id="ch4">
+      <span class="ch-title">Ⅳ · 마지막 인사</span>
+      <div class="polaroid"><div class="ph" data-slot="9" style="width:250px;height:280px">사진</div></div>
+      <p id="capLast">[아버지, 고생 많으셨습니다.<br>이제 편히 쉬세요.]</p>
+      <span class="note">No. 09 · 가족이 마지막으로 고른 사진</span>
+    </div>
+  </section>
+
+  <section class="flower" id="flower">
+    <span class="kicker">헌화</span>
+    <svg width="80" height="110" viewBox="0 0 64 88" fill="none" stroke="#3A3D40" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="흰 국화 한 송이"><circle cx="32" cy="22" r="4"/><ellipse cx="32" cy="10" rx="3.2" ry="7"/><ellipse cx="32" cy="34" rx="3.2" ry="7"/><ellipse cx="20" cy="22" rx="7" ry="3.2"/><ellipse cx="44" cy="22" rx="7" ry="3.2"/><ellipse cx="23.5" cy="13.5" rx="3.2" ry="7" transform="rotate(-45 23.5 13.5)"/><ellipse cx="40.5" cy="13.5" rx="3.2" ry="7" transform="rotate(45 40.5 13.5)"/><ellipse cx="23.5" cy="30.5" rx="3.2" ry="7" transform="rotate(45 23.5 30.5)"/><ellipse cx="40.5" cy="30.5" rx="3.2" ry="7" transform="rotate(-45 40.5 30.5)"/><path d="M32 41v45"/><path d="M32 62c-7-1-12-6-13-13 6 1 11 6 13 13z"/><path d="M32 72c6-1 11-5 12-11-6 1-10 5-12 11z"/></svg>
+
+    <div class="roll" id="roll" aria-live="polite">
+      <span class="dim" id="rollPrev"></span>
+      <span class="cur" id="rollCur"></span>
+      <span class="dim" id="rollNext"></span>
+    </div>
+    <span class="note">국화를 올려주신 분들의 마음이 차례로 이어집니다</span>
+
+    <div class="give-form" id="giveForm">
+      <label class="field-label" for="fWho">헌화하시는 분 (선택)</label>
+      <input class="field-line" id="fWho" type="text" maxlength="30" placeholder="예: 홍길동 · 회사 동료">
+      <button class="btn-dark" id="giveBtn" type="button" style="margin-top:8px">헌화하기</button>
+    </div>
+    <div class="done" id="giveDone" hidden>영전에 국화를 올리셨습니다</div>
+  </section>
+
+  <section class="live" id="liveSec">
+    <div class="head"><span class="kicker">영결식</span><h2 class="h2">멀리서 함께하기</h2></div>
+    <a class="screen" id="liveLink" href="#" aria-label="영결식 중계 보기">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M10 8.5l5 3.5-5 3.5z"/></svg>
+      <span id="liveTime">[00월 00일 00:00] 발인 제례 시작</span>
+    </a>
+    <span class="note">유가족의 뜻에 따라 링크를 받은 분만 보실 수 있습니다. 제단만 비추며 조문객은 촬영하지 않습니다.</span>
+  </section>
+
+  <section class="letters" id="letters">
+    <div class="top">
+      <div class="head"><span class="kicker">추모의 글</span><h2 class="h2">남겨주신 마음</h2></div>
+      <span class="pos" id="pos"></span>
+    </div>
+
+    <article class="card" id="card" aria-live="polite">
+      <span class="mark" aria-hidden="true">“</span>
+      <p id="cardBody"></p>
+      <div class="meta"><span class="when" id="cardWhen"></span><span class="who" id="cardWho"></span></div>
+    </article>
+    <div class="ctrl">
+      <button class="sq" id="prevMsg" type="button" aria-label="이전 추모의 글"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <div class="dots" id="dots" aria-hidden="true"></div>
+      <button class="sq" id="nextMsg" type="button" aria-label="다음 추모의 글"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+    <button class="linkbtn" id="toggleAll" type="button" aria-expanded="false" aria-controls="allList"></button>
+    <div class="all" id="allList" hidden></div>
+
+    <div class="write">
+      <span class="serif" style="font-size:17px;font-weight:600">마음을 남겨주세요</span>
+      <button class="chip" id="quick" type="button">삼가 고인의 명복을 빕니다</button>
+      <label class="field-label" for="pWho" style="margin-top:8px">성함과 고인과의 관계</label>
+      <input class="field-line" id="pWho" type="text" maxlength="30" placeholder="예: 홍길동 · 회사 동료">
+      <label class="field-label" for="pMsg" style="margin-top:10px">추모의 말씀</label>
+      <textarea class="field-box" id="pMsg" maxlength="500" placeholder="고인과 유가족께 전할 말씀"></textarea>
+      <label class="check"><input type="checkbox" id="pPriv"> 유가족에게만 전하기 (다른 조문객에게는 보이지 않습니다)</label>
+      <button class="btn-line" id="submitMsg" type="button" style="margin-top:6px">글 올리기</button>
+      <span class="msg" id="writeMsg" role="status"></span>
+      <span class="note">남기신 성함과 글은 이 추모관과 유가족께만 전해지며, 부적절한 글은 유가족의 요청으로 내려질 수 있습니다.</span>
+      <div style="position:absolute;left:-9999px" aria-hidden="true"><input id="hpCompany" type="text" tabindex="-1" autocomplete="off"></div>
+    </div>
+  </section>
+
+  <section class="schedule" id="schedule">
+    <div class="head"><span class="kicker">장례 일정</span><h2 class="h2">모시는 순서</h2></div>
+    <dl>
+      <div><dt>입관</dt><dd id="sIpgwan">[00월 00일 (요일) 00:00]</dd></div>
+      <div><dt>발인</dt><dd id="sBalin">[00월 00일 (요일) 00:00]</dd></div>
+      <div><dt>화장</dt><dd id="sHwa">[화장시설명]</dd></div>
+      <div><dt>장지</dt><dd><span id="sPlace">[장지명]</span><small id="sAddr">[주소]</small></dd></div>
+    </dl>
+    <a class="map" id="mapLink" href="#" target="_blank" rel="noopener">네이버 지도에서 장지 보기</a>
+  </section>
+
+  <section class="director" id="dirSec">
+    <span class="kicker">이 장례를 모시는 사람</span>
+    <div class="row">
+      <div class="pic">사진</div>
+      <div><b id="mDirector">[성함] 장례지도사</b><span>처음부터 마지막 길까지<br>곁에서 함께 모십니다</span></div>
+    </div>
+  </section>
+
+  <section class="heart" id="heartSec">
+    <button class="heart-toggle" id="heartToggle" type="button" aria-expanded="false" aria-controls="heartBody"><span>상주에게 마음 전하기</span><span id="heartLabel">열기</span></button>
+    <div id="heartBody" hidden>
+      <div class="acct">
+        <div><small id="acctHolder">상주 [성함]</small><b id="acctText">[은행명] [계좌번호]</b></div>
+        <button type="button" id="copyAcct">복사</button>
+      </div>
+      <p class="note" style="margin:12px 0 0">상주님 계좌로 직접 전달되며, 빛고을장례119는 부의금을 받거나 보관하지 않습니다.</p>
+    </div>
+  </section>
+
+  <section class="closing">
+    <svg width="58" height="80" viewBox="0 0 64 88" fill="none" stroke="#E6DFD1" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="흰 국화 한 송이"><circle cx="32" cy="22" r="4"/><ellipse cx="32" cy="10" rx="3.2" ry="7"/><ellipse cx="32" cy="34" rx="3.2" ry="7"/><ellipse cx="20" cy="22" rx="7" ry="3.2"/><ellipse cx="44" cy="22" rx="7" ry="3.2"/><ellipse cx="23.5" cy="13.5" rx="3.2" ry="7" transform="rotate(-45 23.5 13.5)"/><ellipse cx="40.5" cy="13.5" rx="3.2" ry="7" transform="rotate(45 40.5 13.5)"/><ellipse cx="23.5" cy="30.5" rx="3.2" ry="7" transform="rotate(45 23.5 30.5)"/><ellipse cx="40.5" cy="30.5" rx="3.2" ry="7" transform="rotate(-45 40.5 30.5)"/><path d="M32 41v45"/><path d="M32 62c-7-1-12-6-13-13 6 1 11 6 13 13z"/><path d="M32 72c6-1 11-5 12-11-6 1-10 5-12 11z"/><path d="M26 52l6 4 6-4M27 60l5-4 5 4" stroke="#0E0F10" stroke-width="3"/><path d="M26 52l6 4 6-4M27 60l5-4 5 4" stroke="#8A7A58" stroke-width="0.8"/></svg>
+    <p class="condole">삼가 고인의 명복을 빕니다</p>
+    <span class="wish" id="mWish">故 ○○○ 님의 평안한 영면을 기원합니다</span>
+    <div class="orn" aria-hidden="true"><i></i><em></em><i></i></div>
+    <p class="catch">비용은 덜어드리되,<br>예우는 결코 덜어내지 않습니다.</p>
+  </section>
+
+  <footer>
+    <img src="memorial-logo.png" alt="빛고을장례119" width="190" height="118">
+    <span class="pledge">고인께 드리는 최대의 예우</span>
+    <div class="bar" aria-hidden="true"></div>
+    <a class="tel" href="tel:15339657"><small>상담</small>1533-9657</a>
+    <span class="fine">이 추모관은 빛고을장례119가 유가족께 드립니다</span>
+  </footer>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="memorial.js?v=20261111-1"></script>
+</body>
+</html>
