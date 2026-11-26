@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>전화 연결 | 빛고을장례119</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#f8f1e4;font-family:"Noto Sans KR","Malgun Gothic",sans-serif;color:#1c4638;padding:24px}
+.card{width:100%;max-width:420px;background:#fff;border:1px solid #e2d6bc;border-radius:18px;padding:36px 24px;text-align:center;box-shadow:0 6px 24px rgba(0,0,0,.06)}
+.brand{font-size:15px;font-weight:700;color:#1c4638;letter-spacing:.02em}
+h1{font-size:24px;margin:14px 0 8px;line-height:1.4}
+p{font-size:16px;line-height:1.7;margin:0 0 22px;color:#555}
+a.call{display:block;background:#1c4638;color:#fff;text-decoration:none;font-size:22px;font-weight:700;padding:20px 12px;border-radius:14px}
+a.call:active{opacity:.85}
+.sub{margin-top:18px;font-size:14px;color:#888}
+</style>
+</head>
+<body>
+<main class="card">
+<div class="brand">빛고을장례119</div>
+<h1>전화 연결 중입니다</h1>
+<p>잠시 후 전화 화면이 열립니다.<br>열리지 않으면 아래 버튼을 눌러 주세요.</p>
+<a class="call" href="tel:15339657">☎ 1533-9657 전화하기</a>
+<div class="sub">컴퓨터에서 보고 계시면 휴대폰으로 1533-9657에 전화해 주세요.</div>
+</main>
+<script>
+(function(){
+  try {
+    var mobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (!mobile || sessionStorage.getItem("calledOnce")) return;
+    sessionStorage.setItem("calledOnce", "1");
+    setTimeout(function(){ location.href = "tel:15339657"; }, 700);
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>
