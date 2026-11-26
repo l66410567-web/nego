@@ -632,11 +632,20 @@ function submitReview(e){
   return false;
 }
 
+/* 기존에 받아둔 광주 고객 후기 (2026-11-26 사장님 확인 후 다시 노출) — 승인된 새 후기 뒤에 이어서 표시 */
+var REVIEW_SEED = [
+  {name:'박OO', region:'광주 북구',   text:'이런 곳이 있는 줄 몰랐어요. 지인 소개 없이도 이렇게 좋은 조건으로 진행할 수 있다는 게 놀라웠습니다.'},
+  {name:'정OO', region:'광주 서구',   text:'갑자기 상을 치르게 돼서 정신이 없었는데 전화 한 통으로 다 해결됐습니다. 왜 이제야 알았을까 싶어요.'},
+  {name:'최OO', region:'광주 남구',   text:'받을 수 있는 혜택을 미리 알려주셔서 비용 부담을 많이 줄일 수 있었습니다. 정말 감사했습니다.'},
+  {name:'김OO', region:'광주 동구',   text:'친절하게 안내해주셔서 큰 도움이 됐습니다. 처음이라 걱정 많았는데 편하게 진행했어요.'},
+  {name:'조OO', region:'광주 광산구', text:'수목장이랑 봉안당 차이도 잘 몰랐는데 하나하나 비교해서 알려주셔서 좋은 곳으로 모실 수 있었습니다.'},
+  {name:'강OO', region:'광주 서구',   text:'임종부터 발인까지 계속 옆에서 챙겨주셔서 정말 든든했습니다. 이렇게까지 자세히 알려주실 줄 몰랐습니다.'}
+];
+
 /* 승인된 광주 후기 불러오기 → 무한 슬라이드 카드 */
 (function loadReviews(){
   var track = document.getElementById('reviewTrack');
-  if(!track || !PREREG_ENDPOINT || !window.fetch) { showEmpty(); return; }
-  function showEmpty(){ var el = document.getElementById('reviewEmpty'); if(el) el.hidden = false; }
+  if(!track) return;
   function card(r, hidden){
     return '<article class="rv-card"'+(hidden?' aria-hidden="true"':'')+'>'+
       '<span class="rv-cat">'+_rvEsc(r.service || '함께한 이야기')+'</span>'+
@@ -644,20 +653,21 @@ function submitReview(e){
       '<div class="rv-who"><b>'+_rvEsc(r.name)+'</b><span>'+_rvEsc(r.region)+(r.date?' · '+_rvEsc(r.date):'')+'</span></div>'+
       '</article>';
   }
+  function render(fresh){
+    // 광주 지역 후기만 노출 (서버에서도 거르지만 한 번 더 확인)
+    var list = (fresh || []).concat(REVIEW_SEED).filter(function(r){ return r && r.text && String(r.region||'').indexOf('광주') === 0; });
+    var empty = document.getElementById('reviewEmpty'), wrap = document.getElementById('reviewTrackWrap');
+    if(!list.length){ if(empty) empty.hidden = false; if(wrap) wrap.hidden = true; return; }
+    var once = list.map(function(r){ return card(r, false); }).join('');
+    if(list.length < 3){ track.innerHTML = once; track.style.animation = 'none'; }
+    // 슬라이드가 끊기지 않도록 카드 묶음을 한 번 더 붙인다 (화면 낭독기는 두 번째 묶음을 건너뜀)
+    else track.innerHTML = once + list.map(function(r){ return card(r, true); }).join('');
+    if(empty) empty.hidden = true; if(wrap) wrap.hidden = false;
+  }
+  render([]);   // 기존 후기는 바로 표시
+  if(!PREREG_ENDPOINT || !window.fetch) return;
   fetch(PREREG_ENDPOINT + '?action=reviews', { method: 'GET' })
     .then(function(r){ return r.json(); })
-    .then(function(res){
-      var list = (res && res.ok && res.reviews) ? res.reviews : [];
-      // 광주 지역 후기만 노출 (서버에서도 거르지만 한 번 더 확인)
-      list = list.filter(function(r){ return r && r.text && String(r.region||'').indexOf('광주') === 0; });
-      if(!list.length){ showEmpty(); return; }
-      var once = list.map(function(r){ return card(r, false); }).join('');
-      // 슬라이드가 끊기지 않도록 카드 묶음을 한 번 더 붙인다 (화면 낭독기는 두 번째 묶음을 건너뜀)
-      var copy = list.map(function(r){ return card(r, true); }).join('');
-      track.innerHTML = once + copy;
-      if(list.length < 3) track.style.animation = 'none';
-      if(list.length < 3) track.innerHTML = once;
-      var wrap = document.getElementById('reviewTrackWrap'); if(wrap) wrap.hidden = false;
-    })
-    .catch(function(){ showEmpty(); });
+    .then(function(res){ if(res && res.ok && res.reviews && res.reviews.length) render(res.reviews); })
+    .catch(function(){});
 })();
