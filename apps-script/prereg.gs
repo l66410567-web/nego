@@ -14,6 +14,7 @@
  *   CUSTOMER_SMS      : (선택) 'off' 로 설정하면 고객 접수확인 문자를 보내지 않음 (기본: 발송)
  *   FORM_TOKEN        : 홈페이지 script.js 의 PREREG_TOKEN 과 동일한 임의 문자열
  *   SHEET_ID          : (선택) 명단을 저장할 구글 시트 ID. 비워두면 저장하지 않고 문자만 발송
+ *                       ※ 이용후기 기능은 이 시트의 '후기' 탭을 쓰므로 SHEET_ID 가 꼭 있어야 합니다.
  */
 
 var P = PropertiesService.getScriptProperties();
@@ -32,6 +33,9 @@ function doPost(e) {
     // 2) 토큰 검증
     var token = P.getProperty('FORM_TOKEN');
     if (token && data.token !== token) { _log('unauthorized', data); return _json({ ok: false, error: 'unauthorized' }); }
+
+    // 2-1) 이용후기 접수는 별도 처리 ('후기' 시트에 저장, 승인 전에는 비공개)
+    if (data.kind === 'review') return _handleReview(data);
 
     // 3) 입력 정제·검증
     var name   = String(data.name   || '').trim().slice(0, 20);
@@ -86,10 +90,112 @@ function _log(status, data, note) {
   } catch (err) { /* 로그 실패가 접수를 막으면 안 됨 */ }
 }
 
-/** 브라우저에서 주소를 눌러봤을 때 안내 */
-function doGet() {
+/** GET — ?action=reviews 면 승인된 광주 후기 목록(JSON), 그 외에는 안내 문구 */
+function doGet(e) {
+  if (e && e.parameter && e.parameter.action === 'reviews') return _json(_approvedReviews());
   return ContentService.createTextOutput('빛고을장례119 사전등록 접수 엔드포인트입니다.')
     .setMimeType(ContentService.MimeType.TEXT);
+}
+
+/* ---------------- 이용후기 ----------------
+ * '후기' 시트 열: 접수일시 | 성함 | 연락처 | 거주지 | 이용 서비스 | 후기 내용 | 공개승인(체크박스) | 공개이름 | 메모
+ *  - 새 후기는 공개승인이 꺼진 상태로 저장됩니다. 사장님이 내용·이용 여부를 확인하고 체크하면 홈페이지에 게시됩니다.
+ *  - 홈페이지에는 '공개이름'(기본: 성+OO)·거주지·서비스·후기 내용·접수 연월만 나갑니다. 연락처는 절대 내보내지 않습니다.
+ *  - 거주지가 '광주'로 시작하는 후기만 게시합니다.
+ *  - 내리려면 체크를 해제하면 되고, 삭제 요청 시 행을 지우면 됩니다. (반영까지 최대 5분 — 캐시)
+ */
+function _reviewSheet() {
+  var sheetId = P.getProperty('SHEET_ID');
+  if (!sheetId) return null;
+  var ss = SpreadsheetApp.openById(sheetId);
+  var sh = ss.getSheetByName('후기') || ss.insertSheet('후기');
+  if (sh.getLastRow() === 0) {
+    sh.appendRow(['접수일시', '성함', '연락처', '거주지', '이용 서비스', '후기 내용', '공개승인', '공개이름', '메모']);
+    sh.setFrozenRows(1);
+  }
+  return sh;
+}
+
+function _maskName(name) {
+  var n = String(name || '').trim();
+  return n ? n.charAt(0) + 'OO' : '익명';
+}
+
+function _handleReview(data) {
+  var name    = String(data.name    || '').trim().slice(0, 20);
+  var telRaw  = String(data.phone   || '').replace(/[^0-9]/g, '').slice(0, 11);
+  var region  = String(data.region  || '').trim().slice(0, 20);
+  var service = String(data.service || '').trim().slice(0, 20);
+  var text    = String(data.text    || '').trim().slice(0, 500);
+  if (!name || telRaw.length < 10 || !region || text.length < 10) {
+    _log('review-invalid', { source: 'review', page: data.page, tel: telRaw });
+    return _json({ ok: false, error: 'invalid' });
+  }
+  if (!_rateOk()) { _log('review-rate', { source: 'review', page: data.page, tel: telRaw }); return _json({ ok: false, error: 'rate' }); }
+  if (_isDup(telRaw, 'review')) return _json({ ok: true, dup: true });
+
+  var sh = _reviewSheet();
+  if (!sh) return _json({ ok: false, error: 'no-sheet' });
+  sh.appendRow([
+    Utilities.formatDate(new Date(), 'Asia/Seoul', 'yyyy-MM-dd HH:mm:ss'),
+    name, _fmtTel(telRaw), region, service, text, false, _maskName(name), ''
+  ]);
+  sh.getRange(sh.getLastRow(), 7).insertCheckboxes();
+  _log('review-ok', { source: 'review', page: data.page, tel: telRaw });
+
+  var sms = _notifyOwner(name, region);
+  return _json({ ok: true, sms: String(sms).slice(0, 60) });
+}
+
+/** 새 후기 접수 시 사장님께만 문자 (고객에게는 보내지 않음) */
+function _notifyOwner(name, region) {
+  var apiKey = P.getProperty('SOLAPI_API_KEY');
+  var apiSecret = P.getProperty('SOLAPI_API_SECRET');
+  var sender = P.getProperty('SENDER');
+  var to = P.getProperty('NOTIFY_TO');
+  if (!apiKey || !apiSecret || !sender || !to) return 'skip(설정 없음)';
+  var msg = _fitName(function (nm) { return '[빛고을119] 후기접수\n' + nm + ' ' + region + '\n시트 후기탭에서 승인'; }, name);
+  var fromNum = String(sender).replace(/[^0-9]/g, '');
+  var messages = String(to).split(',')
+    .map(function (s) { return s.trim().replace(/[^0-9]/g, ''); })
+    .filter(function (s) { return s; })
+    .map(function (t) { return { to: t, from: fromNum, text: msg }; });
+  var date = new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
+  var salt = Utilities.getUuid().replace(/-/g, '');
+  var signature = _hex(Utilities.computeHmacSha256Signature(date + salt, apiSecret));
+  var res = UrlFetchApp.fetch('https://api.solapi.com/messages/v4/send-many/detail', {
+    method: 'post', contentType: 'application/json',
+    headers: { Authorization: 'HMAC-SHA256 apiKey=' + apiKey + ', date=' + date + ', salt=' + salt + ', signature=' + signature },
+    payload: JSON.stringify({ messages: messages }), muteHttpExceptions: true
+  });
+  return res.getContentText();
+}
+
+/** 승인된 광주 후기 (최신순 최대 30건). 5분 캐시 */
+function _approvedReviews() {
+  var cache = CacheService.getScriptCache();
+  var hit = cache.get('reviews_v1');
+  if (hit) return JSON.parse(hit);
+  var out = { ok: true, reviews: [] };
+  var sh = _reviewSheet();
+  if (sh && sh.getLastRow() > 1) {
+    var rows = sh.getRange(2, 1, sh.getLastRow() - 1, 8).getValues();
+    for (var i = rows.length - 1; i >= 0 && out.reviews.length < 30; i--) {
+      var r = rows[i];
+      var region = String(r[3] || '').trim();
+      if (r[6] !== true || region.indexOf('광주') !== 0 || !String(r[5] || '').trim()) continue;
+      var d = r[0] instanceof Date ? r[0] : new Date(String(r[0]).replace(' ', 'T'));
+      out.reviews.push({
+        name: String(r[7] || '').trim() || _maskName(r[1]),
+        region: region,
+        service: String(r[4] || '').trim(),
+        text: String(r[5]).trim(),
+        date: isNaN(d) ? '' : Utilities.formatDate(d, 'Asia/Seoul', 'yyyy.MM')
+      });
+    }
+  }
+  cache.put('reviews_v1', JSON.stringify(out), 300);
+  return out;
 }
 
 /* ---------------- 내부 함수 ---------------- */
